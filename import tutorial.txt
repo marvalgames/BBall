@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------------------------
+HOW TO USE THE OPTIONAL LEAGUE IMPORT TOOL WHEN CREATING LEAGUES
+---------------------------------------------------------------------------------------------------
+Using a default league (recommended) - click New League
+
+Select a name for your league in the New League Name Box
+
+If the league you are importing contains a different number of teams than the default league you are using and you are not selecting the Draft League option then please delete or add the correct teams. 
+
+Set Import Player Data File to on
+
+Click Create
+The Import Player Data From File Box will appear
+
+The player data file must be saved as .csv. The preferred way is via a program like Excel. This way you can set up the players using a spreadsheet.
+For an example of what a .csv file looks like just open up one of our Rookie Files in notepad.
+
+The first row is the heading names for each column
+Each row in the .csv files represents a player.
+The order of the cells in a spreadsheet (or just the values of the .csv) must be exact to import properly
+
+
+STANDARD FILE FORMAT
+-------------------------------
+Column 1 - Name
+Column 2 - Team Name
+Column 3 - Pos (pg,sg,sf,pf,c)
+Column 4 - Games
+Column 5 - Minutes
+Column 6 - Field Goals Made
+Column 7 - Field Goals Attempted
+Column 8 - Free Throws Made
+Column 9 - Free Throws Attempted
+Column 10- Threes Made
+Column 11- Threes Attempted
+Column 12- Offensive Rebounds
+Column 13- Total Rebounds
+Column 14- Assists
+Column 15- Steals
+Column 16- Turnovers
+Column 17- Blocks
+Column 18- Personal Fouls
+Column 19- Player Age
+Column 20- Years Pro
+Column 21- Bird Years
+Column 22-27 Year 1 thru Year 6 contract value (1400 would represent 14 million)
+
+Column 19-20 is required only when "Ages Only" is selected in the File Data Includes Option
+Column 19-27 is required only when "Ages and Contracts" is selected in the File Data Includes Option
+The columns that are not used are randomly generated but columns 1-17 are required
+-------------------------------------------------------------------------------------------------------------
+
+HISTORICAL FILE FORMAT
+---------------------------------
+When using the Historical File format in your data file this option must be turned ON!
+
+Column 1 - Year (Season end)
+Column 2- Pos  (pg,sg,sf,pf,c)
+Column 3- First Name
+Column 4 - Last Name
+Column 5 - Team Name
+Column 6 - Feet
+Column 7 - Inches
+Column 8 - Years Pro
+Column 9 - Player Age
+Column 10 - Team Name
+Column 11 - Games
+Column 12 - Minutes
+Column 13 - Field Goals Made
+Column 14 - Field Goals Attempted
+Column 15 - Free Throws Made
+Column 16 - Free Throws Attempted
+Column 17 - Threes Made
+Column 18 - Threes Attempted
+Column 19 - Offensive Rebounds
+Column 20 - Total Rebounds
+Column 21 - Assists
+Column 22 - Steals
+Column 23 - Turnovers
+Column 24 - Blocks
+Column 25 - Personal Fouls
+
+
+Enter the Year (Season End) you wish to import
+in the 
+Read Player Data for Season Ending in Year: Edit Box
+Only players whose year ( Column 1 ) match the year entered will be added to your league
+All Contracts and projections will be randomly generated when using the Historical File format.
+-----------------------------------------------------------------------------------------------------------------------
+
+The Team Name Column must match the team nickname in your new league or one of the commonly used abbreviations.
+For example the following will all be read correctly if one of the team nicknames in your league is the Hornets:
+cha
+charlotte
+hornets
+nor
+new orleans
+
+
+The first 96 players without abbreviations or that are not among the first 14 listed for a particular team are added to the Free Agent Pool
+
+ 
+If your abbreviations and your data file are properly set up use the Select File to Import Button to load your custom .csv file
+
+The Player Data File Import Completed prompt will appear 
+Click Ok then Exit the Import Box.
+The remainder of the files for your new league will be created and your league will be ready for use
+
+-------------------------------------
+HOW TO IMPORT DRAFT FILES
+--------------------------------------
+
+NOTE: Draft Files can only be imported during the season (before selecting end season)
+If not the computer will create fictional draft files for the draft
+
+Select Tools / Draft Files
+
+Select Draft File to import
+
+STANDARD FILE FORMAT
+-----------------------------
+Follow the description as explained in the dialog box
+ 
+
+
+HISTORICAL FILE FORMAT
+---------------------------------
+When using the Historical File format in your data file the following option must be turned ON!
+ Use Rookies in Historical File for Season Ending in Year:
+
+Enter the correct year your rookies should be imported from in the edit box
+Typical example: If your season begins in 1997 (97-98) - the rookies would have played in the season starting in 1998 (98-99) so you would enter 1999 (season end)
+The game should default to the correct year
+
+Only players whose year ( Column 1 ) match the year entered and whose years pro ( Column 8 ) are 1 (1 year in the league)  will be added to your league draft file.
+All Contracts and projections will be randomly generated when using the Historical File format
+
+Click Exit
+
+Select Go to Team - Draft Preview to verify the players were imported correctly.

@@ -1,0 +1,8 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by BBall.rc
+//
+#define HIDC_EXHIBITION_GAME            0x809d048b    // IDD_TYPEBOX
+#define HIDC_LEAGUE                     0x809d048c    // IDD_TYPEBOX
+#define HIDC_TEAM_GAME                  0x809d048d    // IDD_TYPEBOX
+#define HIDH_BUTTON_HOME                0x809f04be    // IDD_STATSBOX
+#define HIDH_BUTTON_VISITOR             0x809f04bd    // IDD_STATSBOX

@@ -1,0 +1,79 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=jumpshot.chm
+Contents file=jumpshot.hhc
+Default topic=html\play.htm
+Display compile progress=No
+Index file=Nba.hhk
+Language=0x409 English (United States)
+
+
+[FILES]
+html\setupdelete.htm
+html\setupnew.htm
+html\setupopen.htm
+html\setupsave.htm
+html\setupsettings.htm
+html\staffprofiles.htm
+html\staffs.htm
+html\standingsoverview.htm
+html\teambudget.htm
+html\teamdraft.htm
+html\teamfa.htm
+html\teamhistory.htm
+html\teamlineup.htm
+html\teamrecords.htm
+html\teamresults.htm
+html\teamroster.htm
+html\teamschedules.htm
+html\teamstaff.htm
+html\teamtrade.htm
+html\teamtransactions.htm
+html\teamyearlyresults.htm
+html\toolsauto.htm
+html\toolscityeditor.htm
+html\toolsdraftfiles.htm
+html\toolshtmlexport.htm
+html\toolsplayeredit.htm
+html\toolssavedbox.htm
+html\toolssavedpbp.htm
+html\toolsscheduler.htm
+html\tradingblock.htm
+html\transactions.htm
+html\allstar.htm
+html\allstats.htm
+html\budgetsheet.htm
+html\cityprofiles.htm
+html\coach.htm
+html\coachdefense.htm
+html\coachtimeout.htm
+html\draftpreview.htm
+html\exhibition.htm
+html\fantasydraft.htm
+html\features.htm
+html\freeagency.htm
+html\gameplan.htm
+html\gametype.htm
+html\historyawards.htm
+html\historycareer.htm
+html\historydrafts.htm
+html\historyhof.htm
+html\historyrecordbook.htm
+html\index.htm
+html\leagueleaders.htm
+html\negotiate.htm
+html\offercontract.htm
+html\play.htm
+html\playercard.htm
+html\progresscamp.htm
+html\progressend.htm
+html\progressoverview.htm
+html\progressproposals.htm
+html\proposetrades.htm
+html\records.htm
+html\search.htm
+html\seasonawards.htm
+html\scheduleoverview.htm
+
+[INFOTYPES]
+

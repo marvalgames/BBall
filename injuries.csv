@@ -1,0 +1,306 @@
+INJURY,FREQUENCY,MIN. GAMES,MAX. GAMES
+abdominal strain ,2,1,2
+Ankle ,2,1,2
+Arthritic big toe ,1,3,5
+Arthroscopic left knee surgery ,1,30,45
+Atrial fibrillation ,1,2,4
+Back spasms ,10,2,4
+Bilateral patella tendinitis ,2,2,14
+Bi-lateral plantar fasciitis ,1,2,5
+Bone bruise in right foot ,2,1,2
+Bone bruise on right knee ,1,1,3
+Bone chip in right wrist ,1,1,5
+Bone contusion of the left knee ,1,1,3
+"Bone contusion, right foot ",1,1,3
+Bone spur in left ankle ,1,2,14
+broken left fibula ,1,14,24
+Broken left hand ,1,11,30
+"Broken middle finger, right hand ",1,10,18
+"Broken navicular bone, left wrist ",1,8,16
+Broken Nose ,2,1,4
+Broken right hand ,1,11,30
+Broken right index finger ,1,10,17
+Broken wrist ,1,12,32
+Broken zygomatic bone in face ,1,2,6
+bruise in right foot ,1,1,3
+Bruised left calf ,2,1,4
+Bruised left gastroc muscle ,1,2,5
+Bruised left hip ,1,2,4
+Bruised left knee flexor ,1,2,6
+bruised left shoulder ,1,1,3
+Bruised left thigh ,1,2,5
+Bruised lower back ,1,3,6
+bruised ribs ,1,4,7
+Bruised right clavicle ,1,4,8
+bruised right forearm ,1,1,3
+Bruised right hip ,1,2,5
+bruised right knee ,5,2,4
+Bruised tailbone ,1,1,4
+Bulging disk in lower back ,1,10,99
+Cervical bulging disc ,3,11,98
+Cervical strain ,1,3,8
+Chicken pox ,11,5,9
+Chip fracture in right foot ,1,10,20
+Concussion ,2,2,6
+Conditioning ,12,1,10
+Corneal abrasion ,1,2,8
+Cramped right hamstring ,1,1,5
+Death in family ,11,2,5
+deep left thigh contusion ,1,2,6
+Deep right thigh bruise ,1,1,6
+Dislocated Right Index Finger ,1,3,9
+Dislocated right thumb ,1,3,8
+dislocated toes on right foot ,2,2,7
+Ear infection ,1,3,5
+Family Issues ,12,2,50
+Flu ,13,1,3
+Food poisoning ,3,1,3
+Foot surgery ,1,9,75
+Fractured fifth metatarsal in left foot ,1,10,25
+Fractured fifth metatarsal in right foot ,1,12,27
+Fractured left big toe ,1,5,50
+Fractured left foot ,1,6,45
+Fractured left knee ,1,7,43
+Fractured left pinky ,1,4,27
+Fractured left ring finger ,1,5,26
+Fractured right foot ,1,10,33
+fractured right hand ,1,9,22
+Fractured right orbit bone ,1,11,34
+Fractured right wrist. ,1,15,47
+Groin ,1,3,6
+Headaches ,1,1,4
+Hernia ,1,2,7
+high left ankle sprain ,2,1,6
+hip pointer ,1,3,18
+Hyperextended elbow ,1,2,16
+Hyperextended left knee ,6,3,15
+Hyperextended left pinky ,1,1,17
+Hyperextended right elbow ,1,1,13
+Hyper-extended right knee ,1,2,19
+illness ,13,1,16
+Infected left fifth toe ,1,1,6
+Inflamed left elbow ,1,2,5
+Inflammation in left shoulder ,1,2,8
+Inflammation in right knee ,3,2,9
+Inflammation right ankle ,1,1,9
+Ingrown Toenail ,2,1,3
+Intestinal virus ,1,1,5
+jammed right thumb ,1,1,6
+Jaw contusion ,1,1,8
+Knee ,4,2,19
+Knee surgery ,1,14,41
+Lacerated right hand ,1,2,8
+Lateral left ankle sprain ,1,1,4
+Left achilles tear,6,50,99
+Left ankle bruise ,1,2,6
+Left ankle sprain ,4,1,5
+Left ankle tendinitis ,3,3,7
+Left big toe sprain ,1,1,7
+Left calf strain ,2,2,7
+Left elbow bursitis ,1,2,8
+Left foot inflammation ,2,3,7
+Left foot metatarsal sprain ,1,3,5
+Left foot stress reaction ,1,3,12
+"Left foot, fifth metatarsal fracture ",1,12,27
+left hand contusion ,1,1,6
+left hip contusion ,1,1,7
+Left hip flexor ,1,2,9
+Left knee bursitis ,1,11,31
+Left knee chondromalacia ,1,14,88
+Left knee inflammation ,2,13,78
+Left knee infrapatella tendinitis ,7,12,68
+Left knee sprain ,3,2,8
+Left knee surgery ,1,13,79
+Left knee swelling ,1,12,57
+Left knee synovitis ,1,10,48
+Left knee tendinitis ,10,9,34
+"Left knee, quadriceps tendinitis ",1,8,24
+Left leg ,1,2,44
+"Left leg contusion, sprained left ankle ",1,2,7
+Left patella tendinitis ,3,12,65
+Left peroneal neuropathy ,1,11,47
+Left pinky tendinitis ,1,2,9
+Left plantar fascitis,3,15,22
+Left quadricep tendinitis ,2,1,10
+Left shin contusion ,2,1,11
+Left shoulder bruise ,1,1,6
+Left shoulder strain ,2,2,5
+Left shoulder tendinitis ,2,1,6
+left thigh bruise ,2,1,3
+Left thumb ,1,2,12
+Left toe sesamoiditis ,1,3,13
+left wrist sprain ,2,2,11
+Leg Injury,1,3,7
+Lower abdominal strain ,1,3,14
+Lower back dysfunction ,1,5,24
+Lower back pain ,10,2,8
+Medial tibial periostitis ,1,12,60
+Middle muscle back spasm ,1,2,5
+Migraine ,5,1,3
+Mild concussion ,4,1,4
+"Mild sprain of PCL, left knee ",1,2,7
+muscle spasms in neck/shoulder ,1,1,3
+Nausea ,11,1,2
+Neck spasms ,3,1,3
+Partial tear of right Achilles tendon ,1,10,50
+"Partial tear peroneal tendon, right foot ",1,5,45
+Patella tendinitis ,1,4,13
+Patella tendinitis in left knee ,1,3,12
+Patella tendinitis in right knee ,3,5,14
+"patella tendinitis, both knees ",1,6,16
+Patellafemoral arthritis in both knees ,1,25,99
+Pelvic Contusion ,1,1,4
+Personal business ,11,1,5
+Plantar fasciaitis in right foot ,1,16,24
+Plantar Fasciatis in left foot ,2,15,23
+Plantar fasciitis ,2,14,26
+Plantar Fasciitis in left foot ,2,13,28
+Post-concussion syndrome ,1,5,15
+pulled left hamstring ,2,4,12
+Pulled right groin ,3,3,13
+Pulled Right Hamstring ,1,5,15
+Respiratory infection ,11,3,7
+right Achilles tendinitis ,6,5,16
+Right adductor strain ,2,2,8
+Right ankle bone impingement ,1,3,12
+Right ankle sprain ,3,6,16
+Right ankle spurs ,1,3,12
+Right ankle synovitis ,1,4,13
+Right Bursa Sac/Hip injury ,1,3,8
+Right calf/right achilles tendinitis ,1,6,18
+Right corneal abrasion ,1,4,8
+Right elbow surgery ,1,26,99
+Right elbow tendinitis ,1,5,15
+Right foot plantar fasciitis ,2,7,14
+Right foot sprain ,1,3,13
+Right groin pull ,1,4,13
+Right groin strain ,2,2,9
+Right hip contusion ,1,1,7
+Right hip flexor ,1,1,6
+Right hip strain ,1,1,8
+Right knee contusion ,7,2,10
+Right knee inflamation ,2,3,11
+Right knee patella tendinitis ,4,6,20
+right knee sprain ,2,7,21
+Right knee surgery ,1,20,40
+Right knee tendinitis ,10,10,30
+right leg pain ,1,1,5
+Right lower back spasms ,1,2,6
+Right lower leg edema ,1,3,8
+Right patella tendinitis ,5,7,21
+Right quad contusion ,2,3,6
+Right ring finger surgery ,2,20,40
+Right shoulder contusion ,1,1,5
+Right shoulder rotator cuff weakness ,1,10,20
+Right shoulder strain ,2,3,12
+Right shoulder surgery ,1,40,99
+right thigh contusion ,6,1,4
+Right thumb ,1,1,2
+Rotator cuff weakness in right shoulder ,1,11,21
+Separated left shoulder ,2,5,40
+Sesamoiditis of left toe ,11,3,30
+shoulder ,1,1,50
+Sinus infection ,2,2,6
+Sore back ,3,3,11
+Sore groin ,1,2,10
+Sore hamstring ,1,4,12
+sore hip ,1,3,9
+Sore knees ,1,5,20
+Sore left ankle ,4,3,7
+sore left big toe ,1,2,8
+Sore left foot ,1,1,6
+Sore Left Groin ,1,2,5
+Sore left hand ,1,2,3
+Sore left heel ,1,2,4
+Sore left hip ,1,3,9
+Sore left knee ,10,2,5
+sore left shoulder ,1,3,6
+Sore left toe ,2,2,7
+Sore lower back ,1,4,8
+sore right achilles ,2,5,10
+Sore right ankle ,3,1,4
+Sore right ankle and Achilles tendon ,2,6,9
+sore right elbow ,1,3,7
+sore right foot ,1,1,3
+Sore right knee ,4,2,4
+Sore right shoulder and left hip ,1,3,5
+Sore right wrist ,2,1,4
+Sore toes ,1,1,2
+Sprained ankle ,2,3,12
+Sprained left ankle - Severe,10,9,16
+"Sprained left ankle, deep bone bruise ",1,5,11
+Sprained left big toe ,1,4,8
+Sprained left elbow ,1,5,15
+Sprained left foot ,2,6,12
+Sprained left great toe ,1,3,7
+Sprained left knee ,5,6,13
+Sprained left middle toe ,1,2,6
+Sprained left shoulder ,1,4,14
+sprained left thumb ,4,3,10
+Sprained left toe ,1,5,7
+Sprained left wrist ,4,6,12
+Sprained lower back ,1,7,11
+Sprained MCL in left knee ,1,10,23
+sprained neck ,1,2,5
+Sprained right ankle ,10,3,10
+Sprained right big toe ,2,2,9
+Sprained right elbow ,1,4,11
+Sprained right foot ,1,6,12
+sprained right hand ,2,3,10
+Sprained right knee ,8,6,10
+Sprained right shoulder ,1,5,9
+Sprained right thumb ,2,4,8
+Sprained right wrist ,5,3,7
+Sprained toe ,2,3,11
+Sprained wrist ,1,2,13
+Stomach flu ,12,2,5
+Strained adductor ,1,1,4
+Strained back ,1,1,3
+strained calf ,1,2,6
+Strained groin ,2,3,7
+Strained hamstring ,1,4,8
+Strained hip ,1,2,5
+Strained left ankle ,1,3,9
+Strained left calf ,6,2,8
+Strained left groin ,4,2,5
+Strained left hamstring ,7,3,7
+Strained left hip flexor ,1,4,8
+Strained left knee ,2,5,10
+Strained left quadricep ,3,4,11
+Strained left shoulder ,2,3,12
+Strained ligaments in right hand ,1,6,10
+Strained lower back ,10,3,9
+Strained neck ,1,1,5
+Strained right abductor ,1,2,6
+strained right arch ,1,3,7
+Strained right Calf ,3,4,6
+Strained right groin ,3,2,8
+Strained right hamstring ,8,1,9
+Strained right heel ,1,3,10
+Strained right hip flexor ,3,5,11
+Strained right knee ,1,4,10
+Strained right patella tendon ,1,5,12
+Strained right plantar fascia ,3,3,13
+Strained right quadriceps ,1,2,9
+Strained right thumb ,1,1,3
+Strep throat ,12,3,6
+Stress fracture in left ankle ,1,20,99
+Stress fracture in right foot ,3,18,88
+stretched tendon in right ring finger ,1,1,6
+Subluxated right shoulder ,1,2,5
+Synovitis in left knee ,1,4,44
+Tendinitis in both knees ,2,10,50
+tendinitis right ankle ,1,11,33
+Tendinitis Rt. knee ,1,9,27
+Thigh cramps ,1,2,4
+Toe infection ,11,3,6
+Tonsilitis ,11,5,10
+Torn ACL in left knee ,4,80,99
+Torn gracilis muscle in right hamstring ,1,40,99
+Torn left thumb ligaments ,1,30,99
+"Torn muscle, bone contusion of right hip ",1,20,50
+Torn right Achilles tendon ,1,90,99
+Torn right anterior cruciate ligament ,1,85,99
+Upper Respiratory Infection ,11,5,15
+Viral Infection ,12,3,10
+Zygomatic bone in right side of face ,1,1,8

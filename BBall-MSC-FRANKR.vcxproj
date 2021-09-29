@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Managed|Win32">
+      <Configuration>Managed</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Managed|x64">
+      <Configuration>Managed</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|x64">
+      <Configuration>Test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="x86 2021 Debug|Win32">
+      <Configuration>x86 2021 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="x86 2021 Debug|x64">
+      <Configuration>x86 2021 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="x86 2021|Win32">
+      <Configuration>x86 2021</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="x86 2021|x64">
+      <Configuration>x86 2021</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{ABB73A3D-A2BC-4E89-91DE-305386E85462}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CLRSupport>OldSyntax</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Managed|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CLRSupport>OldSyntax</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='x86 2021|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='x86 2021|Win32'">
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Managed|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.31515.66</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+    <OutDir>Managed\</OutDir>
+    <IntDir>Managed\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:X64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Users\frankr\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\XListCtrl;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Debug/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>.\Release/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/BBall.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/BBall.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>.\Release/BBall.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>.\Release/BBall.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 2021|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg1.cpp" />
+    <ClCompile Include="AllStarDlg.cpp" />
+    <ClCompile Include="AllStarWeekend.cpp" />
+    <ClCompile Include="AllTimeDlg.cpp" />
+    <ClCompile Include="AutoSchDlg.cpp" />
+    <ClCompile Include="Average.cpp" />
+    <ClCompile Include="Awards.cpp" />
+    <ClCompile Include="AwardsDlg.cpp" />
+    <ClCompile Include="BBall.cpp">
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <ClCompile Include="BBallCoachView.cpp" />
+    <ClCompile Include="BBallDoc.cpp" />
+    <ClCompile Include="BBallFile.cpp" />
+    <ClCompile Include="BBallSchedule.cpp" />
+    <ClCompile Include="BBallSettings.cpp" />
+    <ClCompile Include="BBallView.cpp" />
+    <ClCompile Include="BCMenu.cpp" />
+    <ClCompile Include="BitmapCtrl.cpp" />
+    <ClCompile Include="BoxDlg.cpp" />
+    <ClCompile Include="Boxscore.cpp" />
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="BudgetSheetDlg.cpp" />
+    <ClCompile Include="calendar.cpp" />
+    <ClCompile Include="CampDlg.cpp" />
+    <ClCompile Include="Career.cpp" />
+    <ClCompile Include="CareerStatsCardDlg.cpp" />
+    <ClCompile Include="CityProfileDlg.cpp" />
+    <ClCompile Include="CJFlatComboBox.cpp" />
+    <ClCompile Include="ColorStaticST.cpp" />
+    <ClCompile Include="Computer.cpp" />
+    <ClCompile Include="Curvefit.cpp" />
+    <ClCompile Include="datacombo.cpp" />
+    <ClCompile Include="DataSort.cpp" />
+    <ClCompile Include="dbcombo.cpp" />
+    <ClCompile Include="DCUtils.cpp" />
+    <ClCompile Include="DefenseDlg.cpp" />
+    <ClCompile Include="Digistatic.cpp" />
+    <ClCompile Include="Disk.cpp" />
+    <ClCompile Include="DraftDlg.cpp" />
+    <ClCompile Include="EditDlg.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Financial.cpp" />
+    <ClCompile Include="font.cpp" />
+    <ClCompile Include="FranchiseChangeDlg.cpp" />
+    <ClCompile Include="FranchiseEdit.cpp" />
+    <ClCompile Include="FreeAgentDlg.cpp" />
+    <ClCompile Include="Future.cpp" />
+    <ClCompile Include="GamePlan.cpp" />
+    <ClCompile Include="GameView.cpp" />
+    <ClCompile Include="GradientStatic.cpp" />
+    <ClCompile Include="High.cpp" />
+    <ClCompile Include="HireStaff.cpp" />
+    <ClCompile Include="HistoryAwards.cpp" />
+    <ClCompile Include="HistoryAwardsDlg.cpp" />
+    <ClCompile Include="HistoryDraftDlg.cpp" />
+    <ClCompile Include="HistoryStats.cpp" />
+    <ClCompile Include="HistoryTeamDlg.cpp" />
+    <ClCompile Include="HistoryView.cpp" />
+    <ClCompile Include="HofDlg.cpp" />
+    <ClCompile Include="Html.cpp" />
+    <ClCompile Include="HtmlDlg.cpp" />
+    <ClCompile Include="HtmlMsc.cpp" />
+    <ClCompile Include="ImpExp.cpp" />
+    <ClCompile Include="ImportDlg.cpp" />
+    <ClCompile Include="ImportPlayersDlg.cpp" />
+    <ClCompile Include="InjuryTable.cpp" />
+    <ClCompile Include="Label.cpp" />
+    <ClCompile Include="LeadersDlg.cpp" />
+    <ClCompile Include="LeagueTeamSchedule.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">Disabled</Optimization>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+      </ExceptionHandling>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">
+      </ExceptionHandling>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">false</BufferSecurityCheck>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">false</FunctionLevelLinking>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">false</FunctionLevelLinking>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+      </DebugInformationFormat>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">
+      </DebugInformationFormat>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">OldSyntax</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">OldSyntax</CompileAsManaged>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="LeagueTeamsDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="mdccombo.cpp" />
+    <ClCompile Include="MyButton.cpp" />
+    <ClCompile Include="MyComboBox.cpp" />
+    <ClCompile Include="MyDraw.cpp" />
+    <ClCompile Include="MyMenu.cpp" />
+    <ClCompile Include="MySliderControl.cpp" />
+    <ClCompile Include="NegotiateDlg.cpp" />
+    <ClCompile Include="OfferTrades1.cpp" />
+    <ClCompile Include="OptionsDlg.cpp" />
+    <ClCompile Include="Own.cpp" />
+    <ClCompile Include="PbpDlg.cpp" />
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="picture1.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerCardDlg.cpp" />
+    <ClCompile Include="Playoff.cpp" />
+    <ClCompile Include="PlayoffDlg.cpp" />
+    <ClCompile Include="ProgressDlg1.cpp" />
+    <ClCompile Include="ProgressView.cpp" />
+    <ClCompile Include="Record.cpp" />
+    <ClCompile Include="RecordbookDlg.cpp" />
+    <ClCompile Include="RegisterDlg.cpp" />
+    <ClCompile Include="ReportDlg.cpp" />
+    <ClCompile Include="Retirement.cpp" />
+    <ClCompile Include="RookieCardDlg.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Test|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Managed|x64'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="RookieDlg.cpp" />
+    <ClCompile Include="RookieStage.cpp" />
+    <ClCompile Include="rowcursor.cpp" />
+    <ClCompile Include="ScheduleDlg.cpp" />
+    <ClCompile Include="ScheduleView.cpp" />
+    <ClCompile Include="ScoutEditDlg.cpp" />
+    <ClCompile Include="ScoutProfileDlg.cpp" />
+    <ClCompile Include="SearchDlg.cpp" />
+    <ClCompile Include="Splash1.cpp" />
+    <ClCompile Include="SplashScreenEx.cpp" />
+    <ClCompile Include="Staff.cpp" />
+    <ClCompile Include="StaffDlg.cpp" />
+    <ClCompile Include="StandingsView.cpp" />
+    <ClCompile Include="StatsDlg.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Test|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SxGroupBox.cpp" />
+    <ClCompile Include="TeamFinancial.cpp" />
+    <ClCompile Include="TeamView.cpp" />
+    <ClCompile Include="TimeoutDlg.cpp" />
+    <ClCompile Include="ToolsView.cpp" />
+    <ClCompile Include="TradeBlockDlg.cpp" />
+    <ClCompile Include="TradeDlg.cpp" />
+    <ClCompile Include="Transactions.cpp" />
+    <ClCompile Include="TransactionsDlg.cpp" />
+    <ClCompile Include="TransparentGroup.cpp" />
+    <ClCompile Include="TransparentStatic.cpp" />
+    <ClCompile Include="TypeGameDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="arrow.cur" />
+    <None Include="arrowcop.cur" />
+    <None Include="FreeAgentOffer.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="hlp\AfxCore.rtf" />
+    <None Include="nodrop.cur" />
+    <None Include="res\BBall.rc2" />
+    <None Include="res\cursor.cur" />
+    <None Include="res\jpg1.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BBall.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlus.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusBase.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusBitmap.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusBrush.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusCachedBitmap.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusColor.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusColorMatrix.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusEnums.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusFlat.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusFont.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusFontCollection.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusFontFamily.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusGpStubs.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusGraphics.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusHeaders.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusimageAttributes.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusImageCodec.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusImaging.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusInit.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusLineCaps.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusMatrix.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusMem.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusMetaFile.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusMetaHeader.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusPath.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusPen.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusPixelFormats.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusRegion.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusStringFormat.h" />
+    <ClInclude Include="..\..\..\Program Files\Microsoft SDK\include\GdiPlusTypes.h" />
+    <ClInclude Include="AboutDlg1.h" />
+    <ClInclude Include="AllStarDlg.h" />
+    <ClInclude Include="AllStarWeekend.h" />
+    <ClInclude Include="AllTimeDlg.h" />
+    <ClInclude Include="AutoSchDlg.h" />
+    <ClInclude Include="Average.h" />
+    <ClInclude Include="Awards.h" />
+    <ClInclude Include="AwardsDlg.h" />
+    <ClInclude Include="BBall.h" />
+    <ClInclude Include="BBallCoachView.h" />
+    <ClInclude Include="BBallDoc.h" />
+    <ClInclude Include="BBallFile.h" />
+    <ClInclude Include="BBallSchedule.h" />
+    <ClInclude Include="BBallSettings.h" />
+    <ClInclude Include="BBallView.h" />
+    <ClInclude Include="BCMenu.h" />
+    <ClInclude Include="BitmapCtrl.h" />
+    <ClInclude Include="BoxDlg.h" />
+    <ClInclude Include="Boxscore.h" />
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="BudgetSheetDlg.h" />
+    <ClInclude Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\atlmfc\include\afxbutton.h" />
+    <ClInclude Include="calendar.h" />
+    <ClInclude Include="CampDlg.h" />
+    <ClInclude Include="Career.h" />
+    <ClInclude Include="CareerStatsCardDlg.h" />
+    <ClInclude Include="CityProfileDlg.h" />
+    <ClInclude Include="CJFlatComboBox.h" />
+    <ClInclude Include="ColorStaticST.h" />
+    <ClInclude Include="Computer.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="CreateDlg.h" />
+    <ClInclude Include="Curvefit.h" />
+    <ClInclude Include="datacombo.h" />
+    <ClInclude Include="DataSort.h" />
+    <ClInclude Include="dbcombo.h" />
+    <ClInclude Include="DCUtilities.h" />
+    <ClInclude Include="DefenseDlg.h" />
+    <ClInclude Include="Digistatic.h" />
+    <ClInclude Include="Disk.h" />
+    <ClInclude Include="DraftDlg.h" />
+    <ClInclude Include="EditDlg.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Financial.h" />
+    <ClInclude Include="font.h" />
+    <ClInclude Include="FranchiseChangeDlg.h" />
+    <ClInclude Include="FranchiseEdit.h" />
+    <ClInclude Include="FreeAgentDlg.h" />
+    <ClInclude Include="Future.h" />
+    <ClInclude Include="GamePlan.h" />
+    <ClInclude Include="GameView.h" />
+    <ClInclude Include="GradientStatic.h" />
+    <ClInclude Include="High.h" />
+    <ClInclude Include="HireStaff.h" />
+    <ClInclude Include="HistoryAwards.h" />
+    <ClInclude Include="HistoryAwardsDlg.h" />
+    <ClInclude Include="HistoryDraftDlg.h" />
+    <ClInclude Include="HistoryStats.h" />
+    <ClInclude Include="HistoryTeamDlg.h" />
+    <ClInclude Include="HistoryView.h" />
+    <ClInclude Include="HofDlg.h" />
+    <ClInclude Include="Html.h" />
+    <ClInclude Include="HtmlDlg.h" />
+    <ClInclude Include="HtmlMsc.h" />
+    <ClInclude Include="ImpExp.h" />
+    <ClInclude Include="ImportDlg.h" />
+    <ClInclude Include="ImportPlayersDlg.h" />
+    <ClInclude Include="InjuryTable.h" />
+    <ClInclude Include="Label.h" />
+    <ClInclude Include="LeadersDlg.h" />
+    <ClInclude Include="LeagueTeamSchedule.h" />
+    <ClInclude Include="LeagueTeamsDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="mdccombo.h" />
+    <ClInclude Include="MemDC.h" />
+    <ClInclude Include="MemDCDraw.h" />
+    <ClInclude Include="MyButton.h" />
+    <ClInclude Include="MyComboBox.h" />
+    <ClInclude Include="MyDraw.h" />
+    <ClInclude Include="MyMenu.h" />
+    <ClInclude Include="MySliderControl.h" />
+    <ClInclude Include="NegotiateDlg.h" />
+    <ClInclude Include="OfferTrades1.h" />
+    <ClInclude Include="OptionsDlg.h" />
+    <ClInclude Include="Own.h" />
+    <ClInclude Include="PbpDlg.h" />
+    <ClInclude Include="Picture.h" />
+    <ClInclude Include="picture1.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerCardDlg.h" />
+    <ClInclude Include="Playoff.h" />
+    <ClInclude Include="PlayoffDlg.h" />
+    <ClInclude Include="ProgressDlg1.h" />
+    <ClInclude Include="ProgressView.h" />
+    <ClInclude Include="Record.h" />
+    <ClInclude Include="RecordbookDlg.h" />
+    <ClInclude Include="RegisterDlg.h" />
+    <ClInclude Include="ReportDlg.h" />
+    <ClInclude Include="ScoutEditDlg.h" />
+    <ClInclude Include="SplashScreenEx.h" />
+    <ClInclude Include="TransparentGroup.h" />
+    <ClInclude Include="TransparentStatic.h" />
+    <ClInclude Include="XListCtrl\MemDC.h" />
+    <ClInclude Include="XListCtrl\SortCStringArray.h" />
+    <CustomBuild Include="Resource.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|x64'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">Making help include file...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|x64'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|Win32'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|x64'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 2021 Debug|x64'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Making help include file...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Making help include file...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo. &gt;"hlp\$(TargetName).hm"
+echo // Commands (ID_* and IDM_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Prompts (IDP_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Resources (IDR_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Dialogs (IDD_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+echo. &gt;&gt;"hlp\$(TargetName).hm"
+echo // Frame Controls (IDW_*) &gt;&gt;"hlp\$(TargetName).hm"
+makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">hlp\$(TargetName).hm;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="Retirement.h" />
+    <ClInclude Include="Rgbcolor.h" />
+    <ClInclude Include="RookieCardDlg.h" />
+    <ClInclude Include="RookieDlg.h" />
+    <ClInclude Include="RookieStage.h" />
+    <ClInclude Include="rowcursor.h" />
+    <ClInclude Include="ScheduleDlg.h" />
+    <ClInclude Include="ScheduleView.h" />
+    <ClInclude Include="ScoutProfileDlg.h" />
+    <ClInclude Include="SearchDlg.h" />
+    <ClInclude Include="Splash1.h" />
+    <ClInclude Include="Staff.h" />
+    <ClInclude Include="StaffDlg.h" />
+    <ClInclude Include="StandingsView.h" />
+    <ClInclude Include="StatsDlg.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="SxGroupBox.h" />
+    <ClInclude Include="TeamFinancial.h" />
+    <ClInclude Include="TeamView.h" />
+    <ClInclude Include="TimeoutDlg.h" />
+    <ClInclude Include="ToolsView.h" />
+    <ClInclude Include="TradeBlockDlg.h" />
+    <ClInclude Include="TradeDlg.h" />
+    <ClInclude Include="Transactions.h" />
+    <ClInclude Include="TransactionsDlg.h" />
+    <ClInclude Include="TypeGameDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="hlp\AppExit.bmp" />
+    <Image Include="hlp\Bullet.bmp" />
+    <Image Include="hlp\CurArw2.bmp" />
+    <Image Include="hlp\CurArw4.bmp" />
+    <Image Include="hlp\CurHelp.bmp" />
+    <Image Include="hlp\EditCopy.bmp" />
+    <Image Include="hlp\EditCut.bmp" />
+    <Image Include="hlp\EditPast.bmp" />
+    <Image Include="hlp\EditUndo.bmp" />
+    <Image Include="hlp\FileNew.bmp" />
+    <Image Include="hlp\FileOpen.bmp" />
+    <Image Include="hlp\FilePrnt.bmp" />
+    <Image Include="hlp\FileSave.bmp" />
+    <Image Include="hlp\HlpSBar.bmp" />
+    <Image Include="hlp\HlpTBar.bmp" />
+    <Image Include="hlp\RecFirst.bmp" />
+    <Image Include="hlp\RecLast.bmp" />
+    <Image Include="hlp\RecNext.bmp" />
+    <Image Include="hlp\RecPrev.bmp" />
+    <Image Include="hlp\Scmax.bmp" />
+    <Image Include="hlp\ScMenu.bmp" />
+    <Image Include="hlp\Scmin.bmp" />
+    <Image Include="res\About.ico" />
+    <Image Include="res\Baloon.ico" />
+    <Image Include="res\bball help.bmp" />
+    <Image Include="res\BBall.ico" />
+    <Image Include="res\BBallDoc.ico" />
+    <Image Include="res\big man.bmp" />
+    <Image Include="res\big man3.bmp" />
+    <Image Include="res\big-man3.bmp" />
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap4.bmp" />
+    <Image Include="res\bitmap7.bmp" />
+    <Image Include="res\bitmap_b.bmp" />
+    <Image Include="res\bitmap_s.bmp" />
+    <Image Include="res\bk256.bmp" />
+    <Image Include="res\black.bmp" />
+    <Image Include="res\blue.bmp" />
+    <Image Include="res\bmp00001.bmp" />
+    <Image Include="res\bmp00002.bmp" />
+    <Image Include="res\bmp00003.bmp" />
+    <Image Include="res\bmp00004.bmp" />
+    <Image Include="res\BmpBack.bmp" />
+    <Image Include="res\brackets2.bmp" />
+    <Image Include="res\Bullet.bmp" />
+    <Image Include="res\Cancel1_32x32x16.ico" />
+    <Image Include="res\Cancel3_32x32x256.ico" />
+    <Image Include="res\Cancel4_32x32x2.ico" />
+    <Image Include="res\CButtonST_Demo.ico" />
+    <Image Include="res\cc-background.bmp" />
+    <Image Include="res\CC-MAIN-SCREEN.bmp" />
+    <Image Include="res\cc-second-main-screen.bmp" />
+    <Image Include="res\CDRom.ico" />
+    <Image Include="res\Classes1_32x32x16.ico" />
+    <Image Include="res\cximage.bmp" />
+    <Image Include="res\EOapp.ico" />
+    <Image Include="res\Explorer.ico" />
+    <Image Include="res\fa.bmp" />
+    <Image Include="res\FRANKIE.ico" />
+    <Image Include="res\Halloween1.ico" />
+    <Image Include="res\Hardwoodfloor.bmp" />
+    <Image Include="res\hoop1.bmp" />
+    <Image Include="res\ICON 51.ico" />
+    <Image Include="res\ICON 52.ico" />
+    <Image Include="res\ICON 53.ico" />
+    <Image Include="res\icon 54.ico" />
+    <Image Include="res\icon 55.ico" />
+    <Image Include="res\ICON 56.ico" />
+    <Image Include="res\icon 57.ico" />
+    <Image Include="res\icon 58.ico" />
+    <Image Include="res\icon 59.ico" />
+    <Image Include="res\icon 60.ico" />
+    <Image Include="res\icon 61.ico" />
+    <Image Include="res\ICON 74.ico" />
+    <Image Include="res\ICON 75.ico" />
+    <Image Include="res\ICON 76.ico" />
+    <Image Include="res\ICON 77.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon10.ico" />
+    <Image Include="res\icon18.ico" />
+    <Image Include="res\icon20.ico" />
+    <Image Include="res\icon21.ico" />
+    <Image Include="res\icon22.ico" />
+    <Image Include="res\icon23.ico" />
+    <Image Include="res\icon24.ico" />
+    <Image Include="res\icon25.ico" />
+    <Image Include="res\icon26.ico" />
+    <Image Include="res\icon27.ico" />
+    <Image Include="res\icon28.ico" />
+    <Image Include="res\icon29.ico" />
+    <Image Include="res\icon30.ico" />
+    <Image Include="res\icon31.ico" />
+    <Image Include="res\icon39.ico" />
+    <Image Include="res\icon41.ico" />
+    <Image Include="res\icon49.ico" />
+    <Image Include="res\icon50.ico" />
+    <Image Include="res\icon51.ico" />
+    <Image Include="res\icon52.ico" />
+    <Image Include="res\icon53.ico" />
+    <Image Include="res\icon54.ico" />
+    <Image Include="res\icon55.ico" />
+    <Image Include="res\icon56.ico" />
+    <Image Include="res\icon57.ico" />
+    <Image Include="res\icon58.ico" />
+    <Image Include="res\icon59.ico" />
+    <Image Include="res\icon62.ico" />
+    <Image Include="res\icon7.ico" />
+    <Image Include="res\icon8.ico" />
+    <Image Include="res\idr_form.ico" />
+    <Image Include="res\images_n.bmp" />
+    <Image Include="res\images_s.bmp" />
+    <Image Include="res\JSB PIC3 copy.bmp" />
+    <Image Include="res\JSB-MAIN-SCREEN.bmp" />
+    <Image Include="res\JSB-SCREEN.bmp" />
+    <Image Include="res\JSB1.bmp" />
+    <Image Include="res\JSB2.bmp" />
+    <Image Include="res\JSBPIC2.bmp" />
+    <Image Include="res\Lamp1.ico" />
+    <Image Include="res\Lamp2.ico" />
+    <Image Include="res\LedOff.ico" />
+    <Image Include="res\LedOn.ico" />
+    <Image Include="res\listcctrl.bmp" />
+    <Image Include="res\Litening.ico" />
+    <Image Include="res\main-screen.bmp" />
+    <Image Include="res\main-screenb.bmp" />
+    <Image Include="res\michael_jordan.jpg" />
+    <Image Include="res\negotiate.bmp" />
+    <Image Include="res\pic.bmp" />
+    <Image Include="res\Picture3 bcopy.bmp" />
+    <Image Include="res\Picture3 copy.bmp" />
+    <Image Include="res\SAMPE3.bmp" />
+    <Image Include="res\SAMPE4.bmp" />
+    <Image Include="res\SAMPLE-4-JSB.bmp" />
+    <Image Include="res\sample.bmp" />
+    <Image Include="res\sample2.bmp" />
+    <Image Include="res\sample3-jsb.bmp" />
+    <Image Include="res\sample5jsb.bmp" />
+    <Image Include="res\schedule.bmp" />
+    <Image Include="res\SCOREBOARD MAN.bmp" />
+    <Image Include="res\SCOREBOARD5-copy.bmp" />
+    <Image Include="res\SCOREBOARD5.bmp" />
+    <Image Include="res\Search1.ico" />
+    <Image Include="res\Shot.ico" />
+    <Image Include="res\SIMSCREEN.bmp" />
+    <Image Include="res\Splsh16.bmp" />
+    <Image Include="res\STANDINGS-WITHOUT-WORDS.bmp" />
+    <Image Include="res\standings.bmp" />
+    <Image Include="res\STANDINGS2.bmp" />
+    <Image Include="res\SWScan00001.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Workgroup.ico" />
+    <Image Include="sdi.ico" />
+    <Image Include="Splsh16.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

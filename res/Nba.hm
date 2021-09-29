@@ -1,0 +1,75 @@
+// MAKEHELP.BAT generated Help Map file.  Used by Nba.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HID_PLAYERS_CREATE                      0x18003
+HID_PLAYERS_SAVE                        0x18006
+HID_TEAMS_VISITOR                       0x18007
+HID_TEAMS_HOME                          0x18008
+HID_PLAYERS_LOAD                        0x18009
+HID_STATS_GAME                          0x1800B
+HID_STATS_SIMULATED                     0x1800C
+HID_STATS_ACTUAL                        0x1800D
+HID_LEAGUE_EDIT                         0x1800E
+HID_LEAGUE_LOAD                         0x1800F
+HID_LEAGUE_SCHEDULE                     0x18010
+HID_LEAGUE_TEAM                         0x18011
+HID_PLAY_TYPE                           0x18012
+HID_PLAY_SIMULATE                       0x18013
+HID_PLAY_EXITGAME                       0x18014
+HID_PLAY_STATS                          0x18015
+HID_TEAMS_CHOOSE                        0x18016
+HID_PLAYERS_SUBSTITUTE                  0x18017
+HID_LEAGUE_STANDINGS                    0x18018
+HID_LEAGUE_TEAMS                        0x18019
+HID_LEAGUE_LEADERS                      0x1801A
+HID_PLAY_SPEED                          0x18027
+HID_LEAGUE_PLAYOFFS                     0x18028
+HID_PLAYERS_DEFENSE                     0x18029
+HID_LEAGUE_TRANSACTIONS                 0x1802C
+HID_PLAYERS_TRADE                       0x1802D
+HID_STATS_RECORDS                       0x1802E
+HID_STATS_BOXSCORES                     0x18030
+HID_STATS_RATINGS                       0x18031
+HID_VIEW_PBP                            0x18032
+HID_VIEW_BOX                            0x18033
+HID_PLAY_OPTIONS                        0x18035
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_NBATYPE                            0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_CREATEBOX                          0x20082
+HIDD_TEAMSBOX                           0x20086
+HIDD_EDIT_LEAGUE_TEAMS                  0x20099
+HIDD_SCHEDULEBOX                        0x2009B
+HIDD_TEAM_SCHEDULE                      0x2009C
+HIDD_TYPEBOX                            0x2009D
+HIDD_SELECT_TEAM_BOX                    0x2009E
+HIDD_STATSBOX                           0x2009F
+HIDD_SIMULATED_STATSBOX                 0x200A1
+HIDD_SUBBOX                             0x200A2
+HIDD_STANDINGSBOX                       0x200A3
+HIDD_LEADERSBOX                         0x200A4
+HIDD_DIALOG_REGISTER                    0x200FA
+HIDD_TRADEBOX                           0x200FB
+HIDD_DIALOG_DRAFT                       0x200FC
+HIDD_DIALOG_AUTO_SPEED                  0x200FE
+HIDD_DIALOG_PLAYOFFS                    0x200FF
+HIDD_DIALOG_DEFENSE                     0x20100
+HIDD_DIALOG_TO                          0x20101
+HIDD_DIALOG_OFFERTRADE                  0x20103
+HIDD_DIALOG_TRANSACTIONS                0x20104
+HIDD_DIALOG_SCOUTING                    0x20105
+HIDD_DIALOG_ALLTIME                     0x20106
+HIDD_DIALOG_BOXSCORES                   0x2010B
+HIDD_DIALOG_RATINGS                     0x2010C
+HIDD_DIALOG_SAVEDPBP                    0x2010D
+HIDD_DIALOG_SAVEDBOX                    0x2010E
+HIDD_DIALOG_OPTIONS                     0x2010F
+HIDD_ACTUAL_STATSBOX                    0x2040D
+ 
+// Frame Controls (IDW_*) 

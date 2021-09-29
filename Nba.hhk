@@ -1,0 +1,593 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="about jump shot">
+		<param name="Local" value="html\features.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="activate">
+		<param name="Name" value="Edit Depth Charts">
+		<param name="Local" value="html\gameplan.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="all time highs">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\historyrecordbook.htm">
+		<param name="Local" value="html\historyrecordbook.htm">
+		<param name="Name" value="Stats Records Command">
+		<param name="Local" value="html\records.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="arena editor">
+		<param name="Name" value="Arena/City  Editor">
+		<param name="Local" value="html\toolscityeditor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="arena value">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="arenas">
+		<param name="Name" value="City Movement/Arena Construction">
+		<param name="Local" value="html\progressproposals.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="auto play">
+		<param name="Name" value="Schedule Overview">
+		<param name="Local" value="html\scheduleoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="auto play speed">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="auto scheduler">
+		<param name="Name" value="League schedule command">
+		<param name="Local" value="html\toolsscheduler.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bird rights">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		<param name="Name" value="Contract Negotiation">
+		<param name="Local" value="html\offercontract.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="box scores">
+		<param name="Name" value="View Saved Box Score Command">
+		<param name="Local" value="html\toolssavedbox.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="budget">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\teambudget.htm">
+		<param name="Local" value="html\teambudget.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="camp">
+		<param name="Name" value="Career Training Camp">
+		<param name="Local" value="html\progresscamp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="career play">
+		<param name="Name" value="Career Begin Offseason Command">
+		<param name="Local" value="html\progressoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="career stats">
+		<param name="Name" value="History Career Stats">
+		<param name="Local" value="html\historycareer.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="city editor">
+		<param name="Name" value="Arena/City  Editor">
+		<param name="Local" value="html\toolscityeditor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="coaches">
+		<param name="Name" value="Staff Profiles">
+		<param name="Local" value="html\staffprofiles.htm">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="coaching">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="computer generated schedules">
+		<param name="Name" value="Auto Schedule">
+		<param name="Local" value="html\toolsauto.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="computer offers">
+		<param name="Name" value="Receive Trade Proposals">
+		<param name="Local" value="html\tradingblock.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="contracts">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		<param name="Name" value="Contract Negotiation">
+		<param name="Local" value="html\offercontract.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="create league">
+		<param name="Name" value="League edit command">
+		<param name="Local" value="html\setupnew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="create player">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="create schedule">
+		<param name="Name" value="Auto Schedule">
+		<param name="Local" value="html\toolsauto.htm">
+		<param name="Name" value="League schedule command">
+		<param name="Local" value="html\toolsscheduler.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="depth charts">
+		<param name="Name" value="Edit Depth Charts">
+		<param name="Local" value="html\gameplan.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="double teams">
+		<param name="Name" value="Players Defense Command">
+		<param name="Local" value="html\coachdefense.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="draft">
+		<param name="Name" value="Career Rookie Draft">
+		<param name="Local" value="html\draftpreview.htm">
+		<param name="Name" value="League Draft Command">
+		<param name="Local" value="html\fantasydraft.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="draft history">
+		<param name="Name" value="History Rookie Drafts">
+		<param name="Local" value="html\historydrafts.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edit league">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edit players">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edit ratings">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="edit schedule">
+		<param name="Name" value="League schedule command">
+		<param name="Local" value="html\toolsscheduler.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="editing contracts">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="erase leagues">
+		<param name="Local" value="html\setupdelete.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="expenses">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="extensions">
+		<param name="Name" value="Contract Negotiation">
+		<param name="Local" value="html\offercontract.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="features">
+		<param name="Name" value="Jump Shot Basketball">
+		<param name="Local" value="html\features.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="finances">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="find players">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\search.htm">
+		<param name="Local" value="html\search.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="franchise editing">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="free agency">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="game type">
+		<param name="Local" value="html\gametype.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="general manager">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hall of fame">
+		<param name="Name" value="History Hall of Fame">
+		<param name="Local" value="html\historyhof.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hire">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="historical drafts">
+		<param name="Name" value="History Rookie Drafts">
+		<param name="Local" value="html\historydrafts.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="history stats">
+		<param name="Name" value="History Career Stats">
+		<param name="Local" value="html/afxc2nxu.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="import players">
+		<param name="Local" value="html\toolsdraftfiles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="job offers">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Jump Shot">
+		<param name="Name" value="Jump Shot Basketball">
+		<param name="Local" value="html\features.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="leaders">
+		<param name="Name" value="League leaders command">
+		<param name="Local" value="html\leagueleaders.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="league draft">
+		<param name="Name" value="League Draft Command">
+		<param name="Local" value="html\fantasydraft.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="league edit">
+		<param name="Name" value="League edit command">
+		<param name="Local" value="html\setupnew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="load league">
+		<param name="Name" value="Open league command">
+		<param name="Local" value="html\setupopen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="maximum salary">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="mid level exception">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="minimum exception">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="minimum salary">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="moving">
+		<param name="Name" value="City Movement/Arena Construction">
+		<param name="Local" value="html\progressproposals.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="negotiations">
+		<param name="Name" value="Contract Negotiation">
+		<param name="Local" value="html\offercontract.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="off court ratings">
+		<param name="Local" value="html\playercard.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="open league">
+		<param name="Name" value="Open league command">
+		<param name="Local" value="html\setupopen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="options">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="owner cap">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="play calling">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		<param name="Name" value="Players Defense Command">
+		<param name="Local" value="html\coachdefense.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="player aging">
+		<param name="Name" value="Career Begin Offseason Command">
+		<param name="Local" value="html\progressend.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="player ratings">
+		<param name="Local" value="html\playercard.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="player ratings editor">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="playoff results">
+		<param name="Name" value="Schedule Overview">
+		<param name="Local" value="html\scheduleoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="playoff setup">
+		<param name="Name" value="League edit command">
+		<param name="Local" value="html\setupnew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="profit">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\teambudget.htm">
+		<param name="Local" value="html\teambudget.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="projections">
+		<param name="Local" value="html\playercard.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="proposals">
+		<param name="Name" value="City Movement/Arena Construction">
+		<param name="Local" value="html\progressproposals.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ratings">
+		<param name="Local" value="html\allstats.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ratings editor">
+		<param name="Name" value="Players create command">
+		<param name="Local" value="html\toolsplayeredit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="receive trade offers">
+		<param name="Name" value="Receive Trade Proposals">
+		<param name="Local" value="html\tradingblock.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="records">
+		<param name="Name" value="Stats Records Command">
+		<param name="Local" value="html\records.htm">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\historyrecordbook.htm">
+		<param name="Local" value="html\historyrecordbook.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="release players">
+		<param name="Name" value="Trading">
+		<param name="Local" value="html\proposetrades.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="retirements">
+		<param name="Name" value="Career Training Camp">
+		<param name="Local" value="html\progresscamp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="revenues">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		<param name="Name" value="City/Team Profiles">
+		<param name="Local" value="html\cityprofiles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="rookie draft">
+		<param name="Name" value="Career Rookie Draft">
+		<param name="Local" value="html\draftpreview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="rosters">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\teamroster.htm">
+		<param name="Local" value="html\teamroster.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="salary cap">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="save boxscore options">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="save play by play options">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="saved boxscores">
+		<param name="Name" value="View Saved Box Score Command">
+		<param name="Local" value="html\toolssavedbox.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="saved play by play">
+		<param name="Name" value="View Saved Play by Play Command">
+		<param name="Local" value="html\toolssavedpbp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="schedule">
+		<param name="Name" value="Auto Schedule">
+		<param name="Local" value="html\toolsauto.htm">
+		<param name="Name" value="League schedule command">
+		<param name="Local" value="html\toolsscheduler.htm">
+		<param name="Name" value="Schedule Overview">
+		<param name="Local" value="html\scheduleoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scouting report">
+		<param name="Local" value="html\playercard.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="scouts">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		<param name="Name" value="Staff Profiles">
+		<param name="Local" value="html\staffprofiles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="select teams">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\gametype.htm">
+		<param name="Local" value="html\gametype.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="setup league">
+		<param name="Name" value="League edit command">
+		<param name="Local" value="html\setupnew.htm">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="shot selection">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="sign  free agents">
+		<param name="Name" value="Finances Free Agency">
+		<param name="Local" value="html\freeagency.htm">
+		<param name="Name" value="Contract Negotiation">
+		<param name="Local" value="html\offercontract.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="simulate">
+		<param name="Name" value="Schedule Overview">
+		<param name="Local" value="html\scheduleoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="staff">
+		<param name="Name" value="Staff Hiring Period">
+		<param name="Local" value="html\staffs.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="staff ratings">
+		<param name="Name" value="Staff Profiles">
+		<param name="Local" value="html\staffprofiles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="standings">
+		<param name="Local" value="html\standingsoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="start playoffs">
+		<param name="Name" value="Schedule Overview">
+		<param name="Local" value="html\scheduleoverview.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="stats shown after game">
+		<param name="Name" value="Play Options Command">
+		<param name="Local" value="html\setupsettings.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="substitute">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="team history">
+		<param name="Name" value="History Team Results">
+		<param name="Local" value="html\teamyearlyresults.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="team records">
+		<param name="Name" value="Untitled: d:\My Projects\BBall\html\historyrecordbook.htm">
+		<param name="Local" value="html\historyrecordbook.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="team results">
+		<param name="Name" value="League teams command">
+		<param name="Local" value="html/afxc890z.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="team schedules">
+		<param name="Name" value="League teams command">
+		<param name="Local" value="html\teamschedules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="team value">
+		<param name="Name" value="Budget Sheet">
+		<param name="Local" value="html\budgetsheet.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="timeouts">
+		<param name="Name" value="Coaching Jump Shot">
+		<param name="Local" value="html\coach.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="trading">
+		<param name="Name" value="Receive Trade Proposals">
+		<param name="Local" value="html\tradingblock.htm">
+		<param name="Name" value="Trading">
+		<param name="Local" value="html\proposetrades.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="trading block">
+		<param name="Name" value="Receive Trade Proposals">
+		<param name="Local" value="html\tradingblock.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="training camp">
+		<param name="Name" value="Career Training Camp">
+		<param name="Local" value="html\progresscamp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="transactions">
+		<param name="Name" value="League Transactions Command">
+		<param name="Local" value="html\transactions.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="year by year stats">
+		<param name="Name" value="History Career Stats">
+		<param name="Local" value="html\historycareer.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

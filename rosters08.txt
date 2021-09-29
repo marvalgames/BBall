@@ -1,0 +1,13 @@
+Updated 2008 NBA Rosters - Dec 8th 2008
+-------------------------------------------------
+Unzip all files to the JSB folder where the game is installed
+Run the game
+Go to Setup League Screen
+Click Load Default or Saved League
+Open Default_08start
+Click Create Custom League or Quick League to create new league with this player file
+To make changes just create your new league with default in the beginning of the league name i.e. DefaultNBA08
+
+By default trading is off and scouting and coaching are neutral.
+Choose edit settings for changes.
+
