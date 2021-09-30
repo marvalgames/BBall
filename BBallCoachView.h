@@ -20,6 +20,8 @@
 
 #include "MyBitmap.h"
 #include "MyButton.h"
+#include "MyListCtrl.h"
+#include "MySliderControl.h"
 #include "afxlistctrl.h"
 
 
@@ -61,17 +63,21 @@ public:
 
 	CTransparentStatic	m_static_sub;
 	MyButton	m_buttonTo;
-	CSliderCtrl	m_sim_speed;
+	CMySliderControl	m_sim_speed;
 	MyButton	m_button_end;
-	CListCtrl	m_list_visitor_lineup;
-	CListCtrl	m_list_visitor_shot;
-	CListCtrl	m_list_visitor_roster;
-	CListCtrl	m_list_scoreboard;
-	CListCtrl	m_list_home_shot;
-	CListCtrl	m_list_home_roster;
-	CListCtrl	m_list_home_lineup;
+	CMyListCtrl	m_list_visitor_lineup;
+	CMyListCtrl	m_list_visitor_shot;
+	CMyListCtrl	m_list_visitor_roster;
+	CMyListCtrl	m_list_scoreboard;
+	CMyListCtrl	m_list_home_shot;
+	CMyListCtrl	m_list_home_roster;
+	CMyListCtrl	m_list_home_lineup;
 	MyButton	m_button_sim;
 	MyButton	m_button_play;
+	MyButton	m_button_home_card;
+	MyButton	m_button_road_card;
+
+
 	CListBox	m_list_pbp;
 	//}}AFX_DATA
 
@@ -193,6 +199,13 @@ private:
 
 
 
+public:
+	afx_msg void OnStnClickedStaticHome();
+private:
+//	MyButton m_button_home;
+//	MyButton m_button_home;
+public:
+//	MyButton m_button_home;
 };
 
 /////////////////////////////////////////////////////////////////////////////

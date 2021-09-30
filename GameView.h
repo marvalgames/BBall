@@ -45,7 +45,7 @@
 #define Average_h
 #endif 
 
-//#include "XListCtrl/XListCtrl.h"
+#include "MyListCtrl.h"
 
 
 
@@ -93,7 +93,7 @@ public:
 	MyButton	m_button_history;
 	MyButton	m_button_tools;
 	MyButton	m_button_progress;
-	CListCtrl	m_list_stats;
+	CMyListCtrl	m_list_stats;
 	CMyComboBox	m_listTeams;
 	MyButton	m_buttonRatings;
 	CListBox	m_listSimulatedStats2;
@@ -251,12 +251,14 @@ private:
 	int m_currentTeam;
 	CBrush myBrush;
 	void SetPrintAlign(CDC *pDC, HDC hdcPrn);
+
 public:
 	afx_msg void OnItemclickListControlStats(NMHDR *pNMHDR, LRESULT *pResult);
 	//CButton m_radio_simulated;
 	
 	//CButton m_g1;
-		CTransparentGroup	m_g[7];
+		//CTransparentGroup	m_g[7];
+		//afx_msg void OnBnClickedStaticG1();
 };
 
 /////////////////////////////////////////////////////////////////////////////

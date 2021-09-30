@@ -6,6 +6,8 @@
 #endif // _MSC_VER > 1000
 // MyListCtrl.h : header file
 //
+#include "XHeaderCtrl.h"
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CMyListCtrl window
@@ -27,14 +29,23 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CMyListCtrl)
 	protected:
-	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
-	//}}AFX_VIRTUAL
+		afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+		virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+		virtual void PreSubclassWindow();
+		void	SubclassHeaderControl();
+
+		//}}AFX_VIRTUAL
 
 // Implementation
 public:
 	virtual ~CMyListCtrl();
 
+	CXHeaderCtrl	m_HeaderCtrl;
+
+	void SetHeaderColors(COLORREF textColor, COLORREF bkColor);
+
 	enum EHighlight {HIGHLIGHT_NORMAL, HIGHLIGHT_ALLCOLUMNS, HIGHLIGHT_ROW};
+
 
 	// Generated message map functions
 protected:
@@ -52,6 +63,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 private:
 	void RepaintSelectedItems();
+	BOOL m_bHeaderIsSubclassed;
+
 };
 
 /////////////////////////////////////////////////////////////////////////////

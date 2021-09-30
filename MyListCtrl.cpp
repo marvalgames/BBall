@@ -19,7 +19,9 @@ static char THIS_FILE[] = __FILE__;
 
 CMyListCtrl::CMyListCtrl()
 {
+	m_bHeaderIsSubclassed = FALSE;
 	m_nHighlight = HIGHLIGHT_ALLCOLUMNS; 
+	m_HeaderCtrl.SetListCtrl(this);
 }
 
 CMyListCtrl::~CMyListCtrl()
@@ -37,6 +39,92 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CMyListCtrl message handlers
+void CMyListCtrl::PreSubclassWindow()
+{
+	CListCtrl::PreSubclassWindow();
+
+	// for Dialog based applications, this is a good place
+	// to subclass the header control because the OnCreate()
+	// function does not get called.
+
+	SubclassHeaderControl();
+
+	//// TODO: Add your specialized code here and/or call the base class
+	//CHeaderCtrl* pHeader = NULL;
+	//pHeader = GetHeaderCtrl();
+	//if (pHeader != NULL)
+	//{
+	//	VERIFY(m_HeaderCtrl.SubclassWindow(pHeader->m_hWnd)); // m_HeaderCtrl is the new wrapper object
+	//}
+
+	//m_HeaderCtrl.SetTextColor(WHITE);
+	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
+
+	//CListCtrl::PreSubclassWindow();
+}
+
+int CMyListCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CListCtrl::OnCreate(lpCreateStruct) == -1)
+	{
+		ASSERT(FALSE);
+		return -1;
+	}
+
+	// When the CXListCtrl object is created via a call to Create(), instead
+	// of via a dialog box template, we must subclass the header control
+	// window here because it does not exist when the PreSubclassWindow()
+	// function is called.
+
+	SubclassHeaderControl();
+
+	return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// SubclassHeaderControl
+void CMyListCtrl::SubclassHeaderControl()
+{
+
+	if (m_bHeaderIsSubclassed)
+		return;
+	// TODO: Add your specialized code here and/or call the base class
+	//CHeaderCtrl* pHeader = NULL;
+	//pHeader = GetHeaderCtrl();
+	//if (pHeader != NULL)
+	//{
+	//	VERIFY(m_HeaderCtrl.SubclassWindow(pHeader->m_hWnd)); // m_HeaderCtrl is the new wrapper object
+	//}
+
+	//m_HeaderCtrl.SetTextColor(WHITE);
+	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
+	// 
+	// 
+	// 
+	// if the list control has a header control window, then
+	// subclass it
+
+	// Thanks to Alberto Gattegno and Alon Peleg  and their article
+	// "A Multiline Header Control Inside a CListCtrl" for easy way
+	// to determine if the header control exists.
+
+	CHeaderCtrl* pHeader = GetHeaderCtrl();
+	if (pHeader)
+	{
+		VERIFY(m_HeaderCtrl.SubclassWindow(pHeader->m_hWnd));
+		m_bHeaderIsSubclassed = TRUE;
+		m_HeaderCtrl.SetListCtrl(this);
+	}
+
+	//m_HeaderCtrl.SetTextColor(WHITE);
+	//m_HeaderCtrl.SetHeaderControls(YELLOW, BLACK);
+	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
+
+}
+
+void CMyListCtrl :: SetHeaderColors(COLORREF textColor, COLORREF bkColor)
+{
+}
 
 
 BOOL CMyListCtrl::PreCreateWindow(CREATESTRUCT& cs) 
@@ -87,10 +175,11 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 		GetClientRect(&rcClient);
 		rcRow.right = rcClient.right;
 
-		pDC->FillRect(rcRow, &CBrush(nItem%2 ? RGB(254,247,218) :
-	 					RGB(253,236,170)));
+		pDC->FillRect(rcRow, &CBrush(nItem%2 ? RGB(64,64,64) :
+	 					RGB(80,80,80)));
 	
-	
+		pDC->SetTextColor(WHITE);
+
 
 
 	// Get rectangles for drawing
@@ -135,10 +224,12 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 	// Draw the background color
 	if( bHighlight )
 	{
-		pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
-		pDC->SetBkColor(::GetSysColor(COLOR_HIGHLIGHT));
+		//pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
+		//pDC->SetBkColor(::GetSysColor(COLOR_HIGHLIGHT));
+		pDC->SetTextColor(YELLOW);
+		//pDC->SetBkColor(BLACK);
 
-		pDC->FillRect(rcHighlight, &CBrush(RGB(251,208,38)));
+		pDC->FillRect(rcHighlight, &CBrush(RGB(0,0,0)));
 	}
 //	else
 //		pDC->FillRect(rcHighlight, &CBrush(RGB(255,0,0)));
@@ -181,7 +272,6 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 	rcLabel.left += offset/2;
 	rcLabel.right -= offset;
 
-	pDC->SetTextColor(RGB(0,0,0));
 	
 	pDC->DrawText(sLabel,-1,rcLabel,DT_LEFT | DT_SINGLELINE | DT_NOPREFIX | DT_NOCLIP 
 				| DT_VCENTER | DT_END_ELLIPSIS);

@@ -560,6 +560,7 @@
 #define IDC_BUTTON_COACH15              1199
 #define IDC_CHECK_HOME_COURT            1200
 #define IDC_BUTTON_COACH16              1200
+#define IDC_RADIO_ALL2                  1200
 #define IDC_BUTTON_CALCULATE            1201
 #define IDC_BUTTON_BOX3                 1201
 #define IDC_CHECK_AUTO_VISITOR          1202

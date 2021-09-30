@@ -95,8 +95,8 @@ BOOL CAllTimeDlg::OnInitDialog()
 
 	m_listCtrlLeaders.SetBkColor(BK_COLOR);
 	m_listCtrlLeaders.SetTextBkColor(TEXT_BK_COLOR);
-	m_listCtrlLeaders.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
-    m_listCtrlLeaders.SetTextColor(RGB(0,0,0));
+	m_listCtrlLeaders.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_listCtrlLeaders.SetTextColor(RGB(0, 0, 0));
 	m_listCtrlLeaders.SetFont(&m_font);
 
 	m_listCtrlLeaders1.SetBkColor(BK_COLOR);
@@ -477,8 +477,8 @@ void CAllTimeDlg::SetHeaders()
     m_listCtrlLeaders.InsertColumn(1,"#");
     m_listCtrlLeaders.InsertColumn(2,"");
     //m_listCtrlLeaders.InsertColumn(3,"");
-    m_listCtrlLeaders.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders.SetColumnWidth( 1, 32);
+	m_listCtrlLeaders.SetColumnWidth(0, 104);
+	m_listCtrlLeaders.SetColumnWidth( 1, 32);
     m_listCtrlLeaders.SetColumnWidth( 2, 64);
     //m_listCtrlLeaders.SetColumnWidth( 3, 32);
 

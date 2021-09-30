@@ -73,6 +73,7 @@ BEGIN_MESSAGE_MAP(CAwardsDlg, CDialog)
 	ON_WM_CONTEXTMENU()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_ALL_ROOKIE, &CAwardsDlg::OnLvnItemchangedListAllRookie)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -994,7 +995,7 @@ switch (nCtlColor)
           return myBrush;
 
      case CTLCOLOR_SCROLLBAR:
-          pDC->SetTextColor(RGB(0,0,0));
+          pDC->SetTextColor(WHITE);
           pDC->SetBkColor(LISTBOXCOLOR);
           return myBrush;
 
@@ -1013,4 +1014,12 @@ switch (nCtlColor)
 	
 	// TODO: Return a different brush if the default is not desired
 	return hbr;
+}
+
+
+void CAwardsDlg::OnLvnItemchangedListAllRookie(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

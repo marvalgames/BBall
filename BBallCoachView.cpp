@@ -84,6 +84,8 @@ void CBBallCoachView::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CBBallCoachView)
 	DDX_Control(pDX, IDC_BUTTON_HOMEPLAN, m_buttonplan);
 	DDX_Control(pDX, IDC_BUTTON_VISITORPLAN, m_buttonvplan);
+	DDX_Control(pDX, IDC_BUTTON_VISITOR_CARD, m_button_road_card);
+	DDX_Control(pDX, IDC_BUTTON_HOME_CARD, m_button_home_card);
 	DDX_Control(pDX, IDC_STATIC_VLABEL, m_vlabel);
 	DDX_Control(pDX, IDC_STATIC_TLABEL, m_tlabel);
 	DDX_Control(pDX, IDC_STATIC_HLABEL, m_hlabel);
@@ -161,6 +163,7 @@ BEGIN_MESSAGE_MAP(CBBallCoachView, CFormView)
 	ON_NOTIFY(LVN_BEGINDRAG, IDC_LIST_VISITOR_ROSTER, OnBegindragListVisitorRoster)
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
+	ON_STN_CLICKED(IDC_STATIC_HOME, &CBBallCoachView::OnStnClickedStaticHome)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -853,6 +856,7 @@ void CBBallCoachView::SetMyFont(int weight, int height, CString font)
 	lf.lfHeight = height;
 	strcpy_s(lf.lfFaceName, font);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
+
 }
 
 void CBBallCoachView::SetMyFontStarters(int weight, int height, CString font)
@@ -2228,3 +2232,9 @@ void CBBallCoachView::OnTeamTransactions()
 
 
 
+
+
+void CBBallCoachView::OnStnClickedStaticHome()
+{
+	// TODO: Add your control notification handler code here
+}

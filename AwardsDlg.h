@@ -8,6 +8,7 @@
 
 #include "afxlistctrl.h"
 
+#include "MyListCtrl.h"
 
 #ifndef Average_h
 #include "Average.h"
@@ -48,14 +49,14 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CAwardsDlg)
 	enum { IDD = IDD_DIALOG_AWARDS };
-	CListCtrl	m_list_all_rookie;
-	CListCtrl	m_list_all_league;
-	CListCtrl	m_list_all_defense;
-	CListCtrl	m_list_6th;
-	CListCtrl	m_list_leaders;
-	CListCtrl	m_list_rookie;
-	CListCtrl	m_list_defense;
-	CListCtrl	m_list_mvp;
+	CMyListCtrl	m_list_all_rookie;
+	CMyListCtrl	m_list_all_league;
+	CMyListCtrl	m_list_all_defense;
+	CMyListCtrl	m_list_6th;
+	CMyListCtrl	m_list_leaders;
+	CMyListCtrl	m_list_rookie;
+	CMyListCtrl	m_list_defense;
+	CMyListCtrl	m_list_mvp;
 	//}}AFX_DATA
 
 
@@ -127,6 +128,8 @@ private:
 	void ListAllRookie();
 	
 	void InitControls();
+public:
+	afx_msg void OnLvnItemchangedListAllRookie(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

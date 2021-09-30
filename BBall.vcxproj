@@ -729,6 +729,7 @@
     <ClCompile Include="TransparentGroup.cpp" />
     <ClCompile Include="TransparentStatic.cpp" />
     <ClCompile Include="TypeGameDlg.cpp" />
+    <ClCompile Include="XHeaderCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="hlp\AfxCore.rtf" />
@@ -873,7 +874,7 @@
     <ClInclude Include="SplashScreenEx.h" />
     <ClInclude Include="TransparentGroup.h" />
     <ClInclude Include="TransparentStatic.h" />
-    <ClInclude Include="XListCtrl\MemDC.h" />
+    <ClInclude Include="XHeaderCtrl.h" />
     <ClInclude Include="XListCtrl\SortCStringArray.h" />
     <CustomBuild Include="Resource.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Making help include file...</Message>

@@ -119,12 +119,12 @@ void CGameView::DoDataExchange(CDataExchange* pDX)
 
 
 	DDX_Control(pDX, IDC_RADIO_SIMULATED, m_radio_simulated);
-	DDX_Control(pDX, IDC_STATIC_G1, m_g[0]);
-	DDX_Control(pDX, IDC_STATIC_G2, m_g[1]);
-	DDX_Control(pDX, IDC_STATIC_G3, m_g[2]);
-	DDX_Control(pDX, IDC_STATIC_G4, m_g[3]);
-	DDX_Control(pDX, IDC_STATIC_G5, m_g[4]);
-	DDX_Control(pDX, IDC_STATIC_G6, m_g[5]);
+	//DDX_Control(pDX, IDC_STATIC_G1, m_g[0]);
+	//DDX_Control(pDX, IDC_STATIC_G2, m_g[1]);
+	//DDX_Control(pDX, IDC_STATIC_G3, m_g[2]);
+	//DDX_Control(pDX, IDC_STATIC_G4, m_g[3]);
+	//DDX_Control(pDX, IDC_STATIC_G5, m_g[4]);
+	//DDX_Control(pDX, IDC_STATIC_G6, m_g[5]);
 
 }
 
@@ -191,6 +191,7 @@ BEGIN_MESSAGE_MAP(CGameView, CFormView)
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(HDN_ITEMCLICK, 0, &CGameView::OnItemclickListControlStats)
+	//ON_BN_CLICKED(IDC_STATIC_G1, &CGameView::OnBnClickedStaticG1)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -229,6 +230,13 @@ BOOL CGameView::SetToDoc()
 void CGameView::OnInitialUpdate()
 {
 
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G1)->GetSafeHwnd(), L"", L"");
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G2)->GetSafeHwnd(), L"", L"");
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G3)->GetSafeHwnd(), L"", L"");
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G4)->GetSafeHwnd(), L"", L"");
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G5)->GetSafeHwnd(), L"", L"");
+	SetWindowTheme(GetDlgItem(IDC_STATIC_G6)->GetSafeHwnd(), L"", L"");
+
 
 
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
@@ -244,8 +252,9 @@ void CGameView::OnInitialUpdate()
 
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
-	lf.lfWeight = 500;
+	lf.lfWeight = 100;
 	lf.lfHeight = 14;
+	//lf.lfWidth = 32;
 	strcpy_s(lf.lfFaceName, USERFONT);
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -258,13 +267,18 @@ void CGameView::OnInitialUpdate()
 	m_font1.CreateFontIndirect(&lf);    // Create the font.
 
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
-	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfWeight = 900;
+	lf.lfHeight = 16;
 	strcpy_s(lf.lfFaceName, USERFONT);
 	m_font2.CreateFontIndirect(&lf);    // Create the font.
 
 
-
+	GetDlgItem(IDC_STATIC_G1)->SetFont(&m_font2, TRUE);
+	GetDlgItem(IDC_STATIC_G2)->SetFont(&m_font2, TRUE);
+	GetDlgItem(IDC_STATIC_G3)->SetFont(&m_font2, TRUE);
+	GetDlgItem(IDC_STATIC_G4)->SetFont(&m_font2, TRUE);
+	GetDlgItem(IDC_STATIC_G5)->SetFont(&m_font2, TRUE);
+	GetDlgItem(IDC_STATIC_G6)->SetFont(&m_font2, TRUE);
 
 
 
@@ -277,7 +291,7 @@ void CGameView::OnInitialUpdate()
 	// Resize parent to fit dialog template exactly    
 	// while not resizing beyond size of screen
 	VERIFY(pFrame = GetParentFrame());
-	pFrame->GetClientRect(rectFrame);
+	//pFrame->GetClientRect(rectFrame);
 	GetClientRect(rectView);
 	//    if ( rectFrame.Width() < rectView.Width()
 	  //       || rectFrame.Height() < rectView.Height() )
@@ -696,28 +710,17 @@ void CGameView::SetColumnHeaders()
 	m_list_stats.DeleteColumn(22);
 	m_list_stats.DeleteColumn(22);
 
-	m_list_stats.SetColumnWidth(0, 24);
-	m_list_stats.SetColumnWidth(1, 89);
-	m_list_stats.SetColumnWidth(2, 22);
-	m_list_stats.SetColumnWidth(3, 30);
-	m_list_stats.SetColumnWidth(4, 32);
-	m_list_stats.SetColumnWidth(5, 32);
-	m_list_stats.SetColumnWidth(6, 37);
-	m_list_stats.SetColumnWidth(7, 32);
-	m_list_stats.SetColumnWidth(8, 32);
-	m_list_stats.SetColumnWidth(9, 37);
-	m_list_stats.SetColumnWidth(10, 30);
-	m_list_stats.SetColumnWidth(11, 33);
-	m_list_stats.SetColumnWidth(12, 37);
-	m_list_stats.SetColumnWidth(13, 35);
-	m_list_stats.SetColumnWidth(14, 35);
-	m_list_stats.SetColumnWidth(15, 35);
-	m_list_stats.SetColumnWidth(16, 35);
-	m_list_stats.SetColumnWidth(17, 35);
-	m_list_stats.SetColumnWidth(18, 35);
-	m_list_stats.SetColumnWidth(19, 34);
-	m_list_stats.SetColumnWidth(20, 35);
-	m_list_stats.SetColumnWidth(21, 25);
+	m_list_stats.SetColumnWidth(0, 32);
+	m_list_stats.SetColumnWidth(1, 128);
+	m_list_stats.SetColumnWidth(2, 32);
+
+
+	for (int i = 3; i <= 20 ; i++)
+	{
+		m_list_stats.SetColumnWidth(i, 48);
+	}
+
+	m_list_stats.SetColumnWidth(21, 32);
 
 
 }
@@ -2067,11 +2070,20 @@ void CGameView::OnRadioAll()
 
 void CGameView::InitListCtrl()
 {
+	//LOGFONT lf;                        // Used to create the CFont.
+	//memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
+	//lf.lfWeight = 100;
+	//lf.lfHeight = 12;
+	////lf.lfWidth = 24;
+	//strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
+	////strcpy_s(lf.lfFaceName, "TAHOMA");    //    with face name "Arial".
+
+	//m_font.CreateFontIndirect(&lf);    // Create the font.
 
 
 	//	m_button_tools.SetWindowTextA("TEST");
 
-
+	m_list_stats.SetFont(&m_font);
 
 
 }
@@ -2910,12 +2922,23 @@ HBRUSH CGameView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
 	HBRUSH hbr = CFormView::OnCtlColor(pDC, pWnd, nCtlColor);
 
+	/*if (pWnd->GetDlgCtrlID() == IDC_STATIC_G1);
+	{
+		pDC->SetTextColor(RGB(255,0,0));
+		return hbr;
+	}*/
+
+
 	// TODO: Change any attributes of the DC here
 	switch (nCtlColor)
 	{
 		//Edit controls need white background and black text
 		//Note the 'return hbr' which is needed to draw the Edit
 		//control's internal background (as opposed to text background)
+	case WM_CTLCOLORBTN:
+		pDC->SetTextColor(RGB(192,192,192));
+		pDC->SetBkColor(RGB(64,64,64));
+		return hbr;
 	case CTLCOLOR_EDIT:
 		pDC->SetTextColor(EDITCOLOR);
 		pDC->SetBkColor(EDITBKCOLOR);
@@ -2924,9 +2947,14 @@ HBRUSH CGameView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case CTLCOLOR_STATIC:
 		LOGBRUSH logbrush;
 		myBrush.GetLogBrush(&logbrush);
-		pDC->SetTextColor(STATICCOLOR);
-		pDC->SetBkColor(logbrush.lbColor);
-		return myBrush;
+		pDC->SetTextColor(WHITE);
+		pDC->SetBkColor(BLACK);
+		return hbr;
+	case WM_CTLCOLORSTATIC:
+		myBrush.GetLogBrush(&logbrush);
+		pDC->SetTextColor(WHITE);
+		pDC->SetBkColor(BLACK);
+		return hbr;
 	case CTLCOLOR_BTN:
 		//          pDC->SetTextColor(RGB(0,255,255));
 		  //        pDC->SetBkColor(RGB(255,128,128));
@@ -3240,6 +3268,15 @@ BOOL CGameView::OnEraseBkgnd(CDC* pDC)
 void CGameView::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
+	CRect rc;
+
+	/*CWnd* pW = this->GetDlgItem(IDC_STATIC_G1);
+	pW->GetClientRect(&rc);
+	pW->ClientToScreen(&rc);
+	this->ScreenToClient(&rc);
+
+	dc.FillSolidRect(&rc, RGB(255, 0, 0));*/
+
 
 	// TODO: Add your message handler code here
 
@@ -3267,3 +3304,9 @@ void CGameView::OnItemclickListControlStats(NMHDR* pNMHDR, LRESULT* pResult)
 
 	*pResult = 0;
 }
+
+
+//void CGameView::OnBnClickedStaticG1()
+//{
+	// TODO: Add your control notification handler code here
+//}
