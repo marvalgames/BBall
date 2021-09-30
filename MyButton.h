@@ -24,11 +24,22 @@ protected:
 
 public:
 	void SetMyFont(int weight, int height, CString font);
+	//void SetButtonFontSize(LONG height);
+	void SetButtonFontSize(int size);
+	void SetButtonFontWeight(int weight);
+	void SetButtonFontType(CString type);
+
 
 protected:
 	CFont m_font;
+	int fontSize = 14;
+	int fontWeight = 400;
+	CString fontType = "Segoe UI";
+
+	//void SetButtonFontSize(LONG height);
 
 public:
 	afx_msg void OnNcPaint();
+
 };
 

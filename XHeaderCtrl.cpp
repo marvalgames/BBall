@@ -138,6 +138,8 @@ void CXHeaderCtrl::DrawCtrl(CDC* pDC)
 
 	CFont* pFont = pDC->SelectObject(GetFont());
 
+	//pDC->SetBkColor(m_cr3DFace);
+	//pDC->SetTextColor(m_crBtnText);
 	pDC->SetBkColor(m_cr3DFace);
 	pDC->SetTextColor(m_crBtnText);
 

@@ -921,6 +921,7 @@ BOOL CBBallView::OnEraseBkgnd(CDC* pDC)
 
 
 
+	//m_button_schedule.SetFont(&m_font2);
 
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 	if (pDoc->m_default_opened == true)

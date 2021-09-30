@@ -105,16 +105,57 @@ void MyButton::PreSubclassWindow()
 	GetFont()->GetLogFont(&lf);
 	//lf.lfUnderline = (BYTE)m_bUnderline;
 	//lf.lfItalic = (BYTE)m_bItalic;
-	lf.lfHeight = 20;
-	lf.lfWeight = (LONG)300; // (900 = BOLD)
-	strcpy_s(lf.lfFaceName, "Verdana");    //    with face name "Arial"
+	lf.lfHeight = fontSize;
+	lf.lfWeight = (LONG)fontWeight; // (900 = BOLD)
+	strcpy_s(lf.lfFaceName, fontType);    //    with face name "Arial"
 	m_font.CreateFontIndirect(&lf);
 	SetFont(&m_font);
+	//SizeToContent();
+	//SetButtonFontSize(size);
 
 	// ResizeButton();
 
 }
 
+
+void MyButton::SetButtonFontSize(int size)
+{
+	fontSize = size;
+}
+
+void MyButton::SetButtonFontWeight(int weight)
+{
+	fontWeight = weight;
+}
+
+void MyButton::SetButtonFontType(CString type)
+{
+	fontType = type;
+}
+
+
+//void MyButton::SetButtonFontSize(LONG Height)
+//{
+//
+//	// from http://support.microsoft.com/kb/85518
+//	//LOGFONT lf;                        // Used to create the CFont.
+//
+//	//CFont* currentFont = GetFont();
+//	//currentFont->GetLogFont(&lf);
+//
+//
+//	LOGFONT lf;
+//	GetFont()->GetLogFont(&lf);
+//
+//
+//	lf.lfHeight =  Height;
+//	m_font.DeleteObject();
+//	m_font.CreateFontIndirect(&lf);    // Create the font.
+//
+//	// Use the font to paint a control.
+//	SetFont(&m_font);
+//
+//}
 
 
 MyButton::~MyButton(void)

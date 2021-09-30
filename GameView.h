@@ -207,7 +207,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 private:
 	bool m_rookie_view;
-	CFont m_font2;
 	CAverage avg;
 
 	void CalculateCurrentPayroll();
@@ -221,7 +220,7 @@ private:
 	void BuildString(CString s[255], int co, int columns);
 	int m_co;
 	int m_player_pointer[1601];
-	CFont m_font, m_font1;
+	CFont m_font, m_font1, m_font2;
 	void InitListCtrl();
 	CString m_position;
 	void SetAdjustedRatings();

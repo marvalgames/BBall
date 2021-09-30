@@ -52,6 +52,9 @@ protected:
 
 	int  m_nHighlight;		// Indicate type of selection highlighting
 
+	COLORREF headerTextColor;
+	COLORREF headerBkColor;
+
 	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct); 
 
 	//{{AFX_MSG(CMyListCtrl)

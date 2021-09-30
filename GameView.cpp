@@ -237,7 +237,9 @@ void CGameView::OnInitialUpdate()
 	SetWindowTheme(GetDlgItem(IDC_STATIC_G5)->GetSafeHwnd(), L"", L"");
 	SetWindowTheme(GetDlgItem(IDC_STATIC_G6)->GetSafeHwnd(), L"", L"");
 
-
+	/*m_button_schedule.SetButtonFontSize(16);
+	m_button_schedule.SetButtonFontWeight(900);
+	m_button_schedule.SetButtonFontType("Arial");*/
 
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 	CFrameWnd* pFrame;
@@ -280,6 +282,7 @@ void CGameView::OnInitialUpdate()
 	GetDlgItem(IDC_STATIC_G5)->SetFont(&m_font2, TRUE);
 	GetDlgItem(IDC_STATIC_G6)->SetFont(&m_font2, TRUE);
 
+	//GetDlgItem(IDC_BUTTON_SCHEDULE)->SetFont(&m_font1, TRUE);
 
 
 
@@ -311,7 +314,23 @@ void CGameView::OnInitialUpdate()
 	//ResizeParentToFit();
 
 
+	CRect rectList;
+	CWnd* pWnd = GetDlgItem(IDC_LIST_CONTROL_STATS);
+	pWnd->GetWindowRect(&rectList);
+	ScreenToClient(&rectList); //optional step - see below
+	int listW = rectList.Width();
+	int listH = rectList.Height();
+	TRACE("int = % d\n", w);
+	TRACE("int = % d\n", h);
+	TRACE("int = % d\n", listW);
+	TRACE("int = % d\n", listH);
 
+
+	//position:  rect.left, rect.top
+	//size: rect.Width(), rect.Height()
+
+
+	//TRACE("msg=%s, int=%d\n", (LPCTSTR)listW , i);
 	//if (w > WIDTH) w = WIDTH;
 	//if (h > HEIGHT) h = HEIGHT;
 
@@ -327,12 +346,12 @@ void CGameView::OnInitialUpdate()
 	//}
 	//pFrame->RecalcLayout();
 	////ResizeParentToFit(TRUE);    // Shrink to fit template 
+	//m_font2.DeleteObject();
+
+	//m_button_schedule.SetFont(&m_font2);
+	//m_button_schedule.SetButtonFontSize(40);
 
 
-
-
-
-	InitListCtrl();
 
 
 
@@ -381,7 +400,6 @@ void CGameView::OnShowWindow(BOOL bShow, UINT nStatus)
 	CFormView::OnShowWindow(bShow, nStatus);
 
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
-
 
 	// TODO: Add your message handler code here
 	if (bShow == TRUE)
@@ -2234,6 +2252,10 @@ void CGameView::InitHeadings()
 	//	m_list_stats.SetFont(&m_font);
 	m_list_stats.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
+
+
+
+
 }
 
 
@@ -2774,6 +2796,9 @@ void CGameView::OnButtonAwards()
 {
 	// TODO: Add your control notification handler code here
 	// TODO: Add your control notification handler code here
+
+
+
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
 	CString award_file = avg.m_settings.m_path + avg.m_settings.m_league_name;
@@ -2853,6 +2878,7 @@ void CGameView::OnButtonAwards()
 
 void CGameView::OnButtonLeaders()
 {
+
 	// TODO: Add your control notification handler code here
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 	CLeadersDlg* leadersDlg = new CLeadersDlg;
@@ -2927,6 +2953,7 @@ HBRUSH CGameView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		pDC->SetTextColor(RGB(255,0,0));
 		return hbr;
 	}*/
+	//m_button_schedule.SetButtonFontSize(4);
 
 
 	// TODO: Change any attributes of the DC here

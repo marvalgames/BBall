@@ -19,9 +19,12 @@ static char THIS_FILE[] = __FILE__;
 
 CMyListCtrl::CMyListCtrl()
 {
+	headerBkColor = BLACK;
+	headerTextColor = WHITE;
 	m_bHeaderIsSubclassed = FALSE;
 	m_nHighlight = HIGHLIGHT_ALLCOLUMNS; 
 	m_HeaderCtrl.SetListCtrl(this);
+
 }
 
 CMyListCtrl::~CMyListCtrl()
@@ -116,14 +119,16 @@ void CMyListCtrl::SubclassHeaderControl()
 		m_HeaderCtrl.SetListCtrl(this);
 	}
 
-	//m_HeaderCtrl.SetTextColor(WHITE);
-	//m_HeaderCtrl.SetHeaderControls(YELLOW, BLACK);
+	//m_HeaderCtrl.SetHeaderControls(headerTextColor, headerBkColor);
+	m_HeaderCtrl.SetHeaderControls(WHITE, BLACK);
+	m_HeaderCtrl.SetTextColor(WHITE);
 	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
 
 }
 
 void CMyListCtrl :: SetHeaderColors(COLORREF textColor, COLORREF bkColor)
 {
+	m_HeaderCtrl.SetHeaderControls(textColor, bkColor);
 }
 
 
