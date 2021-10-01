@@ -50,25 +50,13 @@ IMPLEMENT_DYNCREATE(CGameView, CFormView)
 CGameView::CGameView()
 	: CFormView(CGameView::IDD)
 {
-	//{{AFX_DATA_INIT(CGameView)
-	//}}AFX_DATA_INIT
-
-//	bitmapBkgnd.Attach (LoadBitmap (AfxGetInstanceHandle(), 
-  //                  MAKEINTRESOURCE(IDB_BITMAP_BK)));
-	//m_bmp = new CBitmap;
-	//m_bmp->LoadBitmap(IDB_BITMAPSCREEN);
-	//m_bmp->SetBitmapDimension(182, 240); /* if the size of bitmap is 50 by 40 */
-	//m_bmp->SetBitmapDimension(1680, 1050); /* if the size of bitmap is 50 by 40 */
-
+	
 	CPngImage pngImage;
 	pngImage.Load(IDB_PNG_BK, AfxGetResourceHandle());
 	m_bmp = new CBitmap;
 	m_bmp->Attach(pngImage.Detach());
 	m_bmp->SetBitmapDimension(512, 512); /* if the size of bitmap is 50 by 40 */
-
-
 	m_rookie_view = false;
-
 }
 
 CGameView::~CGameView()
@@ -119,12 +107,6 @@ void CGameView::DoDataExchange(CDataExchange* pDX)
 
 
 	DDX_Control(pDX, IDC_RADIO_SIMULATED, m_radio_simulated);
-	//DDX_Control(pDX, IDC_STATIC_G1, m_g[0]);
-	//DDX_Control(pDX, IDC_STATIC_G2, m_g[1]);
-	//DDX_Control(pDX, IDC_STATIC_G3, m_g[2]);
-	//DDX_Control(pDX, IDC_STATIC_G4, m_g[3]);
-	//DDX_Control(pDX, IDC_STATIC_G5, m_g[4]);
-	//DDX_Control(pDX, IDC_STATIC_G6, m_g[5]);
 
 }
 
@@ -219,8 +201,6 @@ BOOL CGameView::SetToDoc()
 	// Allow for data validation    
 	if (!UpdateData(TRUE))
 		return FALSE;
-
-
 
 	return TRUE;
 }
@@ -326,36 +306,7 @@ void CGameView::OnInitialUpdate()
 	TRACE("int = % d\n", listH);
 
 
-	//position:  rect.left, rect.top
-	//size: rect.Width(), rect.Height()
-
-
-	//TRACE("msg=%s, int=%d\n", (LPCTSTR)listW , i);
-	//if (w > WIDTH) w = WIDTH;
-	//if (h > HEIGHT) h = HEIGHT;
-
-	//if (w > 1023) w = 1023;
-	//if (h > 750) h = 750;
-	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE );
-	//if(w > 800) m_list_stats.SetWindowPos(NULL, -1,-1,800,284,	SWP_NOMOVE | SWP_NOZORDER | SWP_NOREDRAW | SWP_NOACTIVATE);
-
-
-
-//        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-  //                      GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-	//}
-	//pFrame->RecalcLayout();
-	////ResizeParentToFit(TRUE);    // Shrink to fit template 
-	//m_font2.DeleteObject();
-
-	//m_button_schedule.SetFont(&m_font2);
-	//m_button_schedule.SetButtonFontSize(40);
-
-
-
-
-
-
+	m_list_stats.SetHeaderColors(WHITE, DARKMIDNIGHTBLUE);
 
 
 

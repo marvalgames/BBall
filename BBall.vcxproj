@@ -582,11 +582,9 @@
     <ClCompile Include="BBallSchedule.cpp" />
     <ClCompile Include="BBallSettings.cpp" />
     <ClCompile Include="BBallView.cpp" />
-    <ClCompile Include="BCMenu.cpp" />
     <ClCompile Include="BitmapCtrl.cpp" />
     <ClCompile Include="BoxDlg.cpp" />
     <ClCompile Include="Boxscore.cpp" />
-    <ClCompile Include="BtnST.cpp" />
     <ClCompile Include="BudgetSheetDlg.cpp" />
     <ClCompile Include="calendar.cpp" />
     <ClCompile Include="CampDlg.cpp" />
@@ -663,7 +661,6 @@
     <ClCompile Include="MyComboBox.cpp" />
     <ClCompile Include="MyDraw.cpp" />
     <ClCompile Include="MyListCtrl.cpp" />
-    <ClCompile Include="MyMenu.cpp" />
     <ClCompile Include="MySliderControl.cpp" />
     <ClCompile Include="NegotiateDlg.cpp" />
     <ClCompile Include="OfferTrades1.cpp" />
@@ -786,11 +783,9 @@
     <ClInclude Include="BBallSchedule.h" />
     <ClInclude Include="BBallSettings.h" />
     <ClInclude Include="BBallView.h" />
-    <ClInclude Include="BCMenu.h" />
     <ClInclude Include="BitmapCtrl.h" />
     <ClInclude Include="BoxDlg.h" />
     <ClInclude Include="Boxscore.h" />
-    <ClInclude Include="BtnST.h" />
     <ClInclude Include="BudgetSheetDlg.h" />
     <ClInclude Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\atlmfc\include\afxbutton.h" />
     <ClInclude Include="calendar.h" />
@@ -851,7 +846,6 @@
     <ClInclude Include="MyComboBox.h" />
     <ClInclude Include="MyDraw.h" />
     <ClInclude Include="MyListCtrl.h" />
-    <ClInclude Include="MyMenu.h" />
     <ClInclude Include="MySliderControl.h" />
     <ClInclude Include="NegotiateDlg.h" />
     <ClInclude Include="OfferTrades1.h" />

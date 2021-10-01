@@ -93,11 +93,7 @@ CScheduleView::CScheduleView()
 	m_days_in_month[10] = 31;
 	m_days_in_month[11] = 30;
 	m_days_in_month[12] = 28;
-	
-	//m_bmp =  new CBitmap;
-	//m_bmp->LoadBitmap(IDB_BITMAPSCREEN);
-	//m_bmp->SetBitmapDimension(182,240); /* if the size of bitmap is 50 by 40 */
-	//m_bmp->SetBitmapDimension(1680,1050); /* if the size of bitmap is 50 by 40 */
+
 	CPngImage pngImage;
 	pngImage.Load(IDB_PNG_BK, AfxGetResourceHandle());
 	m_bmp = new CBitmap;
@@ -402,7 +398,8 @@ BEGIN_MESSAGE_MAP(CScheduleView, CFormView)
 	ON_COMMAND(ID_EDIT_STAFF, OnEditStaff)
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
-END_MESSAGE_MAP()
+		ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_DAYS, &CScheduleView::OnNMCustomdrawSliderDays)
+		END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CScheduleView diagnostics
@@ -529,7 +526,7 @@ void CScheduleView::OnInitialUpdate()
     // Resize parent to fit dialog template exactly    
     // while not resizing beyond size of screen
     VERIFY( pFrame = GetParentFrame() );
-    pFrame->GetClientRect( rectFrame );
+    //pFrame->GetClientRect( rectFrame );
     GetClientRect( rectView );
   //  if ( rectFrame.Width() < rectView.Width()
    //      || rectFrame.Height() < rectView.Height() )
@@ -4679,18 +4676,18 @@ switch (nCtlColor)
           LOGBRUSH logbrush;
           myBrush.GetLogBrush( &logbrush );
 		  //pDC->SetTextColor(STATICCOLOR);
-		  pDC->SetTextColor(WHITE);
+		  pDC->SetTextColor(RGB(255,215,0));
 		  //pDC->SetBkColor(logbrush.lbColor);
 		  pDC->SetBkColor(BLACK);
-          return myBrush;
+          return hbr;
      case CTLCOLOR_BTN:
           //pDC->SetTextColor(RGB(0,255,255));
           //pDC->SetBkColor(RGB(255,128,128));
           return hbr;
-     case CTLCOLOR_LISTBOX:
-          pDC->SetBkColor(LISTBOXCOLOR);
-          pDC->SetTextColor(LISTBOXTEXTCOLOR);
-          return myBrush;
+	 case CTLCOLOR_LISTBOX:
+		 pDC->SetBkColor(LISTBOXCOLOR);
+		 pDC->SetTextColor(LISTBOXTEXTCOLOR);
+		 return myBrush;
 
      case CTLCOLOR_SCROLLBAR:
           pDC->SetTextColor(RGB(0,0,0));
@@ -4979,4 +4976,12 @@ void CScheduleView::OnPaint()
 //	graphics.ReleaseHDC(dc.m_hDC);
 
 
+}
+
+
+void CScheduleView::OnNMCustomdrawSliderDays(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

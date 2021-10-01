@@ -48,6 +48,7 @@ BEGIN_MESSAGE_MAP(CScoutProfileDlg, CDialog)
 	ON_WM_CTLCOLOR()
 	ON_BN_CLICKED(IDC_BUTTON_EDIT, OnButtonEdit)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_COACHING, &CScoutProfileDlg::OnLvnItemchangedListCoaching)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -372,4 +373,12 @@ void CScoutProfileDlg::OnButtonEdit()
 	sc.m_member[1] = m_scout;
 	int r = sc.DoModal();
 	
+}
+
+
+void CScoutProfileDlg::OnLvnItemchangedListCoaching(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

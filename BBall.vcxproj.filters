@@ -61,9 +61,6 @@
     <ClCompile Include="BBallView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BCMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BitmapCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -71,9 +68,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Boxscore.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BtnST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BudgetSheetDlg.cpp">
@@ -212,9 +206,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyDraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MySliderControl.cpp">
@@ -454,9 +445,6 @@
     <ClInclude Include="BBallView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BCMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BitmapCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -464,9 +452,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Boxscore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BtnST.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BudgetSheetDlg.h">
@@ -707,9 +692,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyDraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MySliderControl.h">

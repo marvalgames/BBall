@@ -7,10 +7,7 @@
 #define Staff_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 
 #ifndef ScoutEditDlg_h
@@ -41,10 +38,10 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CScoutProfileDlg)
 	enum { IDD = IDD_DIALOG_SCOUT_PROFILE };
-	CListCtrl	m_list_scouting;
-	CListCtrl	m_list_development;
-	CListCtrl	m_list_data;
-	CListCtrl	m_list_coaching;
+	CMyListCtrl	m_list_scouting;
+	CMyListCtrl	m_list_development;
+	CMyListCtrl	m_list_data;
+	CMyListCtrl	m_list_coaching;
 	//}}AFX_DATA
 
 
@@ -75,6 +72,8 @@ private:
 	CBrush myBrush; 
 	void ListData();
 	void InitListCtrl();
+public:
+	afx_msg void OnLvnItemchangedListCoaching(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

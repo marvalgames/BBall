@@ -15,10 +15,6 @@
 #define Average_h
 #endif 
 
-#ifndef XListCtrl_h
-#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
 
 
 

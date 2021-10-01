@@ -41,7 +41,7 @@ void CScoutEditDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxUInt(pDX, m_edit_age, 18, 80);
 	//}}AFX_DATA_MAP
 
-DDX_Control(pDX, IDC_COMBOBOXEX1, m_value[1]);
+	DDX_Control(pDX, IDC_COMBOBOXEX1, m_value[1]);
 	DDX_Control(pDX, IDC_COMBOBOXEX2, m_value[2]);
 	DDX_Control(pDX, IDC_COMBOBOXEX3, m_value[3]);
 	DDX_Control(pDX, IDC_COMBOBOXEX4, m_value[4]);
@@ -98,13 +98,15 @@ DDX_Control(pDX, IDC_COMBOBOXEX1, m_value[1]);
 	DDX_Control(pDX, IDC_COMBOBOXEX55, m_value[55]);
 	DDX_Control(pDX, IDC_COMBOBOXEX56, m_value[56]);
 	DDX_Control(pDX, IDC_COMBOBOXEX57, m_value[57]);
-	DDX_Control(pDX, IDC_COMBOBOXEX58, m_value[58]);
+	//DDX_Control(pDX, IDC_COMBOBOXEX58, m_value[58]);
 	DDX_Control(pDX, IDC_COMBOBOXEX59, m_value[59]);
 	DDX_Control(pDX, IDC_COMBOBOXEX60, m_value[60]);
 	DDX_Control(pDX, IDC_COMBOBOXEX61, m_value[61]);
 	DDX_Control(pDX, IDC_COMBOBOXEX62, m_value[62]);
 
 
+	//  DDX_Control(pDX, IDC_MFCFONTCOMBO2, m_comboStaffList);
+	DDX_Control(pDX, IDC_COMBO1, m_comboStaffList);
 }
 
 
@@ -115,6 +117,9 @@ BEGIN_MESSAGE_MAP(CScoutEditDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBOBOXEX58, OnSelchangeComboboxex58)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_STN_CLICKED(IDC_STATIC6, &CScoutEditDlg::OnStnClickedStatic6)
+//	ON_STN_CLICKED(IDC_STATIC38, &CScoutEditDlg::OnStnClickedStatic38)
+ON_BN_CLICKED(IDOK, &CScoutEditDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -124,11 +129,80 @@ BOOL CScoutEditDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	myBrush.CreateSolidBrush(DLGCOLOR); 
+
+	COMBOBOXEXITEM  item;
+	ZeroMemory(&item, sizeof(item));
+	item.mask = CBEIF_TEXT;
+	item.iItem = 0;
+	item.pszText = _T("Scout");
+	m_value[57].InsertItem(&item);
+	item.pszText = _T("Coach");
+	m_value[57].InsertItem(&item);
+	item.pszText = _T("GM");
+	m_value[57].InsertItem(&item);
+
+	//m_value[57].AddString(_T("Scout"));
+	//m_value[57].AddString(_T("Coach"));
+	//m_value[57].AddString(_T("GM"));
+
+	for (int i = 1; i <= 56; i++)
+	{
+		COMBOBOXEXITEM  item;
+		ZeroMemory(&item, sizeof(item));
+		item.mask = CBEIF_TEXT;
+		item.iItem = 0;
+		item.pszText = _T("1");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("2");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("3");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("4");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("5");
+		m_value[i].InsertItem(&item);
+
+		//m_value[i].AddString(_T("1"));
+		//m_value[i].AddString(_T("2"));
+		//m_value[i].AddString(_T("3"));
+		//m_value[i].AddString(_T("4"));
+		//m_value[i].AddString(_T("5"));
+	}
+
+	for (int i = 59; i <= 62; i++)
+	{
+		COMBOBOXEXITEM  item;
+		ZeroMemory(&item, sizeof(item));
+		item.mask = CBEIF_TEXT;
+		item.iItem = 0;
+		item.pszText = _T("1");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("2");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("3");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("4");
+		m_value[i].InsertItem(&item);
+		item.pszText = _T("5");
+		m_value[i].InsertItem(&item);
+
+
+
+
+		/*m_value[i].AddString(_T("1"));
+		m_value[i].AddString(_T("2"));
+		m_value[i].AddString(_T("3"));
+		m_value[i].AddString(_T("4"));
+		m_value[i].AddString(_T("5"));*/
+	}
+
+
 	m_value[57].SetCurSel(0);
 	m_index = 0;
 	FillList();
 	ReadMember(m_index);
 	// TODO: Add extra initialization here
+	//GetDlgItem(IDC_STATIC37)->ShowWindow(FALSE);
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
@@ -316,15 +390,18 @@ void CScoutEditDlg::FillList()
 {
 	int type = m_value[57].GetCurSel();
 	if (type == -1) return;
-	m_value[58].ResetContent();
-	//m_value[58].SetCurSel(0);
+	m_comboStaffList.ResetContent();
+	m_comboStaffList.SetCurSel(0);
 	for(int i=0; i<=99; i++)
 	{
 		CString str = m_member[i + type*100].m_name;
 		if(str == "") continue;
-		m_value[58].AddString(str);
+		//item.pszText = (LPSTR)(LPCSTR)str;
+		m_comboStaffList.AddString(str);
+
+		//m_value[58].AddString(str);
 	}
-	m_value[58].SetCurSel(m_index);
+	m_comboStaffList.SetCurSel(m_index);
 }
 
 void CScoutEditDlg::OnOK() 
@@ -369,6 +446,13 @@ void CScoutEditDlg::OnSelchangeComboboxex58()
 HBRUSH CScoutEditDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor) 
 {
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	//if (pWnd->GetDlgCtrlID() == IDC_STATIC37)
+	//{
+	//	pDC->SetTextColor(RGB(0, 0, 0));
+	//	pDC->SetBkColor(RGB(255, 255, 100));// for text background  
+	//	return hbr;//your brush  
+	//}
 	
 	// TODO: Change any attributes of the DC here
 switch (nCtlColor)
@@ -385,16 +469,16 @@ switch (nCtlColor)
           LOGBRUSH logbrush;
           myBrush.GetLogBrush( &logbrush );
           pDC->SetTextColor(STATICCOLOR);
-          pDC->SetBkColor(logbrush.lbColor);
+          pDC->SetBkColor(RGB(64,64,64));
           return myBrush;
      case CTLCOLOR_BTN:
           pDC->SetTextColor(RGB(0,255,255));
           pDC->SetBkColor(RGB(255,128,128));
           return myBrush;
-     //case CTLCOLOR_LISTBOX:
-          //pDC->SetBkColor(LISTBOXCOLOR);
-         // pDC->SetTextColor(LISTBOXTEXTCOLOR);
-         // return myBrush;
+     case CTLCOLOR_LISTBOX:
+          pDC->SetBkColor(LISTBOXCOLOR);
+          pDC->SetTextColor(LISTBOXTEXTCOLOR);
+          return myBrush;
 
 //	case CTLCOLOR_LISTBOX:
 //		  //pDC->SetBkMode(TRANSPARENT);
@@ -421,4 +505,23 @@ switch (nCtlColor)
 	
 	// TODO: Return a different brush if the default is not desired
 	return hbr;
+}
+
+
+void CScoutEditDlg::OnStnClickedStatic6()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+//void CScoutEditDlg::OnStnClickedStatic38()
+//{
+//	// TODO: Add your control notification handler code here
+//}
+
+
+void CScoutEditDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

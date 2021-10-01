@@ -19,8 +19,10 @@ static char THIS_FILE[] = __FILE__;
 
 CMyListCtrl::CMyListCtrl()
 {
-	headerBkColor = BLACK;
-	headerTextColor = WHITE;
+	rowColor1 = ROWCOLOR1;
+	rowColor2 = ROWCOLOR2;
+	headerBkColor = HEADER_BKCOLOR;
+	headerTextColor = HEADER_TEXTCOLOR;
 	m_bHeaderIsSubclassed = FALSE;
 	m_nHighlight = HIGHLIGHT_ALLCOLUMNS; 
 	m_HeaderCtrl.SetListCtrl(this);
@@ -120,8 +122,7 @@ void CMyListCtrl::SubclassHeaderControl()
 	}
 
 	//m_HeaderCtrl.SetHeaderControls(headerTextColor, headerBkColor);
-	m_HeaderCtrl.SetHeaderControls(WHITE, BLACK);
-	m_HeaderCtrl.SetTextColor(WHITE);
+	m_HeaderCtrl.SetHeaderControls(headerTextColor, headerBkColor);
 	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
 
 }
@@ -180,9 +181,12 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 		GetClientRect(&rcClient);
 		rcRow.right = rcClient.right;
 
-		pDC->FillRect(rcRow, &CBrush(nItem%2 ? RGB(64,64,64) :
-	 					RGB(80,80,80)));
-	
+//		pDC->FillRect(rcRow, &CBrush(nItem % 2 ? RGB(64, 64, 64) :
+	//		RGB(80, 80, 80)));
+
+		pDC->FillRect(rcRow, &CBrush(nItem % 2 ? rowColor1 :
+			rowColor2));
+
 		pDC->SetTextColor(WHITE);
 
 

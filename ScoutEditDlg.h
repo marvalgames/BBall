@@ -32,7 +32,7 @@ public:
 	UINT	m_edit_age;
 	//}}AFX_DATA
 
-	CMyComboBox	m_value[101];
+	CComboBoxEx	m_value[101];
 
 // Overrides
 	// ClassWizard generated virtual function overrides
@@ -59,6 +59,14 @@ private:
 	void ReadMember(int index);
 	void WriteMember(int index);
 	void FillList();
+public:
+	afx_msg void OnStnClickedStatic6();
+//	afx_msg void OnStnClickedStatic38();
+	afx_msg void OnBnClickedOk();
+private:
+//	CMFCFontComboBox m_comboStaffList;
+public:
+	CComboBox m_comboStaffList;
 };
 
 //{{AFX_INSERT_LOCATION}}

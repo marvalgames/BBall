@@ -55,7 +55,13 @@ protected:
 	COLORREF headerTextColor;
 	COLORREF headerBkColor;
 
-	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct); 
+	//COLORREF rowColor1 = ROWCOLOR1;
+	//COLORREF rowColor2 = ROWCOLOR2;
+	COLORREF rowColor1;
+	COLORREF rowColor2;
+
+
+	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 
 	//{{AFX_MSG(CMyListCtrl)
 	afx_msg void OnPaint();

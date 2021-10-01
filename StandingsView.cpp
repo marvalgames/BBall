@@ -937,7 +937,7 @@ void CStandingsView::InitView()
 	m_listTeams.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	//    m_listTeams.SetTextColor(TEXT_COLOR);
 	//	m_listTeams.SetFont(&m_font1);
-	m_listTeams.SetHeaderColors(YELLOW, RGB(64,64,64));
+	//m_listTeams.SetHeaderColors(YELLOW, RGB(64,64,64));
 
 	m_listTeams.DeleteColumn(0);
 	m_listTeams.InsertColumn(0, "team");

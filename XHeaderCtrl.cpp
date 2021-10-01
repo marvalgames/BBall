@@ -114,6 +114,7 @@ void CXHeaderCtrl::SetHeaderControls(COLORREF textColor, COLORREF bkColor)
 {
 	m_crBtnText = textColor;
 	m_cr3DFace = bkColor;
+	SetTextColor(textColor);
 
 }
 ///////////////////////////////////////////////////////////////////////////////

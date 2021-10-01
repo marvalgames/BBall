@@ -99,6 +99,7 @@ BEGIN_MESSAGE_MAP(CPlayerCardDlg, CDialog)
 	ON_WM_MOVE()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL, &CPlayerCardDlg::OnLvnItemchangedListCtrl)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -2374,4 +2375,12 @@ switch (nCtlColor)
      default:
           return hbr;
 	}
+}
+
+
+void CPlayerCardDlg::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

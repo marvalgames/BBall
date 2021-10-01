@@ -230,7 +230,7 @@ void CBBallView::OnInitialUpdate()
 	CRect rectFrame, rectView;
 
 	VERIFY(pFrame = GetParentFrame());
-	pFrame->GetClientRect(rectFrame);
+	//pFrame->GetClientRect(rectFrame);
 	GetClientRect(rectView);
 	//  if ( rectFrame.Width() < rectView.Width()
 	 //      || rectFrame.Height() < rectView.Height() )
@@ -1682,11 +1682,17 @@ HBRUSH CBBallView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case CTLCOLOR_STATIC:
 		LOGBRUSH logbrush;
 		myBrush.GetLogBrush(&logbrush);
-		pDC->SetTextColor(STATICCOLOR);
-		pDC->SetBkColor(logbrush.lbColor);
+		//pDC->SetTextColor(STATICCOLOR);
+		pDC->SetTextColor(RGB(255, 215, 0));
+		//pDC->SetBkColor(logbrush.lbColor);
+		pDC->SetBkColor(BLACK);
+		return hbr;
+	case CTLCOLOR_LISTBOX:
+		pDC->SetBkColor(LISTBOXCOLOR);
+		pDC->SetTextColor(LISTBOXTEXTCOLOR);
 		return myBrush;
 	case CTLCOLOR_BTN:
-		pDC->SetTextColor(RGB(2555, 255, 255));
+		pDC->SetTextColor(RGB(255, 255, 255));
 		pDC->SetBkColor(RGB(0, 0, 0));
 		return hbr;
 		//     case CTLCOLOR_LISTBOX:

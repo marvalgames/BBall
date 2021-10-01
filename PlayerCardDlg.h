@@ -22,6 +22,7 @@
 #define ScoutProfileDlg_h
 #endif 
 //#include "Staff.h"	// Added by ClassView
+#include "MyListCtrl.h"
 
 
 // PlayerCardDlg.h : header file
@@ -48,7 +49,7 @@ public:
 	int m_player_index;
 	CPlayerCardDlg(CWnd* pParent = NULL);   // standard constructor
 	~CPlayerCardDlg(void);
-	//CListCtrl::~CListCtrl(void)
+	//CMyListCtrl::~CMyListCtrl(void)
 //{
 
 //}
@@ -56,19 +57,19 @@ public:
 	//{{AFX_DATA(CPlayerCardDlg)
 	enum { IDD = IDD_DIALOG_PLAYERCARD };
 	MyButton	m_button_extend;
-	CListCtrl	m_list_highs;
-	CListCtrl	m_list_ctrl_3;
-	CListCtrl	m_list_ctrl_2;
-	CListCtrl	m_list_ctrl_1;
+	CMyListCtrl	m_list_highs;
+	CMyListCtrl	m_list_ctrl_3;
+	CMyListCtrl	m_list_ctrl_2;
+	CMyListCtrl	m_list_ctrl_1;
 	MyButton	m_buttonScout;
-	CListCtrl	m_listctrlskill;
-	CListCtrl	m_listFuture;
-	CListCtrl	m_listCtrlStats;
-	CListCtrl	m_listCtrlShot;
+	CMyListCtrl	m_listctrlskill;
+	CMyListCtrl	m_listFuture;
+	CMyListCtrl	m_listCtrlStats;
+	CMyListCtrl	m_listCtrlShot;
 	CListBox	m_list_report;
-	CListCtrl	m_listctrlstats;
+	CMyListCtrl	m_listctrlstats;
 	CListBox	m_listPosition;
-	CListCtrl	m_listCtrl;
+	CMyListCtrl	m_listCtrl;
 	CListBox	m_list_awards;
 	CString	m_edit_owner;
 	//}}AFX_DATA
@@ -113,6 +114,8 @@ private:
 	CFont m_font;
 	CBrush myBrush;
 	CBrush myBrush2;
+public:
+	afx_msg void OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

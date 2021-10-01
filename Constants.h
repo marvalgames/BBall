@@ -53,6 +53,7 @@ const int TEXT_COLOR = RGB(0,0,0);
 
 #define	BLACK			RGB( 000, 000, 000 )
 #define	DARKBLUE		RGB( 000, 000, 128 )
+#define	DARKMIDNIGHTBLUE		RGB( 000, 051, 102 )
 #define	DARKGREEN		RGB( 000, 064, 000 )
 #define	DARKCYAN		RGB( 000, 064, 064 )
 #define	DARKRED			RGB( 064, 000, 000 )

@@ -34,7 +34,7 @@
 #define	LIGHTCYAN		RGB( 000, 255, 255 )
 #define	LIGHTRED		RGB( 255, 000, 000 )
 #define	LIGHTMAGENTA	RGB( 255, 000, 255 )
-//#define	YELLOW			RGB( 255, 255, 000 )
+#define	YELLOW			RGB( 255, 255, 000 )
 #define	WHITE			RGB( 255, 255, 255 )
 
 #endif	// __RGBCOLOR_H__

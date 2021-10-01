@@ -10,11 +10,6 @@
 #define Average_h
 #endif 
 
-#ifndef XListCtrl_h
-#include "XListCtrl.h"
-#define XListCtrl_h
-#endif 
-
 
 #if _MSC_VER > 1000
 #pragma once

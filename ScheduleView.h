@@ -32,7 +32,7 @@
 #endif
 
 #include "Label.h"
-
+#include "MySliderControl.h"
 
 class CScheduleView : public CFormView
 {
@@ -46,7 +46,7 @@ protected:
 public:
 	//{{AFX_DATA(CScheduleView)
 	enum { IDD = IDD_DIALOG_SCHEDULE_VIEW };
-	CSliderCtrl	m_slider_days;
+	CMySliderControl	m_slider_days;
 	MyButton	m_sim_x;
 	int m_xdays;
 	MyButton	m_button_go;
@@ -81,7 +81,7 @@ public:
 private:
 
 	MyButton	m_buttons[97];
-	CStatic	m_static_score[33];
+	CTransparentStatic	m_static_score[33];
 	CBrush myBrush;
 	CBitmap* m_bmp;
 
@@ -273,6 +273,8 @@ private:
 	int m_visitor_teams[16];
 	void InitControls();
 	void DisplaySchedule();
+public:
+	afx_msg void OnNMCustomdrawSliderDays(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 /////////////////////////////////////////////////////////////////////////////

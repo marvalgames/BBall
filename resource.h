@@ -858,6 +858,8 @@
 #define IDC_MFCBUTTON1                  1436
 #define DC_BUTTON_SCHEDULE              1437
 #define IDC_RADIO1                      1438
+#define IDC_STATIC38                    1441
+#define IDC_STATIC37                    1442
 #define IDC_LIST_DEVELOPMENT            1464
 #define IDC_LIST_COACHING               1465
 #define IDC_COMBO1                      1469
@@ -1349,9 +1351,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        725
+#define _APS_NEXT_RESOURCE_VALUE        728
 #define _APS_NEXT_COMMAND_VALUE         32809
-#define _APS_NEXT_CONTROL_VALUE         1441
+#define _APS_NEXT_CONTROL_VALUE         1445
 #define _APS_NEXT_SYMED_VALUE           115
 #endif
 #endif
