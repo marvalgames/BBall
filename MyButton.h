@@ -1,5 +1,6 @@
 #pragma once
 #include "afxbutton.h"
+#include "BBall.h"
 class MyButton :
 	public CMFCButton
 {
@@ -23,12 +24,14 @@ protected:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
 public:
+	void ChangeBitmap(UINT bitmapResourceID);
 	void SetMyFont(int weight, int height, CString font);
 	//void SetButtonFontSize(LONG height);
 	void SetButtonFontSize(int size);
 	void SetButtonFontWeight(int weight);
 	void SetButtonFontType(CString type);
-
+	BOOL m_useImage = true;
+	//UINT m_imageResourceID = IDB_BUTTON;
 
 protected:
 	CFont m_font;

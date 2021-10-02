@@ -676,7 +676,7 @@ bool CComputer::Trade(int offered[33], int loops, int max_offers, int stage)
 		new_true_values[tmp] = 0;
 		tmpa_player[tmp] = NewRoster[tmp];
 	}
-	avg.ComputerRotationForTrades(tmpa_player, new_true_values, 20, m_team1-1, m_team2-2);
+	avg.ComputerRotationForTrades(tmpa_player, new_true_values, 20, m_team1-1, m_team2-1);
 	delete [] tmpa_player;
 
 

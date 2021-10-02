@@ -12,11 +12,33 @@ MyButton::MyButton(void)
 	m_clrFace = RGB(255, 255, 255);
 	m_clrRegular = RGB(255, 255, 255);
 	m_nFlatStyle = CMFCButton::BUTTONSTYLE_SEMIFLAT;
+	//m_imageResourceID = IDB_BUTTON;
+
+
 	m_bmp = new CBitmap;
-	m_bmp->LoadBitmap(IDB_BUTTON);
-	m_bmp->SetBitmapDimension(128, 32); /* if the size of bitmap is 50 by 40 */
+	if (m_useImage)
+	{
+		m_bmp->LoadBitmap(IDB_BUTTON);
+		//TRACE("int = % d\n", m_imageResourceID);
+		m_bmp->SetBitmapDimension(64, 16); /* if the size of bitmap is 50 by 40 */
+	}
+
+
 
 }
+
+void MyButton::ChangeBitmap(UINT bitmapResourceID)
+{
+	m_bmp->DeleteObject();
+	m_bmp = new CBitmap;
+	m_bmp->LoadBitmap(bitmapResourceID);
+	//TRACE("int = % d\n", m_imageResourceID);
+	m_bmp->SetBitmapDimension(64, 16); /* if the size of bitmap is 50 by 40 */
+
+
+
+}
+
 
 LRESULT MyButton::OnSetText(WPARAM wParam, LPARAM lParam)
 {
@@ -34,63 +56,10 @@ BOOL MyButton::PreCreateWindow(CREATESTRUCT& cs)
 }
 
 
+
 void MyButton::SetMyFont(int weight, int height, CString font)
 {
 
-	////LOGFONT lf;                        // Used to create the CFont.   
-	////memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.              
-	////lf.lfWeight = weight;
-	////lf.lfHeight = height;
-	////strcpy_s(lf.lfFaceName, font);    //    with face name "Arial".
-	////m_font.CreateFontIndirect(&lf);    // Create the font.
-
-	////EnableMenuFont(FALSE);
-	//if (GetFont())
-	//{
-	//	//m_font.DeleteObject();
-	//	m_font.Detach();
-	//	LOGFONT lf;
-	//	GetFont()->GetLogFont(&lf);
-	//	//lf.lfUnderline = (BYTE)m_bUnderline;
-	//	//lf.lfItalic = (BYTE)m_bItalic;
-	//	//lf.lfHeight = 800;
-	//	lf.lfWeight = (LONG)900; // (900 = BOLD)
-
-	//	m_font.CreateFontIndirect(&lf);
-	//	//CString Text;
-	//	//RedrawWindow();
-	//}
-
-
-	///*
-	//	LOGFONT lf;                        // Used to create the CFont.
-	//	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
-	//	lf.lfWeight = 800;
-	//	lf.lfHeight = 20;
-	//	strcpy_s(lf.lfFaceName, "Courier New");    //    with face name "Arial"
-	//	m_font.CreateFontIndirect(&lf);    // Create the font.
-	//	*/
-
-
-	//	//	SetFont(&m_font);
-
-	//		/*
-
-	//	CString Text;
-	//	GetWindowText(Text);
-	//	CRect Rect;
-	//	GetWindowRect(&Rect);
-
-	//	CDC *pDC = GetDC();
-	//	CFont *pOldFont = pDC->SelectObject(&m_font);
-	//	CSize Size = pDC->GetTextExtent(Text);
-	//	pDC->SelectObject(pOldFont);
-	//	ReleaseDC(pDC);
-
-	//	SetWindowPos(NULL,0,0,Size.cx +
-	//	10,Rect.Height(),SWP_NOMOVE|SWP_NOZORDER);
-
-	//	*/
 
 }
 
@@ -100,6 +69,14 @@ void MyButton::PreSubclassWindow()
 
 
 	CMFCButton::PreSubclassWindow();
+
+
+
+
+
+
+
+
 	//EnableMenuFont(FALSE);
 	LOGFONT lf;
 	GetFont()->GetLogFont(&lf);
@@ -134,47 +111,19 @@ void MyButton::SetButtonFontType(CString type)
 }
 
 
-//void MyButton::SetButtonFontSize(LONG Height)
-//{
-//
-//	// from http://support.microsoft.com/kb/85518
-//	//LOGFONT lf;                        // Used to create the CFont.
-//
-//	//CFont* currentFont = GetFont();
-//	//currentFont->GetLogFont(&lf);
-//
-//
-//	LOGFONT lf;
-//	GetFont()->GetLogFont(&lf);
-//
-//
-//	lf.lfHeight =  Height;
-//	m_font.DeleteObject();
-//	m_font.CreateFontIndirect(&lf);    // Create the font.
-//
-//	// Use the font to paint a control.
-//	SetFont(&m_font);
-//
-//}
-
-
 MyButton::~MyButton(void)
 {
 	delete m_bmp;
 }
 
 
-//void MyButton::SetFaceColor(COLORREF crFace, BOOL bRedraw)
-//{
-
-//}
 
 
 
 void MyButton::OnDraw(CDC* pDC, const CRect& rect, UINT uiState)
 {
 	SetMouseCursorHand();
-	if (m_bTransparent == false)
+	if (m_useImage == TRUE)
 	{
 		CDC memdc;
 		memdc.CreateCompatibleDC(pDC);

@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "bball.h"
-
 #ifndef ScoutEditDlg_h
 #include "ScoutEditDlg.h"
 #define ScoutEditDlg_h
@@ -97,7 +96,7 @@ void CScoutEditDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBOBOXEX54, m_value[54]);
 	DDX_Control(pDX, IDC_COMBOBOXEX55, m_value[55]);
 	DDX_Control(pDX, IDC_COMBOBOXEX56, m_value[56]);
-	DDX_Control(pDX, IDC_COMBOBOXEX57, m_value[57]);
+	//DDX_Control(pDX, IDC_COMBOBOXEX57, m_value[57]);//changed to combobox from ex - easier 
 	//DDX_Control(pDX, IDC_COMBOBOXEX58, m_value[58]);
 	DDX_Control(pDX, IDC_COMBOBOXEX59, m_value[59]);
 	DDX_Control(pDX, IDC_COMBOBOXEX60, m_value[60]);
@@ -106,15 +105,18 @@ void CScoutEditDlg::DoDataExchange(CDataExchange* pDX)
 
 
 	//  DDX_Control(pDX, IDC_MFCFONTCOMBO2, m_comboStaffList);
+	DDX_Control(pDX, IDC_COMBO2, m_comboJobsList);
 	DDX_Control(pDX, IDC_COMBO1, m_comboStaffList);
+	DDX_Control(pDX, IDOK, m_okBtn);
+	DDX_Control(pDX, IDCANCEL, m_cancelBtn);
 }
 
 
 BEGIN_MESSAGE_MAP(CScoutEditDlg, CDialog)
 	//{{AFX_MSG_MAP(CScoutEditDlg)
 	ON_BN_CLICKED(IDC_BUTTON_SAVE, OnButtonSave)
-	ON_CBN_SELCHANGE(IDC_COMBOBOXEX57, OnSelchangeComboboxex57)
-	ON_CBN_SELCHANGE(IDC_COMBOBOXEX58, OnSelchangeComboboxex58)
+	ON_CBN_SELCHANGE(IDC_COMBO2, OnSelchangeJobs)
+	ON_CBN_SELCHANGE(IDC_COMBO1, OnSelchangeMembers)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
 	ON_STN_CLICKED(IDC_STATIC6, &CScoutEditDlg::OnStnClickedStatic6)
@@ -128,18 +130,19 @@ END_MESSAGE_MAP()
 BOOL CScoutEditDlg::OnInitDialog() 
 {
 	CDialog::OnInitDialog();
-	myBrush.CreateSolidBrush(DLGCOLOR); 
 
-	COMBOBOXEXITEM  item;
-	ZeroMemory(&item, sizeof(item));
-	item.mask = CBEIF_TEXT;
-	item.iItem = 0;
-	item.pszText = _T("Scout");
-	m_value[57].InsertItem(&item);
-	item.pszText = _T("Coach");
-	m_value[57].InsertItem(&item);
-	item.pszText = _T("GM");
-	m_value[57].InsertItem(&item);
+
+	myBrush.CreateSolidBrush(DLGCOLOR); 
+	m_okBtn.m_useImage = FALSE;
+	m_okBtn.SetTextColor(BUTTONTEXTCOLOR);
+	m_okBtn.SetFaceColor(BUTTONCOLOR);
+	m_cancelBtn.m_useImage = FALSE;
+	m_cancelBtn.SetTextColor(BUTTONTEXTCOLOR);
+	m_cancelBtn.SetFaceColor(BUTTONCOLOR);
+
+	//m_cancelBtn.ChangeBitmap(IDB_BITMAPSCREEN);//
+
+	//m_okBtn.SetTextColor(DARKRED);
 
 	//m_value[57].AddString(_T("Scout"));
 	//m_value[57].AddString(_T("Coach"));
@@ -197,7 +200,8 @@ BOOL CScoutEditDlg::OnInitDialog()
 	}
 
 
-	m_value[57].SetCurSel(0);
+	m_comboStaffList.SetCurSel(0);
+	m_comboJobsList.SetCurSel(0);
 	m_index = 0;
 	FillList();
 	ReadMember(m_index);
@@ -388,7 +392,7 @@ void CScoutEditDlg::WriteMember(int index)
 
 void CScoutEditDlg::FillList()
 {
-	int type = m_value[57].GetCurSel();
+	int type = m_comboJobsList.GetCurSel();
 	if (type == -1) return;
 	m_comboStaffList.ResetContent();
 	m_comboStaffList.SetCurSel(0);
@@ -414,30 +418,30 @@ void CScoutEditDlg::OnOK()
 void CScoutEditDlg::OnButtonSave() 
 {
 	// TODO: Add your control notification handler code here
-	m_index = m_value[58].GetCurSel();
-	int type = m_value[57].GetCurSel();
+	m_index = m_comboStaffList.GetCurSel();
+	int type = m_comboJobsList.GetCurSel();
 	int slot = type*100 + m_index;
 	WriteMember(slot);
 	FillList();
 }
 
-void CScoutEditDlg::OnSelchangeComboboxex57() 
+void CScoutEditDlg::OnSelchangeMembers() 
 {
 	// TODO: Add your control notification handler code here
-	m_index = m_value[58].GetCurSel();
-	int type = m_value[57].GetCurSel();
-	int slot = type*100 + m_index;	
+	m_index = m_comboStaffList.GetCurSel();
+	int type = m_comboJobsList.GetCurSel();
+	int slot = type*100 + m_index;
 	ReadMember(slot);
 	FillList();
 	
 }
 
-void CScoutEditDlg::OnSelchangeComboboxex58() 
+void CScoutEditDlg::OnSelchangeJobs() 
 {
 	// TODO: Add your control notification handler code here
-	m_index = m_value[58].GetCurSel();
-	int type = m_value[57].GetCurSel();
-	int slot = type*100 + m_index;	
+	m_index = m_comboStaffList.GetCurSel();
+	int type = m_comboJobsList.GetCurSel();
+	int slot = type*100 + m_index;
 	ReadMember(slot);
 }
 
@@ -474,7 +478,7 @@ switch (nCtlColor)
      case CTLCOLOR_BTN:
           pDC->SetTextColor(RGB(0,255,255));
           pDC->SetBkColor(RGB(255,128,128));
-          return myBrush;
+          return hbr;
      case CTLCOLOR_LISTBOX:
           pDC->SetBkColor(LISTBOXCOLOR);
           pDC->SetTextColor(LISTBOXTEXTCOLOR);

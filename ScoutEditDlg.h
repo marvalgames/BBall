@@ -6,6 +6,9 @@
 #define Staff_h
 #endif
 #include "MyComboBox.h"
+#include "MyButton.h"
+#include "afxbutton.h"
+
 
 #if _MSC_VER > 1000
 #pragma once
@@ -49,8 +52,8 @@ protected:
 	virtual BOOL OnInitDialog();
 	virtual void OnOK();
 	afx_msg void OnButtonSave();
-	afx_msg void OnSelchangeComboboxex57();
-	afx_msg void OnSelchangeComboboxex58();
+	afx_msg void OnSelchangeJobs();
+	afx_msg void OnSelchangeMembers();
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
@@ -67,6 +70,9 @@ private:
 //	CMFCFontComboBox m_comboStaffList;
 public:
 	CComboBox m_comboStaffList;
+	CComboBox m_comboJobsList;
+	MyButton m_okBtn;
+	MyButton m_cancelBtn;
 };
 
 //{{AFX_INSERT_LOCATION}}
