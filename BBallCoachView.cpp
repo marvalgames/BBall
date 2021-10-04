@@ -65,11 +65,6 @@ CBBallCoachView::CBBallCoachView()
 	m_bmp->SetBitmapDimension(512, 512); /* if the size of bitmap is 50 by 40 */
 
 
-//m_bmp->LoadBitmap(IDB_BITMAPSCREEN);
-// 
-//	m_bmp->SetBitmapDimension(1024,768); /* if the size of bitmap is 50 by 40 */
-	//m_bmp->SetBitmapDimension(1024,1024); /* if the size of bitmap is 50 by 40 */
-
 
 }
 
@@ -217,35 +212,35 @@ void CBBallCoachView::OnInitialUpdate()
 		//{        
 			// Resize so can be refit to any template that fits the screen
 
-
-	int w = GetSystemMetrics(SM_CXSCREEN);
-	int h = GetSystemMetrics(SM_CYSCREEN);
-
-	if (w > WIDTH) w = WIDTH;
-	if (h > HEIGHT) h = HEIGHT;
-	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-	pFrame->RecalcLayout();
-	GetParentFrame()->RecalcLayout();
-	//ResizeParentToFit();
-
-	if (w > WIDTH) w = WIDTH;
-	if (h > HEIGHT) h = HEIGHT;
-	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-	pFrame->RecalcLayout();
-	GetParentFrame()->RecalcLayout();
-
-
-	//if (w > WIDTH) w = WIDTH;
-	//if (h > HEIGHT) h = HEIGHT;
-
-	//if(w > 1023) w = 1023;
-	//if(h > 750) h = 750;
-	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE );
-//}
-
-//pFrame->RecalcLayout();
-////ResizeParentToFit(TRUE);    // Shrink to fit template 
-
+//
+//	int w = GetSystemMetrics(SM_CXSCREEN);
+//	int h = GetSystemMetrics(SM_CYSCREEN);
+//
+//	if (w > WIDTH) w = WIDTH;
+//	if (h > HEIGHT) h = HEIGHT;
+//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
+//	pFrame->RecalcLayout();
+//	GetParentFrame()->RecalcLayout();
+//	//ResizeParentToFit();
+//
+//	if (w > WIDTH) w = WIDTH;
+//	if (h > HEIGHT) h = HEIGHT;
+//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
+//	pFrame->RecalcLayout();
+//	GetParentFrame()->RecalcLayout();
+//
+//
+//	//if (w > WIDTH) w = WIDTH;
+//	//if (h > HEIGHT) h = HEIGHT;
+//
+//	//if(w > 1023) w = 1023;
+//	//if(h > 750) h = 750;
+//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE );
+////}
+//
+////pFrame->RecalcLayout();
+//////ResizeParentToFit(TRUE);    // Shrink to fit template 
+//
 
 	m_button_play.EnableWindow(FALSE);
 	m_button_sim.EnableWindow(FALSE);

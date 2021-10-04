@@ -108,7 +108,7 @@ public:
 	MyButton	m_button_free_agency_period;
 	CListBox	m_list_control;
 	MyButton	m_button_offer;
-	CListCtrl	m_list_free_agents;
+	CMyListCtrl	m_list_free_agents;
 	double	m_edit_cap;
 	//}}AFX_DATA
 
@@ -242,6 +242,8 @@ private:
 	CFont m_font;
 	void InitListCtrl();
 	void SetCampRosters();
+public:
+	afx_msg void OnLvnItemchangedListFreeAgents(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

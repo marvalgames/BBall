@@ -104,6 +104,7 @@ BEGIN_MESSAGE_MAP(CFreeAgentDlg, CDialog)
 	ON_WM_ERASEBKGND()
 	ON_BN_CLICKED(IDC_BUTTON_TOGGLE, OnButtonToggle)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_FREE_AGENTS, &CFreeAgentDlg::OnLvnItemchangedListFreeAgents)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -322,7 +323,7 @@ void CFreeAgentDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -2854,8 +2855,9 @@ void CFreeAgentDlg::SetRatingsHeaders()
      m_list_free_agents.InsertColumn(23,"sk");    
 	 m_list_free_agents.DeleteColumn(24);
      m_list_free_agents.InsertColumn(24,"in");    
+
   
-     m_list_free_agents.SetColumnWidth( 0, 28);
+     m_list_free_agents.SetColumnWidth( 0, 280);
      m_list_free_agents.SetColumnWidth( 1, 88);
      m_list_free_agents.SetColumnWidth( 2, 30);
      m_list_free_agents.SetColumnWidth( 3, 33);
@@ -2945,4 +2947,12 @@ void CFreeAgentDlg::SetColumns()
 	m_list_free_agents.DeleteColumn(13);
 	m_list_free_agents.DeleteColumn(13);
 	
+}
+
+
+void CFreeAgentDlg::OnLvnItemchangedListFreeAgents(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

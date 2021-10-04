@@ -230,16 +230,7 @@ void CBBallView::OnInitialUpdate()
 	CRect rectFrame, rectView;
 
 	VERIFY(pFrame = GetParentFrame());
-	//pFrame->GetClientRect(rectFrame);
 	GetClientRect(rectView);
-	//  if ( rectFrame.Width() < rectView.Width()
-	 //      || rectFrame.Height() < rectView.Height() )
-	 // {        
-		  // Resize so can be refit to any template that fits the screen
-		 // pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-		   //               GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-	  //}
-
 	int w = GetSystemMetrics(SM_CXSCREEN);
 	int h = GetSystemMetrics(SM_CYSCREEN);
 
@@ -248,22 +239,17 @@ void CBBallView::OnInitialUpdate()
 	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_SHOWWINDOW);
 	pFrame->RecalcLayout();
 	GetParentFrame()->RecalcLayout();
-	//ResizeParentToFit();
-	//CenterWindow();
-
-	//m_button_setup.SetImage(IDB_BITMAPGO);
-	//Invalidate(TRUE);
-
 
 }
-
+//
 BOOL CBBallView::PreCreateWindow(CREATESTRUCT& cs)
 {
-	/*cs.cy = 640;
-	cs.cx = 480;
-	cs.y = 0;
-	cs.x = 0;*/
-	return CWnd::PreCreateWindow(cs);
+	//	cs.cy = 640;
+	//	cs.cx = 480;
+	//	cs.y = 0;
+	//	cs.x = 0;
+	//	//return CWnd::PreCreateWindow(cs);
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////

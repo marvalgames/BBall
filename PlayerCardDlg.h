@@ -116,6 +116,8 @@ private:
 	CBrush myBrush2;
 public:
 	afx_msg void OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnEnChangeEditOwner();
 };
 
 //{{AFX_INSERT_LOCATION}}

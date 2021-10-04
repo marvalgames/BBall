@@ -56,11 +56,13 @@ public:
 	//{{AFX_DATA(CStatsDlg)
 	enum { IDD = IDD_STATSBOX };
 	MyButton	m_button_pbp;
-	CListCtrl	m_list_pct;
-	CListCtrl	m_list_scores;
-	CListCtrl	m_list_stats;
+	CMyListCtrl	m_list_pct;
+	CMyListCtrl	m_list_scores;
+	CMyListCtrl	m_list_stats;
 	MyButton	m_buttonVisitor;
 	MyButton	m_buttonHome;
+	MyButton	m_buttonOk;
+	MyButton	m_buttonPrint;
 	UINT	m_edit_att;
 	UINT	m_edit_cap;
 	//}}AFX_DATA
@@ -111,6 +113,9 @@ private:
 	CBrush myBrush;
 	void SetPrintAlign(CDC *pDC, HDC hdcPrn);
 	CPlayer PlayerStats[31];
+public:
+	afx_msg void OnLvnItemchangedListStats(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBnClickedOk();
 };
 
 

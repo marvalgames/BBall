@@ -809,6 +809,7 @@
     <ClInclude Include="DraftDlg.h" />
     <ClInclude Include="EditDlg.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Externs.h" />
     <ClInclude Include="Financial.h" />
     <ClInclude Include="font.h" />
     <ClInclude Include="FranchiseChangeDlg.h" />

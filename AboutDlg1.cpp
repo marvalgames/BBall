@@ -34,10 +34,12 @@ CAboutDlg1::CAboutDlg1(CWnd* pParent /*=NULL*/)
 
 void CAboutDlg1::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CAboutDlg1)
-		// NOTE: the ClassWizard will add DDX and DDV calls here
-	//}}AFX_DATA_MAP
+    CDialog::DoDataExchange(pDX);
+    //{{AFX_DATA_MAP(CAboutDlg1)
+    // NOTE: the ClassWizard will add DDX and DDV calls here
+    //}}AFX_DATA_MAP
+    DDX_Control(pDX, IDC_BUTTON_WEB, m_btnWeb);
+    DDX_Control(pDX, IDOK, m_btnOk);
 }
 
 
@@ -46,6 +48,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg1, CDialog)
 	ON_WM_CTLCOLOR()
 	ON_BN_CLICKED(IDC_BUTTON_WEB, OnButtonWeb)
 	//}}AFX_MSG_MAP
+    ON_BN_CLICKED(IDOK, &CAboutDlg1::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -57,6 +60,7 @@ HBRUSH CAboutDlg1::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 //	Invalidate(FALSE);
 	//Default();
+
      
      switch (nCtlColor)
      {
@@ -124,9 +128,23 @@ BOOL CAboutDlg1::OnInitDialog()
 	CDialog::OnInitDialog();
 	
 	// TODO: Add extra initialization here
+    //(CMFCButton*)GetDlgItem(IDOK)->Set
+    //CMFCButton* pButton = (CMFCButton*)GetDlgItem(IDOK);
+    
+    //pButton->SetTextColor(RGB(0, 0, 255));
+
+
 	myBrush.CreateSolidBrush(DLGCOLOR);
 	
-	return TRUE;  // return TRUE unless you set the focus to a control
+    m_btnOk.m_useImage = false;
+    m_btnOk.SetFaceColor(BUTTONCOLOR);
+    m_btnOk.SetTextColor(BUTTONTEXTCOLOR);
+
+    m_btnWeb.m_useImage = false;
+    m_btnWeb.SetFaceColor(BUTTONCOLOR);
+    m_btnWeb.SetTextColor(BUTTONTEXTCOLOR);
+
+    return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
@@ -134,4 +152,11 @@ void CAboutDlg1::OnButtonWeb()
 {
 	// TODO: Add your control notification handler code here
 	ShellExecute(*this, "open", "http://www.shotsports.com", NULL, NULL, SW_SHOWNORMAL);	
+}
+
+
+void CAboutDlg1::OnBnClickedOk()
+{
+    // TODO: Add your control notification handler code here
+    CDialog::OnOK();
 }

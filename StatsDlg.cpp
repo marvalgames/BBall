@@ -64,6 +64,8 @@ void CStatsDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_STATS, m_list_stats);
 	DDX_Control(pDX, IDH_BUTTON_VISITOR, m_buttonVisitor);
 	DDX_Control(pDX, IDH_BUTTON_HOME, m_buttonHome);
+	DDX_Control(pDX, IDOK, m_buttonOk);
+	DDX_Control(pDX, IDC_BUTTON_PRNT, m_buttonPrint);
 	DDX_Text(pDX, IDC_EDIT_ATT, m_edit_att);
 	DDV_MinMaxUInt(pDX, m_edit_att, 0, 65535);
 	DDX_Text(pDX, IDC_EDIT_CAP, m_edit_cap);
@@ -87,6 +89,8 @@ BEGIN_MESSAGE_MAP(CStatsDlg, CDialog)
 	ON_BN_CLICKED(IDC_RADIO_RUNNING, OnRadioRunning)
 	ON_BN_CLICKED(IDC_RADIO_NORMAL, OnRadioNormal)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_STATS, &CStatsDlg::OnLvnItemchangedListStats)
+	ON_BN_CLICKED(IDOK, &CStatsDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -99,6 +103,7 @@ BOOL CStatsDlg::OnInitDialog()
 	
 	// TODO: Add extra initialization here
  myBrush.CreateSolidBrush(DLGCOLOR); 
+
 
 
 	if(m_saved_box != true)
@@ -558,6 +563,15 @@ void CStatsDlg::OnDestroy()
 void CStatsDlg::InitControls()
 {
 
+	m_buttonOk.m_useImage = false;
+	m_buttonOk.SetFaceColor(BUTTONCOLOR);
+	m_buttonOk.SetTextColor(BUTTONTEXTCOLOR);
+
+	m_buttonPrint.m_useImage = false;
+	m_buttonPrint.SetFaceColor(BUTTONCOLOR);
+	m_buttonPrint.SetTextColor(BUTTONTEXTCOLOR);
+
+
 
 	m_column = 0;
 	CheckDlgButton(IDC_RADIO_NORMAL, 1);	
@@ -620,25 +634,27 @@ void CStatsDlg::InitControls()
     m_list_stats.InsertColumn(16,"pts");    
     m_list_stats.InsertColumn(17,"true");    
 
+
+	double scale = 1.5;
   
-    m_list_stats.SetColumnWidth( 0, 30);
-    m_list_stats.SetColumnWidth( 1, 120);
-    m_list_stats.SetColumnWidth( 2, 28);
-    m_list_stats.SetColumnWidth( 3, 30);
-    m_list_stats.SetColumnWidth( 4, 30);
-    m_list_stats.SetColumnWidth( 5, 30);
-    m_list_stats.SetColumnWidth( 6, 28);
-    m_list_stats.SetColumnWidth( 7, 28);
-    m_list_stats.SetColumnWidth( 8, 28);
-    m_list_stats.SetColumnWidth( 9, 28);
-    m_list_stats.SetColumnWidth( 10, 28);
-    m_list_stats.SetColumnWidth( 11, 28);
-    m_list_stats.SetColumnWidth( 12, 28);
-    m_list_stats.SetColumnWidth( 13, 28);
-    m_list_stats.SetColumnWidth( 14, 28);
-    m_list_stats.SetColumnWidth( 15, 28);
-    m_list_stats.SetColumnWidth( 16, 33);
-    m_list_stats.SetColumnWidth( 17, 40);
+    m_list_stats.SetColumnWidth( 0, 30 * scale );
+    m_list_stats.SetColumnWidth( 1, 120 * scale );
+    m_list_stats.SetColumnWidth( 2, 28 * scale );
+    m_list_stats.SetColumnWidth( 3, 30 * scale );
+    m_list_stats.SetColumnWidth( 4, 30 * scale );
+    m_list_stats.SetColumnWidth( 5, 30 * scale );
+    m_list_stats.SetColumnWidth( 6, 28 * scale );
+    m_list_stats.SetColumnWidth( 7, 28 * scale );
+    m_list_stats.SetColumnWidth( 8, 28 * scale );
+    m_list_stats.SetColumnWidth( 9, 28 * scale );
+    m_list_stats.SetColumnWidth( 10, 28 * scale );
+    m_list_stats.SetColumnWidth( 11, 28 * scale );
+    m_list_stats.SetColumnWidth( 12, 28 * scale );
+    m_list_stats.SetColumnWidth( 13, 28 * scale );
+    m_list_stats.SetColumnWidth( 14, 28 * scale );
+    m_list_stats.SetColumnWidth( 15, 28 * scale );
+    m_list_stats.SetColumnWidth( 16, 33 * scale );
+    m_list_stats.SetColumnWidth( 17, 40 * scale );
 
 
 	m_list_scores.InsertColumn(0,"team");    
@@ -649,13 +665,13 @@ void CStatsDlg::InitControls()
     m_list_scores.InsertColumn(5,"");
     m_list_scores.InsertColumn(6,"T");    
     	
-	m_list_scores.SetColumnWidth( 0, 60);
-    m_list_scores.SetColumnWidth( 1, 30);
-    m_list_scores.SetColumnWidth( 2, 30);
-    m_list_scores.SetColumnWidth( 3, 30);
-    m_list_scores.SetColumnWidth( 4, 30);
-    m_list_scores.SetColumnWidth( 5, 30);
-    m_list_scores.SetColumnWidth( 6, 30);
+	m_list_scores.SetColumnWidth( 0, 60 * scale );
+    m_list_scores.SetColumnWidth( 1, 30 * scale );
+    m_list_scores.SetColumnWidth( 2, 30 * scale );
+    m_list_scores.SetColumnWidth( 3, 30 * scale );
+    m_list_scores.SetColumnWidth( 4, 30 * scale );
+    m_list_scores.SetColumnWidth( 5, 30 * scale );
+    m_list_scores.SetColumnWidth( 6, 30 * scale );
 
 
 	m_list_pct.InsertColumn(0,"team");    
@@ -663,10 +679,10 @@ void CStatsDlg::InitControls()
     m_list_pct.InsertColumn(2,"tfg%");    
     m_list_pct.InsertColumn(3,"ft%");    
     	
-	m_list_pct.SetColumnWidth( 0, 72);
-    m_list_pct.SetColumnWidth( 1, 48);
-    m_list_pct.SetColumnWidth( 2, 48);
-    m_list_pct.SetColumnWidth( 3, 48);
+	m_list_pct.SetColumnWidth( 0, 72 * scale );
+    m_list_pct.SetColumnWidth( 1, 48 * scale );
+    m_list_pct.SetColumnWidth( 2, 48 * scale );
+    m_list_pct.SetColumnWidth( 3, 48 * scale );
 
 
 	m_running_total[0][0] = 0;
@@ -1221,4 +1237,19 @@ void CStatsDlg::ConvertStats()
 void CStatsDlg::SetPtr(CAverage &pAverageClass)
 {
 	avg = pAverageClass;
+}
+
+
+void CStatsDlg::OnLvnItemchangedListStats(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+void CStatsDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

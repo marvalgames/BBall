@@ -26,10 +26,9 @@
 
 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif // Added by ClassView
+#include "MyListCtrl.h"
+//#define XListCtrl_h
+//#endif // Added by ClassView
 
 #include "MyButton.h"
 
@@ -108,7 +107,7 @@ int hiFga;
 	MyButton	m_buttonScout;
 	CListBox	m_listDisplayDraft;
 	CListBox	m_listRosters;
-	CListCtrl	m_listPlayers;
+	CMyListCtrl	m_listPlayers;
 	CListBox	m_listControl;
 	CListBox	m_listRookies;
 	MyButton	m_buttonDraft;
@@ -215,6 +214,8 @@ private:
 	void ListControl();
 	void ListTeams();
 	void ListRookies();
+public:
+	afx_msg void OnLvnItemchangedListPlayers(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

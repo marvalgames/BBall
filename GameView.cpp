@@ -174,6 +174,7 @@ BEGIN_MESSAGE_MAP(CGameView, CFormView)
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(HDN_ITEMCLICK, 0, &CGameView::OnItemclickListControlStats)
 	//ON_BN_CLICKED(IDC_STATIC_G1, &CGameView::OnBnClickedStaticG1)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CONTROL_STATS, &CGameView::OnLvnItemchangedListControlStats)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -268,43 +269,6 @@ void CGameView::OnInitialUpdate()
 
 	// Update form's data from document
 	SetFromDoc();
-
-
-
-	// Resize parent to fit dialog template exactly    
-	// while not resizing beyond size of screen
-	VERIFY(pFrame = GetParentFrame());
-	//pFrame->GetClientRect(rectFrame);
-	GetClientRect(rectView);
-	//    if ( rectFrame.Width() < rectView.Width()
-	  //       || rectFrame.Height() < rectView.Height() )
-		//{        
-			// Resize so can be refit to any template that fits the screen
-
-	int w = GetSystemMetrics(SM_CXSCREEN);
-	int h = GetSystemMetrics(SM_CYSCREEN);
-	//        pFrame->MoveWindow( 0, 0, w, h, FALSE ); 
-
-
-	if (w > WIDTH) w = WIDTH;
-	if (h > HEIGHT) h = HEIGHT;
-	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_SHOWWINDOW);
-	pFrame->RecalcLayout();
-	GetParentFrame()->RecalcLayout();
-	//ResizeParentToFit();
-
-
-	CRect rectList;
-	CWnd* pWnd = GetDlgItem(IDC_LIST_CONTROL_STATS);
-	pWnd->GetWindowRect(&rectList);
-	ScreenToClient(&rectList); //optional step - see below
-	int listW = rectList.Width();
-	int listH = rectList.Height();
-	TRACE("int = % d\n", w);
-	TRACE("int = % d\n", h);
-	TRACE("int = % d\n", listW);
-	TRACE("int = % d\n", listH);
-
 
 	m_list_stats.SetHeaderColors(WHITE, DARKMIDNIGHTBLUE);
 
@@ -3288,3 +3252,11 @@ void CGameView::OnItemclickListControlStats(NMHDR* pNMHDR, LRESULT* pResult)
 //{
 	// TODO: Add your control notification handler code here
 //}
+
+
+void CGameView::OnLvnItemchangedListControlStats(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}

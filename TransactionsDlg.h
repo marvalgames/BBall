@@ -6,10 +6,7 @@
 #define Transactions_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 #ifndef Average_h
 #include "Average.h"
 #define Average_h
@@ -63,7 +60,7 @@ public:
 	//{{AFX_DATA(CTransactionsDlg)
 	enum { IDD = IDD_DIALOG_TRANSACTIONS };
 	CMyComboBox	m_list_teams;
-	CListCtrl	m_listTrades;
+	CMyListCtrl	m_listTrades;
 	//}}AFX_DATA
 
 

@@ -877,6 +877,9 @@
     <ClInclude Include="XHeaderCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Externs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\BmpBack.bmp">

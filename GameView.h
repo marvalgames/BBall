@@ -258,6 +258,7 @@ public:
 	//CButton m_g1;
 		//CTransparentGroup	m_g[7];
 		//afx_msg void OnBnClickedStaticG1();
+	afx_msg void OnLvnItemchangedListControlStats(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 /////////////////////////////////////////////////////////////////////////////

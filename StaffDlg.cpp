@@ -71,6 +71,7 @@ BEGIN_MESSAGE_MAP(CStaffDlg, CDialog)
 	ON_WM_DESTROY()
 	ON_CBN_SELCHANGE(IDC_COMBO_STAFF_TEAMS, OnSelchangeComboStaffTeams)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STAFF, &CStaffDlg::OnLvnItemchangedListCtrlStaff)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1632,23 +1633,25 @@ void CStaffDlg::StaffColumns()
 	m_listCtrl.DeleteColumn(20);
 	m_listCtrl.DeleteColumn(21);
 	m_listCtrl.DeleteColumn(16);
+
+	double scale = 1.5;
   
-    m_listCtrl.SetColumnWidth( 0, 96);
-    m_listCtrl.SetColumnWidth( 1, 64);
-    m_listCtrl.SetColumnWidth( 2, 30);
-    m_listCtrl.SetColumnWidth( 3, 24);
-    m_listCtrl.SetColumnWidth( 4, 24);
-    m_listCtrl.SetColumnWidth( 5, 24);
-    m_listCtrl.SetColumnWidth( 6, 24);
-    m_listCtrl.SetColumnWidth( 7, 24);
-    m_listCtrl.SetColumnWidth( 8, 24);
-    m_listCtrl.SetColumnWidth( 9, 27);
-    m_listCtrl.SetColumnWidth( 10, 27);
-    m_listCtrl.SetColumnWidth( 11, 37);
-    m_listCtrl.SetColumnWidth( 12, 37);
-    m_listCtrl.SetColumnWidth( 13, 27);
-    m_listCtrl.SetColumnWidth( 14, 27);
-    m_listCtrl.SetColumnWidth( 15, 66);
+    m_listCtrl.SetColumnWidth( 0, 96 * scale );
+    m_listCtrl.SetColumnWidth( 1, 64 * scale );
+    m_listCtrl.SetColumnWidth( 2, 30 * scale );
+    m_listCtrl.SetColumnWidth( 3, 24 * scale );
+    m_listCtrl.SetColumnWidth( 4, 24 * scale );
+    m_listCtrl.SetColumnWidth( 5, 24 * scale );
+    m_listCtrl.SetColumnWidth( 6, 24 * scale );
+    m_listCtrl.SetColumnWidth( 7, 24 * scale );
+    m_listCtrl.SetColumnWidth( 8, 24 * scale );
+    m_listCtrl.SetColumnWidth( 9, 27 * scale );
+    m_listCtrl.SetColumnWidth( 10, 27 * scale );
+    m_listCtrl.SetColumnWidth( 11, 37 * scale );
+    m_listCtrl.SetColumnWidth( 12, 37 * scale );
+    m_listCtrl.SetColumnWidth( 13, 27 * scale );
+    m_listCtrl.SetColumnWidth( 14, 27 * scale );
+    m_listCtrl.SetColumnWidth( 15, 66 * scale );
 //    m_listCtrl.SetColumnWidth( 16, 66);
 	}
 	else
@@ -1717,26 +1720,27 @@ void CStaffDlg::CoachColumns()
     m_listCtrl.InsertColumn(19,"co");    
 	m_listCtrl.DeleteColumn(20);
   
-    m_listCtrl.SetColumnWidth( 0, 96);
-    m_listCtrl.SetColumnWidth( 1, 64);
-    m_listCtrl.SetColumnWidth( 2, 30);
-    m_listCtrl.SetColumnWidth( 3, 24);
-    m_listCtrl.SetColumnWidth( 4, 24);
-    m_listCtrl.SetColumnWidth( 5, 24);
-    m_listCtrl.SetColumnWidth( 6, 24);
-    m_listCtrl.SetColumnWidth( 7, 24);
-    m_listCtrl.SetColumnWidth( 8, 24);
-    m_listCtrl.SetColumnWidth( 9, 27);
-    m_listCtrl.SetColumnWidth( 10, 27);
-    m_listCtrl.SetColumnWidth( 11, 24);
-    m_listCtrl.SetColumnWidth( 12, 24);
-    m_listCtrl.SetColumnWidth( 13, 24);
-    m_listCtrl.SetColumnWidth( 14, 24);
-    m_listCtrl.SetColumnWidth( 15, 27);
-    m_listCtrl.SetColumnWidth( 16, 27);
-    m_listCtrl.SetColumnWidth( 17, 27);
-    m_listCtrl.SetColumnWidth( 18, 27);
-    m_listCtrl.SetColumnWidth( 19, 27);
+	double scale = 1.5;
+    m_listCtrl.SetColumnWidth( 0, 96 * scale );
+    m_listCtrl.SetColumnWidth( 1, 64 * scale );
+    m_listCtrl.SetColumnWidth( 2, 30 * scale );
+    m_listCtrl.SetColumnWidth( 3, 24 * scale );
+    m_listCtrl.SetColumnWidth( 4, 24 * scale );
+    m_listCtrl.SetColumnWidth( 5, 24 * scale );
+    m_listCtrl.SetColumnWidth( 6, 24 * scale );
+    m_listCtrl.SetColumnWidth( 7, 24 * scale );
+    m_listCtrl.SetColumnWidth( 8, 24 * scale );
+    m_listCtrl.SetColumnWidth( 9, 27 * scale );
+    m_listCtrl.SetColumnWidth( 10, 27 * scale );
+    m_listCtrl.SetColumnWidth( 11, 24 * scale );
+    m_listCtrl.SetColumnWidth( 12, 24 * scale );
+    m_listCtrl.SetColumnWidth( 13, 24 * scale );
+    m_listCtrl.SetColumnWidth( 14, 24 * scale );
+    m_listCtrl.SetColumnWidth( 15, 27 * scale );
+    m_listCtrl.SetColumnWidth( 16, 27 * scale );
+    m_listCtrl.SetColumnWidth( 17, 27 * scale );
+    m_listCtrl.SetColumnWidth( 18, 27 * scale );
+    m_listCtrl.SetColumnWidth( 19, 27 * scale );
 	}
 
 }
@@ -1807,4 +1811,12 @@ void CStaffDlg::PassMembers()
 
 	}
 
+}
+
+
+void CStaffDlg::OnLvnItemchangedListCtrlStaff(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

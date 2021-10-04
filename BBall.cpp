@@ -197,6 +197,8 @@ BOOL CBBallApp::InitInstance()
 
 
        m_pViews[nView]->SetWindowPos(NULL ,0,0,0,0,NULL);
+       //::SetWindowPos(pActiveView->m_hWnd, HWND_TOPMOST, 0, 0, 1366, 768, SWP_NOZORDER);
+
 	
 
     }
@@ -339,6 +341,10 @@ CView* CBBallApp::SwitchView(UINT nIndex)
           ::GetWindowLong(pNewView->m_hWnd, GWL_ID));
     ::SetWindowLong(pNewView->m_hWnd, GWL_ID, temp);
 
+
+    //::SetWindowPos(pActiveView->m_hWnd, HWND_TOPMOST, 0, 0, 1366, 768, SWP_NOZORDER);
+
+
     // Display and update the new current view - hide the old one    
     pActiveView->ShowWindow(SW_HIDE);
     pNewView->ShowWindow(SW_SHOW);
@@ -419,6 +425,8 @@ int CBBallApp::ExitInstance()
 //	Gdiplus::GdiplusShutdown(m_gdiplusToken);	
 	return CWinApp::ExitInstance();
 }
+
+
 
 
 HBRUSH CAboutDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)

@@ -523,27 +523,27 @@ void CScheduleView::OnInitialUpdate()
     // Update form's data from document
     SetFromDoc();
 
-    // Resize parent to fit dialog template exactly    
-    // while not resizing beyond size of screen
-    VERIFY( pFrame = GetParentFrame() );
-    //pFrame->GetClientRect( rectFrame );
-    GetClientRect( rectView );
-  //  if ( rectFrame.Width() < rectView.Width()
-   //      || rectFrame.Height() < rectView.Height() )
-   // {        
-        // Resize so can be refit to any template that fits the screen
-//        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-//                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-
-	int w = GetSystemMetrics(SM_CXSCREEN);
-		int h = GetSystemMetrics(SM_CYSCREEN);
-
-		if (w > WIDTH) w = WIDTH;
-		if (h > HEIGHT) h = HEIGHT;
-		pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-		pFrame->RecalcLayout();
-		GetParentFrame()->RecalcLayout();
-		//ResizeParentToFit();
+//    // Resize parent to fit dialog template exactly    
+//    // while not resizing beyond size of screen
+//    VERIFY( pFrame = GetParentFrame() );
+//    //pFrame->GetClientRect( rectFrame );
+//    GetClientRect( rectView );
+//  //  if ( rectFrame.Width() < rectView.Width()
+//   //      || rectFrame.Height() < rectView.Height() )
+//   // {        
+//        // Resize so can be refit to any template that fits the screen
+////        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
+////                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
+//
+//	int w = GetSystemMetrics(SM_CXSCREEN);
+//		int h = GetSystemMetrics(SM_CYSCREEN);
+//
+//		if (w > WIDTH) w = WIDTH;
+//		if (h > HEIGHT) h = HEIGHT;
+//		//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
+//		//pFrame->RecalcLayout();
+//		//GetParentFrame()->RecalcLayout();
+//		//ResizeParentToFit();
 
     
 

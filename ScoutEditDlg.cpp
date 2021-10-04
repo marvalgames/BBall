@@ -132,7 +132,7 @@ BOOL CScoutEditDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 
 
-	myBrush.CreateSolidBrush(DLGCOLOR); 
+	myBrush.CreateSolidBrush(DLGCOLOR);
 	m_okBtn.m_useImage = FALSE;
 	m_okBtn.SetTextColor(BUTTONTEXTCOLOR);
 	m_okBtn.SetFaceColor(BUTTONCOLOR);

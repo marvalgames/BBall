@@ -28,6 +28,7 @@
 #endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 #ifndef Average_h
 #include "Average.h"
@@ -89,7 +90,7 @@ public:
 	CListBox	m_listOffers;
 	MyButton	m_buttonOffer;
 	CListBox	m_listControl;
-	CListCtrl	m_listCtrl;
+	CMyListCtrl	m_listCtrl;
 	//}}AFX_DATA
 
 
@@ -162,6 +163,8 @@ private:
 	void SetGmListCtrl();
 	void SetCoachListCtrl();
 	void SetScoutListCtrl();
+public:
+	afx_msg void OnLvnItemchangedListCtrlStaff(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

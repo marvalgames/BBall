@@ -174,6 +174,7 @@ HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 
      case CTLCOLOR_DLG:
           return myBrush;
+		  //return hbr;
      //This shouldn't occurr since we took all the cases, but
      //JUST IN CASE, return the new brush
      default:

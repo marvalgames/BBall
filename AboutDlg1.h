@@ -10,6 +10,8 @@
 /////////////////////////////////////////////////////////////////////////////
 // CAboutDlg1 dialog
 
+#include "MyButton.h"
+
 class CAboutDlg1 : public CDialog
 {
 // Construction
@@ -40,6 +42,12 @@ protected:
 	afx_msg void OnButtonWeb();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedOk();
+private:
+	MyButton m_btnWeb;
+public:
+	MyButton m_btnOk;
 };
 
 //{{AFX_INSERT_LOCATION}}

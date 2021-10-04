@@ -100,6 +100,8 @@ BEGIN_MESSAGE_MAP(CPlayerCardDlg, CDialog)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL, &CPlayerCardDlg::OnLvnItemchangedListCtrl)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STATS, &CPlayerCardDlg::OnLvnItemchangedListCtrlStats)
+	ON_EN_CHANGE(IDC_EDIT_OWNER, &CPlayerCardDlg::OnEnChangeEditOwner)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -446,28 +448,28 @@ void CPlayerCardDlg::InitListCtrl()
     m_listCtrl.InsertColumn(20,"ppg");
   
 	  
-	
-    m_listCtrl.SetColumnWidth( 0, 34);
-    m_listCtrl.SetColumnWidth( 1, 45);
-    m_listCtrl.SetColumnWidth( 2, 31);
-    m_listCtrl.SetColumnWidth( 3, 31);
-    m_listCtrl.SetColumnWidth( 4, 31);
-    m_listCtrl.SetColumnWidth( 5, 31);
-    m_listCtrl.SetColumnWidth( 6, 31);
-    m_listCtrl.SetColumnWidth( 7, 31);
-    m_listCtrl.SetColumnWidth( 8, 31);
-    m_listCtrl.SetColumnWidth( 9, 31);
-    m_listCtrl.SetColumnWidth( 10, 31);
-    m_listCtrl.SetColumnWidth( 11, 31);
-    m_listCtrl.SetColumnWidth( 12, 33);
-    m_listCtrl.SetColumnWidth( 13, 28);
-    m_listCtrl.SetColumnWidth( 14, 31);
-    m_listCtrl.SetColumnWidth( 15, 31);
-    m_listCtrl.SetColumnWidth( 16, 25);
-    m_listCtrl.SetColumnWidth( 17, 27);
-    m_listCtrl.SetColumnWidth( 18, 26);
-    m_listCtrl.SetColumnWidth( 19, 25);
-    m_listCtrl.SetColumnWidth( 20, 31);
+	double scale = 1.5;
+    m_listCtrl.SetColumnWidth( 0, 34 * scale );
+    m_listCtrl.SetColumnWidth( 1, 45 * scale );
+    m_listCtrl.SetColumnWidth( 2, 31 * scale );
+    m_listCtrl.SetColumnWidth( 3, 31 * scale );
+    m_listCtrl.SetColumnWidth( 4, 31 * scale );
+    m_listCtrl.SetColumnWidth( 5, 31 * scale );
+    m_listCtrl.SetColumnWidth( 6, 31 * scale );
+    m_listCtrl.SetColumnWidth( 7, 31 * scale );
+    m_listCtrl.SetColumnWidth( 8, 31 * scale );
+    m_listCtrl.SetColumnWidth( 9, 31 * scale );
+    m_listCtrl.SetColumnWidth( 10, 31 * scale );
+    m_listCtrl.SetColumnWidth( 11, 31 * scale );
+    m_listCtrl.SetColumnWidth( 12, 33 * scale );
+    m_listCtrl.SetColumnWidth( 13, 28 * scale );
+    m_listCtrl.SetColumnWidth( 14, 31 * scale );
+    m_listCtrl.SetColumnWidth( 15, 31 * scale );
+    m_listCtrl.SetColumnWidth( 16, 25 * scale );
+    m_listCtrl.SetColumnWidth( 17, 27 * scale );
+    m_listCtrl.SetColumnWidth( 18, 26 * scale );
+    m_listCtrl.SetColumnWidth( 19, 25 * scale );
+    m_listCtrl.SetColumnWidth( 20, 31 * scale );
     m_listCtrl.SetTextColor(RGB(0,0,0));
     m_listCtrl.SetTextBkColor(TEXT_BK_COLOR);
     m_listCtrl.SetBkColor(BK_COLOR);
@@ -484,11 +486,11 @@ void CPlayerCardDlg::InitListCtrl()
 	m_list_highs.InsertColumn(3,"season");    
 	m_list_highs.InsertColumn(4,"playoff");    
 
-    m_list_highs.SetColumnWidth( 0, 50);
-    m_list_highs.SetColumnWidth( 1, 50);
-    m_list_highs.SetColumnWidth( 2, 50);
-    m_list_highs.SetColumnWidth( 3, 50);
-    m_list_highs.SetColumnWidth( 4, 50);
+    m_list_highs.SetColumnWidth( 0, 50 * scale );
+    m_list_highs.SetColumnWidth( 1, 50 * scale );
+    m_list_highs.SetColumnWidth( 2, 50 * scale );
+    m_list_highs.SetColumnWidth( 3, 50 * scale );
+    m_list_highs.SetColumnWidth( 4, 50 * scale );
     m_list_highs.SetTextColor(RGB(0,0,0));
     m_list_highs.SetTextBkColor(TEXT_BK_COLOR);
     m_list_highs.SetBkColor(BK_COLOR);
@@ -523,28 +525,28 @@ void CPlayerCardDlg::InitListCtrl()
   
   
 	
-    m_listctrlstats.SetColumnWidth( 0, 1);
-//    m_listctrlstats.SetColumnWidth( 1, 40);
-    m_listctrlstats.SetColumnWidth( 1, 22);
-    m_listctrlstats.SetColumnWidth( 2, 22);
-    m_listctrlstats.SetColumnWidth( 3, 30);
-    m_listctrlstats.SetColumnWidth( 4, 30);
-    m_listctrlstats.SetColumnWidth( 5, 30);
-    m_listctrlstats.SetColumnWidth( 6, 30);
-    m_listctrlstats.SetColumnWidth( 7, 30);
-    m_listctrlstats.SetColumnWidth( 8, 30);
-    m_listctrlstats.SetColumnWidth( 9, 30);
-    m_listctrlstats.SetColumnWidth(10 , 30);
-    m_listctrlstats.SetColumnWidth( 11, 30);
-    m_listctrlstats.SetColumnWidth( 12, 32);
-    m_listctrlstats.SetColumnWidth( 13, 27);
-    m_listctrlstats.SetColumnWidth( 14, 30);
-    m_listctrlstats.SetColumnWidth( 15, 30);
-    m_listctrlstats.SetColumnWidth( 16, 25);
-    m_listctrlstats.SetColumnWidth( 17, 25);
-    m_listctrlstats.SetColumnWidth( 18, 26);
-    m_listctrlstats.SetColumnWidth( 19, 25);
-    m_listctrlstats.SetColumnWidth( 20, 31);
+    m_listctrlstats.SetColumnWidth( 0, 1 * scale );
+//    m_listctrlstats.SetColumnWidth( 1, 40 * scale );
+    m_listctrlstats.SetColumnWidth( 1, 22 * scale );
+    m_listctrlstats.SetColumnWidth( 2, 22 * scale );
+    m_listctrlstats.SetColumnWidth( 3, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 4, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 5, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 6, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 7, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 8, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 9, 30 * scale );
+    m_listctrlstats.SetColumnWidth(10 , 30 * scale );
+    m_listctrlstats.SetColumnWidth( 11, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 12, 32 * scale );
+    m_listctrlstats.SetColumnWidth( 13, 27 * scale );
+    m_listctrlstats.SetColumnWidth( 14, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 15, 30 * scale );
+    m_listctrlstats.SetColumnWidth( 16, 25 * scale );
+    m_listctrlstats.SetColumnWidth( 17, 25 * scale );
+    m_listctrlstats.SetColumnWidth( 18, 26 * scale );
+    m_listctrlstats.SetColumnWidth( 19, 25 * scale );
+    m_listctrlstats.SetColumnWidth( 20, 31 * scale );
     m_listctrlstats.SetTextColor(RGB(0,0,0));
     m_listctrlstats.SetTextBkColor(TEXT_BK_COLOR);
     m_listctrlstats.SetBkColor(BK_COLOR);
@@ -575,21 +577,21 @@ void CPlayerCardDlg::InitListCtrl()
     m_listCtrlStats.InsertColumn(14,"T");
   
 	
-    m_listCtrlStats.SetColumnWidth( 0, 32);
-    m_listCtrlStats.SetColumnWidth( 1, 128);
-    m_listCtrlStats.SetColumnWidth( 2, 33);
-    m_listCtrlStats.SetColumnWidth( 3, 33);
-    m_listCtrlStats.SetColumnWidth( 4, 33);
-    m_listCtrlStats.SetColumnWidth( 5, 55);
-    m_listCtrlStats.SetColumnWidth( 6, 20);
-    m_listCtrlStats.SetColumnWidth( 7, 20);
-    m_listCtrlStats.SetColumnWidth( 8, 20);
-    m_listCtrlStats.SetColumnWidth( 9, 20);
-    m_listCtrlStats.SetColumnWidth(10, 55);
-    m_listCtrlStats.SetColumnWidth(11, 20);
-    m_listCtrlStats.SetColumnWidth( 12,20);
-    m_listCtrlStats.SetColumnWidth( 13, 20);
-    m_listCtrlStats.SetColumnWidth( 14, 20);
+    m_listCtrlStats.SetColumnWidth( 0, 32 * scale );
+    m_listCtrlStats.SetColumnWidth( 1, 128 * scale );
+    m_listCtrlStats.SetColumnWidth( 2, 33 * scale );
+    m_listCtrlStats.SetColumnWidth( 3, 33 * scale );
+    m_listCtrlStats.SetColumnWidth( 4, 33 * scale );
+    m_listCtrlStats.SetColumnWidth( 5, 55 * scale );
+    m_listCtrlStats.SetColumnWidth( 6, 20 * scale );
+    m_listCtrlStats.SetColumnWidth( 7, 20 * scale );
+    m_listCtrlStats.SetColumnWidth( 8, 20 * scale );
+    m_listCtrlStats.SetColumnWidth( 9, 20 * scale );
+    m_listCtrlStats.SetColumnWidth(10, 55 * scale );
+    m_listCtrlStats.SetColumnWidth(11, 20 * scale );
+    m_listCtrlStats.SetColumnWidth( 12,20 * scale );
+    m_listCtrlStats.SetColumnWidth( 13, 20 * scale );
+    m_listCtrlStats.SetColumnWidth( 14, 20 * scale );
     m_listCtrlStats.SetBkColor(BK_COLOR);
     m_listCtrlStats.SetTextBkColor(TEXT_BK_COLOR);
     m_listCtrlStats.SetTextColor(RGB(0,0,0));
@@ -608,25 +610,25 @@ void CPlayerCardDlg::InitListCtrl()
     m_listctrlskill.InsertColumn(5,"blk");
   
 	
-    m_listCtrlShot.SetColumnWidth( 0, 40);
-    m_listCtrlShot.SetColumnWidth( 1, 40);
-    m_listCtrlShot.SetColumnWidth( 2, 40);
-    m_listCtrlShot.SetColumnWidth( 3, 39);
-    m_listCtrlShot.SetColumnWidth( 4, 39);
-    m_listCtrlShot.SetColumnWidth( 5, 39);
-    m_listctrlskill.SetColumnWidth( 0, 40);
-    m_listctrlskill.SetColumnWidth( 1, 40);
-    m_listctrlskill.SetColumnWidth( 2, 40);
-    m_listctrlskill.SetColumnWidth( 3, 39);
-    m_listctrlskill.SetColumnWidth( 4, 39);
-    m_listctrlskill.SetColumnWidth( 5, 39);
+    m_listCtrlShot.SetColumnWidth( 0, 40 * scale );
+    m_listCtrlShot.SetColumnWidth( 1, 40 * scale );
+    m_listCtrlShot.SetColumnWidth( 2, 40 * scale );
+    m_listCtrlShot.SetColumnWidth( 3, 39 * scale );
+    m_listCtrlShot.SetColumnWidth( 4, 39 * scale );
+    m_listCtrlShot.SetColumnWidth( 5, 39 * scale );
+    m_listctrlskill.SetColumnWidth( 0, 40 * scale );
+    m_listctrlskill.SetColumnWidth( 1, 40 * scale );
+    m_listctrlskill.SetColumnWidth( 2, 40 * scale );
+    m_listctrlskill.SetColumnWidth( 3, 39 * scale );
+    m_listctrlskill.SetColumnWidth( 4, 39 * scale );
+    m_listctrlskill.SetColumnWidth( 5, 39 * scale );
 	
 	m_listFuture.InsertColumn(0,"Talent");    
     m_listFuture.InsertColumn(1,"Skill");
     m_listFuture.InsertColumn(2,"Intangibles");
-    m_listFuture.SetColumnWidth( 0, 69);
-    m_listFuture.SetColumnWidth( 1, 69);
-    m_listFuture.SetColumnWidth( 2, 69);
+    m_listFuture.SetColumnWidth( 0, 69 * scale );
+    m_listFuture.SetColumnWidth( 1, 69 * scale );
+    m_listFuture.SetColumnWidth( 2, 69 * scale );
 
     m_listctrlskill.SetBkColor(BK_COLOR);
     m_listctrlskill.SetTextBkColor(TEXT_BK_COLOR);
@@ -2383,4 +2385,23 @@ void CPlayerCardDlg::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
 	// TODO: Add your control notification handler code here
 	*pResult = 0;
+}
+
+
+void CPlayerCardDlg::OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+void CPlayerCardDlg::OnEnChangeEditOwner()
+{
+	// TODO:  If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CDialog::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+
+	// TODO:  Add your control notification handler code here
 }

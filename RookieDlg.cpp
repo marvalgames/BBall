@@ -103,6 +103,7 @@ BEGIN_MESSAGE_MAP(CRookieDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_HTML, OnButtonHtml)
 	ON_BN_CLICKED(IDC_BUTTON_NEXT, OnButtonNext)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_PLAYERS, &CRookieDlg::OnLvnItemchangedListPlayers)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -2092,4 +2093,12 @@ void CRookieDlg::OnButtonNext()
 	
 	}
 
+}
+
+
+void CRookieDlg::OnLvnItemchangedListPlayers(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

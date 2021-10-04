@@ -336,42 +336,42 @@ void CTeamView::OnInitialUpdate()
 //	m_button_history.SetShade(CShadeButtonST::SHS_HARDBUMP,8,10,20,BUTTONCOLOR);
 
 
-
-
-
-
-	// Resize parent to fit dialog template exactly    
-	// while not resizing beyond size of screen
-	VERIFY(pFrame = GetParentFrame());
-	pFrame->GetClientRect(rectFrame);
-	GetClientRect(rectView);
-	//    if ( rectFrame.Width() < rectView.Width()
-	  //       || rectFrame.Height() < rectView.Height() )
-		//{        
-			// Resize so can be refit to any template that fits the screen
-	//        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-	//                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-
-	int w = GetSystemMetrics(SM_CXSCREEN);
-	int h = GetSystemMetrics(SM_CYSCREEN);
-
-	if (w > WIDTH) w = WIDTH;
-	if (h > HEIGHT) h = HEIGHT;
-	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-	pFrame->RecalcLayout();
-	GetParentFrame()->RecalcLayout();
-	//ResizeParentToFit();
-
-	//if(w > 1023) w = 1023;
-	//if(h > 750) h = 750;
-//        pFrame->MoveWindow( 0, 0, w, h, FALSE ); 
-
-	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE);
-
-
-	//}
-	//pFrame->RecalcLayout();
-	////ResizeParentToFit(TRUE);    // Shrink to fit template 
+//
+//
+//
+//
+//	// Resize parent to fit dialog template exactly    
+//	// while not resizing beyond size of screen
+//	VERIFY(pFrame = GetParentFrame());
+//	pFrame->GetClientRect(rectFrame);
+//	GetClientRect(rectView);
+//	//    if ( rectFrame.Width() < rectView.Width()
+//	  //       || rectFrame.Height() < rectView.Height() )
+//		//{        
+//			// Resize so can be refit to any template that fits the screen
+//	//        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
+//	//                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
+//
+//	int w = GetSystemMetrics(SM_CXSCREEN);
+//	int h = GetSystemMetrics(SM_CYSCREEN);
+//
+//	if (w > WIDTH) w = WIDTH;
+//	if (h > HEIGHT) h = HEIGHT;
+//	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
+//	pFrame->RecalcLayout();
+//	GetParentFrame()->RecalcLayout();
+//	//ResizeParentToFit();
+//
+//	//if(w > 1023) w = 1023;
+//	//if(h > 750) h = 750;
+////        pFrame->MoveWindow( 0, 0, w, h, FALSE ); 
+//
+//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE);
+//
+//
+//	//}
+//	//pFrame->RecalcLayout();
+//	////ResizeParentToFit(TRUE);    // Shrink to fit template 
 
 
 
@@ -996,6 +996,9 @@ void CTeamView::FillButtons()
 		//		m_button_text[i].MakeUpper();
 		//		m_buttons[i].Repaint(TRUE);
 
+		//m_buttons[i].m_useImage = false;
+		//m_buttons[i].SetFaceColor(BUTTONCOLOR);
+		m_buttons[i].ChangeBitmap(IDB_BITMAPSCREEN);
 
 
 		m_buttons[i].SetWindowText(m_button_text[i]);
@@ -2255,9 +2258,9 @@ HBRUSH CTeamView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 
 
-	case CTLCOLOR_BTN:
-		pDC->SetBkMode(TRANSPARENT);
-		return HBRUSH(myBrush);
+	//case CTLCOLOR_BTN:
+		//pDC->SetBkMode(TRANSPARENT);
+		//return HBRUSH(myBrush);
 
 	case CTLCOLOR_LISTBOX:
 		pDC->SetBkColor(LISTBOXCOLOR);
