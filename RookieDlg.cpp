@@ -514,29 +514,31 @@ void CRookieDlg::InitListCtrl()
     m_listPlayers.InsertColumn(21,"p");
     m_listPlayers.InsertColumn(22,"t");
   
-  
+
+
+	double scale = 1.5f;
 	
-    m_listPlayers.SetColumnWidth( 0, 30);
-    m_listPlayers.SetColumnWidth( 1, 96);
-    m_listPlayers.SetColumnWidth( 2, 28);
-    m_listPlayers.SetColumnWidth( 3, 28);
-    m_listPlayers.SetColumnWidth( 4, 28);
-    m_listPlayers.SetColumnWidth( 5, 28);
-    m_listPlayers.SetColumnWidth( 6, 28);
-    m_listPlayers.SetColumnWidth( 7, 28);
-    m_listPlayers.SetColumnWidth( 8, 28);
-    m_listPlayers.SetColumnWidth( 9, 28);
-    m_listPlayers.SetColumnWidth( 10, 28);
-    m_listPlayers.SetColumnWidth( 11, 28);
-    m_listPlayers.SetColumnWidth( 12, 28);
-    m_listPlayers.SetColumnWidth( 13, 28);
-    m_listPlayers.SetColumnWidth( 14, 28);
-    m_listPlayers.SetColumnWidth( 15, 18);
-    m_listPlayers.SetColumnWidth( 16, 18);
-    m_listPlayers.SetColumnWidth( 17, 18);
-    m_listPlayers.SetColumnWidth( 18, 18);
-    m_listPlayers.SetColumnWidth( 19, 18);
-    m_listPlayers.SetColumnWidth( 20, 18);
+    m_listPlayers.SetColumnWidth( 0, 30 * scale );
+    m_listPlayers.SetColumnWidth( 1, 96 * scale );
+    m_listPlayers.SetColumnWidth( 2, 28 * scale );
+    m_listPlayers.SetColumnWidth( 3, 28 * scale );
+    m_listPlayers.SetColumnWidth( 4, 28 * scale );
+    m_listPlayers.SetColumnWidth( 5, 28 * scale );
+    m_listPlayers.SetColumnWidth( 6, 28 * scale );
+    m_listPlayers.SetColumnWidth( 7, 28 * scale );
+    m_listPlayers.SetColumnWidth( 8, 28 * scale );
+    m_listPlayers.SetColumnWidth( 9, 28 * scale );
+    m_listPlayers.SetColumnWidth( 10, 28 * scale );
+    m_listPlayers.SetColumnWidth( 11, 28 * scale );
+    m_listPlayers.SetColumnWidth( 12, 28 * scale );
+    m_listPlayers.SetColumnWidth( 13, 28 * scale );
+    m_listPlayers.SetColumnWidth( 14, 28 * scale );
+    m_listPlayers.SetColumnWidth( 15, 18 * scale );
+    m_listPlayers.SetColumnWidth( 16, 18 * scale );
+    m_listPlayers.SetColumnWidth( 17, 18 * scale );
+    m_listPlayers.SetColumnWidth( 18, 18 * scale );
+    m_listPlayers.SetColumnWidth( 19, 18 * scale );
+    m_listPlayers.SetColumnWidth( 20, 18 * scale );
     m_listPlayers.SetColumnWidth( 21, 18);
     m_listPlayers.SetColumnWidth( 22, 18);
     m_listPlayers.SetTextColor(RGB(0,0,0));
