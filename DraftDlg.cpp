@@ -98,6 +98,7 @@ BEGIN_MESSAGE_MAP(CDraftDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_SG, OnButtonSg)
 	ON_BN_CLICKED(IDC_BUTTON_RANDOM, OnButtonRandom)
 	//}}AFX_MSG_MAP
+	ON_LBN_SELCHANGE(IDC_LIST_ROSTER, &CDraftDlg::OnLbnSelchangeListRoster)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -116,7 +117,7 @@ BOOL CDraftDlg::OnInitDialog()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 	m_listRoster.SetFont(&m_font);
@@ -1510,4 +1511,10 @@ void CDraftDlg::ShowPlayerCard(int pos)
 	delete scout;
 
 
+}
+
+
+void CDraftDlg::OnLbnSelchangeListRoster()
+{
+	// TODO: Add your control notification handler code here
 }

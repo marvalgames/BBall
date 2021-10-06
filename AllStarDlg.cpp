@@ -38,11 +38,11 @@ CAllStarDlg::CAllStarDlg(CWnd* pParent /*=NULL*/)
 		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
 	asw = new CAllStarWeekend;
-	for(int i=0; i<=80; i++)
+	for (int i = 0; i <= 80; i++)
 	{
 		m_index[i] = 0;
 	}
-	for(int i=0; i<=30; i++)
+	for (int i = 0; i <= 30; i++)
 	{
 		m_scores[i] = 0;
 	}
@@ -120,15 +120,15 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CAllStarDlg message handlers
 
-BOOL CAllStarDlg::OnInitDialog() 
+BOOL CAllStarDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
-	
+
 	// TODO: Add extra initialization here
 
 	CString file_name = avg.m_settings.m_path + avg.m_settings.m_league_name + ".asw";
 	m_button_ok.EnableWindow(FALSE);
- myBrush.CreateSolidBrush(DLGCOLOR); 
+	myBrush.CreateSolidBrush(DLGCOLOR);
 
 
 	CFileStatus status;
@@ -138,25 +138,25 @@ BOOL CAllStarDlg::OnInitDialog()
 
 
 
-		m_button_d1.EnableWindow(TRUE);
-		m_button_d2.EnableWindow(FALSE);
-		m_button_t1.EnableWindow(TRUE);
-		m_button_t2.EnableWindow(FALSE);
-		m_button_t3.EnableWindow(FALSE);
+	m_button_d1.EnableWindow(TRUE);
+	m_button_d2.EnableWindow(FALSE);
+	m_button_t1.EnableWindow(TRUE);
+	m_button_t2.EnableWindow(FALSE);
+	m_button_t3.EnableWindow(FALSE);
 
 
 
 
 
-	if( CFile::GetStatus( user_file_name, status ) == TRUE) user_file = true;
-	
+	if (CFile::GetStatus(user_file_name, status) == TRUE) user_file = true;
 
 
-	if( CFile::GetStatus( file_name, status ) == TRUE) 
+
+	if (CFile::GetStatus(file_name, status) == TRUE)
 	{
 
-        GetDlgItem(IDC_COMBO_ASWSELECT)->ShowWindow(FALSE);		
-        GetDlgItem(IDC_BUTTON_ALLSTARSELECT)->ShowWindow(FALSE);		
+		GetDlgItem(IDC_COMBO_ASWSELECT)->ShowWindow(FALSE);
+		GetDlgItem(IDC_BUTTON_ALLSTARSELECT)->ShowWindow(FALSE);
 
 		m_asw_over = true;
 		m_button_d1.EnableWindow(FALSE);
@@ -166,21 +166,21 @@ BOOL CAllStarDlg::OnInitDialog()
 		m_button_t3.EnableWindow(FALSE);
 		m_button_ok.ShowWindow(FALSE);
 		m_button_cancel.SetWindowText("Exit");
-  		CStdioFile file(file_name, CFile::modeRead);
+		CStdioFile file(file_name, CFile::modeRead);
 		CString str;
 		int player = 0;
-		for(int i = 0; i<=80; i++)
+		for (int i = 0; i <= 80; i++)
 		{
-		
+
 
 			file.ReadString(str);
 			str.TrimRight();
 			CString na = str.Mid(0, 6);
 			m_index[i] = atoi(na);
 
-			for(int j=1; j<=1440; j++)
+			for (int j = 1; j <= 1440; j++)
 			{
-				if(avg.m_actual[j].m_id == m_index[i] && avg.m_actual[j].m_name != "") 
+				if (avg.m_actual[j].m_id == m_index[i] && avg.m_actual[j].m_name != "")
 					asw->m_actual[i] = avg.m_actual[j];
 			}
 
@@ -188,9 +188,9 @@ BOOL CAllStarDlg::OnInitDialog()
 
 
 		}
-		for(int i = 0; i<=30; i++)
+		for (int i = 0; i <= 30; i++)
 		{
-		
+
 
 			file.ReadString(str);
 			str.TrimRight();
@@ -203,84 +203,88 @@ BOOL CAllStarDlg::OnInitDialog()
 	else
 	{
 
-	int co = 0;
-	for(int i=1; i<=1440; i++)
-	{
-		m_id_list[i-1] = 0;
-		if(avg.m_actual[i].m_name != "") 
+		int co = 0;
+		for (int i = 1; i <= 1440; i++)
 		{
-			m_combo_aswselect.AddString(avg.m_actual[i].m_name);
-			m_id_list[co] = i;
-			co = co + 1;
+			m_id_list[i - 1] = 0;
+			if (avg.m_actual[i].m_name != "")
+			{
+				m_combo_aswselect.AddString(avg.m_actual[i].m_name);
+				m_id_list[co] = i;
+				co = co + 1;
+			}
+
+
+		}
+
+		m_combo_aswselect.SetCurSel(0);
+
+
+		asw->avg = avg;
+		if (user_file == false)
+		{
+			asw->SelectThreePointContestants();
+			asw->SelectDunkContestants();
+			asw->SelectAllStarTeams();
+
+
+			for (int i = 1; i <= 12; i++)
+			{
+				m_index[i] = asw->m_actual[i].m_id;
+			}
+			for (int i = 1; i <= 12; i++)
+			{
+				m_index[15 + i] = asw->m_actual[30 + i].m_id;
+				//if (m_index[15 + i] == 0)
+				//{
+				//	m_index[15 + i] = 14 + i;//when no games played WEST can't be zero
+				//}
+			}
+
+
+			asw->SelectRookieTeams();
+
+			for (int i = 1; i <= 10; i++)
+			{
+				m_index[30 + i] = asw->m_actual[i].m_id;
+			}
+			for (int i = 1; i <= 10; i++)
+			{
+				m_index[45 + i] = asw->m_actual[30 + i].m_id;
+			}
+
+			for (int i = 1; i <= 8; i++)
+			{
+				m_index[60 + i] = asw->m_actual[60 + i].m_id;
+			}
+
+
+
+			for (int i = 1; i <= 8; i++)
+			{
+				m_index[70 + i] = asw->m_actual[70 + i].m_id;
+			}
+
+		}
+		else if (user_file == true)
+		{
+
+			asw->ReadUserSelections(m_index, user_file_name);
 		}
 
 
 	}
 
-	m_combo_aswselect.SetCurSel(0);
-
-
-	asw->avg = avg;
-	if(user_file == false)
-	{
-	asw->SelectThreePointContestants();
-	asw->SelectDunkContestants();
-	asw->SelectAllStarTeams();
-
-
-	for(int i=1; i<=12; i++)
-	{
-		m_index[i] = asw->m_actual[i].m_id;
-	}
-	for(int i=1; i<=12; i++)
-	{
-		m_index[15+i] = asw->m_actual[30+i].m_id;
-	}
-
-
-	asw->SelectRookieTeams();
-
-	for(int i=1; i<=10; i++)
-	{
-		m_index[30+i] = asw->m_actual[i].m_id;
-	}
-	for(int i=1; i<=10; i++)
-	{
-		m_index[45+i] = asw->m_actual[30+i].m_id;
-	}
-
-	for(int i=1; i<=8; i++)
-	{
-		m_index[60+i] = asw->m_actual[60+i].m_id;
-	}
-
-
-
-	for(int i=1; i<=8; i++)
-	{
-		m_index[70+i] = asw->m_actual[70+i].m_id;
-	}
-
-	}
-	else if(user_file == true)
-	{
-
-		asw->ReadUserSelections(m_index, user_file_name);
-	}
-
-
-	}
 
 
 
 
-
-	for(int i=0; i<=80; i++)
+	for (int i = 0; i <= 80; i++)
 	{
 		bool found = false;
-		for(int j=1; j<=1440; j++)
+		for (int j = 1; j <= 1440; j++)
 		{
-			if(avg.m_actual[j].m_id == m_index[i] && avg.m_actual[j].m_name != "" && found == false)
+			if (avg.m_actual[j].m_id == m_index[i] && avg.m_actual[j].m_name != "" && found == false)
 			{
 				m_index[i] = j;
 				found = true;
@@ -289,16 +293,16 @@ BOOL CAllStarDlg::OnInitDialog()
 	}
 
 
-	
+
 	DisplayThreeField();
-	if(m_asw_over == true)
+	if (m_asw_over == true)
 	{
 		DisplayThreeRound1();
 		DisplayThreeRound2();
 		DisplayThreeRound3();
 	}
 	DisplayDunkField();
-	if(m_asw_over == true)
+	if (m_asw_over == true)
 	{
 		DisplayDunkRound1();
 		DisplayDunkRound2();
@@ -309,59 +313,59 @@ BOOL CAllStarDlg::OnInitDialog()
 
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+				  // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 void CAllStarDlg::DisplayThreeRound1()
 {
-	for(int i=1; i<=4; i++)
+	for (int i = 1; i <= 4; i++)
 	{
-		CString na = asw->m_actual[60+i].m_name;
+		CString na = asw->m_actual[60 + i].m_name;
 		//int sc = asw->m_actual[60+i].m_3ptscore[1];
-		int sc = m_scores[23+i];
+		int sc = m_scores[23 + i];
 		CString str;
 		str.Format(" %d", sc);
-		na = asw->m_actual[60+i].m_pos + " " + na + str;
-		m_name_r[8+i].SetWindowText(na);
+		na = asw->m_actual[60 + i].m_pos + " " + na + str;
+		m_name_r[8 + i].SetWindowText(na);
 	}
 
 }
 
 void CAllStarDlg::DisplayThreeRound2()
 {
-	for(int i=1; i<=2; i++)
+	for (int i = 1; i <= 2; i++)
 	{
-		CString na = asw->m_actual[60+i].m_name;
+		CString na = asw->m_actual[60 + i].m_name;
 		//int sc = asw->m_actual[60+i].m_3ptscore[2];
-		int sc = m_scores[27+i];
+		int sc = m_scores[27 + i];
 		CString str;
 		str.Format(" %d", sc);
-//		na = na + str;
-		na = asw->m_actual[60+i].m_pos + " " + na + str;
-		m_name_r[12+i].SetWindowText(na);
+		//		na = na + str;
+		na = asw->m_actual[60 + i].m_pos + " " + na + str;
+		m_name_r[12 + i].SetWindowText(na);
 	}
 
 }
 
 void CAllStarDlg::DisplayThreeRound3()
 {
-	for(int i=1; i<=1; i++)
+	for (int i = 1; i <= 1; i++)
 	{
-		CString na = asw->m_actual[60+i].m_name;
+		CString na = asw->m_actual[60 + i].m_name;
 		//int sc = asw->m_actual[60+i].m_3ptscore[3];
 		int sc = m_scores[28];
 		CString str;
 		str.Format(" %d", sc);
-//		na = na + str;
-		na = asw->m_actual[60+i].m_pos + " " + na + str;
-		m_name_r[14+i].SetWindowText(na);
+		//		na = na + str;
+		na = asw->m_actual[60 + i].m_pos + " " + na + str;
+		m_name_r[14 + i].SetWindowText(na);
 	}
 
 
-//	for(int i=1; i<=8; i++)
-//	{
-//		m_index[60+i] = asw->m_actual[60+i].m_id;
-//	}
+	//	for(int i=1; i<=8; i++)
+	//	{
+	//		m_index[60+i] = asw->m_actual[60+i].m_id;
+	//	}
 
 }
 
@@ -369,15 +373,15 @@ void CAllStarDlg::DisplayThreeRound3()
 
 void CAllStarDlg::DisplayThreeField()
 {
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
-		CString na = asw->m_actual[60+i].m_name;
+		CString na = asw->m_actual[60 + i].m_name;
 		//int sc = asw->m_actual[60+i].m_3ptscore[1];
-		int sc = m_scores[15+i];
+		int sc = m_scores[15 + i];
 		CString str;
 		str.Format(" %d", sc);
-//		na = na + str;
-		na = asw->m_actual[60+i].m_pos + " " + na + str;
+		//		na = na + str;
+		na = asw->m_actual[60 + i].m_pos + " " + na + str;
 		m_name_r[i].SetWindowText(na);
 	}
 
@@ -386,31 +390,31 @@ void CAllStarDlg::DisplayThreeField()
 
 void CAllStarDlg::DisplayDunkRound1()
 {
-	for(int i=1; i<=3; i++)
+	for (int i = 1; i <= 3; i++)
 	{
-		CString na = asw->m_actual[70+i].m_name;
+		CString na = asw->m_actual[70 + i].m_name;
 		//double sc = (double)asw->m_actual[70+i].m_dunkscore[1]/10;
-		double sc = (double)m_scores[8+i]/10;
+		double sc = (double)m_scores[8 + i] / 10;
 		CString str;
 		str.Format(" %.1f", sc);
-//		na = na + str;
-		na = asw->m_actual[70+i].m_pos + " " + na + str;
-		m_name_r[23+i].SetWindowText(na);
+		//		na = na + str;
+		na = asw->m_actual[70 + i].m_pos + " " + na + str;
+		m_name_r[23 + i].SetWindowText(na);
 	}
 }
 
 void CAllStarDlg::DisplayDunkRound2()
 {
-	for(int i=1; i<=1; i++)
+	for (int i = 1; i <= 1; i++)
 	{
-		CString na = asw->m_actual[70+i].m_name;
-		double sc = (double)m_scores[9]/10;
+		CString na = asw->m_actual[70 + i].m_name;
+		double sc = (double)m_scores[9] / 10;
 		CString str;
 		str.Format(" %.1f", sc);
 		//na = na + str;
-		na = asw->m_actual[70+i].m_pos + " " + na + str;
+		na = asw->m_actual[70 + i].m_pos + " " + na + str;
 
-		m_name_r[26+i].SetWindowText(na);
+		m_name_r[26 + i].SetWindowText(na);
 	}
 
 	//for(int i=1; i<=8; i++)
@@ -421,7 +425,7 @@ void CAllStarDlg::DisplayDunkRound2()
 
 }
 
-void CAllStarDlg::OnButtonT1() 
+void CAllStarDlg::OnButtonT1()
 {
 	// TODO: Add your control notification handler code here
 	m_button_t1.EnableWindow(FALSE);
@@ -431,15 +435,15 @@ void CAllStarDlg::OnButtonT1()
 
 
 	asw->SimThreePointContestRoundOne();
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
-		m_scores[15+i] = asw->m_scores[15+i];
+		m_scores[15 + i] = asw->m_scores[15 + i];
 	}
 	DisplayThreeField();
 	DisplayThreeRound1();
 }
 
-void CAllStarDlg::OnButtonD1() 
+void CAllStarDlg::OnButtonD1()
 {
 	// TODO: Add your control notification handler code here
 
@@ -447,35 +451,35 @@ void CAllStarDlg::OnButtonD1()
 	m_button_d1.EnableWindow(FALSE);
 	m_button_d2.EnableWindow(TRUE);
 	asw->SimSlamDunkContestRoundOne();
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
 		m_scores[i] = asw->m_scores[i];
 	}
 
 	DisplayDunkField();
 	DisplayDunkRound1();
-	
+
 }
 
-void CAllStarDlg::OnButtonD2() 
+void CAllStarDlg::OnButtonD2()
 {
 	// TODO: Add your control notification handler code here
 	m_button_d1.EnableWindow(FALSE);
 	m_button_d2.EnableWindow(FALSE);
 	m_dunk_finished = true;
-	if(m_dunk_finished == true && m_three_finished == true) 
+	if (m_dunk_finished == true && m_three_finished == true)
 		m_button_ok.EnableWindow(TRUE);
 	asw->SimSlamDunkContestRoundTwo();
-	for(int i=9; i<=11; i++)
+	for (int i = 9; i <= 11; i++)
 	{
 		m_scores[i] = asw->m_scores[i];
 	}
 	DisplayDunkRound1();
 	DisplayDunkRound2();
-	
+
 }
 
-void CAllStarDlg::OnButtonT2() 
+void CAllStarDlg::OnButtonT2()
 {
 	// TODO: Add your control notification handler code here
 
@@ -485,81 +489,81 @@ void CAllStarDlg::OnButtonT2()
 
 	asw->SimThreePointContestRoundTwo();
 
-	for(int i=1; i<=4; i++)
+	for (int i = 1; i <= 4; i++)
 	{
-		m_scores[23+i] = asw->m_scores[23+i];
+		m_scores[23 + i] = asw->m_scores[23 + i];
 	}
 
 	DisplayThreeRound1();
 	DisplayThreeRound2();
-	
+
 }
 
-void CAllStarDlg::OnButtonT3() 
+void CAllStarDlg::OnButtonT3()
 {
 	// TODO: Add your control notification handler code here
 	m_button_t1.EnableWindow(FALSE);
 	m_button_t2.EnableWindow(FALSE);
 	m_button_t3.EnableWindow(FALSE);
 
-	
+
 	m_three_finished = true;
-	if(m_dunk_finished == true && m_three_finished == true) 
+	if (m_dunk_finished == true && m_three_finished == true)
 		m_button_ok.EnableWindow(TRUE);
 
 	asw->SimThreePointContestRoundThree();
-	for(int i=1; i<=2; i++)
+	for (int i = 1; i <= 2; i++)
 	{
-		m_scores[27+i] = asw->m_scores[27+i];
+		m_scores[27 + i] = asw->m_scores[27 + i];
 	}
 
 	DisplayThreeRound2();
 	DisplayThreeRound3();
-	
+
 }
 
-void CAllStarDlg::OnDestroy() 
+void CAllStarDlg::OnDestroy()
 {
 	CDialog::OnDestroy();
-	
+
 	// TODO: Add your message handler code here
 	delete asw;
-	
+
 }
 
 void CAllStarDlg::DisplayDunkField()
 {
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
-		CString na = asw->m_actual[70+i].m_name;
+		CString na = asw->m_actual[70 + i].m_name;
 		//double sc = (double)asw->m_actual[70+i].m_dunkscore[1]/10;
-		double sc = (double)m_scores[i]/10;
+		double sc = (double)m_scores[i] / 10;
 		CString str;
 		str.Format(" %.1f", sc);
 		//na = na + str;
-		na = asw->m_actual[70+i].m_pos + " " + na + str;
-		m_name_r[15+i].SetWindowText(na);
+		na = asw->m_actual[70 + i].m_pos + " " + na + str;
+		m_name_r[15 + i].SetWindowText(na);
 	}
 
 
 }
 
-void CAllStarDlg::OnOK() 
+void CAllStarDlg::OnOK()
 {
 	// TODO: Add extra validation here
 
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
-		m_index[60+i] = asw->m_actual[60+i].m_id;
+		m_index[60 + i] = asw->m_actual[60 + i].m_id;
 	}
 
-	for(int i=1; i<=8; i++)
+	for (int i = 1; i <= 8; i++)
 	{
-		m_index[70+i] = asw->m_actual[70+i].m_id;
+		m_index[70 + i] = asw->m_actual[70 + i].m_id;
 	}
 
-	
-	for(int i=0; i<=60; i++)
+
+	for (int i = 0; i <= 60; i++)
 	{
 		//bool found = false;
 		//for(int j=1; j<=1440; j++)
@@ -574,11 +578,11 @@ void CAllStarDlg::OnOK()
 	}
 
 
-	for(int i=1; i<=30; i++)
+	for (int i = 1; i <= 30; i++)
 	{
 		m_scores[i] = asw->m_scores[i];
 	}
-	
+
 	CDialog::OnOK();
 }
 
@@ -594,9 +598,9 @@ void CAllStarDlg::InitCtrl()
 	m_list_rookies.SetBkColor(BK_COLOR);
 	m_list_rookies.SetTextBkColor(BK_COLOR);
 
-	m_list_rookies.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
+	m_list_rookies.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
-    m_list_rookies.SetTextColor(RGB(0,0,0));
+	m_list_rookies.SetTextColor(RGB(0, 0, 0));
 	m_list_rookies.SetFont(&m_font);
 
 
@@ -604,9 +608,9 @@ void CAllStarDlg::InitCtrl()
 	m_list_allstars.SetBkColor(BK_COLOR);
 	m_list_allstars.SetTextBkColor(BK_COLOR);
 
-	m_list_allstars.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
+	m_list_allstars.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
-    m_list_allstars.SetTextColor(RGB(0,0,0));
+	m_list_allstars.SetTextColor(RGB(0, 0, 0));
 	m_list_allstars.SetFont(&m_font);
 
 
@@ -635,237 +639,237 @@ void CAllStarDlg::InitCtrl()
 void CAllStarDlg::ListAswRosters()
 {
 
-	int co=0;
+	int co = 0;
 
 	m_list_allstars.DeleteAllItems();
 
-	for(int i=1; i<=30; i++)
+	for (int i = 1; i <= 30; i++)
 	{
-		m_player_list[i-1] = 0;
+		m_player_list[i - 1] = 0;
 
 
 		CString s1 = avg.m_actual[m_index[i]].m_pos;
 		CString s2 = avg.m_actual[m_index[i]].m_name;
 		CString s3 = avg.m_actual[m_index[i]].m_team_paying_name;
 		CString s4 = avg.m_settings.m_conferenceName1;
-		if(i > 15) s4 = avg.m_settings.m_conferenceName2;
-		if(s2 == "") continue;
+		if (i > 15) s4 = avg.m_settings.m_conferenceName2;
+		if (s2 == "") continue;
 
-		m_list_allstars.InsertItem(co,s1);
-		m_list_allstars.SetItemText(co,1,s2);
-		m_list_allstars.SetItemText(co,2,s3);
-		m_list_allstars.SetItemText(co,3,s4);
+		m_list_allstars.InsertItem(co, s1);
+		m_list_allstars.SetItemText(co, 1, s2);
+		m_list_allstars.SetItemText(co, 2, s3);
+		m_list_allstars.SetItemText(co, 3, s4);
 		m_player_list[co] = i;
 		co = co + 1;
 	}
 
 
-	m_list_allstars.SetItemState(0, LVIS_SELECTED,LVIS_SELECTED);
+	m_list_allstars.SetItemState(0, LVIS_SELECTED, LVIS_SELECTED);
 	m_list_allstars.EnsureVisible(0, TRUE);
 
-	co=0;
-	for(int i=1; i<=30; i++)
+	co = 0;
+	for (int i = 1; i <= 30; i++)
 	{
-		CString s1 = avg.m_actual[m_index[30+i]].m_pos;
-		CString s2 = avg.m_actual[m_index[30+i]].m_name;
-		CString s3 = avg.m_actual[m_index[30+i]].m_team_paying_name;
-		int y = avg.m_actual[m_index[30+i]].m_yrs_of_service;
+		CString s1 = avg.m_actual[m_index[30 + i]].m_pos;
+		CString s2 = avg.m_actual[m_index[30 + i]].m_name;
+		CString s3 = avg.m_actual[m_index[30 + i]].m_team_paying_name;
+		int y = avg.m_actual[m_index[30 + i]].m_yrs_of_service;
 		CString s4 = "Rookie";
-		if(y==2) s4 = "Soph";
-		if(s2 == "") continue;
-		m_list_rookies.InsertItem(co,s1);
-		m_list_rookies.SetItemText(co,1,s2);
-		m_list_rookies.SetItemText(co,2,s3);
-		m_list_rookies.SetItemText(co,3,s4);
+		if (y == 2) s4 = "Soph";
+		if (s2 == "") continue;
+		m_list_rookies.InsertItem(co, s1);
+		m_list_rookies.SetItemText(co, 1, s2);
+		m_list_rookies.SetItemText(co, 2, s3);
+		m_list_rookies.SetItemText(co, 3, s4);
 		co = co + 1;
 	}
 
 }
 
-void CAllStarDlg::OnDblclkListAllstars(NMHDR* pNMHDR, LRESULT* pResult) 
+void CAllStarDlg::OnDblclkListAllstars(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	// TODO: Add your control notification handler code here
-	int j = m_list_allstars.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED) + 1;
+	int j = m_list_allstars.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED) + 1;
 	CPlayer tmp[81];
-	for(int i=0; i<=80; i++)
+	for (int i = 0; i <= 80; i++)
 	{
 		tmp[i] = avg.m_actual[m_index[i]];
 	}
 
-	
-	if(j > 0)
+
+	if (j > 0)
 	{
 
-	
-	//CPlayer m_player = FA[i+1];
+
+		//CPlayer m_player = FA[i+1];
 
 
-	//int players_listed = m_listfa.GetItemCount();
-	//int tm = m_player.m_team_index - 1;
-	
-	//CString team = "";
-	//if(tm < 0) team = "";
-	//else team = avg.m_settings.m_leagueTeamNames[tm];
+		//int players_listed = m_listfa.GetItemCount();
+		//int tm = m_player.m_team_index - 1;
+
+		//CString team = "";
+		//if(tm < 0) team = "";
+		//else team = avg.m_settings.m_leagueTeamNames[tm];
 
 
-	CPlayerCardDlg *scout = new CPlayerCardDlg;
-	scout->m_default_scout = m_default_team;
+		CPlayerCardDlg* scout = new CPlayerCardDlg;
+		scout->m_default_scout = m_default_team;
 
-	scout->m_path = avg.m_settings.m_path;
-	scout->m_leagueName = avg.m_settings.m_league_name;
+		scout->m_path = avg.m_settings.m_path;
+		scout->m_leagueName = avg.m_settings.m_league_name;
 
-	scout->m_player_index = j;
-	scout->m_title = "Scout";
-	scout->avg = avg;
+		scout->m_player_index = j;
+		scout->m_title = "Scout";
+		scout->avg = avg;
 
-	int co = 1;
-	for(int c=0; c<=30; c++)
-	{
-		if(tmp[c].m_name != "")
+		int co = 1;
+		for (int c = 0; c <= 30; c++)
 		{
+			if (tmp[c].m_name != "")
+			{
 
-			scout->avg.m_actual[co] = tmp[c];
-			co = co + 1;
+				scout->avg.m_actual[co] = tmp[c];
+				co = co + 1;
+			}
 		}
-	}
-	scout->m_player_index = j;
-	scout->m_pl_index_end = co;
-	scout->m_pl_index_start = 0;
+		scout->m_player_index = j;
+		scout->m_pl_index_end = co;
+		scout->m_pl_index_start = 0;
 
-	scout->DoModal();
-	delete scout;
+		scout->DoModal();
+		delete scout;
 	}
 	*pResult = 0;
 
 }
 
-void CAllStarDlg::OnDblclkListRookies(NMHDR* pNMHDR, LRESULT* pResult) 
+void CAllStarDlg::OnDblclkListRookies(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	// TODO: Add your control notification handler code here
-	int j = m_list_rookies.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED) + 1;
-	if(j > 0)
+	int j = m_list_rookies.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED) + 1;
+	if (j > 0)
 	{
 
-	//CPlayer m_player = FA[i+1];
+		//CPlayer m_player = FA[i+1];
 
 
-	//int players_listed = m_listfa.GetItemCount();
-	//int tm = m_player.m_team_index - 1;
-	
-	//CString team = "";
-	//if(tm < 0) team = "";
-	//else team = avg.m_settings.m_leagueTeamNames[tm];
+		//int players_listed = m_listfa.GetItemCount();
+		//int tm = m_player.m_team_index - 1;
+
+		//CString team = "";
+		//if(tm < 0) team = "";
+		//else team = avg.m_settings.m_leagueTeamNames[tm];
 
 
-	CPlayerCardDlg *scout = new CPlayerCardDlg;
-	scout->m_default_scout = m_default_team;
+		CPlayerCardDlg* scout = new CPlayerCardDlg;
+		scout->m_default_scout = m_default_team;
 
-	scout->m_path = avg.m_settings.m_path;
-	scout->m_leagueName = avg.m_settings.m_league_name;
+		scout->m_path = avg.m_settings.m_path;
+		scout->m_leagueName = avg.m_settings.m_league_name;
 
-	scout->m_player_index = j;
-	scout->m_title = "Scout";
-	scout->avg = avg;
+		scout->m_player_index = j;
+		scout->m_title = "Scout";
+		scout->avg = avg;
 
 
-	int co = 1;
-	
-	for(int c=0; c<=30; c++)
-	{
-		if(avg.m_actual[m_index[30+c]].m_name != "")
+		int co = 1;
+
+		for (int c = 0; c <= 30; c++)
 		{
-			scout->avg.m_actual[co] = avg.m_actual[m_index[30+c]];
-			co = co + 1;
+			if (avg.m_actual[m_index[30 + c]].m_name != "")
+			{
+				scout->avg.m_actual[co] = avg.m_actual[m_index[30 + c]];
+				co = co + 1;
+			}
 		}
-	}
-	scout->m_player_index = j;
-	scout->m_pl_index_end = 30;
-	scout->m_pl_index_start = 0;
+		scout->m_player_index = j;
+		scout->m_pl_index_end = 30;
+		scout->m_pl_index_start = 0;
 
-	scout->DoModal();
-	delete scout;
+		scout->DoModal();
+		delete scout;
 	}
 	*pResult = 0;
 
-	
+
 	*pResult = 0;
 }
 
-void CAllStarDlg::OnButtonAllstarselect() 
+void CAllStarDlg::OnButtonAllstarselect()
 {
 	// TODO: Add your control notification handler code here
 	int i = m_combo_aswselect.GetCurSel();
-	int j = m_list_allstars.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED);
-	int k = m_player_list[j];	
+	int j = m_list_allstars.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED);
+	int k = m_player_list[j];
 
 	m_index[k] = m_id_list[i];
 	ListAswRosters();
-	
+
 }
 
-BOOL CAllStarDlg::OnHelpInfo(HELPINFO* pHelpInfo) 
+BOOL CAllStarDlg::OnHelpInfo(HELPINFO* pHelpInfo)
 {
 	// TODO: Add your message handler code here and/or call default
 //	HtmlHelp(NULL, "jumpshot.chm::/html/allstar.htm", HH_DISPLAY_TOPIC, 0);
 
-	
+
 	return CDialog::OnHelpInfo(pHelpInfo);
 }
 
-void CAllStarDlg::OnContextMenu(CWnd* pWnd, CPoint point) 
+void CAllStarDlg::OnContextMenu(CWnd* pWnd, CPoint point)
 {
 	// TODO: Add your message handler code here
 //	HtmlHelp(NULL, "jumpshot.chm::/html/allstar.htm", HH_DISPLAY_TOPIC, 0);
-	
+
 }
 
-HBRUSH CAllStarDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor) 
+HBRUSH CAllStarDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
-	
+
 	// TODO: Change any attributes of the DC here
- switch (nCtlColor)
-     {
-     //Edit controls need white background and black text
-     //Note the 'return hbr' which is needed to draw the Edit
-     //control's internal background (as opposed to text background)
-     case CTLCOLOR_EDIT:
-          pDC->SetTextColor(EDITCOLOR);
-          pDC->SetBkColor(EDITBKCOLOR);
-          return hbr;
-     //Static controls need black text and same background as myBrush
-     case CTLCOLOR_STATIC:
-          LOGBRUSH logbrush;
-          myBrush.GetLogBrush( &logbrush );
-          pDC->SetTextColor(STATICCOLOR);
-          pDC->SetBkColor(logbrush.lbColor);
-          return myBrush;
-     case CTLCOLOR_BTN:
-          pDC->SetTextColor(RGB(0,255,255));
-          pDC->SetBkColor(RGB(255,128,128));
-          return myBrush;
-     case CTLCOLOR_LISTBOX:
-          pDC->SetBkColor(LISTBOXCOLOR);
-          pDC->SetTextColor(LISTBOXTEXTCOLOR);
-          return myBrush;
+	switch (nCtlColor)
+	{
+		//Edit controls need white background and black text
+		//Note the 'return hbr' which is needed to draw the Edit
+		//control's internal background (as opposed to text background)
+	case CTLCOLOR_EDIT:
+		pDC->SetTextColor(EDITCOLOR);
+		pDC->SetBkColor(EDITBKCOLOR);
+		return hbr;
+		//Static controls need black text and same background as myBrush
+	case CTLCOLOR_STATIC:
+		LOGBRUSH logbrush;
+		myBrush.GetLogBrush(&logbrush);
+		pDC->SetTextColor(STATICCOLOR);
+		pDC->SetBkColor(logbrush.lbColor);
+		return myBrush;
+	case CTLCOLOR_BTN:
+		pDC->SetTextColor(RGB(0, 255, 255));
+		pDC->SetBkColor(RGB(255, 128, 128));
+		return myBrush;
+	case CTLCOLOR_LISTBOX:
+		pDC->SetBkColor(LISTBOXCOLOR);
+		pDC->SetTextColor(LISTBOXTEXTCOLOR);
+		return myBrush;
 
-     case CTLCOLOR_SCROLLBAR:
-          pDC->SetTextColor(RGB(0,0,0));
-          pDC->SetBkColor(LISTBOXCOLOR);
-          return myBrush;
+	case CTLCOLOR_SCROLLBAR:
+		pDC->SetTextColor(RGB(0, 0, 0));
+		pDC->SetBkColor(LISTBOXCOLOR);
+		return myBrush;
 
-     case CTLCOLOR_MSGBOX:
-          pDC->SetTextColor(RGB(255,255,255));
-          pDC->SetBkColor(RGB(255,128,128));
-          return myBrush;
+	case CTLCOLOR_MSGBOX:
+		pDC->SetTextColor(RGB(255, 255, 255));
+		pDC->SetBkColor(RGB(255, 128, 128));
+		return myBrush;
 
-     case CTLCOLOR_DLG:
-          return myBrush;
-     //This shouldn't occurr since we took all the cases, but
-     //JUST IN CASE, return the new brush
-     default:
-          return hbr;
-     } 	
+	case CTLCOLOR_DLG:
+		return myBrush;
+		//This shouldn't occurr since we took all the cases, but
+		//JUST IN CASE, return the new brush
+	default:
+		return hbr;
+	}
 	// TODO: Return a different brush if the default is not desired
 //	return hbr;
 }

@@ -59,6 +59,7 @@ BEGIN_MESSAGE_MAP(CDefenseDlg, CDialog)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_CTRL_OFFENSE, OnDblclkListCtrlOffense)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_CTRL_DEFENSE, OnDblclkListCtrlDefense)
 	//}}AFX_MSG_MAP
+	ON_LBN_SELCHANGE(IDC_LIST_DEFENSE, &CDefenseDlg::OnLbnSelchangeListDefense)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -490,4 +491,10 @@ void CDefenseDlg::OnDblclkListCtrlDefense(NMHDR* pNMHDR, LRESULT* pResult)
 	}
 	
 	*pResult = 0;
+}
+
+
+void CDefenseDlg::OnLbnSelchangeListDefense()
+{
+	// TODO: Add your control notification handler code here
 }

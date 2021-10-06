@@ -144,6 +144,8 @@ private:
 	int m_currentRound;
 	bool m_draftStarted;
 
+public:
+	afx_msg void OnLbnSelchangeListRoster();
 };
 
 //{{AFX_INSERT_LOCATION}}

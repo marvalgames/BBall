@@ -36,6 +36,10 @@ public:
 	//}}AFX_VIRTUAL
 
 // Implementation
+
+private:
+	CBrush myBrush;
+
 protected:
 
 	// Generated message map functions
@@ -43,6 +47,8 @@ protected:
 	virtual BOOL OnInitDialog();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
 
 //{{AFX_INSERT_LOCATION}}

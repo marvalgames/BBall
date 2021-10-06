@@ -206,6 +206,9 @@ private:
 //	MyButton m_button_home;
 public:
 //	MyButton m_button_home;
+	afx_msg void OnLvnItemchangedListScoreboard(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnStnClickedStaticTlabel();
+	afx_msg void OnLvnItemchangedListHomeShot(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 /////////////////////////////////////////////////////////////////////////////

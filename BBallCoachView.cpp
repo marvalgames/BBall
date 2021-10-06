@@ -159,6 +159,9 @@ BEGIN_MESSAGE_MAP(CBBallCoachView, CFormView)
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
 	ON_STN_CLICKED(IDC_STATIC_HOME, &CBBallCoachView::OnStnClickedStaticHome)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_SCOREBOARD, &CBBallCoachView::OnLvnItemchangedListScoreboard)
+	ON_STN_CLICKED(IDC_STATIC_TLABEL, &CBBallCoachView::OnStnClickedStaticTlabel)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_HOME_SHOT, &CBBallCoachView::OnLvnItemchangedListHomeShot)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -255,8 +258,8 @@ void CBBallCoachView::OnInitialUpdate()
 
 	}
 
-	SetMyFont(600, 13, USERFONT);
-	SetMyFontStarters(500, 15, "Verdana");
+	SetMyFont(200, 14, USERFONT);
+	SetMyFontStarters(500, 14, "Arial");
 	SetMyFontScores(800, 16, "Courier New");
 
 
@@ -326,16 +329,16 @@ void CBBallCoachView::OnInitialUpdate()
 	m_list_visitor_roster.InsertColumn(7, "en");
 	m_list_visitor_roster.InsertColumn(8, "o");
 	m_list_visitor_roster.InsertColumn(9, "d");
-	m_list_visitor_roster.SetColumnWidth(0, 80);
-	m_list_visitor_roster.SetColumnWidth(1, 26);
-	m_list_visitor_roster.SetColumnWidth(2, 28);
-	m_list_visitor_roster.SetColumnWidth(3, 26);
-	m_list_visitor_roster.SetColumnWidth(4, 27);
-	m_list_visitor_roster.SetColumnWidth(5, 26);
-	m_list_visitor_roster.SetColumnWidth(6, 20);
-	m_list_visitor_roster.SetColumnWidth(7, 28);
-	m_list_visitor_roster.SetColumnWidth(8, 26);
-	m_list_visitor_roster.SetColumnWidth(9, 26);
+	m_list_visitor_roster.SetColumnWidth(0, 120);
+	m_list_visitor_roster.SetColumnWidth(1, 39);
+	m_list_visitor_roster.SetColumnWidth(2, 42);
+	m_list_visitor_roster.SetColumnWidth(3, 39);
+	m_list_visitor_roster.SetColumnWidth(4, 40);
+	m_list_visitor_roster.SetColumnWidth(5, 39);
+	m_list_visitor_roster.SetColumnWidth(6, 30);
+	m_list_visitor_roster.SetColumnWidth(7, 42);
+	m_list_visitor_roster.SetColumnWidth(8, 39);
+	m_list_visitor_roster.SetColumnWidth(9, 39);
 
 	m_list_home_roster.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_home_roster.InsertColumn(0, "player");
@@ -348,24 +351,24 @@ void CBBallCoachView::OnInitialUpdate()
 	m_list_home_roster.InsertColumn(7, "en");
 	m_list_home_roster.InsertColumn(8, "o");
 	m_list_home_roster.InsertColumn(9, "d");
-	m_list_home_roster.SetColumnWidth(0, 80);
-	m_list_home_roster.SetColumnWidth(1, 26);
-	m_list_home_roster.SetColumnWidth(2, 28);
-	m_list_home_roster.SetColumnWidth(3, 26);
-	m_list_home_roster.SetColumnWidth(4, 27);
-	m_list_home_roster.SetColumnWidth(5, 26);
-	m_list_home_roster.SetColumnWidth(6, 20);
-	m_list_home_roster.SetColumnWidth(7, 28);
-	m_list_home_roster.SetColumnWidth(8, 26);
-	m_list_home_roster.SetColumnWidth(9, 26);
+	m_list_home_roster.SetColumnWidth(0, 120);
+	m_list_home_roster.SetColumnWidth(1, 39);
+	m_list_home_roster.SetColumnWidth(2, 42);
+	m_list_home_roster.SetColumnWidth(3, 39);
+	m_list_home_roster.SetColumnWidth(4, 40);
+	m_list_home_roster.SetColumnWidth(5, 39);
+	m_list_home_roster.SetColumnWidth(6, 30);
+	m_list_home_roster.SetColumnWidth(7, 42);
+	m_list_home_roster.SetColumnWidth(8, 39);
+	m_list_home_roster.SetColumnWidth(9, 39);
 
 	m_list_visitor_lineup.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_visitor_lineup.InsertColumn(0, "Pos");
 	m_list_visitor_lineup.InsertColumn(1, "Player");
 	m_list_visitor_lineup.InsertColumn(2, "Defender");
-	m_list_visitor_lineup.SetColumnWidth(0, 36);
-	m_list_visitor_lineup.SetColumnWidth(1, 97);
-	m_list_visitor_lineup.SetColumnWidth(2, 97);
+	m_list_visitor_lineup.SetColumnWidth(0, 54);
+	m_list_visitor_lineup.SetColumnWidth(1, 144);
+	m_list_visitor_lineup.SetColumnWidth(2, 144);
 
 	m_list_scoreboard.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_scoreboard.InsertColumn(0, "Visitor");
@@ -379,13 +382,13 @@ void CBBallCoachView::OnInitialUpdate()
 	m_list_home_lineup.InsertColumn(0, "Pos");
 	m_list_home_lineup.InsertColumn(1, "Player");
 	m_list_home_lineup.InsertColumn(2, "Defender");
-	m_list_home_lineup.SetColumnWidth(0, 36);
-	m_list_home_lineup.SetColumnWidth(1, 97);
-	m_list_home_lineup.SetColumnWidth(2, 97);
+	m_list_home_lineup.SetColumnWidth(0, 54);
+	m_list_home_lineup.SetColumnWidth(1, 144);
+	m_list_home_lineup.SetColumnWidth(2, 144);
 
 	m_list_home_shot.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_home_shot.InsertColumn(0, "Shoot");
-	m_list_home_shot.SetColumnWidth(0, 51);
+	m_list_home_shot.SetColumnWidth(0, 76);
 	m_list_home_shot.InsertItem(0, "Auto");
 	m_list_home_shot.InsertItem(1, "Three");
 	m_list_home_shot.InsertItem(2, "Outside");
@@ -394,7 +397,7 @@ void CBBallCoachView::OnInitialUpdate()
 
 	m_list_visitor_shot.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_visitor_shot.InsertColumn(0, "Shoot");
-	m_list_visitor_shot.SetColumnWidth(0, 51);
+	m_list_visitor_shot.SetColumnWidth(0, 76);
 	m_list_visitor_shot.InsertItem(0, "Auto");
 	m_list_visitor_shot.InsertItem(1, "Three");
 	m_list_visitor_shot.InsertItem(2, "Outside");
@@ -1971,7 +1974,7 @@ HBRUSH CBBallCoachView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case CTLCOLOR_STATIC:
 		LOGBRUSH logbrush;
 		myBrush.GetLogBrush(&logbrush);
-		pDC->SetTextColor(RGB(0, 99, 0));
+		pDC->SetTextColor(RGB(255, 215, 0));
 		pDC->SetBkColor(logbrush.lbColor);
 		return hbr;
 
@@ -2232,4 +2235,26 @@ void CBBallCoachView::OnTeamTransactions()
 void CBBallCoachView::OnStnClickedStaticHome()
 {
 	// TODO: Add your control notification handler code here
+}
+
+
+void CBBallCoachView::OnLvnItemchangedListScoreboard(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+void CBBallCoachView::OnStnClickedStaticTlabel()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+void CBBallCoachView::OnLvnItemchangedListHomeShot(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

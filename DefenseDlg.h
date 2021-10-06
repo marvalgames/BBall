@@ -24,6 +24,7 @@
 #endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 #include "MyComboBox.h"
 
 //#include "Average.h"	// Added by ClassView
@@ -57,8 +58,8 @@ public:
 	CMyComboBox	m_listPf;
 	CMyComboBox	m_listC;
 	CMyComboBox	m_listPg;
-	CListCtrl	m_listCtrlDef;
-	CListCtrl	m_listCtrlOff;
+	CMyListCtrl	m_listCtrlDef;
+	CMyListCtrl	m_listCtrlOff;
 	CListBox	m_listDefense;
 	CListBox	m_listOffense;
 	MyButton	m_buttonVisitor;
@@ -103,6 +104,8 @@ private:
 	CBrush myBrush2;
 	int m_team;
 	void DisplayMatchups();
+public:
+	afx_msg void OnLbnSelchangeListDefense();
 };
 
 //{{AFX_INSERT_LOCATION}}

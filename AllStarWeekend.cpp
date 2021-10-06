@@ -87,12 +87,14 @@ void CAllStarWeekend::SelectAllStarTeams()
 
 	for(int i=1; i<=960; i++)
 	{
-		double n1 = (double)(avg.m_actual[i].m_sim_fgm * 2 + avg.m_actual[i].m_sim_tfgm * 3 + avg.m_actual[i].m_sim_ftm + avg.m_actual[i].m_sim_oreb + avg.m_actual[i].m_sim_reb + avg.m_actual[i].m_sim_ast + avg.m_actual[i].m_sim_stl + avg.m_actual[i].m_sim_blk)  * (100 + avg.m_actual[i].m_age) / 128;//128 used for age factor
+		double n1 = avg.m_actual[i].m_sim_fgm * 2 + avg.m_actual[i].m_sim_tfgm * 3 + avg.m_actual[i].m_sim_ftm + avg.m_actual[i].m_sim_oreb + avg.m_actual[i].m_sim_reb + avg.m_actual[i].m_sim_ast + avg.m_actual[i].m_sim_stl + avg.m_actual[i].m_sim_blk  * (100 + (double)avg.m_actual[i].m_age) / 128;//128 used for age factor
+		if (n1 == 0) n1 = .960 / i;
 		for(int j=1; j<=960; j++)
 		{
 			if(avg.m_actual[i].m_name == "" || avg.m_actual[j].m_name == "") continue;
-			double n2 = (double)(avg.m_actual[j].m_sim_fgm * 2 + avg.m_actual[j].m_sim_tfgm * 3 + avg.m_actual[j].m_sim_ftm + avg.m_actual[j].m_sim_oreb + avg.m_actual[j].m_sim_reb + avg.m_actual[j].m_sim_ast + avg.m_actual[j].m_sim_stl + avg.m_actual[j].m_sim_blk)  * (100 + avg.m_actual[j].m_age) / 128;
-			if(n1 > n2)
+			double n2 = avg.m_actual[j].m_sim_fgm * 2 + avg.m_actual[j].m_sim_tfgm * 3 + avg.m_actual[j].m_sim_ftm + avg.m_actual[j].m_sim_oreb + avg.m_actual[j].m_sim_reb + avg.m_actual[j].m_sim_ast + avg.m_actual[j].m_sim_stl + avg.m_actual[j].m_sim_blk  * (100 + (double)avg.m_actual[j].m_age) / 128;
+			if (n2 == 0) n2 = .960 / j;
+			if(n1 >= n2)
 			{
 					CPlayer temp = avg.m_actual[i];
 					avg.m_actual[i] =  avg.m_actual[j];

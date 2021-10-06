@@ -15,6 +15,7 @@
 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 #include "afxlistctrl.h"
 
 #if _MSC_VER > 1000
@@ -42,8 +43,8 @@ public:
 	//{{AFX_DATA(CAllStarDlg)
 	enum { IDD = IDD_DIALOG_ASW };
 	CMyComboBox	m_combo_aswselect;
-	CListCtrl	m_list_rookies;
-	CListCtrl	m_list_allstars;
+	CMyListCtrl	m_list_rookies;
+	CMyListCtrl	m_list_allstars;
 	MyButton	m_button_cancel;
 	MyButton	m_button_ok;
 	MyButton	m_button_d2;
