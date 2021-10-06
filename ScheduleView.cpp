@@ -451,8 +451,8 @@ void CScheduleView::OnInitialUpdate()
 
 
 
-  CFrameWnd * pFrame;
-    CRect rectFrame, rectView;
+  //CFrameWnd * pFrame;
+    //CRect rectFrame, rectView;
 
     CFormView::OnInitialUpdate();
     
@@ -523,45 +523,24 @@ void CScheduleView::OnInitialUpdate()
     // Update form's data from document
     SetFromDoc();
 
-//    // Resize parent to fit dialog template exactly    
-//    // while not resizing beyond size of screen
-//    VERIFY( pFrame = GetParentFrame() );
-//    //pFrame->GetClientRect( rectFrame );
-//    GetClientRect( rectView );
-//  //  if ( rectFrame.Width() < rectView.Width()
-//   //      || rectFrame.Height() < rectView.Height() )
-//   // {        
-//        // Resize so can be refit to any template that fits the screen
-////        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-////                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-//
-//	int w = GetSystemMetrics(SM_CXSCREEN);
-//		int h = GetSystemMetrics(SM_CYSCREEN);
-//
-//		if (w > WIDTH) w = WIDTH;
-//		if (h > HEIGHT) h = HEIGHT;
-//		//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-//		//pFrame->RecalcLayout();
-//		//GetParentFrame()->RecalcLayout();
-//		//ResizeParentToFit();
+	CFrameWnd* pFrame;
+	CRect rectFrame, rectView;
 
-    
+	VERIFY(pFrame = GetParentFrame());
+	GetClientRect(rectView);
+	int w = GetSystemMetrics(SM_CXSCREEN);
+	int h = GetSystemMetrics(SM_CYSCREEN);
+
+	if (w > WIDTH) w = WIDTH;
+	if (h > HEIGHT) h = HEIGHT;
+	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_SHOWWINDOW);
+	pFrame->RecalcLayout();
+	GetParentFrame()->RecalcLayout();
 
 
 
 
-//	RedrawWindow( ); 	
-
-
-
-
-	//if(pDoc->m_default_opened == true) 
-	//	((CBBallApp*)AfxGetApp())->SwitchView( 0 );	
-
-	
-
-
-
+  
 }
 
 void CScheduleView::SetFromDoc()

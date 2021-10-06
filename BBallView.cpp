@@ -163,18 +163,17 @@ void CBBallView::DoDataExchange(CDataExchange* pDX)
 	DDV_MaxChars(pDX, m_edit_quickname, 16);
 	//}}AFX_DATA_MAP
 }
-//
-//BOOL CBBallView::PreCreateWindow(CREATESTRUCT& cs)
-//{
-//	// TODO: Modify the Window class or styles here by modifying
-//	//  the CREATESTRUCT cs
-//
-////cs.style = WS_OVERLAPPED | WS_BORDER | WS_SYSMENU| 
-//	//	WS_MAXIMIZE | WS_MINIMIZEBOX |
-//		//WS_MAXIMIZEBOX ;
-//
-//	return CFormView::PreCreateWindow(cs);
-//}
+
+BOOL CBBallView::PreCreateWindow(CREATESTRUCT& cs)
+{
+	// TODO: Modify the Window class or styles here by modifying
+	//  the CREATESTRUCT cs
+
+	//cs.style = WS_OVERLAPPED | WS_BORDER | WS_SYSMENU |
+	//	WS_MAXIMIZE | WS_MINIMIZEBOX |
+	//	WS_MAXIMIZEBOX;
+	return true;
+}
 
 void CBBallView::OnInitialUpdate()
 {
@@ -194,12 +193,6 @@ void CBBallView::OnInitialUpdate()
 	pSplash->SetBitmap(IDB_SPLASH, 255, 0, 255);
 	pSplash->Show();
 
-	//	Invalidate(TRUE);
-	//OnPaint() ;
-
-	//	myBrush.CreateSolidBrush(SCREENCOLOR); 
-	//	  m_tbrush.CreateSolidBrush(LISTBOXCOLOR);         
-
 
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
@@ -213,17 +206,6 @@ void CBBallView::OnInitialUpdate()
 	lf.lfHeight = 28;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font1.CreateFontIndirect(&lf);    // Create the font.
-
-
-
-	//m_button_tools.SetMyFont(800,20,"Courier New");
-	//m_button_tools.SetFont(&m_font1);
-
-//	bitmapBkgnd.Attach (LoadBitmap (AfxGetInstanceHandle(), 
-  //               MAKEINTRESOURCE(IDB_BITMAP4)));
-
-	// Calculate a color effect for hilighting the button
-
 
 
 	CFrameWnd* pFrame;
@@ -241,19 +223,7 @@ void CBBallView::OnInitialUpdate()
 	GetParentFrame()->RecalcLayout();
 
 }
-//
-BOOL CBBallView::PreCreateWindow(CREATESTRUCT& cs)
-{
-	//	cs.cy = 640;
-	//	cs.cx = 480;
-	//	cs.y = 0;
-	//	cs.x = 0;
-	//	//return CWnd::PreCreateWindow(cs);
-	return true;
-}
 
-/////////////////////////////////////////////////////////////////////////////
-// CBBallView diagnostics
 
 #ifdef _DEBUG
 void CBBallView::AssertValid() const

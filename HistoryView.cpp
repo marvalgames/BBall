@@ -145,8 +145,8 @@ void CHistoryView::OnInitialUpdate()
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
 
-	CFrameWnd* pFrame;
-	CRect rectFrame, rectView;
+	//CFrameWnd* pFrame;
+	//CRect rectFrame, rectView;
 
 	CFormView::OnInitialUpdate();
 
@@ -175,46 +175,20 @@ void CHistoryView::OnInitialUpdate()
 	m_font1.CreateFontIndirect(&lf);    // Create the font.
 
 
-//
-//
-//
-//	// Resize parent to fit dialog template exactly    
-//	// while not resizing beyond size of screen
-//	VERIFY(pFrame = GetParentFrame());
-//	pFrame->GetClientRect(rectFrame);
-//	GetClientRect(rectView);
-//	//    if ( rectFrame.Width() < rectView.Width()
-//	  //       || rectFrame.Height() < rectView.Height() )
-//	  //  {        
-//			// Resize so can be refit to any template that fits the screen
-//	//        pFrame->MoveWindow( 0, 0, GetSystemMetrics(SM_CXSCREEN), 
-//	//                        GetSystemMetrics(SM_CYSCREEN), FALSE ); 
-//
-//	int w = GetSystemMetrics(SM_CXSCREEN);
-//	int h = GetSystemMetrics(SM_CYSCREEN);
-//
-//	if (w > WIDTH) w = WIDTH;
-//	if (h > HEIGHT) h = HEIGHT;
-//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-//	pFrame->RecalcLayout();
-//	GetParentFrame()->RecalcLayout();
-//	//ResizeParentToFit();
-//
-//
-//	//if(w > 1023) w = 1023;
-//	//if(h > 750) h = 750;
-////        pFrame->MoveWindow( 0, 0, w, h, FALSE ); 
-//
-//		//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE );
-//
-//
-//
-//   // }
-//	//pFrame->RecalcLayout();
-//	////ResizeParentToFit(TRUE);    // Shrink to fit template 
-//
-//
-////	InitControls();
+	CFrameWnd* pFrame;
+	CRect rectFrame, rectView;
+
+	VERIFY(pFrame = GetParentFrame());
+	GetClientRect(rectView);
+	int w = GetSystemMetrics(SM_CXSCREEN);
+	int h = GetSystemMetrics(SM_CYSCREEN);
+
+	if (w > WIDTH) w = WIDTH;
+	if (h > HEIGHT) h = HEIGHT;
+	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_SHOWWINDOW);
+	pFrame->RecalcLayout();
+	GetParentFrame()->RecalcLayout();
+
 
 }
 

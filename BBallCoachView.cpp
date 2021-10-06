@@ -184,14 +184,14 @@ void CBBallCoachView::Dump(CDumpContext& dc) const
 
 void CBBallCoachView::OnInitialUpdate()
 {
-	CFormView::OnInitialUpdate();
+	//CFormView::OnInitialUpdate();
 
 	// TODO: Add your specialized code here and/or call the base class
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
 
-	CFrameWnd* pFrame;
-	CRect rectFrame, rectView;
+	//CFrameWnd* pFrame;
+	//CRect rectFrame, rectView;
 	myBrush.CreateSolidBrush(DLGCOLOR); 
 	//myBrush2.CreateSolidBrush(LISTBOXCOLOR); 
 
@@ -201,49 +201,22 @@ void CBBallCoachView::OnInitialUpdate()
 	SetFromDoc();
 
 
+	CFrameWnd* pFrame;
+	CRect rectFrame, rectView;
 
-
-
-
-	// Resize parent to fit dialog template exactly    
-	   // while not resizing beyond size of screen
 	VERIFY(pFrame = GetParentFrame());
-	pFrame->GetClientRect(rectFrame);
 	GetClientRect(rectView);
-	//    if ( rectFrame.Width() < rectView.Width()
-	  //       || rectFrame.Height() < rectView.Height() )
-		//{        
-			// Resize so can be refit to any template that fits the screen
+	int w = GetSystemMetrics(SM_CXSCREEN);
+	int h = GetSystemMetrics(SM_CYSCREEN);
 
-//
-//	int w = GetSystemMetrics(SM_CXSCREEN);
-//	int h = GetSystemMetrics(SM_CYSCREEN);
-//
-//	if (w > WIDTH) w = WIDTH;
-//	if (h > HEIGHT) h = HEIGHT;
-//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-//	pFrame->RecalcLayout();
-//	GetParentFrame()->RecalcLayout();
-//	//ResizeParentToFit();
-//
-//	if (w > WIDTH) w = WIDTH;
-//	if (h > HEIGHT) h = HEIGHT;
-//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_NOSIZE);
-//	pFrame->RecalcLayout();
-//	GetParentFrame()->RecalcLayout();
-//
-//
-//	//if (w > WIDTH) w = WIDTH;
-//	//if (h > HEIGHT) h = HEIGHT;
-//
-//	//if(w > 1023) w = 1023;
-//	//if(h > 750) h = 750;
-//	//pFrame->SetWindowPos(NULL, 0, 0, w, h, FALSE );
-////}
-//
-////pFrame->RecalcLayout();
-//////ResizeParentToFit(TRUE);    // Shrink to fit template 
-//
+	if (w > WIDTH) w = WIDTH;
+	if (h > HEIGHT) h = HEIGHT;
+	pFrame->SetWindowPos(NULL, 0, 0, w, h, SWP_SHOWWINDOW);
+	pFrame->RecalcLayout();
+	GetParentFrame()->RecalcLayout();
+
+
+
 
 	m_button_play.EnableWindow(FALSE);
 	m_button_sim.EnableWindow(FALSE);
