@@ -20,12 +20,9 @@
 #define Average_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 
 #if _MSC_VER > 1000
@@ -66,10 +63,10 @@ public:
 // Dialog Data
 	//{{AFX_DATA(COfferTrades)
 	enum { IDD = IDD_DIALOG_OFFERTRADE };
-	CListCtrl	m_listVisitor;
-	CListCtrl	m_listTeam2;
-	CListCtrl	m_listTeam1;
-	CListCtrl	m_listHome;
+	CMyListCtrl	m_listVisitor;
+	CMyListCtrl	m_listTeam2;
+	CMyListCtrl	m_listTeam1;
+	CMyListCtrl	m_listHome;
 	MyButton	m_buttonScoutVisitor;
 	MyButton	m_buttonScoutHome;
 	CString	m_team1Name;
@@ -108,6 +105,8 @@ private:
 	CFont m_font;
 	CBrush myBrush;
 	CPlayer *m_player;
+public:
+	afx_msg void OnLvnItemchangedListCtrlHomeRoster(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

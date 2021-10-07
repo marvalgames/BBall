@@ -22,6 +22,7 @@
 #endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 // RookieCardDlg.h : header file
 //
@@ -49,14 +50,14 @@ public:
 	//{{AFX_DATA(CRookieCardDlg)
 	enum { IDD = IDD_DIALOG_ROOKIECARD };
 	MyButton	m_buttonScout;
-	CListCtrl	m_listctrlskill;
-	CListCtrl	m_listFuture;
-	CListCtrl	m_listCtrlStats;
-	CListCtrl	m_listCtrlShot;
+	CMyListCtrl	m_listctrlskill;
+	CMyListCtrl	m_listFuture;
+	CMyListCtrl	m_listCtrlStats;
+	CMyListCtrl	m_listCtrlShot;
 	CListBox	m_list_report;
-	CListCtrl	m_listctrlstats;
+	CMyListCtrl	m_listctrlstats;
 	CListBox	m_listPosition;
-	CListCtrl	m_listCtrl;
+	CMyListCtrl	m_listCtrl;
 	CListBox	m_list_awards;
 	CString	m_edit_owner;
 	//}}AFX_DATA
@@ -95,6 +96,8 @@ private:
 	CFont m_font;
 	CBrush myBrush;
 	CBrush myBrush2;
+public:
+	afx_msg void OnLbnSelchangeListReport2();
 };
 
 

@@ -65,6 +65,7 @@ BEGIN_MESSAGE_MAP(CTradeBlockDlg, CDialog)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_BLOCK, OnDblclkListBlock)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_ROSTER, &CTradeBlockDlg::OnLvnItemchangedListRoster)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -509,4 +510,12 @@ HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 	
 	// TODO: Return a different brush if the default is not desired
 	//return hbr;
+}
+
+
+void CTradeBlockDlg::OnLvnItemchangedListRoster(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

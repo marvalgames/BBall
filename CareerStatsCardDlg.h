@@ -7,6 +7,8 @@
 
 
 //#include "XListCtrl/XListCtrl.h"
+#include "MyListCtrl.h"
+
 
 #ifndef Player_h
 #include "Player.h"
@@ -30,7 +32,7 @@ public:
 	enum { IDD = IDD_DIALOG_CAREERSTATSCARD };
 	CListBox	m_listPosition;
 	CListBox	m_list_awards;
-	CListCtrl	m_listCtrl;
+	CMyListCtrl	m_listCtrl;
 	//}}AFX_DATA
 
 

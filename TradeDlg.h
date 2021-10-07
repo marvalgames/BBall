@@ -45,12 +45,8 @@
 #endif // _MSC_VER >= 1000
 #define HID_LEAGUE_TRADE 14
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
-
 #include "MyButton.h"
+#include "MyListCtrl.h"
 #include "afxlistctrl.h"
 // TradeDlg.h : header file
 //
@@ -105,14 +101,14 @@ public:
 	//{{AFX_DATA(CTradeDlg)
 	enum { IDD = IDD_TRADEBOX };
 	MyButton	m_button_cancel;
-	CListCtrl	m_list_team1_draft;
-	CListCtrl	m_listroster3;
-	CListCtrl	m_listroster2;
-	CListCtrl	m_listplayers2;
-	CListCtrl	m_listplayers1;
-	CListCtrl	m_list_team2_draft;
-	CListCtrl	m_listfa;
-	CListCtrl	m_listroster1;
+	CMyListCtrl	m_list_team1_draft;
+	CMyListCtrl	m_listroster3;
+	CMyListCtrl	m_listroster2;
+	CMyListCtrl	m_listplayers2;
+	CMyListCtrl	m_listplayers1;
+	CMyListCtrl	m_list_team2_draft;
+	CMyListCtrl	m_listfa;
+	CMyListCtrl	m_listroster1;
 	CMyComboBox	m_listteams3;
 	CMyComboBox	m_listteams2;
 	CMyComboBox	m_listteams1;
@@ -210,6 +206,9 @@ private:
 	int slots[61];
 	int InjuredList[33][31];
 	CPlayer* List;
+public:
+	afx_msg void OnLvnItemchangedListCtrlFa(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLvnItemchangedListCtrlTeam2Draft(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

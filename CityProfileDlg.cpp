@@ -45,6 +45,7 @@ BEGIN_MESSAGE_MAP(CCityProfileDlg, CDialog)
 	ON_WM_CONTEXTMENU()
 	ON_WM_HELPINFO()
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDOK, &CCityProfileDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -723,4 +724,11 @@ void CCityProfileDlg::ListCity()
 	//		m_list_city.SetItemText(co,s+1,Stats[s+1]);
 	//	}
 
+}
+
+
+void CCityProfileDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

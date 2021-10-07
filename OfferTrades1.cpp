@@ -69,6 +69,7 @@ BEGIN_MESSAGE_MAP(COfferTrades, CDialog)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_CTRL_VISITOR_ROSTER, OnDblclkListCtrlVisitorRoster)
 	ON_BN_CLICKED(IDC_BUTTON_TRADE, OnButtonTrade)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_HOME_ROSTER, &COfferTrades::OnLvnItemchangedListCtrlHomeRoster)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -661,4 +662,12 @@ void COfferTrades::OnButtonTrade()
 	else
 		CDialog::OnOK();
 	
+}
+
+
+void COfferTrades::OnLvnItemchangedListCtrlHomeRoster(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

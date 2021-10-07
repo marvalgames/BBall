@@ -289,11 +289,14 @@ void CTeamView::OnInitialUpdate()
 			m_buttons[i].m_nAlignStyle = CMFCButton::ALIGN_LEFT;
 		}
 		m_buttons[i].m_bTransparent = TRUE;
-
 		//	m_buttons[i].SetTextColor(RGB(0,0,0));
 		//	m_buttons[i].SetImage(IDB_BUTTON, IDB_BUTTON, FALSE);
 	}
 	
+	m_buttons[25].m_bTransparent = FALSE;
+	//	m_buttons[i].SetTextColor(RGB(0,0,0));
+	//	m_buttons[i].SetImage(IDB_BUTTON, IDB_BUTTON, FALSE);
+
 
 
 	LOGFONT lf;                        // Used to create the CFont.
@@ -712,7 +715,7 @@ void CTeamView::OnButtonTrade()
 	{
 		m_button_text[29] = pDoc->avg.m_finance[tm].m_city_name + " " + pDoc->avg.m_settings.m_leagueTeamNames[tm] + " Stengths";
 		m_button_text[30] = pDoc->avg.m_finance[tm].m_city_name + " " + pDoc->avg.m_settings.m_leagueTeamNames[tm] + " Needs";
-		m_button_text[25] = "Trading Block";
+		m_button_text[25] = "Get Trade Offers";
 	}
 
 

@@ -8,10 +8,7 @@
 #define HireStaff_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 #include "MyButton.h"
 
@@ -60,9 +57,9 @@ public:
 	enum { IDD = IDD_DIALOG_NEGOTIATE };
 	CMyComboBox	m_combo_mid_years;
 	MyButton	m_button_clear;
-	CListCtrl	m_list_ctrl_bid;
+	CMyListCtrl	m_list_ctrl_bid;
 	CStatic	m_static_y6;
-	CListCtrl	m_list_ctrl;
+	CMyListCtrl	m_list_ctrl;
 	UINT	m_edit1;
 	UINT	m_edit2;
 	UINT	m_edit3;

@@ -8,6 +8,7 @@
 //#include "High.h"	// Added by ClassView
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 #include "afxlistctrl.h"
 
 
@@ -38,16 +39,16 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CAllTimeDlg)
 	enum { IDD = IDD_DIALOG_ALLTIME };
-	CListCtrl	m_listCtrlLeaders7;
-	CListCtrl	m_listCtrlLeaders6;
-	CListCtrl	m_listCtrlLeaders5;
-	CListCtrl	m_listCtrlLeaders4;
-	CListCtrl	m_listCtrlLeaders3;
-	CListCtrl	m_listCtrlLeaders2;
+	CMyListCtrl	m_listCtrlLeaders7;
+	CMyListCtrl	m_listCtrlLeaders6;
+	CMyListCtrl	m_listCtrlLeaders5;
+	CMyListCtrl	m_listCtrlLeaders4;
+	CMyListCtrl	m_listCtrlLeaders3;
+	CMyListCtrl	m_listCtrlLeaders2;
 	MyButton	m_button_ok;
 	CMyComboBox	m_listTeams;
-	CListCtrl	m_listCtrlLeaders1;
-	CListCtrl	m_listCtrlLeaders;
+	CMyListCtrl	m_listCtrlLeaders1;
+	CMyListCtrl	m_listCtrlLeaders;
 	//}}AFX_DATA
 
 

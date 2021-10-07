@@ -5,7 +5,7 @@
 #include "Player.h"
 #define Player_h
 #endif 
-
+#include "MyListCtrl.h"
 //#ifndef SeasonStats_h
 //#include "SeasonStats.h"	// Added by ClassView
 //#define SeasonStats_h
@@ -49,7 +49,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CLeadersDlg)
 	enum { IDD = IDD_LEADERSBOX };
-	CListCtrl	m_listLeaders;
+	CMyListCtrl	m_listLeaders;
 	MyButton	m_buttonLeaders;
 	CListBox	m_listStats;
 	//}}AFX_DATA
@@ -109,6 +109,8 @@ private:
 	BOOL m_teamOffenseSelected;
 	BOOL m_teamDefenseSelected;
 	BOOL m_simulatedSelected;
+public:
+	afx_msg void OnLvnItemchangedListCtrlLeaders(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

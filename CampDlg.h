@@ -18,6 +18,7 @@
 #endif 
 //#include "ScoutDlg.h"
 
+#include "MyListCtrl.h"
 
 
 
@@ -98,7 +99,7 @@ public:
 	MyButton	m_buttonSave;
 	MyButton	m_buttonHOF;
 	CListBox	m_listHallOfFame;
-	CListCtrl	m_listPlayers;
+	CMyListCtrl	m_listPlayers;
 	CListBox	m_listRetired;
 	MyButton	m_saveDraft;
 	CListBox	m_listControl;

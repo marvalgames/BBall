@@ -120,7 +120,7 @@ void CBoxscore::OnButtonPrint()
            SetPrintAlign(pDC, hdcPrn);// set the printing alignment
 
 	LOGFONT logFont;
-	logFont.lfHeight = 20;
+	logFont.lfHeight = 16;
 	logFont.lfWidth = 0;
 	logFont.lfEscapement = 0;
 	logFont.lfOrientation = 0;

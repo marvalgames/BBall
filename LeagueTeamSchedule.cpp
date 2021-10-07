@@ -211,48 +211,48 @@ HBRUSH CLeagueTeamSchedule::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	//	Invalidate(FALSE);
 		//Default();
 
-		 //switch (nCtlColor)
-		 //{
-		 ////Edit controls need white background and black text
-		 ////Note the 'return hbr' which is needed to draw the Edit
-		 ////control's internal background (as opposed to text background)
-		 //case CTLCOLOR_EDIT:
-		 //     pDC->SetTextColor(EDITCOLOR);
-		 //     pDC->SetBkColor(EDITBKCOLOR);
-		 //     return hbr;
-		 ////Static controls need black text and same background as myBrush
-		 //case CTLCOLOR_STATIC:
-		 //     LOGBRUSH logbrush;
-		 //     myBrush.GetLogBrush( &logbrush );
-		 //     pDC->SetTextColor(STATICCOLOR);
-		 //     pDC->SetBkColor(logbrush.lbColor);
-		 //     return myBrush;
-		 //case CTLCOLOR_BTN:
-		 //     pDC->SetTextColor(RGB(0,255,255));
-		 //     pDC->SetBkColor(RGB(255,128,128));
-		 //     return myBrush;
-		 //case CTLCOLOR_LISTBOX:
-		 //     pDC->SetBkColor(LISTBOXCOLOR);
-		 //     pDC->SetTextColor(LISTBOXTEXTCOLOR);
-		 //     return myBrush;
+		 switch (nCtlColor)
+		 {
+		 //Edit controls need white background and black text
+		 //Note the 'return hbr' which is needed to draw the Edit
+		 //control's internal background (as opposed to text background)
+		 case CTLCOLOR_EDIT:
+		      pDC->SetTextColor(EDITCOLOR);
+		      pDC->SetBkColor(EDITBKCOLOR);
+		      return hbr;
+		 //Static controls need black text and same background as myBrush
+		 case CTLCOLOR_STATIC:
+		      LOGBRUSH logbrush;
+		      myBrush.GetLogBrush( &logbrush );
+		      pDC->SetTextColor(STATICCOLOR);
+		      pDC->SetBkColor(logbrush.lbColor);
+		      return myBrush;
+		 case CTLCOLOR_BTN:
+		      pDC->SetTextColor(RGB(0,255,255));
+		      pDC->SetBkColor(RGB(255,128,128));
+		      return myBrush;
+		 case CTLCOLOR_LISTBOX:
+		      pDC->SetBkColor(LISTBOXCOLOR);
+		      pDC->SetTextColor(LISTBOXTEXTCOLOR);
+		      return myBrush;
 
-		 //case CTLCOLOR_SCROLLBAR:
-		 //     pDC->SetTextColor(RGB(0,0,0));
-		 //     pDC->SetBkColor(LISTBOXCOLOR);
-		 //     return myBrush;
+		 case CTLCOLOR_SCROLLBAR:
+		      pDC->SetTextColor(RGB(0,0,0));
+		      pDC->SetBkColor(LISTBOXCOLOR);
+		      return myBrush;
 
-		 //case CTLCOLOR_MSGBOX:
-		 //     pDC->SetTextColor(RGB(255,255,255));
-		 //     pDC->SetBkColor(RGB(255,128,128));
-		 //     return myBrush;
+		 case CTLCOLOR_MSGBOX:
+		      pDC->SetTextColor(RGB(255,255,255));
+		      pDC->SetBkColor(RGB(255,128,128));
+		      return myBrush;
 
-		 //case CTLCOLOR_DLG:
-		 //     return myBrush;
-		 ////This shouldn't occurr since we took all the cases, but
-		 ////JUST IN CASE, return the new brush
-		 //default:
-		 //     return hbr;
-		 //} 
+		 case CTLCOLOR_DLG:
+		      return myBrush;
+		 //This shouldn't occurr since we took all the cases, but
+		 //JUST IN CASE, return the new brush
+		 default:
+		      return hbr;
+		 } 
 
 
 	return hbr;

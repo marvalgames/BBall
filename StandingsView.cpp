@@ -133,6 +133,7 @@ BEGIN_MESSAGE_MAP(CStandingsView, CFormView)
 	ON_WM_PAINT()
 	ON_WM_CANCELMODE()
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_VS_OPP, &CStandingsView::OnLvnItemchangedListCtrlVsOpp)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1257,4 +1258,12 @@ void CStandingsView::OnCancelMode()
 
 	// TODO: Add your message handler code here
 
+}
+
+
+void CStandingsView::OnLvnItemchangedListCtrlVsOpp(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

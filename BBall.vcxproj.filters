@@ -982,6 +982,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="images\Tropical Hardwood_BaseColor.png" />
+    <Image Include="res\ref.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon50.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

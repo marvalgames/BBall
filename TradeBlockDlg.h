@@ -15,6 +15,7 @@
 #endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CTradeBlockDlg dialog
@@ -35,8 +36,8 @@ public:
 	MyButton	m_button_getoffers;
 	CMyComboBox	m_maxoffers;
 	CMyComboBox	m_comboteams;
-	CListCtrl	m_listblock;
-	CListCtrl	m_listroster;
+	CMyListCtrl	m_listblock;
+	CMyListCtrl	m_listroster;
 	BOOL	m_checkoffers;
 	//}}AFX_DATA
 
@@ -76,6 +77,8 @@ private:
 	void ListBlock();
 	void ListRoster();
 	void InitData();
+public:
+	afx_msg void OnLvnItemchangedListRoster(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

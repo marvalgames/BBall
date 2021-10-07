@@ -10,10 +10,7 @@
 #define Average_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 
 #if _MSC_VER > 1000
@@ -44,7 +41,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CEditRatings)
 	enum { IDD = IDD_DIALOG_PLAYER_EDIT };
-	CListCtrl	m_listAvg;
+	CMyListCtrl	m_listAvg;
 	CMyComboBox	m_combo_pos;
 	CMyComboBox	m_combo_comp;
 	CMyComboBox	m_combo_team;

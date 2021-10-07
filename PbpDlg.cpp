@@ -46,6 +46,7 @@ BEGIN_MESSAGE_MAP(CPbpDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBO_LIST_TEAMS, OnSelchangeComboListTeams)
 	ON_NOTIFY(NM_CLICK, IDC_LIST_CTRL_GAMES, OnClickListCtrlGames)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_GAMES, &CPbpDlg::OnLvnItemchangedListCtrlGames)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -469,4 +470,12 @@ file.Close();
 
 	}
 
+}
+
+
+void CPbpDlg::OnLvnItemchangedListCtrlGames(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

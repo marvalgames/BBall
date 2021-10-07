@@ -70,6 +70,7 @@ BEGIN_MESSAGE_MAP(CBoxDlg, CDialog)
 	ON_NOTIFY(NM_CLICK, IDC_LIST_CTRL_GAMES, OnClickListCtrlGames)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_CTRL_SAVED_BOX, OnDblclkListCtrlSavedBox)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_SAVED_BOX, &CBoxDlg::OnLvnItemchangedListCtrlSavedBox)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -903,5 +904,13 @@ void CBoxDlg::OnDblclkListCtrlSavedBox(NMHDR* pNMHDR, LRESULT* pResult)
 		delete card;
 	}
 
+	*pResult = 0;
+}
+
+
+void CBoxDlg::OnLvnItemchangedListCtrlSavedBox(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
 	*pResult = 0;
 }

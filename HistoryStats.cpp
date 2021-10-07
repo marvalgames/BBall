@@ -54,6 +54,7 @@ BEGIN_MESSAGE_MAP(CHistoryStats, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_BACK, OnButtonBack)
 	ON_BN_CLICKED(IDC_BUTTON_NEXT, OnButtonNext)
 	//}}AFX_MSG_MAP
+	ON_LBN_SELCHANGE(IDC_LIST_DRAFT, &CHistoryStats::OnLbnSelchangeListDraft)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1114,4 +1115,10 @@ ListAwards();
 
 }
 
+}
+
+
+void CHistoryStats::OnLbnSelchangeListDraft()
+{
+	// TODO: Add your control notification handler code here
 }

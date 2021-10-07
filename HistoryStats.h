@@ -12,10 +12,7 @@
 #define Career_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -42,7 +39,7 @@ public:
 	CMyComboBox	m_listPlayers;
 	CListBox	m_list_awards;
 	CListBox	m_listDraft;
-	CListCtrl	m_listCtrl;
+	CMyListCtrl	m_listCtrl;
 	//}}AFX_DATA
 
 
@@ -89,6 +86,8 @@ private:
 	int m_id;
 	void GetCurrentID();
 	void FillListYears();
+public:
+	afx_msg void OnLbnSelchangeListDraft();
 };
 
 //{{AFX_INSERT_LOCATION}}

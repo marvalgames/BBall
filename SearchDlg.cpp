@@ -89,6 +89,7 @@ BEGIN_MESSAGE_MAP(CSearchDlg, CDialog)
 	ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST_PLAYERS, OnColumnclickListPlayers)
 	ON_NOTIFY(NM_CLICK, IDC_LIST_PLAYERS, OnClickListPlayers)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_PLAYERS, &CSearchDlg::OnLvnItemchangedListPlayers)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -681,5 +682,13 @@ void CSearchDlg::OnClickListPlayers(NMHDR* pNMHDR, LRESULT* pResult)
 	else
 		m_button_ok.EnableWindow(FALSE);
 	
+	*pResult = 0;
+}
+
+
+void CSearchDlg::OnLvnItemchangedListPlayers(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
 	*pResult = 0;
 }

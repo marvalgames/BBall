@@ -216,6 +216,8 @@ public:
 	int m_default_team;	
 
 
+public:
+	afx_msg void OnLvnItemchangedListCtrlVsOpp(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 /////////////////////////////////////////////////////////////////////////////

@@ -6,15 +6,8 @@
 #define TeamFinancial_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 
 
@@ -44,10 +37,10 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CCityProfileDlg)
 	enum { IDD = IDD_DIALOG_CITY_PROFILE };
-	CListCtrl	m_list_revenues;
-	CListCtrl	m_list_expenses;
-	CListCtrl	m_list_city;
-	CListCtrl	m_list_arena;
+	CMyListCtrl	m_list_revenues;
+	CMyListCtrl	m_list_expenses;
+	CMyListCtrl	m_list_city;
+	CMyListCtrl	m_list_arena;
 	//}}AFX_DATA
 
 
@@ -79,6 +72,8 @@ private:
 	void ListExpenses();
 	void InitLabels();
 	void InitListCtrl();
+public:
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

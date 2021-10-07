@@ -1074,7 +1074,9 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
     <Image Include="res\BmpBack.bmp" />
     <Image Include="res\button1.bmp" />
     <Image Include="res\cximage.bmp" />
+    <Image Include="res\icon50.ico" />
     <Image Include="res\JSB-MAIN-SCREEN.bmp" />
+    <Image Include="res\ref.ico" />
     <Image Include="res\sample.bmp" />
     <Image Include="res\schedule.bmp" />
     <Image Include="res\Shot.ico" />

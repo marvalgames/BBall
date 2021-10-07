@@ -107,6 +107,8 @@ BEGIN_MESSAGE_MAP(CTradeDlg, CDialog)
 	ON_NOTIFY(NM_CLICK, IDC_LIST_CTRL_PLAYERS1, OnClickListCtrlPlayers1)
 	ON_NOTIFY(NM_CLICK, IDC_LIST_CTRL_PLAYERS2, OnClickListCtrlPlayers2)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_FA, &CTradeDlg::OnLvnItemchangedListCtrlFa)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_TEAM2_DRAFT, &CTradeDlg::OnLvnItemchangedListCtrlTeam2Draft)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -3490,4 +3492,20 @@ void CTradeDlg::AddOfferedPicks()
 		
 		
 		}
+}
+
+
+void CTradeDlg::OnLvnItemchangedListCtrlFa(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+void CTradeDlg::OnLvnItemchangedListCtrlTeam2Draft(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

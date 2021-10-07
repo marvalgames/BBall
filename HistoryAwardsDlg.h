@@ -6,10 +6,7 @@
 #endif // _MSC_VER > 1000
 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 
 //#ifndef PropSheet_h
@@ -33,7 +30,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CHistoryAwardsDlg)
 	enum { IDD = IDD_DIALOG_HISTORY_AWARDS };
-	CListCtrl	m_list_players;
+	CMyListCtrl	m_list_players;
 	//}}AFX_DATA
 
 
@@ -146,6 +143,8 @@ private:
 	void ListBlk();
 	void ListChampion();
 	void InitControls();
+public:
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -12,11 +12,8 @@
 #endif 
 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
 
+#include "MyListCtrl.h"
 #include "MyButton.h"
 // BoxDlg.h : header file
 //
@@ -39,8 +36,8 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CBoxDlg)
 	enum { IDD = IDD_DIALOG_SAVEDBOX };
-	CListCtrl	m_listGames;
-	CListCtrl	m_listBox;
+	CMyListCtrl	m_listGames;
+	CMyListCtrl	m_listBox;
 	CMyComboBox	m_listTeams;
 	MyButton	m_buttonVisitor;
 	MyButton	m_buttonHome;
@@ -96,6 +93,8 @@ private:
 	CString m_print_strings[33];	
 	void SetPrintAlign(CDC *pDC, HDC hdcPrn);
 
+public:
+	afx_msg void OnLvnItemchangedListCtrlSavedBox(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -217,6 +217,7 @@
 #define IDB_PNG2                        721
 #define IDB_PNG3                        724
 #define IDB_PNG_BK                      724
+#define IDI_ICON_REF                    749
 #define IDC_BUTTON_NEW                  1000
 #define IDC_NAME                        1000
 #define IDC_BUTTON_LOAD                 1001
@@ -1351,7 +1352,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        741
+#define _APS_NEXT_RESOURCE_VALUE        768
 #define _APS_NEXT_COMMAND_VALUE         32809
 #define _APS_NEXT_CONTROL_VALUE         1445
 #define _APS_NEXT_SYMED_VALUE           115

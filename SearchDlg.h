@@ -10,10 +10,7 @@
 #define Staff_h
 #endif 
 #include "MyButton.h"
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
@@ -72,7 +69,7 @@ public:
 	CMyComboBox	m_combo_dd;
 	CMyComboBox	m_combo_pd;
 	CMyComboBox	m_combo_td;
-	CListCtrl	m_list_players;
+	CMyListCtrl	m_list_players;
 	MyButton	m_button_find;
 	CMyComboBox	m_combo_max_sal;
 	CMyComboBox	m_combo_min_sal;
@@ -159,6 +156,8 @@ private:
 	CString m_search_team;
 	CString m_search_po;
 
+public:
+	afx_msg void OnLvnItemchangedListPlayers(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -54,6 +54,7 @@ BEGIN_MESSAGE_MAP(CRookieCardDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_OK, OnButtonOk)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_LBN_SELCHANGE(IDC_LIST_REPORT2, &CRookieCardDlg::OnLbnSelchangeListReport2)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -586,4 +587,10 @@ switch (nCtlColor)
      default:
           return hbr;
 	}	
+}
+
+
+void CRookieCardDlg::OnLbnSelchangeListReport2()
+{
+	// TODO: Add your control notification handler code here
 }

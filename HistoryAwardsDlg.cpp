@@ -59,6 +59,7 @@ BEGIN_MESSAGE_MAP(CHistoryAwardsDlg, CDialog)
 	ON_WM_CONTEXTMENU()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDOK, &CHistoryAwardsDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1366,4 +1367,11 @@ switch (nCtlColor)
 	
 	
 		
+}
+
+
+void CHistoryAwardsDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

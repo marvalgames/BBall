@@ -11,10 +11,7 @@
 #define High_h
 #endif 
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -38,7 +35,7 @@ public:
 	//{{AFX_DATA(CRecordbookDlg)
 	enum { IDD = IDD_DIALOG_RECORDBOOK };
 	CMyComboBox	m_combo_teams;
-	CListCtrl	m_list_records;
+	CMyListCtrl	m_list_records;
 	//}}AFX_DATA
 
 

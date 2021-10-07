@@ -8,10 +8,7 @@
 
 #define HID_VIEW_SAVEDPBP 24
 
-#ifndef XListCtrl_h
-//#include "XListCtrl/XListCtrl.h"
-#define XListCtrl_h
-#endif 
+#include "MyListCtrl.h"
 
 // PbpDlg.h : header file
 //
@@ -31,7 +28,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CPbpDlg)
 	enum { IDD = IDD_DIALOG_SAVEDPBP };
-	CListCtrl	m_listGames;
+	CMyListCtrl	m_listGames;
 	CMyComboBox	m_listTeams;
 	CListBox	m_listPbp;
 	//}}AFX_DATA
@@ -67,6 +64,8 @@ private:
 	CBrush myBrush2;
 	int m_games[10000];
 	void SetPrintAlign(CDC *pDC, HDC hdcPrn);
+public:
+	afx_msg void OnLvnItemchangedListCtrlGames(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

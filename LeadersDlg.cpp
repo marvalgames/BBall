@@ -72,6 +72,7 @@ BEGIN_MESSAGE_MAP(CLeadersDlg, CDialog)
 	ON_WM_CTLCOLOR()
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_CTRL_LEADERS, OnDblclkListCtrlLeaders)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_LEADERS, &CLeadersDlg::OnLvnItemchangedListCtrlLeaders)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1814,4 +1815,12 @@ void CLeadersDlg::InitControls()
 
 //	m_rows = 0;
 
+}
+
+
+void CLeadersDlg::OnLvnItemchangedListCtrlLeaders(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }
