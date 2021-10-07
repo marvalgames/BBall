@@ -58,7 +58,7 @@ public:
 	MyButton	m_button_progress;
 	MyButton	m_button_history;
 
-	CTransparentGroup g1,g2,g3;
+	//CTransparentGroup g1,g2,g3;
 
 	CMyComboBox	m_combo_teams;
 	MyButton	m_button_standings;

@@ -88,6 +88,7 @@ private:
 	void FillListYears();
 public:
 	afx_msg void OnLbnSelchangeListDraft();
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

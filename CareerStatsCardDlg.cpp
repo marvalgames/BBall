@@ -60,6 +60,7 @@ BEGIN_MESSAGE_MAP(CCareerStatsCardDlg, CDialog)
 	ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST_CTRL_STATS, OnColumnclickListCtrlStats)
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STATS, &CCareerStatsCardDlg::OnLvnItemchangedListCtrlStats)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -621,28 +622,28 @@ void CCareerStatsCardDlg::InitListCtrl()
     m_listCtrl.InsertColumn(20,"ppg");
   
 	  
-	
-    m_listCtrl.SetColumnWidth( 0, 45);
-    m_listCtrl.SetColumnWidth( 1, 60);
-    m_listCtrl.SetColumnWidth( 2, 30);
-    m_listCtrl.SetColumnWidth( 3, 31);
-    m_listCtrl.SetColumnWidth( 4, 31);
-    m_listCtrl.SetColumnWidth( 5, 31);
-    m_listCtrl.SetColumnWidth( 6, 31);
-    m_listCtrl.SetColumnWidth( 7, 31);
-    m_listCtrl.SetColumnWidth( 8, 31);
-    m_listCtrl.SetColumnWidth( 9, 31);
-    m_listCtrl.SetColumnWidth( 10, 30);
-    m_listCtrl.SetColumnWidth( 11, 31);
-    m_listCtrl.SetColumnWidth( 12, 33);
-    m_listCtrl.SetColumnWidth( 13, 27);
-    m_listCtrl.SetColumnWidth( 14, 31);
-    m_listCtrl.SetColumnWidth( 15, 30);
-    m_listCtrl.SetColumnWidth( 16, 25);
-    m_listCtrl.SetColumnWidth( 17, 26);
-    m_listCtrl.SetColumnWidth( 18, 25);
-    m_listCtrl.SetColumnWidth( 19, 25);
-    m_listCtrl.SetColumnWidth( 20, 31);
+	float scale = 1.5;
+    m_listCtrl.SetColumnWidth( 0, 45 * scale );
+    m_listCtrl.SetColumnWidth( 1, 60 * scale );
+    m_listCtrl.SetColumnWidth( 2, 30 * scale );
+    m_listCtrl.SetColumnWidth( 3, 31 * scale );
+    m_listCtrl.SetColumnWidth( 4, 31 * scale );
+    m_listCtrl.SetColumnWidth( 5, 31 * scale );
+    m_listCtrl.SetColumnWidth( 6, 31 * scale );
+    m_listCtrl.SetColumnWidth( 7, 31 * scale );
+    m_listCtrl.SetColumnWidth( 8, 31 * scale );
+    m_listCtrl.SetColumnWidth( 9, 31 * scale );
+    m_listCtrl.SetColumnWidth( 10, 30 * scale );
+    m_listCtrl.SetColumnWidth( 11, 31 * scale );
+    m_listCtrl.SetColumnWidth( 12, 33 * scale );
+    m_listCtrl.SetColumnWidth( 13, 27 * scale );
+    m_listCtrl.SetColumnWidth( 14, 31 * scale );
+    m_listCtrl.SetColumnWidth( 15, 30 * scale );
+    m_listCtrl.SetColumnWidth( 16, 25 * scale );
+    m_listCtrl.SetColumnWidth( 17, 26 * scale );
+    m_listCtrl.SetColumnWidth( 18, 25 * scale );
+    m_listCtrl.SetColumnWidth( 19, 25 * scale );
+    m_listCtrl.SetColumnWidth( 20, 31 * scale );
     m_listCtrl.SetTextColor(RGB(0,0,0));
     m_listCtrl.SetTextBkColor(TEXT_BK_COLOR);
     m_listCtrl.SetBkColor(BK_COLOR);
@@ -1050,4 +1051,12 @@ switch (nCtlColor)
 	
 	// TODO: Return a different brush if the default is not desired
 //	return hbr;
+}
+
+
+void CCareerStatsCardDlg::OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
 }

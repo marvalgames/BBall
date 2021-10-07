@@ -13,6 +13,7 @@
 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 
 
@@ -55,8 +56,8 @@ public:
 	MyButton	m_button_cancel;
 	MyButton	m_edit_ok;
 	CListBox	m_list_control;
-	CListCtrl	m_list_stats;
-	CListCtrl	m_list_ctrl;
+	CMyListCtrl	m_list_stats;
+	CMyListCtrl	m_list_ctrl;
 	UINT	m_edit_ticket_price;
 	UINT	m_edit_suite_price;
 	UINT	m_edit_con_price;

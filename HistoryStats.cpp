@@ -55,6 +55,7 @@ BEGIN_MESSAGE_MAP(CHistoryStats, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_NEXT, OnButtonNext)
 	//}}AFX_MSG_MAP
 	ON_LBN_SELCHANGE(IDC_LIST_DRAFT, &CHistoryStats::OnLbnSelchangeListDraft)
+	ON_BN_CLICKED(IDOK, &CHistoryStats::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -154,7 +155,7 @@ void CHistoryStats::InitListCtrl()
 LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -184,28 +185,28 @@ LOGFONT lf;                        // Used to create the CFont.
     m_listCtrl.InsertColumn(20,"ppg");
   
   
-	
-    m_listCtrl.SetColumnWidth( 0, 34);
-    m_listCtrl.SetColumnWidth( 1, 64);
-    m_listCtrl.SetColumnWidth( 2, 31);
-    m_listCtrl.SetColumnWidth( 3, 31);
-    m_listCtrl.SetColumnWidth( 4, 31);
-    m_listCtrl.SetColumnWidth( 5, 31);
-    m_listCtrl.SetColumnWidth( 6, 31);
-    m_listCtrl.SetColumnWidth( 7, 31);
-    m_listCtrl.SetColumnWidth( 8, 31);
-    m_listCtrl.SetColumnWidth( 9, 31);
-    m_listCtrl.SetColumnWidth( 10, 31);
-    m_listCtrl.SetColumnWidth( 11, 31);
-    m_listCtrl.SetColumnWidth( 12, 35);
-    m_listCtrl.SetColumnWidth( 13, 29);
-    m_listCtrl.SetColumnWidth( 14, 31);
-    m_listCtrl.SetColumnWidth( 15, 31);
-    m_listCtrl.SetColumnWidth( 16, 25);
-    m_listCtrl.SetColumnWidth( 17, 25);
-    m_listCtrl.SetColumnWidth( 18, 29);
-    m_listCtrl.SetColumnWidth( 19, 25);
-    m_listCtrl.SetColumnWidth( 20, 31);
+	float scale = 1.5;
+    m_listCtrl.SetColumnWidth( 0, 34 * scale );
+    m_listCtrl.SetColumnWidth( 1, 64 * scale );
+    m_listCtrl.SetColumnWidth( 2, 31 * scale );
+    m_listCtrl.SetColumnWidth( 3, 31 * scale );
+    m_listCtrl.SetColumnWidth( 4, 31 * scale );
+    m_listCtrl.SetColumnWidth( 5, 31 * scale );
+    m_listCtrl.SetColumnWidth( 6, 31 * scale );
+    m_listCtrl.SetColumnWidth( 7, 31 * scale );
+    m_listCtrl.SetColumnWidth( 8, 31 * scale );
+    m_listCtrl.SetColumnWidth( 9, 31 * scale );
+    m_listCtrl.SetColumnWidth( 10, 31 * scale );
+    m_listCtrl.SetColumnWidth( 11, 31 * scale );
+    m_listCtrl.SetColumnWidth( 12, 35 * scale );
+    m_listCtrl.SetColumnWidth( 13, 29 * scale );
+    m_listCtrl.SetColumnWidth( 14, 31 * scale );
+    m_listCtrl.SetColumnWidth( 15, 31 * scale );
+    m_listCtrl.SetColumnWidth( 16, 25 * scale );
+    m_listCtrl.SetColumnWidth( 17, 25 * scale );
+    m_listCtrl.SetColumnWidth( 18, 29 * scale );
+    m_listCtrl.SetColumnWidth( 19, 25 * scale );
+    m_listCtrl.SetColumnWidth( 20, 31 * scale );
     m_listCtrl.SetTextColor(RGB(0,0,0));
 //    m_listCtrl.SetTextBkColor(RGB(255,251,240));
  //   m_listCtrl.SetBkColor(RGB(255,251,240));
@@ -1121,4 +1122,11 @@ ListAwards();
 void CHistoryStats::OnLbnSelchangeListDraft()
 {
 	// TODO: Add your control notification handler code here
+}
+
+
+void CHistoryStats::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

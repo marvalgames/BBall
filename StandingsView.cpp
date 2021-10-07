@@ -84,9 +84,9 @@ void CStandingsView::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_CHOICES, m_listChoices);
 	//}}AFX_DATA_MAP
 
-	DDX_Control(pDX, IDC_STATIC_G3, g3);
-	DDX_Control(pDX, IDC_STATIC_G2, g2);
-	DDX_Control(pDX, IDC_STATIC_G1, g1);
+	//DDX_Control(pDX, IDC_STATIC_G3, g3);
+	//DDX_Control(pDX, IDC_STATIC_G2, g2);
+	//DDX_Control(pDX, IDC_STATIC_G1, g1);
 
 }
 
@@ -160,6 +160,18 @@ void CStandingsView::OnInitialUpdate()
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
 	CFormView::OnInitialUpdate();
+
+	LOGFONT lf;                        // Used to create the CFont.
+	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
+	lf.lfWeight = 100;
+	lf.lfHeight = 14;
+	//lf.lfWidth = 32;
+	strcpy_s(lf.lfFaceName, USERFONT);
+	m_font.CreateFontIndirect(&lf);    // Create the font.
+
+
+	GetDlgItem(IDC_STATIC_G2)->SetFont(&m_font, TRUE);
+	GetDlgItem(IDC_STATIC_G3)->SetFont(&m_font, TRUE);
 
 
 
@@ -883,6 +895,8 @@ void CStandingsView::InitView()
 {
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
+
+
 	//m_list_stats.SetBkColor(RGB(215,235,255));
 	//m_list_stats.SetTextBkColor(RGB(0,128,192));
    //m_list_stats.SetTextColor(RGB(0,0,0));
@@ -1060,9 +1074,14 @@ HBRUSH CStandingsView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case CTLCOLOR_STATIC:
 		LOGBRUSH logbrush;
 		myBrush.GetLogBrush(&logbrush);
-		pDC->SetTextColor(STATICCOLOR);
-		pDC->SetBkColor(logbrush.lbColor);
-		return hbr;
+		pDC->SetTextColor(WHITE);
+		pDC->SetBkColor(BLACK);
+		return myBrush;
+	case WM_CTLCOLORSTATIC:
+		myBrush.GetLogBrush(&logbrush);
+		pDC->SetTextColor(WHITE);
+		pDC->SetBkColor(BLACK);
+		return myBrush;
 	case CTLCOLOR_BTN:
 		//          pDC->SetTextColor(RGB(0,255,255));
 		  //        pDC->SetBkColor(RGB(255,128,128));

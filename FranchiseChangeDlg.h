@@ -38,6 +38,7 @@
 #endif 
 
 #include "MyButton.h"
+#include "MyListCtrl.h"
 
 // FranchiseChangeDlg.h : header file
 //
@@ -75,7 +76,7 @@ public:
 	MyButton	m_button_end;
 	CListBox	m_list_result;
 	MyButton	m_button_move;
-	CListCtrl	m_list_ctrl;
+	CMyListCtrl	m_list_ctrl;
 	UINT	m_edit_capacity;
 	UINT	m_edit_club;
 	UINT	m_edit_pct;

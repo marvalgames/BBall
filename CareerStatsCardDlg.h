@@ -83,6 +83,8 @@ private:
 	void InitListCtrl();
 	void ListPlayerAwards();
 	void Player();
+public:
+	afx_msg void OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}
