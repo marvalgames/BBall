@@ -59,6 +59,8 @@ protected:
 	//COLORREF rowColor2 = ROWCOLOR2;
 	COLORREF rowColor1;
 	COLORREF rowColor2;
+	COLORREF listColor1;
+	COLORREF listColor2;
 
 
 	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);

@@ -1924,9 +1924,9 @@ BOOL CBBallCoachView::OnHelpInfo(HELPINFO* pHelpInfo)
 void CBBallCoachView::OnContextMenu(CWnd* pWnd, CPoint point)
 {
 	// TODO: Add your message handler code here
-//	HtmlHelp(NULL, "jumpshot.chm::/html/coach.htm", HH_DISPLAY_TOPIC, 0);
+	//HtmlHelp(NULL, "jumpshot.chm::/html/coach.htm", HH_DISPLAY_TOPIC, 0);
 
-//	return CFormView::OnHelpInfo(pHelpInfo);
+	//return CFormView::OnHelpInfo(pHelpInfo);
 
 }
 

@@ -32,7 +32,7 @@ CLeagueTeamsDlg::CLeagueTeamsDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CLeagueTeamsDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CLeagueTeamsDlg)
-	m_leagueName = _T("Default_04-05");
+	m_leagueName = _T("Default_20-21");
 	m_conferenceName1 = _T("");
 	m_conferenceName2 = _T("");
 	m_divisionName1 = _T("");

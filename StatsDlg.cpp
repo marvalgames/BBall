@@ -188,9 +188,9 @@ void CStatsDlg::OnButtonHome()
 			Pos = m_player.GetPos();
 			if(player == 30) Name = m_home;
 			if(Name == "" || (player > 27 && player < 30)) continue;
-			int min = (m_player.GetGameMin()) / 60;
-			if(m_player.m_game_Min > 0 && min == 0) min = 1;
-			
+			int min = round(m_player.GetGameMin() / 60);
+			if (m_player.m_game_Min > 0 && min == 0) min = 1;
+
 			if(player == 30){min = 240; Min = "";}
 			else Min.Format( "%d", min );
 			int fgm = m_player.GetGameFgm() + m_player.GetGameTfgm();
@@ -291,8 +291,9 @@ void CStatsDlg::OnButtonVisitor()
 			Pos = m_player.GetPos();
 			if(player == 15) Name = m_visitor;
 			if(Name == "" || (player > 12 && player < 15)) continue;
-			int min = (m_player.GetGameMin()) / 60;
-			if(m_player.m_game_Min > 0 && min == 0) min = 1;
+			int min = round(m_player.GetGameMin() / 60);
+			if (m_player.m_game_Min > 0 && min == 0) min = 1;
+
 
 			if(player == 15){min = 240; Min = "";}
 			else Min.Format( "%d", min );
@@ -1054,17 +1055,21 @@ void CStatsDlg::ReadSavedBox()
 	CString file_name = avg.m_settings.m_path + avg.m_settings.m_league_name + ".sco";
 
 	CFile file( file_name, CFile::modeRead);
-	char s[3001];
+	char s[2001];
 	int seek = (m_mo*500 + m_da*15 + m_ga) * 2000;
+	//seek = 0;
 	file.Seek(seek, CFile::begin );
 	int bytes = file.Read(s, 2000);
 	s[bytes] = 0;
 	CString str = CString(s);
-	str = str + "                                                                                                "; 
+	//str = str + "                                                                                                "; 
+	CString mo = str.Mid(0, 2);
+	CString da = str.Mid(2, 2);
+	CString ga = str.Mid(4, 2);
 
 
 	CString buf;
-	buf = str.Mid(6,2);
+	buf = str.Mid(6, 2);
 	m_visitor_index = atoi(buf);
 	buf = str.Mid(8,2);
 	m_home_index = atoi(buf);
@@ -1154,7 +1159,7 @@ void CStatsDlg::ReadSavedBox()
 		PlayerStats[i+1].m_id = id;
 
 		buf = str.Mid(58 + i*53+24,2);
-		int min = atoi(buf) * 60 - 29;
+		int min = atoi(buf) * 60;
 		PlayerStats[i+1].SetGameMin(min);
 
 		buf = str.Mid(58 + i*53+26,2);

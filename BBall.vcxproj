@@ -200,6 +200,7 @@
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -233,8 +234,7 @@
       <AdditionalDependencies>Htmlhelp.lib;comctl32.lib;winmm.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug/BBall.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\hlp;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/BBall.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
@@ -464,7 +464,7 @@
       <AdditionalIncludeDirectories>..\XListCtrl;$(ProjectDir)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
@@ -475,15 +475,16 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
+      <CompileAsManaged>false</CompileAsManaged>
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>Htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release/BBall.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>C:\Program Files\HTML Help Workshop\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\hlp;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\Release/BBall.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>Htmlhelp.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -730,6 +731,205 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="hlp\AfxCore.rtf" />
+    <None Include="hlp\BBall.hpj" />
+    <None Include="html\allstar.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\allstats.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\budgetsheet.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\cityprofiles.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\coach.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\coachdefense.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\coachtimeout.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\draftpreview.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\exhibition.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\fantasydraft.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\features.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\freeagency.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\gameplan.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\gametype.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\historyawards.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\historycareer.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\historydrafts.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\historyhof.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\historyrecordbook.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\index.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\leagueleaders.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\negotiate.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\offercontract.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\play.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\playercard.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\progresscamp.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\progressend.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\progressoverview.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\progressproposals.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\proposetrades.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\records.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\scheduleoverview.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\search.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\seasonawards.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\setupdelete.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\setupnew.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\setupopen.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\setupsave.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\setupsettings.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\staffprofiles.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\staffs.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\standingsoverview.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teambudget.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamdraft.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamfa.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamhistory.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamlineup.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamrecords.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamresults.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamroster.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamschedules.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamstaff.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamtrade.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamtransactions.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\teamyearlyresults.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolsauto.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolscityeditor.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolsdraftfiles.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolshtmlexport.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolsimport.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolsplayeredit.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolssavedbox.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolssavedpbp.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\toolsscheduler.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\tradingblock.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="html\transactions.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="nodrop.cur" />
     <None Include="res\BBall.rc2" />
     <None Include="res\cursor.cur" />
@@ -788,6 +988,7 @@
     <ClInclude Include="Boxscore.h" />
     <ClInclude Include="BudgetSheetDlg.h" />
     <ClInclude Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\atlmfc\include\afxbutton.h" />
+    <ClInclude Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\atlmfc\include\afxwin.h" />
     <ClInclude Include="calendar.h" />
     <ClInclude Include="CampDlg.h" />
     <ClInclude Include="Career.h" />
@@ -830,6 +1031,7 @@
     <ClInclude Include="HofDlg.h" />
     <ClInclude Include="Html.h" />
     <ClInclude Include="HtmlDlg.h" />
+    <ClInclude Include="htmlhelp.h" />
     <ClInclude Include="HtmlMsc.h" />
     <ClInclude Include="ImpExp.h" />
     <ClInclude Include="ImportDlg.h" />

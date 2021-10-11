@@ -39,10 +39,14 @@ HBRUSH CMyComboBox::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	HBRUSH hbr = CComboBox::OnCtlColor(pDC, pWnd, nCtlColor);
 
 	// TODO: Change any attributes of the DC here
+	pDC->SetTextColor(YELLOW);
+	pDC->SetBkColor(RGB(69,94,137));
+
+	//pDC->SetBkMode(TRANSPARENT);
 
 	// TODO: Return a different brush if the default is not desired
 	m_BkBrush.Detach();
-	m_BkBrush.CreateSolidBrush(LISTBOXCOLOR);
+	m_BkBrush.CreateSolidBrush(RGB(69,94,137));
 	return m_BkBrush;
 
 

@@ -134,6 +134,8 @@ BEGIN_MESSAGE_MAP(CStandingsView, CFormView)
 	ON_WM_CANCELMODE()
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_VS_OPP, &CStandingsView::OnLvnItemchangedListCtrlVsOpp)
+	ON_BN_CLICKED(IDC_STATIC_G3, &CStandingsView::OnBnClickedStaticG3)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_TEAMS, &CStandingsView::OnLvnItemchangedListCtrlTeams)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -926,14 +928,14 @@ void CStandingsView::InitView()
 	m_listTeams.DeleteColumn(7);
 	m_listTeams.InsertColumn(7, "away");
 
-	m_listTeams.SetColumnWidth(0, 120);
-	m_listTeams.SetColumnWidth(1, 66);
-	m_listTeams.SetColumnWidth(2, 40);
-	m_listTeams.SetColumnWidth(3, 40);
-	m_listTeams.SetColumnWidth(4, 66);
-	m_listTeams.SetColumnWidth(5, 66);
-	m_listTeams.SetColumnWidth(6, 66);
-	m_listTeams.SetColumnWidth(7, 66);
+	m_listTeams.SetColumnWidth(0, 180);
+	m_listTeams.SetColumnWidth(1, 99);
+	m_listTeams.SetColumnWidth(2, 60);
+	m_listTeams.SetColumnWidth(3, 60);
+	m_listTeams.SetColumnWidth(4, 99);
+	m_listTeams.SetColumnWidth(5, 99);
+	m_listTeams.SetColumnWidth(6, 99);
+	m_listTeams.SetColumnWidth(7, 99);
 	//m_listTeams.SetColumnWidth( 13, 30);
 	//m_listTeams.SetColumnWidth( 14, 30);
 
@@ -951,9 +953,9 @@ void CStandingsView::InitView()
 	m_listVsOpponents.DeleteColumn(2);
 	m_listVsOpponents.InsertColumn(2, "loss");
 
-	m_listVsOpponents.SetColumnWidth(0, 90);
-	m_listVsOpponents.SetColumnWidth(1, 30);
-	m_listVsOpponents.SetColumnWidth(2, 30);
+	m_listVsOpponents.SetColumnWidth(0, 120);
+	m_listVsOpponents.SetColumnWidth(1, 40);
+	m_listVsOpponents.SetColumnWidth(2, 40);
 
 
 	//	m_button_schedule.SetShade(CShadeButtonST::SHS_HARDBUMP,8,10,20,BUTTONCOLOR);
@@ -1281,6 +1283,20 @@ void CStandingsView::OnCancelMode()
 
 
 void CStandingsView::OnLvnItemchangedListCtrlVsOpp(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+void CStandingsView::OnBnClickedStaticG3()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+void CStandingsView::OnLvnItemchangedListCtrlTeams(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
 	// TODO: Add your control notification handler code here

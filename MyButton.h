@@ -30,7 +30,7 @@ public:
 	void SetButtonFontSize(int size);
 	void SetButtonFontWeight(int weight);
 	void SetButtonFontType(CString type);
-	BOOL m_useImage = true;
+	BOOL m_useImage = false;
 	//UINT m_imageResourceID = IDB_BUTTON;
 
 protected:

@@ -1,12 +1,10 @@
 [OPTIONS]
-Auto Index=Yes
 Compatibility=1.1 or later
-Compiled file=jumpshot.chm
-Contents file=..\jumpshot.hhc
-Default Font=Segoe UI,8,0
+Compiled file=..\jumpshot.chm
+Contents file=jumpshot.hhc
 Default topic=html\play.htm
 Display compile progress=Yes
-Index file=..\Nba.hhk
+Index file=Nba.hhk
 Language=0x409 English (United States)
 
 
@@ -76,9 +74,6 @@ html\records.htm
 html\search.htm
 html\seasonawards.htm
 html\scheduleoverview.htm
-
-[MAP]
-#include htmlhelp.h
 
 [INFOTYPES]
 

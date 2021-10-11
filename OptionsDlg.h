@@ -51,6 +51,7 @@ public:
 	enum { IDD = IDD_DIALOG_OPTIONS };
 	CMyComboBox	m_listTeams;
 	MyButton	m_button_toggle_control;
+	MyButton	m_buttons[2];
 	CSliderCtrl	m_slider_pace;
 	BOOL	m_checkBox;
 	BOOL	m_checkPbp;
@@ -117,6 +118,7 @@ protected:
 	afx_msg void OnCheckCoaches();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
 };
 
 //{{AFX_INSERT_LOCATION}}

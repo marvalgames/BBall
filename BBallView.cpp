@@ -129,6 +129,16 @@ CBBallView::CBBallView()
 	m_bmp->SetBitmapDimension(512, 512); /* if the size of bitmap is 50 by 40 */
 
 
+
+	int fontSize = 28;
+	m_button_options.SetButtonFontSize(fontSize);
+	m_button_delete.SetButtonFontSize(fontSize);
+	m_button_load.SetButtonFontSize(fontSize);
+	m_button_new.SetButtonFontSize(fontSize);
+	m_button_save.SetButtonFontSize(fontSize);
+	m_button_quickstart.SetButtonFontSize(fontSize);
+
+
 	//m_button_setup.SetFaceColor(RGB(39,64,139));
 	//m_button_setup.SetTextColor(RGB(245,245,245));
 
@@ -188,6 +198,8 @@ void CBBallView::OnInitialUpdate()
 	m_tbrush.CreateSolidBrush(LISTBOXCOLOR);
 
 
+
+
 	CSplashScreenEx* pSplash = new CSplashScreenEx();
 	pSplash->Create(this, NULL, 2000, CSS_FADE | CSS_CENTERSCREEN | CSS_SHADOW);
 	pSplash->SetBitmap(IDB_SPLASH, 255, 0, 255);
@@ -206,6 +218,7 @@ void CBBallView::OnInitialUpdate()
 	lf.lfHeight = 28;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font1.CreateFontIndirect(&lf);    // Create the font.
+
 
 
 	CFrameWnd* pFrame;
@@ -262,7 +275,7 @@ void CBBallView::OnButtonLoad()
 
 
 
-	CFileDialog fil(true, ".lge", "Default_04-05", OFN_HIDEREADONLY,
+	CFileDialog fil(true, ".lge", "Default_20-21", OFN_HIDEREADONLY,
 		"League Files (*.lge)|*.lge|", NULL);
 	result = fil.DoModal();
 	if (result == IDOK)
@@ -337,6 +350,7 @@ void CBBallView::OnButtonLoad()
 		//		str.Format("CREATE QUICK LEAGUE BASED ON DEFAULT LEAGUE: %s", le);
 		str = "Create Quick League";
 		GetDlgItem(IDC_BUTTON_QUICKSTART)->SetWindowText(str);
+
 	}
 	else
 	{
@@ -1161,9 +1175,16 @@ void CBBallView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 BOOL CBBallView::OnHelpInfo(HELPINFO* pHelpInfo)
 {
 	// TODO: Add your message handler code here and/or call default
-//	HtmlHelp(NULL, "jumpshot.chm::/html/play.htm", HH_DISPLAY_TOPIC, 0);
+	//HtmlHelp(NULL, "jumpshot.chm::/html/play.htm", HH_DISPLAY_TOPIC, 0);
+	//HtmlHelp(NULL, "jumpshot.chm::/html/play.htm", HH_DISPLAY_TOPIC, 0);
+	//HtmlHelp(this->m_hWnd, "HelpSample.chm", HH_DISPLAY_TOPIC, NULL)
+	//HtmlHelp(NULL, HH_DISPLAY_TOPIC);
 
 //	return CFormView::OnHelpInfo(pHelpInfo);
+	ShellExecute(NULL, "open", "html\\play.htm", NULL, NULL, SW_SHOWNORMAL);
+
+
+
 
 	return CFormView::OnHelpInfo(pHelpInfo);
 }
@@ -1644,8 +1665,8 @@ HBRUSH CBBallView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		pDC->SetBkColor(BLACK);
 		return hbr;
 	case CTLCOLOR_LISTBOX:
-		pDC->SetBkColor(LISTBOXCOLOR);
-		pDC->SetTextColor(LISTBOXTEXTCOLOR);
+		//pDC->SetBkColor(LISTBOXCOLOR);
+		//pDC->SetTextColor(LISTBOXTEXTCOLOR);
 		return myBrush;
 	case CTLCOLOR_BTN:
 		pDC->SetTextColor(RGB(255, 255, 255));

@@ -213,17 +213,20 @@ void CTeamFinancial::GameClubSales(int personality, double avg_roster_value, int
 
 	
 	double pct_factor = price / best_price;
-	if(pct_factor > 1) pct_factor = best_price / price;
+	if(pct_factor > 1 && price > 0) pct_factor = best_price / price;
 	
 	pct_factor = (1 - pct_factor) * (1 - (double)m_interest / 8);
 	double projected_revenue = max_revenue * (1 - pct_factor);
 	    
 
+	double sold = 0;
 
-
-	double sold = projected_revenue / price;
-	sold = (.9 + Random(.2)) * sold;
-	sold = sold * .98;
+	if (price > 0)
+	{
+		sold = projected_revenue / price;
+		sold = (.9 + Random(.2)) * sold;
+		sold = sold * .98;
+	}
 
 	m_clubs_sold = (long) sold;
 	if(m_clubs_sold > capacity) m_clubs_sold = capacity;

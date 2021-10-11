@@ -285,14 +285,29 @@ void CTeamView::OnInitialUpdate()
 	{
 		if (i < 32)
 		{
-			m_buttons[i].m_nFlatStyle = CMFCButton::BUTTONSTYLE_NOBORDERS;
+			//m_buttons[i].m_nFlatStyle = CMFCButton::BUTTONSTYLE_NOBORDERS;
 			m_buttons[i].m_nAlignStyle = CMFCButton::ALIGN_LEFT;
 		}
 		m_buttons[i].m_bTransparent = TRUE;
-		//	m_buttons[i].SetTextColor(RGB(0,0,0));
+		if (i <= 12 || i == 29 || i == 30 || i == 32) m_buttons[i].m_bTransparent = FALSE;
+		if (i > 12 && i != 32)
+		{
+			m_buttons[i].m_bTransparent = FALSE;
+			//m_buttons[i].SetTextColor(RGB(226, 226, 223));
+			//m_buttons[i].SetFaceColor(RGB(0, 48, 73));
+			m_buttons[i].SetFaceColor(RGB(250, 237, 203));
+			m_buttons[i].SetTextColor(RGB(0, 0, 0));
+			m_buttons[i].m_nFlatStyle = CMFCButton::BUTTONSTYLE_NOBORDERS;
+			//m_buttons[i].m_nFlatStyle = CMFCButton::BUTTONSTYLE_3D;
+		}
+		else
+		{
+			m_buttons[i].SetFaceColor(RGB(201, 228, 222));
+			m_buttons[i].SetTextColor(RGB(0, 0, 0));
+		}
 		//	m_buttons[i].SetImage(IDB_BUTTON, IDB_BUTTON, FALSE);
 	}
-	
+
 	m_buttons[25].m_bTransparent = FALSE;
 	//	m_buttons[i].SetTextColor(RGB(0,0,0));
 	//	m_buttons[i].SetImage(IDB_BUTTON, IDB_BUTTON, FALSE);
@@ -2223,9 +2238,9 @@ HBRUSH CTeamView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 
 
-	//case CTLCOLOR_BTN:
-		//pDC->SetBkMode(TRANSPARENT);
-		//return HBRUSH(myBrush);
+		//case CTLCOLOR_BTN:
+			//pDC->SetBkMode(TRANSPARENT);
+			//return HBRUSH(myBrush);
 
 	case CTLCOLOR_LISTBOX:
 		pDC->SetBkColor(LISTBOXCOLOR);

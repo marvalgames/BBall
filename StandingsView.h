@@ -218,6 +218,8 @@ public:
 
 public:
 	afx_msg void OnLvnItemchangedListCtrlVsOpp(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBnClickedStaticG3();
+	afx_msg void OnLvnItemchangedListCtrlTeams(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 /////////////////////////////////////////////////////////////////////////////

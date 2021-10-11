@@ -396,6 +396,207 @@
     <None Include="hlp\AfxCore.rtf">
       <Filter>Help Files</Filter>
     </None>
+    <None Include="hlp\BBall.hpj">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\allstar.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\allstats.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\budgetsheet.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\cityprofiles.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\coach.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\coachdefense.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\coachtimeout.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\draftpreview.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\exhibition.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\fantasydraft.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\features.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\freeagency.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\gameplan.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\gametype.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\historyawards.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\historycareer.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\historydrafts.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\historyhof.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\historyrecordbook.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\index.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\leagueleaders.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\negotiate.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\offercontract.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\play.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\playercard.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\progresscamp.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\progressend.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\progressoverview.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\progressproposals.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\proposetrades.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\records.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\scheduleoverview.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\search.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\seasonawards.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\setupdelete.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\setupnew.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\setupopen.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\setupsave.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\setupsettings.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\staffprofiles.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\staffs.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\standingsoverview.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teambudget.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamdraft.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamfa.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamhistory.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamlineup.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamrecords.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamresults.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamroster.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamschedules.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamstaff.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamtrade.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamtransactions.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\teamyearlyresults.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolsauto.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolscityeditor.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolsdraftfiles.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolshtmlexport.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolsimport.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolsplayeredit.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolssavedbox.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolssavedpbp.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\toolsscheduler.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\tradingblock.htm">
+      <Filter>Help Files</Filter>
+    </None>
+    <None Include="html\transactions.htm">
+      <Filter>Help Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BBall.rc">
@@ -878,6 +1079,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Externs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="htmlhelp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\atlmfc\include\afxwin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

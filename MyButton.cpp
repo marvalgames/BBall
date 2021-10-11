@@ -9,7 +9,7 @@ END_MESSAGE_MAP()
 
 MyButton::MyButton(void)
 {
-	m_clrFace = RGB(255, 255, 255);
+	m_clrFace = RGB(0, 48, 73);
 	m_clrRegular = RGB(255, 255, 255);
 	m_nFlatStyle = CMFCButton::BUTTONSTYLE_SEMIFLAT;
 	//m_imageResourceID = IDB_BUTTON;

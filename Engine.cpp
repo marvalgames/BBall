@@ -6872,8 +6872,9 @@ void CEngine::SaveCurrentGameData()
 		buffer_pos.Format("%-2s", pos);
 
 
-		int min = (m_playerStats->m_game_Min) / 60;
-		if(m_playerStats->m_game_Min > 0 && min == 0) min = 1;
+		float min_f = round((float)m_playerStats->m_game_Min / 60);
+		int min = (int)min_f;
+		if (m_playerStats->m_game_Min > 0 && min == 0) min = 1;
 
 		buffer1.Format("%2d", min);
 		int fgm = m_playerStats->m_game_Fgm;
@@ -7011,8 +7012,10 @@ void CEngine::SaveCurrentGameData()
 		//buffer_pos.Format("%-2s", pos);
 
 
-		int min = (m_playerStats->m_game_Min) / 60;
-		if(m_playerStats->m_game_Min > 0 && min == 0) min = 1;
+		float min_f = round((float)m_playerStats->m_game_Min / 60);
+		int min = (int)min_f;
+		if (m_playerStats->m_game_Min > 0 && min == 0) min = 1;
+
 		buffer1.Format("%4d", min);
 		int fgm = m_playerStats->m_game_Fgm;
 		buffer2.Format("%4d", fgm);
@@ -7135,7 +7138,7 @@ for(int i=1; i<=64; i++)
 
 	
 		int games = (m_players1->m_game_Min != 0);
-		int min = (m_players1->m_game_Min) / 60;
+		int min = round(m_players1->m_game_Min / 60);
 		if(m_players1->m_game_Min > 0 && min == 0) min = 1;
 		int fgm = m_players1->m_game_Fgm;
 		int fga = m_players1->m_game_Fga;

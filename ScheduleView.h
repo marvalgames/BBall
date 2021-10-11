@@ -81,7 +81,7 @@ public:
 private:
 
 	MyButton	m_buttons[97];
-	CTransparentStatic	m_static_score[33];
+	CStatic	m_static_score[33];
 	CBrush myBrush;
 	CBitmap* m_bmp;
 

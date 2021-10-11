@@ -127,6 +127,8 @@ private:
 	CFont m_font, m_font1;
 	CBrush myBrush;
 	void InitControls();
+public:
+	afx_msg void OnBnClickedButtonArena();
 };
 
 /////////////////////////////////////////////////////////////////////////////

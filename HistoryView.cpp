@@ -117,6 +117,7 @@ BEGIN_MESSAGE_MAP(CHistoryView, CFormView)
 	ON_COMMAND(ID_EDIT_CITIES, OnEditCities)
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDC_BUTTON_ARENA, &CHistoryView::OnBnClickedButtonArena)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -811,4 +812,10 @@ void CHistoryView::OnPaint()
 //	graphics.ReleaseHDC(dc.m_hDC);
 
 	// Do not call CFormView::OnPaint() for painting messages
+}
+
+
+void CHistoryView::OnBnClickedButtonArena()
+{
+	// TODO: Add your control notification handler code here
 }

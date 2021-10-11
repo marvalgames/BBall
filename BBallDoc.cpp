@@ -151,13 +151,10 @@ if(m_program_started == false)
 	CString look = m_default_path + m_default_league + ".lge";
 	if( CFile::GetStatus( look, status ) != TRUE) 
 	{
-		m_default_league = "Default_04-05";
+		m_default_league = "Default_20-21";
 		CString look = m_default_path + m_default_league + ".lge";
 			if( CFile::GetStatus( look, status ) != TRUE) 
 			{
-//				HWND hWnd = AfxGetApp()->GetMainWnd()->m_hWnd;
-				//MessageBox(hWnd,"", "Installation Error! Please ensure that the file Default_04-05.lge is located in the same folder as jumpshot.exe", MB_OK);
-				//exit(0);
 				m_default_league = "termination";
 			}
 	}
@@ -328,7 +325,7 @@ void CBBallDoc::OpenGameData(CString LeaguePath, CString LeagueName)
 
 		if(m_default_league == "termination")
 		{
-			AfxMessageBox("INSTALLATION ERROR: Please ensure the default league file: Default_04-05.lge is located in the same folder as jumpshot.exe", MB_OK);
+			AfxMessageBox("INSTALLATION ERROR: Please ensure the default league file: Default_20-21.lge is located in the same folder as jumpshot.exe", MB_OK);
 				exit(0);
 		}
 

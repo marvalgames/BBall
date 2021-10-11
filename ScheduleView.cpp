@@ -4658,7 +4658,8 @@ switch (nCtlColor)
 		  pDC->SetTextColor(RGB(255,215,0));
 		  //pDC->SetBkColor(logbrush.lbColor);
 		  pDC->SetBkColor(BLACK);
-          return hbr;
+		  return myBrush;
+		  //return hbr;
      case CTLCOLOR_BTN:
           //pDC->SetTextColor(RGB(0,255,255));
           //pDC->SetBkColor(RGB(255,128,128));

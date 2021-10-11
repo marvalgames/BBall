@@ -130,7 +130,7 @@ BOOL CAboutDlg1::OnInitDialog()
 	// TODO: Add extra initialization here
     //(CMFCButton*)GetDlgItem(IDOK)->Set
     //CMFCButton* pButton = (CMFCButton*)GetDlgItem(IDOK);
-    
+
     //pButton->SetTextColor(RGB(0, 0, 255));
 
 
@@ -151,7 +151,7 @@ BOOL CAboutDlg1::OnInitDialog()
 void CAboutDlg1::OnButtonWeb() 
 {
 	// TODO: Add your control notification handler code here
-	ShellExecute(*this, "open", "http://www.shotsports.com", NULL, NULL, SW_SHOWNORMAL);	
+    ShellExecute(*this, "open", "http://www.shotsports.com", NULL, NULL, SW_SHOWNORMAL);
 }
 
 

@@ -21,6 +21,8 @@ CMyListCtrl::CMyListCtrl()
 {
 	rowColor1 = ROWCOLOR1;
 	rowColor2 = ROWCOLOR2;
+	listColor1 = LISTCOLOR1;
+	listColor2 = LISTCOLOR2;
 	headerBkColor = HEADER_BKCOLOR;
 	headerTextColor = HEADER_TEXTCOLOR;
 	m_bHeaderIsSubclassed = FALSE;
@@ -186,8 +188,9 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 
 		pDC->FillRect(rcRow, &CBrush(nItem % 2 ? rowColor1 :
 			rowColor2));
+		COLORREF rowTextColor = nItem % 2 ? listColor1 : listColor2;
 
-		pDC->SetTextColor(WHITE);
+		pDC->SetTextColor(rowTextColor);
 
 
 
