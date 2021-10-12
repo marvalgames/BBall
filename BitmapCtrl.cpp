@@ -205,7 +205,25 @@ void CBitmapCtrl::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 
 void CBitmapCtrl::LoadFile(CString filename)
 {
-	HBITMAP hBitmap = (HBITMAP) LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_DEFAULTSIZE);
-	SetBitmap(hBitmap);
+	//CPngImage pngImage;
+	//pngImage.Load((UINT)IMAGE_BITMAP, AfxGetResourceHandle());
+	//pngImage.LoadFromFile(filename);
+
+	//CBitmap bmp;;
+	//bmp.Attach(pngImage.Detach());
+	//bmp.SetBitmapDimension(50, 40); /* if the size of bitmap is 50 by 40 */
+
+	/*HBITMAP bmp = nullptr;
+
+	if (pngImage.Load((UINT)IDC_BITMAP))
+	{
+		bmp = (HBITMAP)pngImage.Detach();
+	}
+
+	SetBitmap(bmp);*/
+
+
+	//HBITMAP hBitmap = (HBITMAP) LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_DEFAULTSIZE);
+	//SetBitmap(hBitmap);
 }
 

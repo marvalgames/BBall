@@ -23,6 +23,7 @@
 #endif 
 //#include "Staff.h"	// Added by ClassView
 #include "MyListCtrl.h"
+#include "BBall.h"
 
 
 // PlayerCardDlg.h : header file
@@ -57,19 +58,19 @@ public:
 	//{{AFX_DATA(CPlayerCardDlg)
 	enum { IDD = IDD_DIALOG_PLAYERCARD };
 	MyButton	m_button_extend;
+	MyButton	m_buttonScout;
 	CMyListCtrl	m_list_highs;
 	CMyListCtrl	m_list_ctrl_3;
 	CMyListCtrl	m_list_ctrl_2;
 	CMyListCtrl	m_list_ctrl_1;
-	MyButton	m_buttonScout;
 	CMyListCtrl	m_listctrlskill;
 	CMyListCtrl	m_listFuture;
 	CMyListCtrl	m_listCtrlStats;
 	CMyListCtrl	m_listCtrlShot;
-	CListBox	m_list_report;
 	CMyListCtrl	m_listctrlstats;
-	CListBox	m_listPosition;
 	CMyListCtrl	m_listCtrl;
+	CListBox	m_list_report;
+	CListBox	m_listPosition;
 	CListBox	m_list_awards;
 	CString	m_edit_owner;
 	//}}AFX_DATA
@@ -112,12 +113,19 @@ private:
 	CBitmap bitmapBkgnd;
 	//CBitmap bm;
 	CFont m_font;
+	CFont m_font2;
 	CBrush myBrush;
 	CBrush myBrush2;
+
 public:
 	afx_msg void OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnEnChangeEditOwner();
+	afx_msg void OnLvnItemchangedList6(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLvnItemchangedList4(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLbnSelchangeListReport2();
+	afx_msg void OnStnClickedStaticPng();
+	CMFCButton m_buttonPng;
 };
 
 //{{AFX_INSERT_LOCATION}}

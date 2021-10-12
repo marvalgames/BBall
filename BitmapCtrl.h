@@ -4,6 +4,8 @@
 #pragma once
 /////////////////////////////////////////////////////////////////////////////
 // CBitmapCtrl window
+#include <afxtoolbarimages.h>
+#include "BBall.h"
 
 class CBitmapCtrl : public CWnd
 {

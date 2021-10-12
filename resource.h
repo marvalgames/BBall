@@ -861,6 +861,7 @@
 #define IDC_RADIO1                      1438
 #define IDC_STATIC38                    1441
 #define IDC_STATIC37                    1442
+#define IDC_STATIC_PNG                  1445
 #define IDC_LIST_DEVELOPMENT            1464
 #define IDC_LIST_COACHING               1465
 #define IDC_COMBO1                      1469
@@ -1354,7 +1355,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        769
 #define _APS_NEXT_COMMAND_VALUE         32809
-#define _APS_NEXT_CONTROL_VALUE         1445
+#define _APS_NEXT_CONTROL_VALUE         1446
 #define _APS_NEXT_SYMED_VALUE           115
 #endif
 #endif

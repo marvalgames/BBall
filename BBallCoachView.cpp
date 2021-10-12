@@ -162,6 +162,7 @@ BEGIN_MESSAGE_MAP(CBBallCoachView, CFormView)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_SCOREBOARD, &CBBallCoachView::OnLvnItemchangedListScoreboard)
 	ON_STN_CLICKED(IDC_STATIC_TLABEL, &CBBallCoachView::OnStnClickedStaticTlabel)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_HOME_SHOT, &CBBallCoachView::OnLvnItemchangedListHomeShot)
+	ON_LBN_SELCHANGE(IDC_LIST_PBP, &CBBallCoachView::OnLbnSelchangeListPbp)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -193,7 +194,7 @@ void CBBallCoachView::OnInitialUpdate()
 	//CFrameWnd* pFrame;
 	//CRect rectFrame, rectView;
 	myBrush.CreateSolidBrush(DLGCOLOR); 
-	//myBrush2.CreateSolidBrush(LISTBOXCOLOR); 
+	myBrush2.CreateSolidBrush(BUTTONCOLOR); 
 
 
 
@@ -1918,6 +1919,8 @@ BOOL CBBallCoachView::OnHelpInfo(HELPINFO* pHelpInfo)
 //	HtmlHelp(NULL, "jumpshot.chm::/html/coach.htm", HH_DISPLAY_TOPIC, 0);
 
 //	return CDialog::OnHelpInfo(pHelpInfo);
+	ShellExecute(NULL, "open", "html\\coach.htm", NULL, NULL, SW_SHOWNORMAL);
+
 	return CFormView::OnHelpInfo(pHelpInfo);
 }
 
@@ -1946,10 +1949,10 @@ HBRUSH CBBallCoachView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		//Static controls need black text and same background as myBrush
 	case CTLCOLOR_STATIC:
 		LOGBRUSH logbrush;
-		myBrush.GetLogBrush(&logbrush);
+		myBrush2.GetLogBrush(&logbrush);
 		pDC->SetTextColor(RGB(255, 215, 0));
 		pDC->SetBkColor(logbrush.lbColor);
-		return hbr;
+		return myBrush2;
 
 		
 
@@ -2230,4 +2233,10 @@ void CBBallCoachView::OnLvnItemchangedListHomeShot(NMHDR* pNMHDR, LRESULT* pResu
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
 	// TODO: Add your control notification handler code here
 	*pResult = 0;
+}
+
+
+void CBBallCoachView::OnLbnSelchangeListPbp()
+{
+	// TODO: Add your control notification handler code here
 }

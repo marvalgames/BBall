@@ -37,20 +37,21 @@ public:
 	CBBallCoachView();           // protected constructor used by dynamic creation
 
 	CBrush myBrush;
+	CBrush myBrush2;
 
 
 	//{{AFX_DATA(CBBallCoachView)
 	enum { IDD = IDD_DIALOG_COACH_VIEW };
 	MyButton	m_buttonplan;
 	MyButton	m_buttonvplan;
-	CTransparentStatic	m_vlabel;
-	CTransparentStatic	m_tlabel;
-	CTransparentStatic	m_hlabel;
-	CTransparentStatic	m_static_homescore;
-	CTransparentStatic	m_static_home;
-	CTransparentStatic	m_static_visitorscore;
-	CTransparentStatic	m_static_visitor;
-	CTransparentStatic	m_static_time;
+	CStatic	m_vlabel;
+	CStatic	m_tlabel;
+	CStatic	m_hlabel;
+	CStatic	m_static_homescore;
+	CStatic	m_static_home;
+	CStatic	m_static_visitorscore;
+	CStatic	m_static_visitor;
+	CStatic	m_static_time;
 //	CDigiStatic	m_static_time;
 	//CDigiStatic	m_vlabel;
 //	CDigiStatic	m_tlabel;
@@ -209,6 +210,7 @@ public:
 	afx_msg void OnLvnItemchangedListScoreboard(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnStnClickedStaticTlabel();
 	afx_msg void OnLvnItemchangedListHomeShot(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLbnSelchangeListPbp();
 };
 
 /////////////////////////////////////////////////////////////////////////////
