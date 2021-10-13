@@ -244,15 +244,40 @@ void CPlayerCardDlg::Player()
 
 
 	CString na = avg.m_actual[m_player_index].GetName();
-	na.Replace(' ', '_');
 	na.MakeLower();
+	na.Replace("jr. ", "");
+	na.Remove('.');
+	na.Replace(_T("-"), _T(" "));
 
-	CString img = avg.m_settings.m_path + "Pictures\\" + na + ".png";
 
-	bool exists = true;
-	CFileStatus status;
-	if (CFile::GetStatus(img, status) == 0) exists = false;
 
+	CString test1 = avg.m_settings.m_path + "Pictures\\" + na + ".png";
+	test1.MakeLower();
+	CString test2 = avg.m_settings.m_path + "Pictures\\" + na +  " Jr" + ".png";
+	test2.MakeLower();
+
+	CString img = test1;
+	img.MakeLower();
+
+
+	//bool jr = (img.Right(3) == "Jr.");//if file name has Jr. at end
+	//if (jr) na = na + " Jr.";//then add to player name
+
+	bool exists = false;
+	CFileStatus status1;
+	//CFileStatus status2;
+	if (CFile::GetStatus(test1, status1))
+	{
+		exists = true;
+		img = test1;
+	}
+	else if (CFile::GetStatus(test2, status1))
+	{
+		exists = true;
+		img = test2;
+	}
+	//img = test2;
+	//exists = true;
 	CPngImage pngImage;
 	CBitmap bmp;
 	if (exists == true)
@@ -314,6 +339,7 @@ void CPlayerCardDlg::Player()
 
 
 	exists = true;
+	CFileStatus status;
 	if (CFile::GetStatus(pFileName, status) == 0) exists = false;
 
 

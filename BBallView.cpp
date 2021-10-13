@@ -137,6 +137,7 @@ CBBallView::CBBallView()
 	m_button_new.SetButtonFontSize(fontSize);
 	m_button_save.SetButtonFontSize(fontSize);
 	m_button_quickstart.SetButtonFontSize(fontSize);
+	m_button_go.SetButtonFontSize(fontSize);
 
 
 	//m_button_setup.SetFaceColor(RGB(39,64,139));

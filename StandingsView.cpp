@@ -41,7 +41,6 @@ CStandingsView::CStandingsView()
 
 
 
-
 	//{{AFX_DATA_INIT(CStandingsView)
 	//}}AFX_DATA_INIT
 
@@ -170,7 +169,7 @@ void CStandingsView::OnInitialUpdate()
 	//lf.lfWidth = 32;
 	strcpy_s(lf.lfFaceName, USERFONT);
 	m_font.CreateFontIndirect(&lf);    // Create the font.
-
+	m_listTeams.SetFont(&m_font);
 
 	GetDlgItem(IDC_STATIC_G2)->SetFont(&m_font, TRUE);
 	GetDlgItem(IDC_STATIC_G3)->SetFont(&m_font, TRUE);
