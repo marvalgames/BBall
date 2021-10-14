@@ -487,6 +487,7 @@ HBRUSH COptionsDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case CTLCOLOR_EDIT:
 		pDC->SetTextColor(EDITCOLOR);
 		pDC->SetBkColor(EDITBKCOLOR);
+		//pDC->SetBkColor(BUTTONFACECOLOR2);
 		return hbr;
 		//Static controls need black text and same background as m_brush
 	case CTLCOLOR_STATIC:

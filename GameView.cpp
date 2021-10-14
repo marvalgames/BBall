@@ -2165,7 +2165,7 @@ void CGameView::InitHeadings()
 	m_list_stats.SetTextColor(RGB(0, 0, 0));
 
 	//	m_list_stats.SetFont(&m_font);
-	m_list_stats.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_list_stats.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_AUTOSIZECOLUMNS);
 
 
 

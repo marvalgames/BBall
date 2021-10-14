@@ -428,18 +428,18 @@ void CStatsDlg::OnButtonPrnt()
 
 	LOGFONT logFont;
 	logFont.lfHeight = 40;
-	logFont.lfWidth = 0;
-	logFont.lfEscapement = 0;
-	logFont.lfOrientation = 0;
+	//logFont.lfWidth = 0;
+	//logFont.lfEscapement = 0;
+	//logFont.lfOrientation = 0;
 	logFont.lfWeight = 420;
-	logFont.lfItalic = 0;
-	logFont.lfUnderline = 0;
-	logFont.lfStrikeOut = 0;
-	logFont.lfCharSet = ANSI_CHARSET;
-	logFont.lfOutPrecision = OUT_DEFAULT_PRECIS;
-	logFont.lfClipPrecision = CLIP_DEFAULT_PRECIS;
-	logFont.lfQuality = PROOF_QUALITY;
-	logFont.lfPitchAndFamily = VARIABLE_PITCH | FF_MODERN;
+	//logFont.lfItalic = 0;
+	//logFont.lfUnderline = 0;
+	//logFont.lfStrikeOut = 0;
+	//logFont.lfCharSet = ANSI_CHARSET;
+	//logFont.lfOutPrecision = OUT_DEFAULT_PRECIS;
+	//logFont.lfClipPrecision = CLIP_DEFAULT_PRECIS;
+	//logFont.lfQuality = PROOF_QUALITY;
+	//logFont.lfPitchAndFamily = VARIABLE_PITCH | FF_MODERN;
 	strcpy_s(logFont.lfFaceName, "Courier New");
 
 	CFont font;
@@ -580,7 +580,7 @@ void CStatsDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 14;
+	lf.lfHeight = 18;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 

@@ -171,6 +171,11 @@ void CStandingsView::OnInitialUpdate()
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 	m_listTeams.SetFont(&m_font);
 
+	m_listTeams.SetBkColor(BK_COLOR);
+	m_listTeams.SetTextBkColor(TEXT_BK_COLOR);
+	m_listTeams.SetTextColor(RGB(0, 0, 0));
+
+
 	GetDlgItem(IDC_STATIC_G2)->SetFont(&m_font, TRUE);
 	GetDlgItem(IDC_STATIC_G3)->SetFont(&m_font, TRUE);
 
@@ -446,8 +451,6 @@ void CStandingsView::OnSelchangeListChoices()
 				m_listTeams.SetItemText(row, 5, divisionWin + "-" + divisionLoss);
 				m_listTeams.SetItemText(row, 6, homeWin + "-" + homeLoss);
 				m_listTeams.SetItemText(row, 7, visitorWin + "-" + visitorLoss);
-
-
 				//			m_listTeams.AddString(result);
 				m_strings[row] = result;
 				if (standing[t].m_initialNumber == m_default_team)
@@ -455,6 +458,12 @@ void CStandingsView::OnSelchangeListChoices()
 				row = row + 1;
 			}
 		}
+
+		CRect rect;
+		m_listTeams.GetItemRect(0, &rect, LVIR_BOUNDS);
+		int width = GetSystemMetrics(SM_CXVSCROLL);
+		m_listTeams.SetWindowPos(NULL, 0, 0, rect.Width() + width*2, (row+2) * rect.Height(),
+			SWP_NOMOVE | SWP_NOACTIVATE | SWP_NOZORDER);
 
 		HighlightRow();
 
@@ -897,7 +906,6 @@ void CStandingsView::InitView()
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
 
-
 	//m_list_stats.SetBkColor(RGB(215,235,255));
 	//m_list_stats.SetTextBkColor(RGB(0,128,192));
    //m_list_stats.SetTextColor(RGB(0,0,0));
@@ -1047,7 +1055,7 @@ void CStandingsView::InitView()
 	UpdateData(FALSE);
 	//Invalidate(TRUE);	
 
-	RedrawWindow(NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE);
+	//RedrawWindow(NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE);
 
 	//m_listTeams.RedrawWindow();
 
@@ -1078,11 +1086,11 @@ HBRUSH CStandingsView::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		pDC->SetTextColor(WHITE);
 		pDC->SetBkColor(BLACK);
 		return myBrush;
-	case WM_CTLCOLORSTATIC:
+	/*case WM_CTLCOLORSTATIC:
 		myBrush.GetLogBrush(&logbrush);
 		pDC->SetTextColor(WHITE);
 		pDC->SetBkColor(BLACK);
-		return myBrush;
+		return myBrush;*/
 	case CTLCOLOR_BTN:
 		//          pDC->SetTextColor(RGB(0,255,255));
 		  //        pDC->SetBkColor(RGB(255,128,128));
