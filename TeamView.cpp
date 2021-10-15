@@ -94,7 +94,7 @@ CTeamView::CTeamView()
 
 
 
-	myBrush.CreateStockObject(HOLLOW_BRUSH);
+	//myBrush.CreateStockObject(HOLLOW_BRUSH);
 
 
 	//	bitmapBkgnd.Attach (LoadBitmap (AfxGetInstanceHandle(), 
@@ -988,6 +988,8 @@ void CTeamView::FillButtons()
 		//if(i < 32) m_buttons[i].DrawBorder(false);
 		//m_buttons[i].SetDefaultColors(TRUE);
 	}
+
+
 
 	if (pDoc->avg.m_settings.m_scouts[32] == 1 && pDoc->avg.m_settings.m_coaches[32] == 1)
 		m_button_staffs.EnableWindow(FALSE);
@@ -2112,78 +2114,7 @@ void CTeamView::OnEditStaff()
 
 BOOL CTeamView::OnEraseBkgnd(CDC* pDC)
 {
-	// TODO: Add your message handler code here and/or call default
-	/*
-	CBBallDoc * pDoc = (CBBallDoc*) GetDocument();
-//	if(pDoc->avg.m_settings.m_loadbmp == false)
-//	{
-//		CRect rc;
-//		GetWindowRect(&rc);
-//		ScreenToClient(&rc);
-//		CBrush brush(SCREENCOLOR);
-//		pDC->FillRect(rc, &brush);
-//		pDC->SelectStockObject(ANSI_VAR_FONT);
-//		pDC->DrawText("", -1, rc, DT_CENTER | DT_WORDBREAK | DT_NOPREFIX | DT_NOCLIP);
-//	}
-//	else if(pDoc->avg.m_settings.m_loadbmp == true)
-//	{
-
-//bitmapBkgnd.Detach();
-//	bitmapBkgnd.LoadBitmap(pDoc->avg.m_settings.m_path + "default.bmp");
-
-	CRect rect;
-   GetClientRect(&rect);
-   CDC dc;
-   dc.CreateCompatibleDC(pDC);
-   CBitmap* pOldBitmap = dc.SelectObject(&bitmapBkgnd);
-   int iBitmapWidth, iBitmapHeight ;
-   int ixOrg, iyOrg;
-
-   BITMAP bm;
-   bitmapBkgnd.GetObject(sizeof(BITMAP),&bm);
-   iBitmapWidth = bm.bmWidth;
-   iBitmapHeight = bm.bmHeight;
-
-   // If our bitmap is smaller than the background and tiling is
-   // supported, tile it. Otherwise watch the efficiency - don't
-   // spend time setting up loops you won't need.
-
-   if (iBitmapWidth  >= rect.Width() &&
-	   iBitmapHeight >= rect.Height() )
-   {
-	  pDC->BitBlt (rect.left,
-				   rect.top,
-				   rect.Width(),
-				   rect.Height(),
-				   &dc,
-				   0, 0, SRCCOPY);
-   }
-   else
-   {
-	  for (iyOrg = 0; iyOrg < rect.Height(); iyOrg += iBitmapHeight)
-	  {
-		 for (ixOrg = 0; ixOrg < rect.Width(); ixOrg += iBitmapWidth)
-		 {
-			pDC->BitBlt (ixOrg,
-						 iyOrg,
-						 rect.Width(),
-						 rect.Height(),
-						 &dc,
-						 0, 0, SRCCOPY);
-		 }
-	  }
-   }
-
-   dc.SelectObject(pOldBitmap);
-
-//	}
-*/
-//   return 0;
-
-
-//		return CView::OnEraseBkgnd(pDC);
-
-
+	
 	CDC memdc;
 	memdc.CreateCompatibleDC(pDC);
 	CBitmap* pOldBitmap = memdc.SelectObject(m_bmp);

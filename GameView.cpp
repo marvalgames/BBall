@@ -270,7 +270,7 @@ void CGameView::OnInitialUpdate()
 	// Update form's data from document
 	SetFromDoc();
 
-	m_list_stats.SetHeaderColors(WHITE, DARKMIDNIGHTBLUE);
+	//m_list_stats.SetHeaderColors(WHITE, DARKMIDNIGHTBLUE);
 
 
 
