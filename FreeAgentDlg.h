@@ -54,7 +54,7 @@
 
 class CFreeAgentDlg : public CDialog
 {
-// Construction
+	// Construction
 
 
 public:
@@ -84,7 +84,7 @@ public:
 	CPlayer* m_copy_actual;
 
 	CString m_control[33];
-	
+
 	CString m_league_team_names[33];
 	CFreeAgentDlg(CWnd* pParent = NULL);   // standard constructor
 
@@ -95,19 +95,25 @@ public:
 	MyButton	m_button_export;
 	MyButton	m_button_import;
 	MyButton	m_button_save_fa;
-	MyButton	m_radio_free_agents;
-	MyButton	m_radio_all_players;
-	CMyComboBox	m_list_team_names;
+	//MyButton	m_radio_free_agents;
+	//MyButton	m_radio_all_players;
+
+
+	MyButton	m_button_offer;
+	MyButton	m_button_free_agency_period;
+
 	MyButton	m_button_sort;
-	CListBox	m_list_offers;
-	CListBox	m_list_cap;
 	MyButton	m_cancel;
 	MyButton	m_ok;
+	MyButton	m_btn[11];
+
+
+	CMyComboBox	m_list_team_names;
+	CListBox	m_list_offers;
+	CListBox	m_list_cap;
 	CMyComboBox	m_combo_teams;
 	CListBox	m_list_signings;
-	MyButton	m_button_free_agency_period;
 	CListBox	m_list_control;
-	MyButton	m_button_offer;
 	CMyListCtrl	m_list_free_agents;
 	double	m_edit_cap;
 	//}}AFX_DATA
@@ -116,7 +122,7 @@ public:
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CFreeAgentDlg)
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
@@ -168,7 +174,7 @@ private:
 	typedef struct OFFERLIST
 	{
 		int shown_id;//id of players that are actually listed
-		int id;		
+		int id;
 		int team_index;
 		CString offer_string;
 	} OFFERLIST;
@@ -196,10 +202,10 @@ private:
 	void ListSignings();
 	void Retirements();
 	int m_stop_loading;
-	
+
 	bool m_resume_save;
 	int m_count_signings;
-	
+
 	void CreateFaSaveString(int stage, CPlayer m_player);
 	CString m_string_load[481];
 	bool m_reset_signings;
@@ -240,6 +246,7 @@ private:
 
 	void ListFreeAgents();
 	CFont m_font;
+	CFont m_fontHeader;
 	void InitListCtrl();
 	void SetCampRosters();
 public:

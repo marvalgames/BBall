@@ -9,6 +9,7 @@
 #include "afxlistctrl.h"
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 
 #ifndef Average_h
 #include "Average.h"
@@ -49,6 +50,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CAwardsDlg)
 	enum { IDD = IDD_DIALOG_AWARDS };
+	MyButton m_button[1];
 	CMyListCtrl	m_list_all_rookie;
 	CMyListCtrl	m_list_all_league;
 	CMyListCtrl	m_list_all_defense;

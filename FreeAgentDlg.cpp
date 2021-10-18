@@ -50,24 +50,52 @@ void CFreeAgentDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON_TOGGLE, m_button_toggle);
 	DDX_Control(pDX, IDC_BUTTON_EXPORT, m_button_export);
 	DDX_Control(pDX, IDC_BUTTON_IMPORT, m_button_import);
+	DDX_Control(pDX, IDC_BUTTON_FREE_AGENCY_PERIOD, m_button_free_agency_period);
 	DDX_Control(pDX, IDC_BUTTON_SAVE_FA, m_button_save_fa);
-	DDX_Control(pDX, IDC_RADIO_FREE_AGENTS, m_radio_free_agents);
-	DDX_Control(pDX, IDC_RADIO_ALL_PLAYERS, m_radio_all_players);
-	DDX_Control(pDX, IDC_COMBO_LIST_TEAM_NAMES, m_list_team_names);
+	DDX_Control(pDX, IDOK, m_ok);
+	DDX_Control(pDX, IDCANCEL, m_cancel);
+	DDX_Control(pDX, IDC_BUTTON_OFFER, m_button_offer);
 	DDX_Control(pDX, IDC_BUTTON_SORT, m_button_sort);
+	DDX_Control(pDX, IDC_BUTTON_HTML, m_btn[0]);
+	DDX_Control(pDX, IDC_RADIO_SIGNED_PLAYERS, m_btn[1]);
+	DDX_Control(pDX, IDC_RADIO_UNSIGNED_PLAYERS, m_btn[2]);
+	DDX_Control(pDX, IDC_RADIO_ALL, m_btn[3]);
+	DDX_Control(pDX, IDC_RADIO_FREE_AGENTS, m_btn[4]);
+	//DDX_Control(pDX, IDC_RADIO_FREE_AGENTS, m_radio_free_agents);
+	DDX_Control(pDX, IDC_RADIO_ALL_PLAYERS, m_btn[5]);
+	DDX_Control(pDX, IDC_RADIO_PG, m_btn[6]);
+	DDX_Control(pDX, IDC_RADIO_SG, m_btn[7]);
+	DDX_Control(pDX, IDC_RADIO_SF, m_btn[8]);
+	DDX_Control(pDX, IDC_RADIO_PF, m_btn[9]);
+	DDX_Control(pDX, IDC_RADIO_C, m_btn[10]);
+	DDX_Control(pDX, IDC_COMBO_LIST_TEAM_NAMES, m_list_team_names);
 	DDX_Control(pDX, IDC_LIST_OFFERS, m_list_offers);
 	DDX_Control(pDX, IDC_LIST_CAP, m_list_cap);
-	DDX_Control(pDX, IDCANCEL, m_cancel);
-	DDX_Control(pDX, IDOK, m_ok);
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_combo_teams);
 	DDX_Control(pDX, IDC_LIST_SIGNINGS, m_list_signings);
-	DDX_Control(pDX, IDC_BUTTON_FREE_AGENCY_PERIOD, m_button_free_agency_period);
 	DDX_Control(pDX, IDC_LIST_CONTROL, m_list_control);
-	DDX_Control(pDX, IDC_BUTTON_OFFER, m_button_offer);
 	DDX_Control(pDX, IDC_LIST_FREE_AGENTS, m_list_free_agents);
 	DDX_Text(pDX, IDC_EDIT_CAP, m_edit_cap);
 	//}}AFX_DATA_MAP
 }
+//
+//
+//MyButton	m_button_toggle;
+//MyButton	m_button_export;
+//MyButton	m_button_import;
+//MyButton	m_button_save_fa;
+//MyButton	m_radio_free_agents;
+//MyButton	m_radio_all_players;
+//
+//
+//MyButton	m_button_offer;
+//MyButton	m_button_free_agency_period;
+//
+//MyButton	m_button_sort;
+//MyButton	m_cancel;
+//MyButton	m_ok;
+//MyButton	m_btn[11];
+
 
 
 BEGIN_MESSAGE_MAP(CFreeAgentDlg, CDialog)
@@ -323,12 +351,21 @@ void CFreeAgentDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 14;
+	lf.lfHeight = 16;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
+	LOGFONT lf0;                        // Used to create the CFont.
+	memset(&lf0, 0, sizeof(LOGFONT));   // Clear out structure.
+	lf0.lfWeight = 100;
+	lf0.lfHeight = 10;
+	strcpy_s(lf0.lfFaceName, "Arial");    //    with face name "Arial".
+	m_fontHeader.CreateFontIndirect(&lf0);    // Create the font.
+
+
 	m_list_free_agents.SetBkColor(BK_COLOR);
 	m_list_free_agents.SetTextBkColor(BK_COLOR);
+	//m_list_free_agents.SetHeaderFont(&m_fontHeader);
 
 //	m_list_free_agents.SetExtendedStyle(LVS_EX_FULLROWSELECT);
 	m_list_free_agents.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
@@ -2857,31 +2894,31 @@ void CFreeAgentDlg::SetRatingsHeaders()
      m_list_free_agents.InsertColumn(24,"in");    
 
   
-     m_list_free_agents.SetColumnWidth( 0, 280);
-     m_list_free_agents.SetColumnWidth( 1, 88);
-     m_list_free_agents.SetColumnWidth( 2, 30);
-     m_list_free_agents.SetColumnWidth( 3, 33);
-     m_list_free_agents.SetColumnWidth( 4, 30);
-     m_list_free_agents.SetColumnWidth( 5, 30);
-     m_list_free_agents.SetColumnWidth( 6, 30);
-     m_list_free_agents.SetColumnWidth( 7, 33);
-     m_list_free_agents.SetColumnWidth( 8, 30);
-     m_list_free_agents.SetColumnWidth( 9, 30);
-     m_list_free_agents.SetColumnWidth( 10, 30);
-     m_list_free_agents.SetColumnWidth( 11, 30);
-     m_list_free_agents.SetColumnWidth( 12, 30);
-     m_list_free_agents.SetColumnWidth( 13, 30);
-     m_list_free_agents.SetColumnWidth( 14, 24);
-     m_list_free_agents.SetColumnWidth( 15, 24);
-     m_list_free_agents.SetColumnWidth( 16, 24);
-     m_list_free_agents.SetColumnWidth( 17, 24);
-     m_list_free_agents.SetColumnWidth( 18, 24);
-     m_list_free_agents.SetColumnWidth( 19, 24);
-     m_list_free_agents.SetColumnWidth( 20, 24);
-     m_list_free_agents.SetColumnWidth( 21, 24);
-     m_list_free_agents.SetColumnWidth( 22, 24);
-     m_list_free_agents.SetColumnWidth( 23, 24);
-     m_list_free_agents.SetColumnWidth( 24, 24);
+     m_list_free_agents.SetColumnWidth( 0, 36);
+     m_list_free_agents.SetColumnWidth( 1, 144);
+     m_list_free_agents.SetColumnWidth( 2, 40);
+     m_list_free_agents.SetColumnWidth( 3, 40);
+     m_list_free_agents.SetColumnWidth( 4, 40);
+     m_list_free_agents.SetColumnWidth( 5, 40);
+     m_list_free_agents.SetColumnWidth( 6, 40);
+     m_list_free_agents.SetColumnWidth( 7, 40);
+     m_list_free_agents.SetColumnWidth( 8, 40);
+     m_list_free_agents.SetColumnWidth( 9, 40);
+     m_list_free_agents.SetColumnWidth( 10, 36);
+     m_list_free_agents.SetColumnWidth( 11, 36);
+     m_list_free_agents.SetColumnWidth( 12, 36);
+     m_list_free_agents.SetColumnWidth( 13, 36);
+     m_list_free_agents.SetColumnWidth( 14, 32);
+     m_list_free_agents.SetColumnWidth( 15, 32);
+     m_list_free_agents.SetColumnWidth( 16, 32);
+     m_list_free_agents.SetColumnWidth( 17, 32);
+     m_list_free_agents.SetColumnWidth( 18, 32);
+     m_list_free_agents.SetColumnWidth( 19, 32);
+     m_list_free_agents.SetColumnWidth( 20, 32);
+     m_list_free_agents.SetColumnWidth( 21, 32);
+     m_list_free_agents.SetColumnWidth( 22, 32);
+     m_list_free_agents.SetColumnWidth( 23, 32);
+     m_list_free_agents.SetColumnWidth( 24, 32);
 
 }
 
@@ -2920,19 +2957,19 @@ void CFreeAgentDlg::SetColumns()
 	m_list_free_agents.DeleteColumn(12);
     m_list_free_agents.InsertColumn(12,"from");    
   
-    m_list_free_agents.SetColumnWidth( 0, 28);
-    m_list_free_agents.SetColumnWidth( 1, 92);
-    m_list_free_agents.SetColumnWidth( 2, 44);
-    m_list_free_agents.SetColumnWidth( 3, 44);
-    m_list_free_agents.SetColumnWidth( 4, 63);
-    m_list_free_agents.SetColumnWidth( 5, 60);
-    m_list_free_agents.SetColumnWidth( 6, 60);
-    m_list_free_agents.SetColumnWidth( 7, 60);
-    m_list_free_agents.SetColumnWidth( 8, 60);
-    m_list_free_agents.SetColumnWidth( 9, 60);
-    m_list_free_agents.SetColumnWidth( 10, 60);
-    m_list_free_agents.SetColumnWidth( 11, 61);
-    m_list_free_agents.SetColumnWidth( 12, 61);
+    m_list_free_agents.SetColumnWidth( 0, 36);
+    m_list_free_agents.SetColumnWidth( 1, 144);
+    m_list_free_agents.SetColumnWidth( 2, 66);
+    m_list_free_agents.SetColumnWidth( 3, 48);
+    m_list_free_agents.SetColumnWidth( 4, 96);
+    m_list_free_agents.SetColumnWidth( 5, 80);
+    m_list_free_agents.SetColumnWidth( 6, 80);
+    m_list_free_agents.SetColumnWidth( 7, 88);
+    m_list_free_agents.SetColumnWidth( 8, 80);
+    m_list_free_agents.SetColumnWidth( 9, 84);
+    m_list_free_agents.SetColumnWidth( 10, 76);
+    m_list_free_agents.SetColumnWidth( 11, 80);
+    m_list_free_agents.SetColumnWidth( 12, 84);
 
 	m_list_free_agents.DeleteColumn(13);
 	m_list_free_agents.DeleteColumn(13);

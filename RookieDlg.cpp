@@ -61,6 +61,8 @@ void CRookieDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CRookieDlg)
+	DDX_Control(pDX, IDC_BUTTON_PRINT, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_HTML, m_button[1]);
 	DDX_Control(pDX, IDC_BUTTON_NEXT, m_button_next);
 	DDX_Control(pDX, IDC_BUTTON_TRADE, m_button_trade);
 	DDX_Control(pDX, IDC_BUTTON_EDIT, m_button_edit);
@@ -443,6 +445,9 @@ void CRookieDlg::SetCursors()
 
 void CRookieDlg::InitListCtrl()
 {
+	m_button[0].SetFaceColor(BUTTONFACECOLOR2);
+	m_button[1].SetFaceColor(BUTTONFACECOLOR2);
+
 
 	m_column_headers[0] = "pos";
 	m_column_headers[1] = "player";
@@ -487,7 +492,7 @@ void CRookieDlg::InitListCtrl()
 	m_listPlayers.SetBkColor(BK_COLOR);
 	m_listPlayers.SetTextBkColor(TEXT_BK_COLOR);
 
-	m_listPlayers.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
+	m_listPlayers.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
 
     m_listPlayers.InsertColumn(0,"Pos");    
@@ -519,7 +524,7 @@ void CRookieDlg::InitListCtrl()
 	double scale = 1.5f;
 	
     m_listPlayers.SetColumnWidth( 0, 30 * scale );
-    m_listPlayers.SetColumnWidth( 1, 96 * scale );
+    m_listPlayers.SetColumnWidth( 1, 90 * scale );
     m_listPlayers.SetColumnWidth( 2, 28 * scale );
     m_listPlayers.SetColumnWidth( 3, 28 * scale );
     m_listPlayers.SetColumnWidth( 4, 28 * scale );
@@ -539,8 +544,8 @@ void CRookieDlg::InitListCtrl()
     m_listPlayers.SetColumnWidth( 18, 18 * scale );
     m_listPlayers.SetColumnWidth( 19, 18 * scale );
     m_listPlayers.SetColumnWidth( 20, 18 * scale );
-    m_listPlayers.SetColumnWidth( 21, 18);
-    m_listPlayers.SetColumnWidth( 22, 18);
+    m_listPlayers.SetColumnWidth( 21, 18 * scale);
+    m_listPlayers.SetColumnWidth( 22, 18 * scale);
     m_listPlayers.SetTextColor(RGB(0,0,0));
 	m_listPlayers.SetFont(&m_font);
 	CString string;

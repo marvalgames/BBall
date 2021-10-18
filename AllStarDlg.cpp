@@ -115,6 +115,7 @@ BEGIN_MESSAGE_MAP(CAllStarDlg, CDialog)
 	ON_WM_CONTEXTMENU()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDOK, &CAllStarDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -591,7 +592,7 @@ void CAllStarDlg::InitCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -624,15 +625,15 @@ void CAllStarDlg::InitCtrl()
 	m_list_rookies.InsertColumn(2, "team");
 	m_list_rookies.InsertColumn(3, "");
 
-	m_list_allstars.SetColumnWidth(0, 24);
-	m_list_allstars.SetColumnWidth(1, 67);
-	m_list_allstars.SetColumnWidth(2, 61);
-	m_list_allstars.SetColumnWidth(3, 56);
+	m_list_allstars.SetColumnWidth(0, 30);
+	m_list_allstars.SetColumnWidth(1, 90);
+	m_list_allstars.SetColumnWidth(2, 76);
+	m_list_allstars.SetColumnWidth(3, 70);
 
-	m_list_rookies.SetColumnWidth(0, 24);
-	m_list_rookies.SetColumnWidth(1, 67);
-	m_list_rookies.SetColumnWidth(2, 61);
-	m_list_rookies.SetColumnWidth(3, 56);
+	m_list_rookies.SetColumnWidth(0, 30);
+	m_list_rookies.SetColumnWidth(1, 90);
+	m_list_rookies.SetColumnWidth(2, 76);
+	m_list_rookies.SetColumnWidth(3, 70);
 
 }
 
@@ -872,4 +873,11 @@ HBRUSH CAllStarDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	}
 	// TODO: Return a different brush if the default is not desired
 //	return hbr;
+}
+
+
+void CAllStarDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

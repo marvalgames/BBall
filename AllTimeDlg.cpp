@@ -41,6 +41,10 @@ void CAllTimeDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST3, m_listCtrlLeaders3);
 	DDX_Control(pDX, IDC_LIST1, m_listCtrlLeaders2);
 	DDX_Control(pDX, IDOK, m_button_ok);
+	DDX_Control(pDX, IDC_RADIO_SEASON, m_button[0]);
+	DDX_Control(pDX, IDC_RADIO_SEASON2, m_button[1]);
+	DDX_Control(pDX, IDC_RADIO_PLAYOFF, m_button[2]);
+	DDX_Control(pDX, IDC_RADIO_PLAYOFF2, m_button[3]);
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_listTeams);
 	DDX_Control(pDX, IDC_LIST_LEADERS1, m_listCtrlLeaders1);
 	DDX_Control(pDX, IDC_LIST_LEADERS, m_listCtrlLeaders);
@@ -61,6 +65,7 @@ BEGIN_MESSAGE_MAP(CAllTimeDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBO_TEAMS, OnSelchangeComboTeams)
 	ON_NOTIFY(NM_DBLCLK, IDC_LIST_LEADERS, OnDblclkListLeaders)
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDOK, &CAllTimeDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -88,7 +93,7 @@ BOOL CAllTimeDlg::OnInitDialog()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 10;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 //	strcpy_s(lf.lfFaceName, "TAHOMA");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
@@ -477,71 +482,78 @@ void CAllTimeDlg::SetHeaders()
     m_listCtrlLeaders.InsertColumn(1,"#");
     m_listCtrlLeaders.InsertColumn(2,"");
     //m_listCtrlLeaders.InsertColumn(3,"");
-	m_listCtrlLeaders.SetColumnWidth(0, 104);
-	m_listCtrlLeaders.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders.SetColumnWidth( 2, 64);
+	m_listCtrlLeaders.SetColumnWidth(0, 144);
+	m_listCtrlLeaders.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders1.InsertColumn(0,"Rebounds");
     m_listCtrlLeaders1.InsertColumn(1,"#");
     m_listCtrlLeaders1.InsertColumn(2,"");
     //m_listCtrlLeaders1.InsertColumn(3,"");
-    m_listCtrlLeaders1.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders1.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders1.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders1.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders1.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders1.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders1.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders2.InsertColumn(0,"Assists");
     m_listCtrlLeaders2.InsertColumn(1,"#");
     m_listCtrlLeaders2.InsertColumn(2,"");
     //m_listCtrlLeaders2.InsertColumn(3,"");
-    m_listCtrlLeaders2.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders2.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders2.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders2.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders2.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders2.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders2.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders3.InsertColumn(0,"Steals");
     m_listCtrlLeaders3.InsertColumn(1,"#");
     m_listCtrlLeaders3.InsertColumn(2,"");
     //m_listCtrlLeaders3.InsertColumn(3,"");
-    m_listCtrlLeaders3.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders3.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders3.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders3.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders3.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders3.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders3.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders4.InsertColumn(0,"Blocks");
     m_listCtrlLeaders4.InsertColumn(1,"#");
     m_listCtrlLeaders4.InsertColumn(2,"");
     //m_listCtrlLeaders4.InsertColumn(3,"");
-    m_listCtrlLeaders4.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders4.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders4.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders4.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders4.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders4.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders4.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders5.InsertColumn(0,"Field Goals");
     m_listCtrlLeaders5.InsertColumn(1,"#");
     m_listCtrlLeaders5.InsertColumn(2,"");
     //m_listCtrlLeaders5.InsertColumn(3,"");
-    m_listCtrlLeaders5.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders5.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders5.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders5.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders5.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders5.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders5.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders6.InsertColumn(0,"Threes");
     m_listCtrlLeaders6.InsertColumn(1,"#");
     m_listCtrlLeaders6.InsertColumn(2,"");
     //m_listCtrlLeaders6.InsertColumn(3,"");
-    m_listCtrlLeaders6.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders6.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders6.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders6.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders6.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders6.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders6.SetColumnWidth( 3, 32);
 
     m_listCtrlLeaders7.InsertColumn(0,"Free Throws");
     m_listCtrlLeaders7.InsertColumn(1,"#");
     m_listCtrlLeaders7.InsertColumn(2,"");
     //m_listCtrlLeaders7.InsertColumn(3,"");
-    m_listCtrlLeaders7.SetColumnWidth( 0, 104);
-    m_listCtrlLeaders7.SetColumnWidth( 1, 32);
-    m_listCtrlLeaders7.SetColumnWidth( 2, 64);
+    m_listCtrlLeaders7.SetColumnWidth( 0, 144);
+    m_listCtrlLeaders7.SetColumnWidth( 1, 42);
+    m_listCtrlLeaders7.SetColumnWidth( 2, 76);
     //m_listCtrlLeaders7.SetColumnWidth( 3, 32);
+}
+
+
+void CAllTimeDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

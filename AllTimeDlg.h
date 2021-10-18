@@ -46,6 +46,7 @@ public:
 	CMyListCtrl	m_listCtrlLeaders3;
 	CMyListCtrl	m_listCtrlLeaders2;
 	MyButton	m_button_ok;
+	MyButton	m_button[4];
 	CMyComboBox	m_listTeams;
 	CMyListCtrl	m_listCtrlLeaders1;
 	CMyListCtrl	m_listCtrlLeaders;
@@ -85,6 +86,8 @@ private:
 	void ListSeasonHighs();
 	void InitListCtrl();
 	CBrush myBrush;
+public:
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

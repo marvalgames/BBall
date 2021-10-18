@@ -409,8 +409,8 @@ void CSearchDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
-	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
+	lf.lfHeight = 16;
+	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
 	m_list_players.SetBkColor(BK_COLOR);
@@ -436,11 +436,11 @@ void CSearchDlg::InitControls()
     m_list_players.InsertColumn(4,"salary");    
 	m_list_players.DeleteColumn(5);
   
-    m_list_players.SetColumnWidth( 0, 30);
-    m_list_players.SetColumnWidth( 1, 90);
-    m_list_players.SetColumnWidth( 2, 90);
-    m_list_players.SetColumnWidth( 3, 30);
-    m_list_players.SetColumnWidth( 4, 60);
+    m_list_players.SetColumnWidth( 0, 45);
+    m_list_players.SetColumnWidth( 1, 135);
+    m_list_players.SetColumnWidth( 2, 135);
+    m_list_players.SetColumnWidth( 3, 45);
+    m_list_players.SetColumnWidth( 4, 90);
 
 
 	m_combo_min_sal.SetCurSel(0);

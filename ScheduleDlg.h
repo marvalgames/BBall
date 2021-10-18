@@ -44,6 +44,7 @@ public:
 	//{{AFX_DATA(CScheduleDlg)
 	enum { IDD = IDD_SCHEDULEBOX };
 	MyButton	m_button_reset;
+	MyButton	m_button[2];
 	CMyComboBox	m_scheduleMonth;
 	CMyComboBox	m_scheduleDay;
 	MyButton	m_buttonAuto;

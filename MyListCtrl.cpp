@@ -55,19 +55,6 @@ void CMyListCtrl::PreSubclassWindow()
 	// function does not get called.
 
 	SubclassHeaderControl();
-
-	//// TODO: Add your specialized code here and/or call the base class
-	//CHeaderCtrl* pHeader = NULL;
-	//pHeader = GetHeaderCtrl();
-	//if (pHeader != NULL)
-	//{
-	//	VERIFY(m_HeaderCtrl.SubclassWindow(pHeader->m_hWnd)); // m_HeaderCtrl is the new wrapper object
-	//}
-
-	//m_HeaderCtrl.SetTextColor(WHITE);
-	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
-
-	//CListCtrl::PreSubclassWindow();
 }
 
 int CMyListCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -95,25 +82,7 @@ void CMyListCtrl::SubclassHeaderControl()
 
 	if (m_bHeaderIsSubclassed)
 		return;
-	// TODO: Add your specialized code here and/or call the base class
-	//CHeaderCtrl* pHeader = NULL;
-	//pHeader = GetHeaderCtrl();
-	//if (pHeader != NULL)
-	//{
-	//	VERIFY(m_HeaderCtrl.SubclassWindow(pHeader->m_hWnd)); // m_HeaderCtrl is the new wrapper object
-	//}
-
-	//m_HeaderCtrl.SetTextColor(WHITE);
-	//SetHeaderColors(m_HeaderCtrl, WHITE, BLACK);
-	// 
-	// 
-	// 
-	// if the list control has a header control window, then
-	// subclass it
-
-	// Thanks to Alberto Gattegno and Alon Peleg  and their article
-	// "A Multiline Header Control Inside a CListCtrl" for easy way
-	// to determine if the header control exists.
+	
 
 	CHeaderCtrl* pHeader = GetHeaderCtrl();
 	if (pHeader)
@@ -129,9 +98,14 @@ void CMyListCtrl::SubclassHeaderControl()
 
 }
 
-void CMyListCtrl :: SetHeaderColors(COLORREF textColor, COLORREF bkColor)
+void CMyListCtrl::SetHeaderColors(COLORREF textColor, COLORREF bkColor)
 {
 	m_HeaderCtrl.SetHeaderControls(textColor, bkColor);
+}
+
+void CMyListCtrl::SetHeaderFont(CFont* font)
+{
+	m_HeaderCtrl.SetFont(font);
 }
 
 
@@ -183,9 +157,6 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 		GetClientRect(&rcClient);
 		rcRow.right = rcClient.right;
 
-//		pDC->FillRect(rcRow, &CBrush(nItem % 2 ? RGB(64, 64, 64) :
-	//		RGB(80, 80, 80)));
-
 		pDC->FillRect(rcRow, &CBrush(nItem % 2 ? rowColor1 :
 			rowColor2));
 		COLORREF rowTextColor = nItem % 2 ? listColor1 : listColor2;
@@ -236,15 +207,9 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 	// Draw the background color
 	if( bHighlight )
 	{
-		//pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
-		//pDC->SetBkColor(::GetSysColor(COLOR_HIGHLIGHT));
 		pDC->SetTextColor(YELLOW);
-		//pDC->SetBkColor(BLACK);
-
 		pDC->FillRect(rcHighlight, &CBrush(RGB(0,0,0)));
 	}
-//	else
-//		pDC->FillRect(rcHighlight, &CBrush(RGB(255,0,0)));
 
 	
 
@@ -295,16 +260,6 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 	LV_COLUMN lvc;
 	lvc.mask = LVCF_FMT | LVCF_WIDTH;
 
-//	if( m_nHighlight == 0 )		// Highlight only first column
-//	{
-//		pDC->SetTextColor(RGB(255,251,240));
-//		pDC->SetBkColor(RGB(128,128,128));
-//	}
-//	else
-//	{
-//		pDC->SetTextColor(RGB(255,255,255));
-//		pDC->SetBkColor(RGB(255,0,0));
-//	}
 	
 	rcBounds.right = rcHighlight.right > rcBounds.right ? rcHighlight.right :
 							rcBounds.right;
@@ -345,19 +300,6 @@ CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
 		pDC->DrawText(sLabel, -1, rcLabel, nJustify | DT_SINGLELINE | 
 					DT_NOPREFIX | DT_VCENTER | DT_END_ELLIPSIS);
 	}
-
-
-//	if( m_nHighlight )
-//	{
-//		pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
-//		pDC->SetBkColor(::GetSysColor(COLOR_HIGHLIGHT));
-
-//		pDC->FillRect(rcHighlight, &CBrush(::GetSysColor(COLOR_HIGHLIGHT)));
-//	}
-//	else
-//	{
-	
-//	}
 
 
 

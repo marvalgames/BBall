@@ -105,6 +105,9 @@ public:
 	CListBox	m_listControl;
 	CListBox	m_listRookies;
 	MyButton	m_buttonDraft;
+
+	MyButton	m_button[3];
+
 	//}}AFX_DATA
 
 
@@ -174,11 +177,13 @@ private:
 	CBrush myBrush;
 	CBrush myBrush2;
 	CFont m_font;
-	void InitListCtrl();
+	void InitCtrl();
 	void SetCursors();
 	void ListControl();
 	void ListTeams();
 	void ListRookies();
+public:
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

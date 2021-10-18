@@ -39,6 +39,9 @@ CCampDlg::CCampDlg(CWnd* pParent /*=NULL*/)
 	Rookies = new CPlayer[1601];
 	//Player = new CPlayer[1601];
 	FA = new CPlayer[481];
+	m_button[0].SetButtonFontSize(20);
+	m_button[1].SetButtonFontSize(20);
+	m_buttonRelease.SetButtonFontSize(20);
 
 
 
@@ -60,6 +63,9 @@ void CCampDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_DISPLAY_RETIREMENTS, m_listRetired);
 	DDX_Control(pDX, IDOK, m_saveDraft);
 	DDX_Control(pDX, IDC_LIST_CONTROL, m_listControl);
+	DDX_Control(pDX, IDC_RADIO_COACH, m_button[0]);
+	DDX_Control(pDX, IDC_RADIO_SCOUT, m_button[1]);
+	DDX_Control(pDX, IDCANCEL, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -81,6 +87,7 @@ BEGIN_MESSAGE_MAP(CCampDlg, CDialog)
 	ON_BN_CLICKED(IDC_RADIO_COACH, OnRadioCoach)
 	ON_BN_CLICKED(IDC_RADIO_SCOUT, OnRadioScout)
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDOK, &CCampDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -116,7 +123,7 @@ BOOL CCampDlg::OnInitDialog()
 	myBrush.CreateSolidBrush(DLGCOLOR); 	
 	myBrush2.CreateSolidBrush(LISTBOXCOLOR); 	
 	ClearRatings();
-	InitListCtrl();
+	InitCtrl();
 	SetCursors();
 	
 	OpenPlayers();
@@ -358,16 +365,20 @@ void CCampDlg::SetCursors()
 }
 
 
-void CCampDlg::InitListCtrl()
+void CCampDlg::InitCtrl()
 {
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
+	m_button[0].SetFaceColor(BUTTONFACECOLOR2);
+	m_button[1].SetFaceColor(BUTTONFACECOLOR2);
+	m_buttonRelease.SetFaceColor(BUTTONFACECOLOR2);
 
-//	m_listPlayers.SetExtendedStyle(LVS_EX_FULLROWSELECT);
+
+	//	m_listPlayers.SetExtendedStyle(LVS_EX_FULLROWSELECT);
 	m_listPlayers.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
     m_listPlayers.SetBkColor(BK_COLOR);
 	m_listPlayers.SetTextBkColor(TEXT_BK_COLOR);
@@ -398,29 +409,29 @@ void CCampDlg::InitListCtrl()
   
   
 	
-    m_listPlayers.SetColumnWidth( 0, 32);
-    m_listPlayers.SetColumnWidth( 1, 99);
-    m_listPlayers.SetColumnWidth( 2, 32);
-    m_listPlayers.SetColumnWidth( 3, 32);
-    m_listPlayers.SetColumnWidth( 4, 31);
-    m_listPlayers.SetColumnWidth( 5, 31);
-    m_listPlayers.SetColumnWidth( 6, 32);
-    m_listPlayers.SetColumnWidth( 7, 32);
-    m_listPlayers.SetColumnWidth( 8, 31);
-    m_listPlayers.SetColumnWidth( 9, 29);
-    m_listPlayers.SetColumnWidth( 10, 31);
-    m_listPlayers.SetColumnWidth( 11, 31);
-    m_listPlayers.SetColumnWidth( 12, 31);
-    m_listPlayers.SetColumnWidth( 13, 31);
-    m_listPlayers.SetColumnWidth( 14, 31);
-    m_listPlayers.SetColumnWidth( 15, 22);
-    m_listPlayers.SetColumnWidth( 16, 22);
-    m_listPlayers.SetColumnWidth( 17, 22);
-    m_listPlayers.SetColumnWidth( 18, 22);
-    m_listPlayers.SetColumnWidth( 19, 22);
-    m_listPlayers.SetColumnWidth( 20, 22);
-    m_listPlayers.SetColumnWidth( 21, 22);
-    m_listPlayers.SetColumnWidth( 22, 22);
+    m_listPlayers.SetColumnWidth( 0, 48);
+    m_listPlayers.SetColumnWidth( 1, 144);
+    m_listPlayers.SetColumnWidth( 2, 48);
+    m_listPlayers.SetColumnWidth( 3, 48);
+    m_listPlayers.SetColumnWidth( 4, 48);
+    m_listPlayers.SetColumnWidth( 5, 48);
+    m_listPlayers.SetColumnWidth( 6, 48);
+    m_listPlayers.SetColumnWidth( 7, 48);
+    m_listPlayers.SetColumnWidth( 8, 48);
+    m_listPlayers.SetColumnWidth( 9, 48);
+    m_listPlayers.SetColumnWidth( 10, 45);
+    m_listPlayers.SetColumnWidth( 11, 45);
+    m_listPlayers.SetColumnWidth( 12, 45);
+    m_listPlayers.SetColumnWidth( 13, 45);
+    m_listPlayers.SetColumnWidth( 14, 45);
+    m_listPlayers.SetColumnWidth( 15, 32);
+    m_listPlayers.SetColumnWidth( 16, 32);
+    m_listPlayers.SetColumnWidth( 17, 32);
+    m_listPlayers.SetColumnWidth( 18, 32);
+    m_listPlayers.SetColumnWidth( 19, 32);
+    m_listPlayers.SetColumnWidth( 20, 32);
+    m_listPlayers.SetColumnWidth( 21, 32);
+    m_listPlayers.SetColumnWidth( 22, 32);
     //m_listPlayers.SetTextColor(RGB(0,0,0));
 	m_listPlayers.SetFont(&m_font);
 
@@ -1539,4 +1550,11 @@ switch(m_column)
 m_listPlayers.DeleteAllItems();
 
 ListProgress();
+}
+
+
+void CCampDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

@@ -94,6 +94,7 @@ int hiFga;
 // Dialog Data
 	//{{AFX_DATA(CRookieDlg)
 	enum { IDD = IDD_DIALOG_ROOKIES };
+	MyButton	m_button[2];
 	MyButton	m_button_next;
 	MyButton	m_button_trade;
 	MyButton	m_button_edit;

@@ -113,7 +113,7 @@ void CScoutProfileDlg::InitListCtrl()
 LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 16;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -144,8 +144,8 @@ void CScoutProfileDlg::ListData()
 	m_list_data.InsertColumn(0,"category");    
     m_list_data.InsertColumn(1,"rating");    
 
-    m_list_data.SetColumnWidth( 0, 64);
-    m_list_data.SetColumnWidth( 1, 80);
+    m_list_data.SetColumnWidth( 0, 78);
+    m_list_data.SetColumnWidth( 1, 112);
 
 	CString string[99];
 	CString label[99];
@@ -196,8 +196,8 @@ void CScoutProfileDlg::ListScouting()
 	m_list_scouting.InsertColumn(0,"scouting");    
     m_list_scouting.InsertColumn(1,"rating");    
 
-    m_list_scouting.SetColumnWidth( 0, 64);
-    m_list_scouting.SetColumnWidth( 1, 64);
+    m_list_scouting.SetColumnWidth( 0, 96);
+    m_list_scouting.SetColumnWidth( 1, 96);
 
 	CString string[99];
 	CString label[99];
@@ -242,9 +242,9 @@ CString display[6] = {"", "Very Low", "Poor", "Average", "Good", "Excellent"};
     m_list_coaching.InsertColumn(1,"offense");    
     m_list_coaching.InsertColumn(2,"defense");    
 
-    m_list_coaching.SetColumnWidth( 0, 71);
-    m_list_coaching.SetColumnWidth( 1, 71);
-    m_list_coaching.SetColumnWidth( 2, 71);
+    m_list_coaching.SetColumnWidth( 0, 105);
+    m_list_coaching.SetColumnWidth( 1, 105);
+    m_list_coaching.SetColumnWidth( 2, 105);
 
 	CString string[99];
 	CString label[99];

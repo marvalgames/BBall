@@ -40,6 +40,9 @@ void CRookieCardDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_CTRL_STATS2, m_listCtrlStats);
 	DDX_Control(pDX, IDC_LIST_CTRL_SHOT2, m_listCtrlShot);
 	DDX_Control(pDX, IDC_LIST_REPORT2, m_list_report);
+	DDX_Control(pDX, IDC_BUTTON_OK, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[1]);
+	DDX_Control(pDX, IDC_BUTTON_FORWARD, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -71,7 +74,7 @@ BOOL CRookieCardDlg::OnInitDialog()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -138,7 +141,14 @@ void CRookieCardDlg::InitListCtrl()
 	lf.lfHeight = 12;
 	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.*/
-	
+	//SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+
+
+	m_listCtrlStats.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_listCtrlShot.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_listctrlskill.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_listFuture.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	//m_list_report.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 
 	m_listCtrlStats.SetFont(&m_font);
 	m_listCtrlShot.SetFont(&m_font);
@@ -146,7 +156,7 @@ void CRookieCardDlg::InitListCtrl()
 	m_listFuture.SetFont(&m_font);
 	m_list_report.SetFont(&m_font);
 
-    m_listCtrlStats.InsertColumn(0,"Pos");    
+	m_listCtrlStats.InsertColumn(0,"Pos");
     m_listCtrlStats.InsertColumn(1,"Player");
     m_listCtrlStats.InsertColumn(2,"Age");
     m_listCtrlStats.InsertColumn(3,"Ht");
@@ -166,24 +176,24 @@ void CRookieCardDlg::InitListCtrl()
     m_listCtrlStats.InsertColumn(14,"T");
   
 	
-    m_listCtrlStats.SetColumnWidth( 0, 32);
-    m_listCtrlStats.SetColumnWidth( 1, 128);
-    m_listCtrlStats.SetColumnWidth( 2, 33);
-    m_listCtrlStats.SetColumnWidth( 3, 33);
-    m_listCtrlStats.SetColumnWidth( 4, 33);
+    m_listCtrlStats.SetColumnWidth( 0, 48);
+    m_listCtrlStats.SetColumnWidth( 1, 160);
+    m_listCtrlStats.SetColumnWidth( 2, 48);
+    m_listCtrlStats.SetColumnWidth( 3, 48);
+    m_listCtrlStats.SetColumnWidth( 4, 48);
     
 	
 	
-	m_listCtrlStats.SetColumnWidth( 5, 55);
-    m_listCtrlStats.SetColumnWidth( 6, 20);
-    m_listCtrlStats.SetColumnWidth( 7, 20);
-    m_listCtrlStats.SetColumnWidth( 8, 20);
-    m_listCtrlStats.SetColumnWidth( 9, 20);
-    m_listCtrlStats.SetColumnWidth(10, 55);
-    m_listCtrlStats.SetColumnWidth(11, 20);
-    m_listCtrlStats.SetColumnWidth( 12,20);
-    m_listCtrlStats.SetColumnWidth( 13, 20);
-    m_listCtrlStats.SetColumnWidth( 14, 20);
+	m_listCtrlStats.SetColumnWidth( 5, 80);
+    m_listCtrlStats.SetColumnWidth( 6, 27);
+    m_listCtrlStats.SetColumnWidth( 7, 27);
+    m_listCtrlStats.SetColumnWidth( 8, 27);
+    m_listCtrlStats.SetColumnWidth( 9, 27);
+    m_listCtrlStats.SetColumnWidth(10, 80);
+    m_listCtrlStats.SetColumnWidth(11, 27);
+    m_listCtrlStats.SetColumnWidth( 12,27);
+    m_listCtrlStats.SetColumnWidth( 13, 27);
+    m_listCtrlStats.SetColumnWidth( 14, 27);
     m_listCtrlStats.SetBkColor(BK_COLOR);
     m_listCtrlStats.SetTextBkColor(TEXT_BK_COLOR);
     m_listCtrlStats.SetTextColor(RGB(0,0,0));
@@ -202,32 +212,35 @@ void CRookieCardDlg::InitListCtrl()
     m_listctrlskill.InsertColumn(5,"blk");
   
 	
-    m_listCtrlShot.SetColumnWidth( 0, 40);
-    m_listCtrlShot.SetColumnWidth( 1, 40);
-    m_listCtrlShot.SetColumnWidth( 2, 40);
-    m_listCtrlShot.SetColumnWidth( 3, 39);
-    m_listCtrlShot.SetColumnWidth( 4, 39);
-    m_listCtrlShot.SetColumnWidth( 5, 39);
-    m_listctrlskill.SetColumnWidth( 0, 40);
-    m_listctrlskill.SetColumnWidth( 1, 40);
-    m_listctrlskill.SetColumnWidth( 2, 40);
-    m_listctrlskill.SetColumnWidth( 3, 39);
-    m_listctrlskill.SetColumnWidth( 4, 39);
-    m_listctrlskill.SetColumnWidth( 5, 39);
+    m_listCtrlShot.SetColumnWidth( 0, 55);
+    m_listCtrlShot.SetColumnWidth( 1, 55);
+    m_listCtrlShot.SetColumnWidth( 2, 55);
+    m_listCtrlShot.SetColumnWidth( 3, 55);
+    m_listCtrlShot.SetColumnWidth( 4, 55);
+    m_listCtrlShot.SetColumnWidth( 5, 55);
+    m_listctrlskill.SetColumnWidth( 0, 55);
+    m_listctrlskill.SetColumnWidth( 1, 55);
+    m_listctrlskill.SetColumnWidth( 2, 55);
+    m_listctrlskill.SetColumnWidth( 3, 55);
+    m_listctrlskill.SetColumnWidth( 4, 55);
+    m_listctrlskill.SetColumnWidth( 5, 55);
 	
 	m_listFuture.InsertColumn(0,"Talent");    
     m_listFuture.InsertColumn(1,"Skill");
     m_listFuture.InsertColumn(2,"Intangibles");
-    m_listFuture.SetColumnWidth( 0, 69);
-    m_listFuture.SetColumnWidth( 1, 69);
-    m_listFuture.SetColumnWidth( 2, 69);
+    m_listFuture.SetColumnWidth( 0, 95);
+    m_listFuture.SetColumnWidth( 1, 95);
+    m_listFuture.SetColumnWidth( 2, 95);
 
-    m_listCtrlShot.SetBkColor(BK_COLOR);
-    m_listCtrlShot.SetTextBkColor(TEXT_BK_COLOR);
-    m_listCtrlShot.SetTextColor(RGB(0,0,0));
-    m_listFuture.SetTextBkColor(TEXT_BK_COLOR);
-    m_listFuture.SetBkColor(BK_COLOR);
-    m_listFuture.SetTextColor(RGB(0,0,0));
+	m_listCtrlShot.SetBkColor(BK_COLOR);
+	m_listctrlskill.SetBkColor(BK_COLOR);
+	m_listCtrlStats.SetBkColor(BK_COLOR);
+	m_listFuture.SetBkColor(BK_COLOR);
+	//m_listCtrlShot.SetTextBkColor(TEXT_BK_COLOR);
+    //m_listCtrlShot.SetTextColor(RGB(0,0,0));
+    //m_listFuture.SetTextBkColor(TEXT_BK_COLOR);
+    //m_listFuture.SetBkColor(BK_COLOR);
+    //m_listFuture.SetTextColor(RGB(0,0,0));
 
 }
 

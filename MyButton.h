@@ -35,7 +35,7 @@ public:
 
 protected:
 	CFont m_font;
-	int fontSize = 14;
+	int fontSize = 15;
 	int fontWeight = 400;
 	CString fontType = "Segoe UI";
 

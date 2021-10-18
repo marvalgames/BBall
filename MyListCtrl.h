@@ -43,6 +43,10 @@ public:
 	CXHeaderCtrl	m_HeaderCtrl;
 
 	void SetHeaderColors(COLORREF textColor, COLORREF bkColor);
+	void SetHeaderFont(CFont* font);
+
+
+
 
 	enum EHighlight {HIGHLIGHT_NORMAL, HIGHLIGHT_ALLCOLUMNS, HIGHLIGHT_ROW};
 

@@ -42,6 +42,8 @@ void CScheduleDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CScheduleDlg)
 	DDX_Control(pDX, IDC_BUTTON_RESET, m_button_reset);
+	DDX_Control(pDX, IDOK, m_button[0]);
+	DDX_Control(pDX, IDCANCEL, m_button[1]);
 	DDX_Control(pDX, IDC_LIST_MONTH, m_scheduleMonth);
 	DDX_Control(pDX, IDC_LIST_DAY, m_scheduleDay);
 	DDX_Control(pDX, IDC_BUTTON_AUTOSCH, m_buttonAuto);

@@ -10,6 +10,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CAutoSchDlg dialog
+#include "MyButton.h"
 
 class CAutoSchDlg : public CDialog
 {
@@ -40,6 +41,7 @@ public:
 	CListBox	m_listDiv;
 	CListBox	m_listOther;
 	CListBox	m_listConf;
+	MyButton m_button[2];
 	//}}AFX_DATA
 
 

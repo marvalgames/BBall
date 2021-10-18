@@ -39,6 +39,7 @@ void CAwardsDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_ROOKIES, m_list_rookie);
 	DDX_Control(pDX, IDC_LIST_DEFENSE, m_list_defense);
 	DDX_Control(pDX, IDC_LIST_MVP, m_list_mvp);
+	DDX_Control(pDX, IDOK, m_button[0]);
 	//}}AFX_DATA_MAP
 }
 
@@ -116,7 +117,7 @@ void CAwardsDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -192,9 +193,9 @@ void CAwardsDlg::InitControls()
     m_list_6th.InsertColumn(1,"6th man");    
 	m_list_6th.DeleteColumn(2);
     m_list_6th.InsertColumn(2,"team");    
-    m_list_6th.SetColumnWidth( 0, 30);
-    m_list_6th.SetColumnWidth( 1, 120);
-    m_list_6th.SetColumnWidth( 2, 90);
+    m_list_6th.SetColumnWidth( 0, 40);
+    m_list_6th.SetColumnWidth( 1, 156);
+    m_list_6th.SetColumnWidth( 2, 124);
 
 	m_list_mvp.DeleteColumn(0);
     m_list_mvp.InsertColumn(0,"po");    
@@ -202,9 +203,9 @@ void CAwardsDlg::InitControls()
     m_list_mvp.InsertColumn(1,"most valuable player");    
 	m_list_mvp.DeleteColumn(2);
     m_list_mvp.InsertColumn(2,"team");    
-    m_list_mvp.SetColumnWidth( 0, 30);
-    m_list_mvp.SetColumnWidth( 1, 120);
-    m_list_mvp.SetColumnWidth( 2, 90);
+    m_list_mvp.SetColumnWidth( 0, 40);
+    m_list_mvp.SetColumnWidth( 1, 156);
+    m_list_mvp.SetColumnWidth( 2, 124);
 
 	m_list_defense.DeleteColumn(0);
     m_list_defense.InsertColumn(0,"po");    
@@ -212,9 +213,9 @@ void CAwardsDlg::InitControls()
     m_list_defense.InsertColumn(1,"defensive player");    
 	m_list_defense.DeleteColumn(2);
     m_list_defense.InsertColumn(2,"team");    
-    m_list_defense.SetColumnWidth( 0, 30);
-    m_list_defense.SetColumnWidth( 1, 120);
-    m_list_defense.SetColumnWidth( 2, 90);
+    m_list_defense.SetColumnWidth( 0, 40);
+    m_list_defense.SetColumnWidth( 1, 156);
+    m_list_defense.SetColumnWidth( 2, 124);
 
 	m_list_rookie.DeleteColumn(0);
     m_list_rookie.InsertColumn(0,"po");    
@@ -222,9 +223,9 @@ void CAwardsDlg::InitControls()
     m_list_rookie.InsertColumn(1,"rookie of the year");    
 	m_list_rookie.DeleteColumn(2);
     m_list_rookie.InsertColumn(2,"team");    
-    m_list_rookie.SetColumnWidth( 0, 30);
-    m_list_rookie.SetColumnWidth( 1, 120);
-    m_list_rookie.SetColumnWidth( 2, 90);
+    m_list_rookie.SetColumnWidth( 0, 40);
+    m_list_rookie.SetColumnWidth( 1, 156);
+    m_list_rookie.SetColumnWidth( 2, 124);
 
 	m_list_all_league.DeleteColumn(0);
     m_list_all_league.InsertColumn(0,"po");    
@@ -232,9 +233,9 @@ void CAwardsDlg::InitControls()
     m_list_all_league.InsertColumn(1,"all league");    
 	m_list_all_league.DeleteColumn(2);
     m_list_all_league.InsertColumn(2,"team");    
-    m_list_all_league.SetColumnWidth( 0, 30);
-    m_list_all_league.SetColumnWidth( 1, 120);
-    m_list_all_league.SetColumnWidth( 2, 90);
+    m_list_all_league.SetColumnWidth( 0, 40);
+    m_list_all_league.SetColumnWidth( 1, 156);
+    m_list_all_league.SetColumnWidth( 2, 124);
 
 	m_list_all_defense.DeleteColumn(0);
     m_list_all_defense.InsertColumn(0,"po");    
@@ -242,9 +243,9 @@ void CAwardsDlg::InitControls()
     m_list_all_defense.InsertColumn(1,"all defense");    
 	m_list_all_defense.DeleteColumn(2);
     m_list_all_defense.InsertColumn(2,"team");    
-    m_list_all_defense.SetColumnWidth( 0, 30);
-    m_list_all_defense.SetColumnWidth( 1, 120);
-    m_list_all_defense.SetColumnWidth( 2, 90);
+    m_list_all_defense.SetColumnWidth( 0, 40);
+    m_list_all_defense.SetColumnWidth( 1, 156);
+    m_list_all_defense.SetColumnWidth( 2, 124);
 
 	m_list_all_rookie.DeleteColumn(0);
     m_list_all_rookie.InsertColumn(0,"po");    
@@ -252,9 +253,9 @@ void CAwardsDlg::InitControls()
     m_list_all_rookie.InsertColumn(1,"all rookie");    
 	m_list_all_rookie.DeleteColumn(2);
     m_list_all_rookie.InsertColumn(2,"team");    
-    m_list_all_rookie.SetColumnWidth( 0, 30);
-    m_list_all_rookie.SetColumnWidth( 1, 120);
-    m_list_all_rookie.SetColumnWidth( 2, 90);
+    m_list_all_rookie.SetColumnWidth( 0, 40);
+    m_list_all_rookie.SetColumnWidth( 1, 156);
+    m_list_all_rookie.SetColumnWidth( 2, 124);
 
 	m_list_leaders.DeleteColumn(0);
     m_list_leaders.InsertColumn(0,"po");    
@@ -264,8 +265,8 @@ void CAwardsDlg::InitControls()
     m_list_leaders.InsertColumn(2,"team");    
 	m_list_leaders.DeleteColumn(3);
     m_list_leaders.InsertColumn(3,"avg");    
-    m_list_leaders.SetColumnWidth( 0, 30);
-    m_list_leaders.SetColumnWidth( 1, 90);
+    m_list_leaders.SetColumnWidth( 0, 40);
+    m_list_leaders.SetColumnWidth( 1, 156);
     m_list_leaders.SetColumnWidth( 2, 60);
     m_list_leaders.SetColumnWidth( 3, 60);
 

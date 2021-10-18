@@ -49,6 +49,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CRookieCardDlg)
 	enum { IDD = IDD_DIALOG_ROOKIECARD };
+	MyButton	m_button[4];
 	MyButton	m_buttonScout;
 	CMyListCtrl	m_listctrlskill;
 	CMyListCtrl	m_listFuture;

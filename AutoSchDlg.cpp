@@ -41,6 +41,8 @@ void CAutoSchDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_DIVISION, m_listDiv);
 	DDX_Control(pDX, IDC_LIST_OTHER, m_listOther);
 	DDX_Control(pDX, IDC_LIST_CONFERENCE, m_listConf);
+	DDX_Control(pDX, IDC_BUTTON_CREATE, m_button[0]);
+	DDX_Control(pDX, IDCANCEL, m_button[1]);
 	//}}AFX_DATA_MAP
 }
 

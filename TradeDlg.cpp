@@ -3024,7 +3024,7 @@ void CTradeDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -3041,8 +3041,8 @@ void CTradeDlg::InitControls()
     //m_list_team1_draft.InsertColumn(4,"");    
 //    m_list_team1_draft.InsertColumn(5,"");    
 
-    m_list_team1_draft.SetColumnWidth( 0, 90);
-    m_list_team1_draft.SetColumnWidth( 1, 100);
+    m_list_team1_draft.SetColumnWidth( 0, 120);
+    m_list_team1_draft.SetColumnWidth( 1, 133);
 
 	m_list_team2_draft.SetBkColor(BK_COLOR);
 	m_list_team2_draft.SetTextBkColor(TEXT_BK_COLOR);
@@ -3053,8 +3053,8 @@ void CTradeDlg::InitControls()
     m_list_team2_draft.InsertColumn(0,"pick");    
     m_list_team2_draft.InsertColumn(1,"team");    
 
-    m_list_team2_draft.SetColumnWidth( 0, 90);
-    m_list_team2_draft.SetColumnWidth( 1, 100);
+    m_list_team2_draft.SetColumnWidth( 0, 120);
+    m_list_team2_draft.SetColumnWidth( 1, 133);
 
 	m_listfa.SetBkColor(BK_COLOR);
 	m_listfa.SetTextBkColor(TEXT_BK_COLOR);
@@ -3069,11 +3069,11 @@ void CTradeDlg::InitControls()
     m_listfa.InsertColumn(4,"inj");    
     //m_listfa.InsertColumn(5,"");    
 
-    m_listfa.SetColumnWidth( 0, 29);
-    m_listfa.SetColumnWidth( 1, 94);
-    m_listfa.SetColumnWidth( 2, 29);
-    m_listfa.SetColumnWidth( 3, 40);
-    m_listfa.SetColumnWidth( 4, 25);
+    m_listfa.SetColumnWidth( 0, 36);
+    m_listfa.SetColumnWidth( 1, 112);
+    m_listfa.SetColumnWidth( 2, 38);
+    m_listfa.SetColumnWidth( 3, 55);
+    m_listfa.SetColumnWidth( 4, 28);
     //m_listfa.SetColumnWidth( 5, 30);
 
 	m_listplayers1.SetBkColor(BK_COLOR);
@@ -3089,8 +3089,8 @@ void CTradeDlg::InitControls()
   //  m_listplayers1.InsertColumn(4,"");    
     //m_listplayers1.InsertColumn(5,"");    
 
-    m_listplayers1.SetColumnWidth( 0, 90);
-    m_listplayers1.SetColumnWidth( 1, 100);
+    m_listplayers1.SetColumnWidth( 0, 120);
+    m_listplayers1.SetColumnWidth( 1, 133);
     //m_listplayers1.SetColumnWidth( 2, 25);
     //m_listplayers1.SetColumnWidth( 3, 40);
     //m_listplayers1.SetColumnWidth( 4, 25);
@@ -3109,8 +3109,8 @@ void CTradeDlg::InitControls()
     //m_listplayers2.InsertColumn(4,"");    
 //    m_listplayers2.InsertColumn(5,"");    
 
-    m_listplayers2.SetColumnWidth( 0, 90);
-    m_listplayers2.SetColumnWidth( 1, 100);
+    m_listplayers2.SetColumnWidth( 0, 120);
+    m_listplayers2.SetColumnWidth( 1, 133);
     //m_listplayers2.SetColumnWidth( 2, 25);
     //m_listplayers2.SetColumnWidth( 3, 40);
     //m_listplayers2.SetColumnWidth( 4, 25);
@@ -3129,11 +3129,11 @@ void CTradeDlg::InitControls()
     m_listroster1.InsertColumn(4,"inj");    
     //m_listroster1.InsertColumn(5,"");    
 
-    m_listroster1.SetColumnWidth( 0, 29);
-    m_listroster1.SetColumnWidth( 1, 94);
-    m_listroster1.SetColumnWidth( 2, 29);
-    m_listroster1.SetColumnWidth( 3, 40);
-    m_listroster1.SetColumnWidth( 4, 25);
+    m_listroster1.SetColumnWidth( 0, 36);
+    m_listroster1.SetColumnWidth( 1, 112);
+    m_listroster1.SetColumnWidth( 2, 38);
+    m_listroster1.SetColumnWidth( 3, 55);
+    m_listroster1.SetColumnWidth( 4, 28);
     //m_listroster1.SetColumnWidth( 5, 30);
 
 	m_listroster2.SetBkColor(BK_COLOR);
@@ -3149,11 +3149,11 @@ void CTradeDlg::InitControls()
     m_listroster2.InsertColumn(4,"inj");    
     //m_listroster2.InsertColumn(5,"");    
 
-    m_listroster2.SetColumnWidth( 0, 29);
-    m_listroster2.SetColumnWidth( 1, 94);
-    m_listroster2.SetColumnWidth( 2, 29);
-    m_listroster2.SetColumnWidth( 3, 40);
-    m_listroster2.SetColumnWidth( 4, 25);
+    m_listroster2.SetColumnWidth( 0, 36);
+    m_listroster2.SetColumnWidth( 1, 112);
+    m_listroster2.SetColumnWidth( 2, 38);
+    m_listroster2.SetColumnWidth( 3, 55);
+    m_listroster2.SetColumnWidth( 4, 28);
     //m_listroster2.SetColumnWidth( 5, 30);
 
 	m_listroster3.SetBkColor(BK_COLOR);
@@ -3169,97 +3169,14 @@ void CTradeDlg::InitControls()
     m_listroster3.InsertColumn(4,"inj");    
     //m_listroster3.InsertColumn(5,"");    
 
-    m_listroster3.SetColumnWidth( 0, 29);
-    m_listroster3.SetColumnWidth( 1, 94);
-    m_listroster3.SetColumnWidth( 2, 29);
-    m_listroster3.SetColumnWidth( 3, 40);
-    m_listroster3.SetColumnWidth( 4, 25);
+    m_listroster3.SetColumnWidth( 0, 36);
+    m_listroster3.SetColumnWidth( 1, 112);
+    m_listroster3.SetColumnWidth( 2, 38);
+    m_listroster3.SetColumnWidth( 3, 55);
+    m_listroster3.SetColumnWidth( 4, 28);
     //m_listroster3.SetColumnWidth( 5, 30);
 
   
-
-/*m_button_add_pick2.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_add_pick2.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_add_pick2.SetInactiveFgColor(RGB(0,255,0));
-        m_button_add_pick2.SetActiveFgColor(ActiveFont);
-        m_button_add_pick2.SetBtnCursor(IDC_CURSOR);
-        m_button_add_pick2.SetTooltipText(IDS_TT_OK);
-		m_button_add_pick2.SetIcon(IDI_ICON32);
-
-m_button_cancel.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_cancel.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_cancel.SetInactiveFgColor(RGB(0,255,0));
-        m_button_cancel.SetActiveFgColor(ActiveFont);
-        m_button_cancel.SetBtnCursor(IDC_CURSOR);
-        m_button_cancel.SetTooltipText(IDS_TT_OK);
-		m_button_cancel.SetIcon(IDI_ICON32);
-
-m_button_release.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_release.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_release.SetInactiveFgColor(RGB(0,255,0));
-        m_button_release.SetActiveFgColor(ActiveFont);
-        m_button_release.SetBtnCursor(IDC_CURSOR);
-        m_button_release.SetTooltipText(IDS_TT_OK);
-		m_button_release.SetIcon(IDI_ICON32);
-
-m_button_search.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_search.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_search.SetInactiveFgColor(RGB(0,255,0));
-        m_button_search.SetActiveFgColor(ActiveFont);
-        m_button_search.SetBtnCursor(IDC_CURSOR);
-        m_button_search.SetTooltipText(IDS_TT_OK);
-		m_button_search.SetIcon(IDI_ICON32);
-
-m_button_sign.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_sign.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_sign.SetInactiveFgColor(RGB(0,255,0));
-        m_button_sign.SetActiveFgColor(ActiveFont);
-        m_button_sign.SetBtnCursor(IDC_CURSOR);
-        m_button_sign.SetTooltipText(IDS_TT_OK);
-		m_button_sign.SetIcon(IDI_ICON32);
-m_button_team1.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_team1.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_team1.SetInactiveFgColor(RGB(0,255,0));
-        m_button_team1.SetActiveFgColor(ActiveFont);
-        m_button_team1.SetBtnCursor(IDC_CURSOR);
-        m_button_team1.SetTooltipText(IDS_TT_OK);
-		m_button_team1.SetIcon(IDI_ICON32);
-m_button_team2.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_team2.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_team2.SetInactiveFgColor(RGB(0,255,0));
-        m_button_team2.SetActiveFgColor(ActiveFont);
-        m_button_team2.SetBtnCursor(IDC_CURSOR);
-        m_button_team2.SetTooltipText(IDS_TT_OK);
-		m_button_team2.SetIcon(IDI_ICON32);
-m_button_trade.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_button_trade.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_button_trade.SetInactiveFgColor(RGB(0,255,0));
-        m_button_trade.SetActiveFgColor(ActiveFont);
-        m_button_trade.SetBtnCursor(IDC_CURSOR);
-        m_button_trade.SetTooltipText(IDS_TT_OK);
-		m_button_trade.SetIcon(IDI_ICON32);
-m_buttonFaReport.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_buttonFaReport.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_buttonFaReport.SetInactiveFgColor(RGB(0,255,0));
-        m_buttonFaReport.SetActiveFgColor(ActiveFont);
-        m_buttonFaReport.SetBtnCursor(IDC_CURSOR);
-        m_buttonFaReport.SetTooltipText(IDS_TT_OK);
-		m_buttonFaReport.SetIcon(IDI_ICON32);
-m_buttonOk.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_buttonOk.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_buttonOk.SetInactiveFgColor(RGB(0,255,0));
-        m_buttonOk.SetActiveFgColor(ActiveFont);
-        m_buttonOk.SetBtnCursor(IDC_CURSOR);
-        m_buttonOk.SetTooltipText(IDS_TT_OK);
-		m_buttonOk.SetIcon(IDI_ICON32);
-m_buttonRatings.SetInactiveBgColor(crStandard - RGB(20,20,20));
-        m_buttonRatings.SetActiveBgColor(crStandard + RGB(20,20,20));
-        m_buttonRatings.SetInactiveFgColor(RGB(0,255,0));
-        m_buttonRatings.SetActiveFgColor(ActiveFont);
-        m_buttonRatings.SetBtnCursor(IDC_CURSOR);
-        m_buttonRatings.SetTooltipText(IDS_TT_OK);
-		m_buttonRatings.SetIcon(IDI_ICON32);*/
-
 	int days_passed = (avg.m_sched.m_currentMonth - avg.m_sched.m_first_mo)*30 +
 		(avg.m_sched.m_currentDay - avg.m_sched.m_first_da);
 
@@ -3280,6 +3197,7 @@ m_buttonRatings.SetInactiveBgColor(crStandard - RGB(20,20,20));
 	}
 
 
+	m_button_search.SetFaceColor(BUTTONFACECOLOR2);
 
 }
 

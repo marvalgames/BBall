@@ -101,6 +101,8 @@ private:
 	void DisplayThreeRound3();
 	void DisplayThreeRound2();
 	void DisplayThreeRound1();
+public:
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

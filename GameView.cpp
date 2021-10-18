@@ -1187,31 +1187,31 @@ void CGameView::SetRatingsHeaders()
 	m_list_stats.DeleteColumn(24);
 	m_list_stats.InsertColumn(24, "in");
 
-	m_list_stats.SetColumnWidth(0, 24);
-	m_list_stats.SetColumnWidth(1, 88);
-	m_list_stats.SetColumnWidth(2, 30);
-	m_list_stats.SetColumnWidth(3, 33);
-	m_list_stats.SetColumnWidth(4, 30);
-	m_list_stats.SetColumnWidth(5, 30);
-	m_list_stats.SetColumnWidth(6, 30);
-	m_list_stats.SetColumnWidth(7, 33);
-	m_list_stats.SetColumnWidth(8, 30);
-	m_list_stats.SetColumnWidth(9, 30);
-	m_list_stats.SetColumnWidth(10, 30);
-	m_list_stats.SetColumnWidth(11, 30);
-	m_list_stats.SetColumnWidth(12, 30);
-	m_list_stats.SetColumnWidth(13, 30);
-	m_list_stats.SetColumnWidth(14, 24);
-	m_list_stats.SetColumnWidth(15, 24);
-	m_list_stats.SetColumnWidth(16, 24);
-	m_list_stats.SetColumnWidth(17, 24);
-	m_list_stats.SetColumnWidth(18, 24);
-	m_list_stats.SetColumnWidth(19, 24);
-	m_list_stats.SetColumnWidth(20, 24);
-	m_list_stats.SetColumnWidth(21, 24);
-	m_list_stats.SetColumnWidth(22, 24);
-	m_list_stats.SetColumnWidth(23, 24);
-	m_list_stats.SetColumnWidth(24, 24);
+	m_list_stats.SetColumnWidth(0, 30);
+	m_list_stats.SetColumnWidth(1, 100);
+	m_list_stats.SetColumnWidth(2, 33);
+	m_list_stats.SetColumnWidth(3, 36);
+	m_list_stats.SetColumnWidth(4, 33);
+	m_list_stats.SetColumnWidth(5, 33);
+	m_list_stats.SetColumnWidth(6, 33);
+	m_list_stats.SetColumnWidth(7, 36);
+	m_list_stats.SetColumnWidth(8, 33);
+	m_list_stats.SetColumnWidth(9, 33);
+	m_list_stats.SetColumnWidth(10, 33);
+	m_list_stats.SetColumnWidth(11, 33);
+	m_list_stats.SetColumnWidth(12, 33);
+	m_list_stats.SetColumnWidth(13, 33);
+	m_list_stats.SetColumnWidth(14, 27);
+	m_list_stats.SetColumnWidth(15, 27);
+	m_list_stats.SetColumnWidth(16, 27);
+	m_list_stats.SetColumnWidth(17, 27);
+	m_list_stats.SetColumnWidth(18, 27);
+	m_list_stats.SetColumnWidth(19, 27);
+	m_list_stats.SetColumnWidth(20, 27);
+	m_list_stats.SetColumnWidth(21, 27);
+	m_list_stats.SetColumnWidth(22, 27);
+	m_list_stats.SetColumnWidth(23, 27);
+	m_list_stats.SetColumnWidth(24, 27);
 
 }
 
@@ -2481,18 +2481,18 @@ void CGameView::SetContractHeaders()
 
 
 
-	m_list_stats.SetColumnWidth(0, 24);
-	m_list_stats.SetColumnWidth(1, 90);
-	m_list_stats.SetColumnWidth(2, 48);
-	m_list_stats.SetColumnWidth(3, 48);
-	m_list_stats.SetColumnWidth(4, 48);
-	m_list_stats.SetColumnWidth(5, 48);
-	m_list_stats.SetColumnWidth(6, 48);
-	m_list_stats.SetColumnWidth(7, 48);
-	m_list_stats.SetColumnWidth(8, 48);
-	m_list_stats.SetColumnWidth(9, 48);
-	m_list_stats.SetColumnWidth(10, 48);
-	m_list_stats.SetColumnWidth(11, 48);
+	m_list_stats.SetColumnWidth(0, 30);
+	m_list_stats.SetColumnWidth(1, 100);
+	m_list_stats.SetColumnWidth(2, 54);
+	m_list_stats.SetColumnWidth(3, 54);
+	m_list_stats.SetColumnWidth(4, 54);
+	m_list_stats.SetColumnWidth(5, 54);
+	m_list_stats.SetColumnWidth(6, 54);
+	m_list_stats.SetColumnWidth(7, 54);
+	m_list_stats.SetColumnWidth(8, 54);
+	m_list_stats.SetColumnWidth(9, 54);
+	m_list_stats.SetColumnWidth(10, 54);
+	m_list_stats.SetColumnWidth(11, 54);
 
 	m_list_stats.DeleteColumn(12);
 	m_list_stats.DeleteColumn(12);
