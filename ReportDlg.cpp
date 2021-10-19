@@ -45,6 +45,12 @@ void CReportDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_listTeams);
 	//}}AFX_DATA_MAP
 
+	DDX_Control(pDX, IDOK, m_button[0]);
+	DDX_Control(pDX, IDCANCEL, m_button[1]);
+	DDX_Control(pDX, IDC_BUTTON_EXPORT, m_button[2]);
+	DDX_Control(pDX, IDC_BUTTON_IMPORT, m_button[3]);
+	DDX_Control(pDX, IDC_BUTTON_EXPORTALL, m_button[4]);
+	DDX_Control(pDX, IDC_BUTTON_RESET, m_button[5]);
 	DDX_Control(pDX, IDC_STATIC19, m_edit[19]);
 	DDX_Control(pDX, IDC_STATIC18, m_edit[18]);
 	DDX_Control(pDX, IDC_STATIC17, m_edit[17]);
@@ -215,7 +221,10 @@ BOOL CReportDlg::OnHelpInfo(HELPINFO* pHelpInfo)
 //	return CDialog::OnHelpInfo(pHelpInfo);
 
 //	HtmlHelp(NULL, "jumpshot.chm::/html/gameplan.htm", HH_DISPLAY_TOPIC, 0);
-	
+	ShellExecute(NULL, "open", "html\\gameplan.htm", NULL, NULL, SW_SHOWNORMAL);
+
+	//return CFormView::OnHelpInfo(pHelpInfo);
+
 	return CDialog::OnHelpInfo(pHelpInfo);
 
 }

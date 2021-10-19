@@ -42,6 +42,8 @@ void CDefenseDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_OFFENSE, m_listOffense);
 	DDX_Control(pDX, IDC_BUTTON_VISITOR, m_buttonVisitor);
 	DDX_Control(pDX, IDC_BUTTON_HOME, m_buttonHome);
+	DDX_Control(pDX, IDOK, m_button[0]);
+	DDX_Control(pDX, IDCANCEL, m_button[1]);
 	DDX_Text(pDX, IDC_EDIT_TEAM_NAME, m_teamName);
 	DDV_MaxChars(pDX, m_teamName, 32);
 	//}}AFX_DATA_MAP
@@ -80,7 +82,7 @@ BOOL CDefenseDlg::OnInitDialog()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 20;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 

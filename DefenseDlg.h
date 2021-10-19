@@ -64,6 +64,8 @@ public:
 	CListBox	m_listOffense;
 	MyButton	m_buttonVisitor;
 	MyButton	m_buttonHome;
+	MyButton	m_button[3];
+
 	CString	m_teamName;
 	//}}AFX_DATA
 

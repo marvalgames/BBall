@@ -1915,7 +1915,7 @@ void CDisk::ReadBudgetFile(CString file_name)
 	for(int t=0; t<=100; t++)
 	{
 
-		char s[33];
+		char s[33] = "";
 		int seek = t*1000;
 		
 		file.Seek(seek, CFile::begin );
@@ -1933,12 +1933,14 @@ void CDisk::ReadBudgetFile(CString file_name)
 
 		bytes = file.Read(s, 10);
 		s[bytes] = 0;
-		i = atoi(s);
+		CString str = s;
+		i = atoi(str);
 		avg.m_finance[t].m_season_suites_sold = i;
 
 		bytes = file.Read(s, 10);
 		s[bytes] = 0;
-		i = atoi(s);
+		str = s;
+		i = atoi(str);
 		avg.m_finance[t].m_season_clubs_sold = i;
 
 		bytes = file.Read(s, 10);

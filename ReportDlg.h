@@ -28,6 +28,7 @@
 #define GamePlan_h
 #endif 
 
+#include "MyButton.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -49,6 +50,7 @@ class CReportDlg : public CDialog
 private:
 
 	CBitmap bitmapBkgnd;
+	MyButton m_button[6];
 
 public:
 	bool m_in_game;

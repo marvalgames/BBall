@@ -44,6 +44,7 @@ public:
 	enum { IDD = IDD_DIALOG_COACH_VIEW };
 	MyButton	m_buttonplan;
 	MyButton	m_buttonvplan;
+	MyButton m_button[3];
 	CStatic	m_vlabel;
 	CStatic	m_tlabel;
 	CStatic	m_hlabel;

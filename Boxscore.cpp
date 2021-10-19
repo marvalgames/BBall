@@ -32,6 +32,8 @@ void CBoxscore::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CBoxscore)
 	DDX_Control(pDX, IDC_LIST_PBP, m_listPBP);
+	DDX_Control(pDX, IDC_BUTTON_PRINT, m_button[0]);
+	DDX_Control(pDX, IDOK, m_button[1]);
 	//}}AFX_DATA_MAP
 }
 

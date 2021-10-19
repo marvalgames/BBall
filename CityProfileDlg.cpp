@@ -166,7 +166,7 @@ void CCityProfileDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -343,9 +343,9 @@ void CCityProfileDlg::SetListBoxHeaders()
     m_list_expenses.InsertColumn(1,"current");    
 	m_list_expenses.DeleteColumn(2);
     m_list_expenses.InsertColumn(2,"last");    
-    m_list_expenses.SetColumnWidth( 0, 120);
-    m_list_expenses.SetColumnWidth( 1, 80);
-    m_list_expenses.SetColumnWidth( 2, 80);
+    m_list_expenses.SetColumnWidth( 0, 140);
+    m_list_expenses.SetColumnWidth( 1, 84);
+    m_list_expenses.SetColumnWidth( 2, 84);
 
 	m_list_revenues.DeleteAllItems();
 	m_list_revenues.DeleteColumn(0);
@@ -354,9 +354,9 @@ void CCityProfileDlg::SetListBoxHeaders()
     m_list_revenues.InsertColumn(1,"current");    
 	m_list_revenues.DeleteColumn(2);
     m_list_revenues.InsertColumn(2,"last");    
-    m_list_revenues.SetColumnWidth( 0, 120);
-    m_list_revenues.SetColumnWidth( 1, 79);
-    m_list_revenues.SetColumnWidth( 2, 79);
+    m_list_revenues.SetColumnWidth( 0, 140);
+    m_list_revenues.SetColumnWidth( 1, 84);
+    m_list_revenues.SetColumnWidth( 2, 84);
 
 	m_list_arena.DeleteAllItems();
 	m_list_arena.DeleteColumn(0);
@@ -365,9 +365,9 @@ void CCityProfileDlg::SetListBoxHeaders()
     m_list_arena.InsertColumn(1,"current");    
 	m_list_arena.DeleteColumn(2);
     m_list_arena.InsertColumn(2,"last");    
-    m_list_arena.SetColumnWidth( 0, 120);
-    m_list_arena.SetColumnWidth( 1, 79);
-    m_list_arena.SetColumnWidth( 2, 79);
+    m_list_arena.SetColumnWidth( 0, 140);
+    m_list_arena.SetColumnWidth( 1, 84);
+    m_list_arena.SetColumnWidth( 2, 84);
 
 	m_list_city.DeleteAllItems();
 	m_list_city.DeleteColumn(0);
@@ -376,9 +376,9 @@ void CCityProfileDlg::SetListBoxHeaders()
     m_list_city.InsertColumn(1,"current");    
 	m_list_city.DeleteColumn(2);
     m_list_city.InsertColumn(2,"last");    
-    m_list_city.SetColumnWidth( 0, 120);
-    m_list_city.SetColumnWidth( 1, 79);
-    m_list_city.SetColumnWidth( 2, 79);
+    m_list_city.SetColumnWidth( 0, 140);
+    m_list_city.SetColumnWidth( 1, 84);
+    m_list_city.SetColumnWidth( 2, 84);
 }
 
 void CCityProfileDlg::ListRevenues()
@@ -549,7 +549,11 @@ void CCityProfileDlg::ListArena()
 		r = fin.m_season_suites_sold / g;
 		Stats[4 ].Format("%.f", r);
 
-		pct = int((double)fin.m_season_suites_sold / ((double)fin.m_suites * g) * 1000);
+		if (fin.m_suites > 0)
+			pct = int((double)fin.m_season_suites_sold / ((double)fin.m_suites * g) * 1000);
+		else
+			pct = 0;
+
 		r = (double) pct / 10;
 		Stats[5 ].Format("%.2f", r);
 
@@ -559,18 +563,24 @@ void CCityProfileDlg::ListArena()
 		r = fin.m_season_clubs_sold / g;
 		Stats[7 ].Format("%.f", r);
 
-		pct = int((double) fin.m_season_clubs_sold / ((double)fin.m_club_seats * g) * 1000);
+		if (fin.m_club_seats > 0)
+			pct = int((double)fin.m_season_clubs_sold / ((double)fin.m_club_seats * g) * 1000);
+		else
+			pct = 0;
+
 		r = (double) pct / 10;
 		Stats[8 ].Format("%.2f", r);
 
 		int d = fin.m_parking_spots;
 		Stats[9 ].Format("%d", d);
 
-		if(fin.m_parking == 0) r = 0;
+		if (fin.m_parking == 0) r = 0;
 		else r = fin.m_season_parking_revenue / (double)fin.m_parking / g;
 		Stats[10 ].Format("%.f", r);
 
-		pct = int((double) fin.m_season_parking_revenue / (double) fin.m_parking / ((double)fin.m_parking_spots * g) * 1000);
+		if (fin.m_parking > 0 && fin.m_parking_spots > 0)
+			pct = int((double)fin.m_season_parking_revenue / (double)fin.m_parking / ((double)fin.m_parking_spots * g) * 1000);
+		else pct = 0;
 		r = (double) pct / 10;
 		Stats[11 ].Format("%.2f", r);	
 
@@ -598,7 +608,10 @@ void CCityProfileDlg::ListArena()
 		r = fin_l.m_season_suites_sold / g;
 		Stats_l[4 ].Format("%.f", r);
 
-		pct = int((double)fin_l.m_season_suites_sold / ((double)fin_l.m_suites * g) * 1000);
+		if (fin_l.m_suites > 0)
+			pct = int((double)fin_l.m_season_suites_sold / ((double)fin_l.m_suites * g) * 1000);
+		else pct = 0;
+
 		r = (double) pct / 10;
 		Stats_l[5 ].Format("%.2f", r);
 
@@ -608,7 +621,11 @@ void CCityProfileDlg::ListArena()
 		r = fin_l.m_season_clubs_sold / g;
 		Stats_l[7 ].Format("%.f", r);
 
-		pct = int((double) fin_l.m_season_clubs_sold / ((double)fin_l.m_club_seats * g) * 1000);
+		if (fin_l.m_club_seats > 0)
+			pct = int((double)fin_l.m_season_clubs_sold / ((double)fin_l.m_club_seats * g) * 1000);
+		else
+			pct = 0;
+
 		r = (double) pct / 10;
 		Stats_l[8 ].Format("%.2f", r);
 
@@ -619,7 +636,9 @@ void CCityProfileDlg::ListArena()
 		else r = fin_l.m_season_parking_revenue / (double)fin_l.m_parking / g;
 		Stats_l[10 ].Format("%.f", r);
 
-		pct = int((double) fin_l.m_season_parking_revenue / (double) fin_l.m_parking / ((double)fin_l.m_parking_spots * g) * 1000);
+		if (fin_l.m_parking > 0 && fin_l.m_parking_spots > 0)
+			pct = int((double)fin_l.m_season_parking_revenue / (double)fin_l.m_parking / ((double)fin_l.m_parking_spots * g) * 1000);
+		else pct = 0;
 		r = (double) pct / 10;
 		Stats_l[11 ].Format("%.2f", r);	
 

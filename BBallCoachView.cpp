@@ -102,6 +102,9 @@ void CBBallCoachView::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_HOME_LINEUP, m_list_home_lineup);
 	DDX_Control(pDX, IDC_BUTTON_SIM, m_button_sim);
 	DDX_Control(pDX, IDC_BUTTON_PLAY, m_button_play);
+	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_BOX, m_button[1]);
+	DDX_Control(pDX, IDC_BUTTON_DEFENSE, m_button[2]);
 	DDX_Control(pDX, IDC_LIST_PBP, m_list_pbp);
 	//}}AFX_DATA_MAP
 	DDX_Check(pDX, IDC_CHECK_AUTO_VISITOR, m_auto_sub[1]);

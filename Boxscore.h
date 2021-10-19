@@ -4,7 +4,7 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-
+#include "MyButton.h"
 #define HID_STATS_GAME_PBP 25
 
 // Boxscore.h : header file
@@ -24,6 +24,7 @@ public:
 	//{{AFX_DATA(CBoxscore)
 	enum { IDD = IDD_DIALOG_BOXSCORES };
 	CListBox	m_listPBP;
+	MyButton m_button[2];
 	//}}AFX_DATA
 
 

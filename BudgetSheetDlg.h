@@ -53,6 +53,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CBudgetSheetDlg)
 	enum { IDD = IDD_DIALOG_BUDGET_SHEET };
+	MyButton m_button[4];
 	MyButton	m_button_cancel;
 	MyButton	m_edit_ok;
 	CListBox	m_list_control;
