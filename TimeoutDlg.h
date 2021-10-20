@@ -39,6 +39,7 @@ public:
 	enum { IDD = IDD_DIALOG_TO };
 	MyButton	m_buttonVisitor;
 	MyButton	m_buttonHome;
+	MyButton	m_button[2];
 	BOOL	m_checkTo20;
 	//}}AFX_DATA
 

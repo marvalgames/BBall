@@ -23,6 +23,8 @@ CTimeoutDlg::CTimeoutDlg(CWnd* pParent /*=NULL*/)
 {
 	//{{AFX_DATA_INIT(CTimeoutDlg)
 	m_checkTo20 = FALSE;
+	m_button[0].SetFaceColor(BUTTONFACECOLOR2);
+	m_button[1].SetFaceColor(BUTTONFACECOLOR2);
 	//}}AFX_DATA_INIT
 }
 
@@ -32,6 +34,8 @@ void CTimeoutDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CTimeoutDlg)
 	DDX_Control(pDX, IDC_BUTTON_VISITOR, m_buttonVisitor);
+	DDX_Control(pDX, IDC_CHECK_TO20, m_button[0]);
+	DDX_Control(pDX, IDCANCEL, m_button[1]);
 	DDX_Control(pDX, IDC_BUTTON_HOME, m_buttonHome);
 	DDX_Check(pDX, IDC_CHECK_TO20, m_checkTo20);
 	//}}AFX_DATA_MAP

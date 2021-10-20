@@ -87,7 +87,6 @@ BEGIN_MESSAGE_MAP(CCampDlg, CDialog)
 	ON_BN_CLICKED(IDC_RADIO_COACH, OnRadioCoach)
 	ON_BN_CLICKED(IDC_RADIO_SCOUT, OnRadioScout)
 	//}}AFX_MSG_MAP
-	ON_BN_CLICKED(IDOK, &CCampDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1553,8 +1552,3 @@ ListProgress();
 }
 
 
-void CCampDlg::OnBnClickedOk()
-{
-	// TODO: Add your control notification handler code here
-	CDialog::OnOK();
-}

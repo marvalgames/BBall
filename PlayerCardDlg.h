@@ -59,6 +59,7 @@ public:
 	enum { IDD = IDD_DIALOG_PLAYERCARD };
 	MyButton	m_button_extend;
 	MyButton	m_buttonScout;
+	MyButton	m_button[3];
 	CMyListCtrl	m_list_highs;
 	CMyListCtrl	m_list_ctrl_3;
 	CMyListCtrl	m_list_ctrl_2;

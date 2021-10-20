@@ -183,7 +183,6 @@ private:
 	void ListTeams();
 	void ListRookies();
 public:
-	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}

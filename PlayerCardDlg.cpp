@@ -85,6 +85,9 @@ void CPlayerCardDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MaxChars(pDX, m_edit_owner, 64);
 	//}}AFX_DATA_MAP
 	DDX_Control(pDX, IDC_MFCBUTTON1, m_buttonPng);
+	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_FORWARD, m_button[1]);
+	DDX_Control(pDX, IDOK, m_button[2]);
 }
 
 

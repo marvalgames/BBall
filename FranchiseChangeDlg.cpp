@@ -243,7 +243,7 @@ void CFranchiseChangeDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -340,15 +340,15 @@ void CFranchiseChangeDlg::SetColumnHeaders()
     m_list_ctrl.InsertColumn(6,"Eco");    
     m_list_ctrl.InsertColumn(7,"Cost");    
     m_list_ctrl.InsertColumn(8,"Pop");    
-    m_list_ctrl.SetColumnWidth( 0, 60);
-    m_list_ctrl.SetColumnWidth( 1, 60);
-    m_list_ctrl.SetColumnWidth( 2, 36);
-    m_list_ctrl.SetColumnWidth( 3, 36);
-    m_list_ctrl.SetColumnWidth( 4, 36);
-    m_list_ctrl.SetColumnWidth( 5, 39);
-    m_list_ctrl.SetColumnWidth( 6, 36);
-    m_list_ctrl.SetColumnWidth( 7, 36);
-    m_list_ctrl.SetColumnWidth( 8, 36);
+    m_list_ctrl.SetColumnWidth( 0, 120);
+    m_list_ctrl.SetColumnWidth( 1, 120);
+    m_list_ctrl.SetColumnWidth( 2, 50);
+    m_list_ctrl.SetColumnWidth( 3, 50);
+    m_list_ctrl.SetColumnWidth( 4, 50);
+    m_list_ctrl.SetColumnWidth( 5, 50);
+    m_list_ctrl.SetColumnWidth( 6, 50);
+    m_list_ctrl.SetColumnWidth( 7, 50);
+    m_list_ctrl.SetColumnWidth( 8, 50);
 
 	
 	//	m_list_ctrl.SetItemState(0,LVIS_SELECTED,LVIS_SELECTED);
