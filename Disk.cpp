@@ -5798,9 +5798,13 @@ void CDisk::ReadNewPlayerDataFile(CString file_name, CString dumb_file_name, CSt
 
 
 		buf = str.Mid(52,4);
-		m_player.m_games = atoi(buf);
+		CString cBuf = buf;
+		m_player.m_games = atoi(cBuf);
 		buf = str.Mid(56,4);
 		m_player.m_min = atoi(buf);
+
+	
+
 		buf = str.Mid(60,4);
 		m_player.m_fgm = atoi(buf);
 		buf = str.Mid(64,4);
@@ -6349,7 +6353,10 @@ void CDisk::ReadNewPlayerDataFile(CString file_name, CString dumb_file_name, CSt
 				m_player.m_yrs_of_service = 1;
 			}
 
-		avg.m_actual[i] = m_player;
+		if (m_player.m_games > 16 && m_player.m_min > 240)
+		{
+			avg.m_actual[i] = m_player;
+		}
 	}
 	
 	file.Close();

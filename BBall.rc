@@ -699,9 +699,9 @@ BEGIN
     GROUPBOX        "Double Click for Complete Profile",IDC_STATIC,0,0,532,124
     GROUPBOX        "Coaches View",IDC_STATIC,82,215,65,48
     COMBOBOX        IDC_COMBO_STAFF_TEAMS,46,139,61,122,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    GROUPBOX        "Player Team Offers",IDC_STATIC,160,125,214,65
-    GROUPBOX        "Hirings",IDC_STATIC,158,278,216,66
-    GROUPBOX        "Firings and Resignations",IDC_STATIC,159,191,215,87
+    GROUPBOX        "Player Team Offers",IDC_STATIC,160,125,213,54
+    GROUPBOX        "Hirings",IDC_STATIC,158,278,213,68
+    GROUPBOX        "Firings and Resignations",IDC_STATIC,159,191,212,69
     GROUPBOX        "Select Team",IDC_STATIC,11,127,131,79
     GROUPBOX        "Control",IDC_STATIC,42,155,69,28
 END

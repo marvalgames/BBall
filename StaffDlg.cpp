@@ -72,6 +72,7 @@ BEGIN_MESSAGE_MAP(CStaffDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBO_STAFF_TEAMS, OnSelchangeComboStaffTeams)
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STAFF, &CStaffDlg::OnLvnItemchangedListCtrlStaff)
+	ON_BN_CLICKED(IDOK, &CStaffDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -442,7 +443,7 @@ void CStaffDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -1819,4 +1820,11 @@ void CStaffDlg::OnLvnItemchangedListCtrlStaff(NMHDR* pNMHDR, LRESULT* pResult)
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
 	// TODO: Add your control notification handler code here
 	*pResult = 0;
+}
+
+
+void CStaffDlg::OnBnClickedOk()
+{
+	// TODO: Add your control notification handler code here
+	CDialog::OnOK();
 }

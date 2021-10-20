@@ -165,6 +165,7 @@ private:
 	void SetScoutListCtrl();
 public:
 	afx_msg void OnLvnItemchangedListCtrlStaff(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBnClickedOk();
 };
 
 //{{AFX_INSERT_LOCATION}}
