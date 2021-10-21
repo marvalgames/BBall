@@ -34,6 +34,9 @@ void CTransactionsDlg::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CTransactionsDlg)
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_list_teams);
 	DDX_Control(pDX, IDC_LIST_TRADES, m_listTrades);
+	//DDX_Control(pDX, IDOK, m_button[0]);
+	//DDX_Control(pDX, IDC_RADIO_INJURIES, m_button[1]);
+	//DDX_Control(pDX, IDC_RADIO_TRADES, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -281,7 +284,7 @@ void CTransactionsDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -307,11 +310,11 @@ void CTransactionsDlg::InitControls()
 	
 
 
-	m_listTrades.SetColumnWidth(0,100);
-	m_listTrades.SetColumnWidth(1,100);
-	m_listTrades.SetColumnWidth(2,120);
-	m_listTrades.SetColumnWidth(3,180);
-	m_listTrades.SetColumnWidth(4,100);
+	m_listTrades.SetColumnWidth(0,108);
+	m_listTrades.SetColumnWidth(1,128);
+	m_listTrades.SetColumnWidth(2,128);
+	m_listTrades.SetColumnWidth(3,216);
+	m_listTrades.SetColumnWidth(4,128);
 
 
 	m_list_teams.AddString(m_league_name);
@@ -323,7 +326,7 @@ void CTransactionsDlg::InitControls()
 
 	m_list_teams.SetCurSel(m_default_team+1);
 
-	CheckDlgButton(IDC_RADIO_TRADES, 2);
+	//CheckDlgButton(IDC_RADIO_TRADES, 0);
 	m_category = 1;
 	m_row = 0;
 	m_id_list[0] = 0;
@@ -642,3 +645,4 @@ void CTransactionsDlg::ListFaSignings(int row, int index)
 
 	}
 }
+

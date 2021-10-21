@@ -931,6 +931,7 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="nodrop.cur" />
+    <None Include="resource.hm" />
     <None Include="res\BBall.rc2" />
     <None Include="res\cursor.cur" />
   </ItemGroup>

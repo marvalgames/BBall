@@ -597,6 +597,9 @@
     <None Include="html\transactions.htm">
       <Filter>Help Files</Filter>
     </None>
+    <None Include="resource.hm">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BBall.rc">

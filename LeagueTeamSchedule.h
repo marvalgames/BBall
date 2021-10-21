@@ -7,6 +7,7 @@
 #endif 
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 
 #ifndef Average_h
 #include "Average.h"	// Added by ClassView
@@ -38,6 +39,7 @@ public:
 	enum { IDD = IDD_TEAM_SCHEDULE };
 	CMyListCtrl	m_listSchedule;
 	CMyComboBox	m_listTeam;
+	MyButton m_button[2];
 	//}}AFX_DATA
 
 

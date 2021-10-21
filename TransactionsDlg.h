@@ -7,6 +7,7 @@
 #endif 
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 #ifndef Average_h
 #include "Average.h"
 #define Average_h
@@ -61,6 +62,7 @@ public:
 	enum { IDD = IDD_DIALOG_TRANSACTIONS };
 	CMyComboBox	m_list_teams;
 	CMyListCtrl	m_listTrades;
+	//MyButton m_button[3];
 	//}}AFX_DATA
 
 

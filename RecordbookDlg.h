@@ -12,6 +12,7 @@
 #endif 
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -72,6 +73,7 @@ protected:
 private:
 	void FillComboBox(int style);
 	void SetHeaders();
+	MyButton m_button[11];
 	CString m_names_list[51];
 	CBrush myBrush; 
 	int m_id_list[51];

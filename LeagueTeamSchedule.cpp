@@ -38,6 +38,8 @@ void CLeagueTeamSchedule::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CLeagueTeamSchedule)
 	DDX_Control(pDX, IDC_LIST_CTRL_TEAM_SCH, m_listSchedule);
 	DDX_Control(pDX, IDC_COMBO_LIST_TEAM, m_listTeam);
+	DDX_Control(pDX, IDC_BUTTON_PRINT, m_button[0]);
+	DDX_Control(pDX, IDOK, m_button[1]);
 	//}}AFX_DATA_MAP
 }
 
@@ -415,7 +417,7 @@ void CLeagueTeamSchedule::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -438,11 +440,11 @@ void CLeagueTeamSchedule::InitControls()
 	m_listSchedule.DeleteColumn(4);
 	m_listSchedule.InsertColumn(4, "record");
 
-	m_listSchedule.SetColumnWidth(0, 78);
-	m_listSchedule.SetColumnWidth(1, 90);
-	m_listSchedule.SetColumnWidth(2, 50);
-	m_listSchedule.SetColumnWidth(3, 50);
-	m_listSchedule.SetColumnWidth(4, 50);
+	m_listSchedule.SetColumnWidth(0, 80);
+	m_listSchedule.SetColumnWidth(1, 104);
+	m_listSchedule.SetColumnWidth(2, 64);
+	m_listSchedule.SetColumnWidth(3, 64);
+	m_listSchedule.SetColumnWidth(4, 64);
 }
 
 void CLeagueTeamSchedule::OnDblclkListCtrlTeamSch(NMHDR* pNMHDR, LRESULT* pResult)
