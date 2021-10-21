@@ -33,6 +33,23 @@ void CHistoryAwardsDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CHistoryAwardsDlg)
 	DDX_Control(pDX, IDC_LIST_PLAYERS, m_list_players);
+	DDX_Control(pDX, IDC_RADIO_MVP, m_button[0]);
+	DDX_Control(pDX, IDC_RADIO_DEFENSE, m_button[1]);
+	DDX_Control(pDX, IDC_RADIO_ROOKIES, m_button[2]);
+	DDX_Control(pDX, IDC_RADIO_6TH, m_button[3]);
+	DDX_Control(pDX, IDC_RADIO_POINTS, m_button[4]);
+	DDX_Control(pDX, IDC_RADIO_REBOUNDS, m_button[5]);
+	DDX_Control(pDX, IDC_RADIO_ASSISTS, m_button[6]);
+	DDX_Control(pDX, IDC_RADIO_STEALS, m_button[7]);
+	DDX_Control(pDX, IDC_RADIO_BLOCKS, m_button[8]);
+	DDX_Control(pDX, IDC_RADIO_PLAYOFF, m_button[9]);
+	DDX_Control(pDX, IDC_RADIO_CHAMPION, m_button[10]);
+	DDX_Control(pDX, IDC_RADIO_ALLSTAR, m_button[11]);
+	DDX_Control(pDX, IDC_RADIO_ROOKIESTAR, m_button[12]);
+	DDX_Control(pDX, IDC_RADIO_THREE, m_button[13]);
+	DDX_Control(pDX, IDC_RADIO_DUNK, m_button[14]);
+	DDX_Control(pDX, IDOK, m_button[15]);
+	DDX_Control(pDX, IDCANCEL, m_button[16]);
 	//}}AFX_DATA_MAP
 }
 
@@ -91,7 +108,7 @@ void CHistoryAwardsDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -115,11 +132,11 @@ void CHistoryAwardsDlg::InitControls()
 	m_list_players.DeleteColumn(4);
     m_list_players.InsertColumn(4,"");    
   
-    m_list_players.SetColumnWidth( 0, 60);
-    m_list_players.SetColumnWidth( 1, 30);
-    m_list_players.SetColumnWidth( 2, 90);
-    m_list_players.SetColumnWidth( 3, 90);
-    m_list_players.SetColumnWidth( 4, 60);
+    m_list_players.SetColumnWidth( 0, 80);
+    m_list_players.SetColumnWidth( 1, 40);
+    m_list_players.SetColumnWidth( 2, 160);
+    m_list_players.SetColumnWidth( 3, 160);
+    m_list_players.SetColumnWidth( 4, 0);
 
 
 

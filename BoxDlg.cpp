@@ -52,6 +52,8 @@ void CBoxDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_listTeams);
 	DDX_Control(pDX, IDC_BUTTON_VISITOR, m_buttonVisitor);
 	DDX_Control(pDX, IDC_BUTTON_HOME, m_buttonHome);
+	DDX_Control(pDX, IDC_BUTTON_PRINT, m_button[0]);
+	DDX_Control(pDX, IDOK, m_button[1]);
 	//}}AFX_DATA_MAP
 }
 
@@ -620,7 +622,7 @@ void CBoxDlg::InitControls()
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
 	lf.lfHeight = 14;
-	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
+	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 	m_listBox.SetFont(&m_font);
 	m_listBox.SetBkColor(BK_COLOR);
@@ -655,22 +657,22 @@ void CBoxDlg::InitControls()
 //  m_listBox.InsertColumn(17,"true");    
 
   
-    m_listBox.SetColumnWidth( 0, 112);
-    m_listBox.SetColumnWidth( 1, 30);
-    m_listBox.SetColumnWidth( 2, 30);
-    m_listBox.SetColumnWidth( 3, 30);
-    m_listBox.SetColumnWidth( 4, 30);
-    m_listBox.SetColumnWidth( 5, 30);
-    m_listBox.SetColumnWidth( 6, 30);
-    m_listBox.SetColumnWidth( 7, 30);
-    m_listBox.SetColumnWidth( 8, 29);
-    m_listBox.SetColumnWidth( 9, 29);
-    m_listBox.SetColumnWidth( 10, 29);
-    m_listBox.SetColumnWidth( 11, 29);
-    m_listBox.SetColumnWidth( 12, 29);
-    m_listBox.SetColumnWidth( 13, 29);
-    m_listBox.SetColumnWidth( 14, 29);
-    m_listBox.SetColumnWidth( 15, 31);
+    m_listBox.SetColumnWidth( 0, 120);
+    m_listBox.SetColumnWidth( 1, 33);
+    m_listBox.SetColumnWidth( 2, 33);
+    m_listBox.SetColumnWidth( 3, 33);
+    m_listBox.SetColumnWidth( 4, 33);
+    m_listBox.SetColumnWidth( 5, 33);
+    m_listBox.SetColumnWidth( 6, 33);
+    m_listBox.SetColumnWidth( 7, 33);
+    m_listBox.SetColumnWidth( 8, 33);
+    m_listBox.SetColumnWidth( 9, 33);
+    m_listBox.SetColumnWidth( 10, 33);
+    m_listBox.SetColumnWidth( 11, 33);
+    m_listBox.SetColumnWidth( 12, 33);
+    m_listBox.SetColumnWidth( 13, 33);
+    m_listBox.SetColumnWidth( 14, 33);
+    m_listBox.SetColumnWidth( 15, 33);
 
 
 
@@ -692,12 +694,12 @@ void CBoxDlg::InitControls()
     m_listGames.InsertColumn(4,"pts");
     m_listGames.InsertColumn(5,"w-l"); 
 
-    m_listGames.SetColumnWidth( 0, 41);
-    m_listGames.SetColumnWidth( 1, 90);
-    m_listGames.SetColumnWidth( 2, 31);
-    m_listGames.SetColumnWidth( 3, 90);
-    m_listGames.SetColumnWidth( 4, 31);
-    m_listGames.SetColumnWidth( 5, 31);
+    m_listGames.SetColumnWidth( 0, 50);
+    m_listGames.SetColumnWidth( 1, 99);
+    m_listGames.SetColumnWidth( 2, 40);
+    m_listGames.SetColumnWidth( 3, 99);
+    m_listGames.SetColumnWidth( 4, 40);
+    m_listGames.SetColumnWidth( 5, 40);
 
 
 }

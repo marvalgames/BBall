@@ -47,6 +47,9 @@ void CCareerStatsCardDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_POSITION, m_listPosition);
 	DDX_Control(pDX, IDC_LIST_AWARDS, m_list_awards);
 	DDX_Control(pDX, IDC_LIST_CTRL_STATS, m_listCtrl);
+	DDX_Control(pDX, IDC_BUTTON_NEXT, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[1]);
+	DDX_Control(pDX, IDOK, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -592,7 +595,7 @@ void CCareerStatsCardDlg::InitListCtrl()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 

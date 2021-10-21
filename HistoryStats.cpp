@@ -36,6 +36,9 @@ void CHistoryStats::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_AWARDS, m_list_awards);
 	DDX_Control(pDX, IDC_LIST_DRAFT, m_listDraft);
 	DDX_Control(pDX, IDC_LIST_CTRL_STATS, m_listCtrl);
+	DDX_Control(pDX, IDC_BUTTON_NEXT, m_button[0]);
+	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[1]);
+	DDX_Control(pDX, IDOK, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -155,7 +158,7 @@ void CHistoryStats::InitListCtrl()
 LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 14;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -187,7 +190,7 @@ LOGFONT lf;                        // Used to create the CFont.
   
 	float scale = 1.5;
     m_listCtrl.SetColumnWidth( 0, 34 * scale );
-    m_listCtrl.SetColumnWidth( 1, 64 * scale );
+    m_listCtrl.SetColumnWidth( 1, 70 * scale );
     m_listCtrl.SetColumnWidth( 2, 31 * scale );
     m_listCtrl.SetColumnWidth( 3, 31 * scale );
     m_listCtrl.SetColumnWidth( 4, 31 * scale );

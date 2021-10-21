@@ -9,6 +9,7 @@
 #define HID_VIEW_SAVEDPBP 24
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 
 // PbpDlg.h : header file
 //
@@ -29,6 +30,7 @@ public:
 	//{{AFX_DATA(CPbpDlg)
 	enum { IDD = IDD_DIALOG_SAVEDPBP };
 	CMyListCtrl	m_listGames;
+	MyButton m_button[2];
 	CMyComboBox	m_listTeams;
 	CListBox	m_listPbp;
 	//}}AFX_DATA
