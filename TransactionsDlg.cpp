@@ -5,9 +5,9 @@
 #include "Bball.h"
 //#include "constants.h"
 //#include "resource.h"
-#include "MyComboBox.h"
+//#include "MyComboBox.h"
 #include "TransactionsDlg.h"
-#include "PlayerCardDlg.h"
+//#include "PlayerCardDlg.h"
 //#include "Transactions.h"
 
 #ifdef _DEBUG
@@ -35,8 +35,8 @@ void CTransactionsDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_list_teams);
 	DDX_Control(pDX, IDC_LIST_TRADES, m_listTrades);
 	//DDX_Control(pDX, IDOK, m_button[0]);
-	//DDX_Control(pDX, IDC_RADIO_INJURIES, m_button[1]);
-	//DDX_Control(pDX, IDC_RADIO_TRADES, m_button[2]);
+	//DDX_Control(pDX, IDC_RADIO_TRADES, m_button[1]);
+	//DDX_Control(pDX, IDC_RADIO_INJURIES, m_button[2]);
 	//}}AFX_DATA_MAP
 }
 
@@ -598,6 +598,10 @@ void CTransactionsDlg::OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult)
 
 	scout->DoModal();
 	delete scout;
+
+
+
+
 	}
 	*pResult = 0;
 }

@@ -5,10 +5,10 @@
 #include "bball.h"
 //#include "constants.h"
 //#include "resource.h"
-#include "MyComboBox.h"
+//#include "MyComboBox.h"
 #include "PlayerCardDlg.h"
-#include "NegotiateDlg.h"
-#include <direct.h>
+//#include "NegotiateDlg.h"
+//#include <direct.h>
 
 
 //#include "BitmapCtrl.h"
@@ -93,7 +93,7 @@ void CPlayerCardDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CPlayerCardDlg, CDialog)
 	//{{AFX_MSG_MAP(CPlayerCardDlg)
-	ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST_CTRL_STATS, OnColumnclickListCtrlStats)
+	//ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST_CTRL_STATS, OnColumnclickListCtrlStats)
 	ON_WM_HELPINFO()
 	ON_WM_CONTEXTMENU()
 	ON_BN_CLICKED(IDC_BUTTON_BACK, OnButtonBack)
@@ -104,13 +104,6 @@ BEGIN_MESSAGE_MAP(CPlayerCardDlg, CDialog)
 	ON_WM_MOVE()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL, &CPlayerCardDlg::OnLvnItemchangedListCtrl)
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STATS, &CPlayerCardDlg::OnLvnItemchangedListCtrlStats)
-	ON_EN_CHANGE(IDC_EDIT_OWNER, &CPlayerCardDlg::OnEnChangeEditOwner)
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST6, &CPlayerCardDlg::OnLvnItemchangedList6)
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST4, &CPlayerCardDlg::OnLvnItemchangedList4)
-	ON_LBN_SELCHANGE(IDC_LIST_REPORT2, &CPlayerCardDlg::OnLbnSelchangeListReport2)
-	ON_STN_CLICKED(IDC_STATIC_PNG, &CPlayerCardDlg::OnStnClickedStaticPng)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -123,7 +116,7 @@ BOOL CPlayerCardDlg::OnInitDialog()
 	// TODO: Add extra initialization here
 	myBrush.CreateSolidBrush(DLGCOLOR);
 	myBrush2.CreateSolidBrush(LISTBOXCOLOR);
-	_mkdir(avg.m_settings.m_path + "Pictures");
+	//_mkdir(avg.m_settings.m_path + "Pictures");
 
 	//CRect brect;
 	//GetDlgItem(IDC_BITMAP)->GetWindowRect(brect);
@@ -169,8 +162,6 @@ BOOL CPlayerCardDlg::OnInitDialog()
 
 
 
-	m_listPosition.SetFont(&m_font);
-	m_list_awards.SetFont(&m_font);
 	//	CTabCtrl() tab;
 	//	GetTabControl()->SetFont( &m_font);
 
@@ -511,12 +502,14 @@ void CPlayerCardDlg::InitListCtrl()
 
 
 
+	m_listPosition.SetFont(&m_font);
+	m_list_awards.SetFont(&m_font);
 
 
 
 
 	m_listCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
-
+	//m_listCtrl.DeleteAllItems();
 
 	m_listCtrl.InsertColumn(0, "Year");
 	m_listCtrl.InsertColumn(1, "Team");
@@ -542,27 +535,27 @@ void CPlayerCardDlg::InitListCtrl()
 
 
 	double scale = 1.5;
-	m_listCtrl.SetColumnWidth(0, 34 * scale);
-	m_listCtrl.SetColumnWidth(1, 45 * scale);
-	m_listCtrl.SetColumnWidth(2, 31 * scale);
-	m_listCtrl.SetColumnWidth(3, 31 * scale);
-	m_listCtrl.SetColumnWidth(4, 31 * scale);
-	m_listCtrl.SetColumnWidth(5, 31 * scale);
-	m_listCtrl.SetColumnWidth(6, 31 * scale);
-	m_listCtrl.SetColumnWidth(7, 31 * scale);
-	m_listCtrl.SetColumnWidth(8, 31 * scale);
-	m_listCtrl.SetColumnWidth(9, 31 * scale);
-	m_listCtrl.SetColumnWidth(10, 31 * scale);
-	m_listCtrl.SetColumnWidth(11, 31 * scale);
-	m_listCtrl.SetColumnWidth(12, 33 * scale);
-	m_listCtrl.SetColumnWidth(13, 28 * scale);
-	m_listCtrl.SetColumnWidth(14, 31 * scale);
-	m_listCtrl.SetColumnWidth(15, 31 * scale);
-	m_listCtrl.SetColumnWidth(16, 25 * scale);
-	m_listCtrl.SetColumnWidth(17, 27 * scale);
-	m_listCtrl.SetColumnWidth(18, 26 * scale);
-	m_listCtrl.SetColumnWidth(19, 25 * scale);
-	m_listCtrl.SetColumnWidth(20, 31 * scale);
+	m_listCtrl.SetColumnWidth(0, 51);
+	m_listCtrl.SetColumnWidth(1, 62);
+	m_listCtrl.SetColumnWidth(2, 46);
+	m_listCtrl.SetColumnWidth(3, 46);
+	m_listCtrl.SetColumnWidth(4, 46);
+	m_listCtrl.SetColumnWidth(5, 46);
+	m_listCtrl.SetColumnWidth(6, 46);
+	m_listCtrl.SetColumnWidth(7, 46);
+	m_listCtrl.SetColumnWidth(8, 46);
+	m_listCtrl.SetColumnWidth(9, 46);
+	m_listCtrl.SetColumnWidth(10, 46);
+	m_listCtrl.SetColumnWidth(11, 46);
+	m_listCtrl.SetColumnWidth(12, 49);
+	m_listCtrl.SetColumnWidth(13, 42);
+	m_listCtrl.SetColumnWidth(14, 46);
+	m_listCtrl.SetColumnWidth(15, 46);
+	m_listCtrl.SetColumnWidth(16, 37);
+	m_listCtrl.SetColumnWidth(17, 40);
+	m_listCtrl.SetColumnWidth(18, 39);
+	m_listCtrl.SetColumnWidth(19, 37);
+	m_listCtrl.SetColumnWidth(20, 46);
 	m_listCtrl.SetTextColor(RGB(0, 0, 0));
 	m_listCtrl.SetTextBkColor(TEXT_BK_COLOR);
 	m_listCtrl.SetBkColor(BK_COLOR);
@@ -1454,169 +1447,169 @@ void CPlayerCardDlg::ListPlayerAwards()
 	}
 
 }
-
-void CPlayerCardDlg::OnColumnclickListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult)
-{
-
-	NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
-	// TODO: Add your control notification handler code here
-
-	int index = m_listCtrl.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED);
-	int m_column = pNMListView->iSubItem;
-
-
-	CPlayer m_player_i, m_player_j;
-
-
-
-
-	for (int i = 0; i <= 23; i++)
-	{
-		for (int j = 0; j <= 23; j++)
-		{
-
-
-			bool swap = false;
-
-			m_player_i = m_stats[i];
-			m_player_j = m_stats[j];
-
-			double s1_i = (double)m_stats[i].GetGames();
-			double s1_j = (double)m_stats[j].GetGames();
-			if (s1_i == 0 || s1_j == 0) continue;
-			double s2_i = (double)m_stats[i].GetMin() / s1_i;
-			double s3_i = ((double)m_stats[i].GetFgm() + (double)m_stats[i].GetTfgm()) / s1_i;
-			double s4_i = ((double)m_stats[i].GetFga() + (double)m_stats[i].GetTfga()) / s1_i;
-			double s5_i = (double)m_stats[i].GetFtm() / s1_i;
-			double s6_i = (double)m_stats[i].GetFta() / s1_i;
-			double s7_i = (double)m_stats[i].GetTfgm() / s1_i;
-			double s8_i = (double)m_stats[i].GetTfga() / s1_i;
-			double s9_i = (double)m_stats[i].GetOreb() / s1_i;
-			double s10_i = ((double)m_stats[i].GetReb() + (double)m_stats[i].GetOreb()) / s1_i;
-			double s11_i = (double)m_stats[i].GetAst() / s1_i;
-			double s12_i = (double)m_stats[i].GetStl() / s1_i;
-			double s13_i = (double)m_stats[i].GetTo() / s1_i;
-			double s14_i = (double)m_stats[i].GetBlk() / s1_i;
-			double s15_i = (double)m_stats[i].GetPf() / s1_i;
-
-			double p1_i = s3_i / s4_i;
-			double p2_i = s5_i / s6_i;
-			double p3_i = s7_i / s8_i;
-			double pt_i = (s3_i * 2 + s5_i + s7_i);
-
-			double s2_j = (double)m_stats[j].GetMin() / s1_j;
-			double s3_j = ((double)m_stats[j].GetFgm() + (double)m_stats[j].GetTfgm()) / s1_j;
-			double s4_j = ((double)m_stats[j].GetFga() + (double)m_stats[j].GetTfga()) / s1_j;
-			double s5_j = (double)m_stats[j].GetFtm() / s1_j;
-			double s6_j = (double)m_stats[j].GetFta() / s1_j;
-			double s7_j = (double)m_stats[j].GetTfgm() / s1_j;
-			double s8_j = (double)m_stats[j].GetTfga() / s1_j;
-			double s9_j = (double)m_stats[j].GetOreb() / s1_j;
-			double s10_j = ((double)m_stats[j].GetReb() + (double)m_stats[j].GetOreb()) / s1_j;
-			double s11_j = (double)m_stats[j].GetAst() / s1_j;
-			double s12_j = (double)m_stats[j].GetStl() / s1_j;
-			double s13_j = (double)m_stats[j].GetTo() / s1_j;
-			double s14_j = (double)m_stats[j].GetBlk() / s1_j;
-			double s15_j = (double)m_stats[j].GetPf() / s1_j;
-
-			double p1_j = s3_j / s4_j;
-			double p2_j = s5_j / s6_j;
-			double p3_j = s7_j / s8_j;
-			double pt_j = (s3_j * 2 + s5_j + s7_j);
-
-
-
-			switch (m_column)
-			{
-
-			case 0:
-				swap = m_player_i.GetRosterNumber() < m_player_j.GetRosterNumber();
-				break;
-			case 1:
-				swap = m_player_i.m_team < m_player_j.m_team;
-				break;
-			case 2:
-				swap = s1_i > s1_j;
-				break;
-			case 3:
-				swap = s2_i > s2_j;
-				break;
-			case 4:
-				swap = s3_i > s3_j;
-				break;
-			case 5:
-				swap = s4_i > s4_j;
-				break;
-			case 6:
-				swap = p1_i > p1_j;
-				break;
-			case 7:
-				swap = s5_i > s5_j;
-				break;
-			case 8:
-				swap = s6_i > s6_j;
-				break;
-			case 9:
-				swap = p2_i > p2_j;
-				break;
-			case 10:
-				swap = s7_i > s7_j;
-				break;
-			case 11:
-				swap = s8_i > s8_j;
-				break;
-			case 12:
-				swap = p3_i > p3_j;
-				break;
-			case 13:
-				swap = s9_i > s9_j;
-				break;
-			case 14:
-				swap = s10_i > s10_j;
-				break;
-			case 15:
-				swap = s11_i > s11_j;
-				break;
-			case 16:
-				swap = s12_i > s12_j;
-				break;
-			case 17:
-				swap = s13_i > s13_j;
-				break;
-			case 18:
-				swap = s14_i > s14_j;
-				break;
-			case 19:
-				swap = s15_i > s15_j;
-				break;
-			case 20:
-				swap = pt_i > pt_j;
-				break;
-
-
-			}
-
-			if (swap == true)
-			{//swap
-				CPlayer temp = m_stats[i];
-				m_stats[i] = m_stats[j];
-				m_stats[j] = temp;
-			}
-
-
-		}
-
-	}
-
-	ListStats();
-	ListSeasonStats();
-	DisplayRating();
-	int items = 0;
-	m_listCtrl.SetItemState(items, LVIS_SELECTED, LVIS_SELECTED);
-	m_listCtrl.SetItemState(items, LVIS_FOCUSED, LVIS_FOCUSED);
-	m_listCtrl.EnsureVisible(items, TRUE);
-	*pResult = 0;
-}
+//
+//void CPlayerCardDlg::OnColumnclickListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult)
+//{
+//
+//	NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+//	// TODO: Add your control notification handler code here
+//
+//	int index = m_listCtrl.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED);
+//	int m_column = pNMListView->iSubItem;
+//
+//
+//	CPlayer m_player_i, m_player_j;
+//
+//
+//
+//
+//	for (int i = 0; i <= 23; i++)
+//	{
+//		for (int j = 0; j <= 23; j++)
+//		{
+//
+//
+//			bool swap = false;
+//
+//			m_player_i = m_stats[i];
+//			m_player_j = m_stats[j];
+//
+//			double s1_i = (double)m_stats[i].GetGames();
+//			double s1_j = (double)m_stats[j].GetGames();
+//			if (s1_i == 0 || s1_j == 0) continue;
+//			double s2_i = (double)m_stats[i].GetMin() / s1_i;
+//			double s3_i = ((double)m_stats[i].GetFgm() + (double)m_stats[i].GetTfgm()) / s1_i;
+//			double s4_i = ((double)m_stats[i].GetFga() + (double)m_stats[i].GetTfga()) / s1_i;
+//			double s5_i = (double)m_stats[i].GetFtm() / s1_i;
+//			double s6_i = (double)m_stats[i].GetFta() / s1_i;
+//			double s7_i = (double)m_stats[i].GetTfgm() / s1_i;
+//			double s8_i = (double)m_stats[i].GetTfga() / s1_i;
+//			double s9_i = (double)m_stats[i].GetOreb() / s1_i;
+//			double s10_i = ((double)m_stats[i].GetReb() + (double)m_stats[i].GetOreb()) / s1_i;
+//			double s11_i = (double)m_stats[i].GetAst() / s1_i;
+//			double s12_i = (double)m_stats[i].GetStl() / s1_i;
+//			double s13_i = (double)m_stats[i].GetTo() / s1_i;
+//			double s14_i = (double)m_stats[i].GetBlk() / s1_i;
+//			double s15_i = (double)m_stats[i].GetPf() / s1_i;
+//
+//			double p1_i = s3_i / s4_i;
+//			double p2_i = s5_i / s6_i;
+//			double p3_i = s7_i / s8_i;
+//			double pt_i = (s3_i * 2 + s5_i + s7_i);
+//
+//			double s2_j = (double)m_stats[j].GetMin() / s1_j;
+//			double s3_j = ((double)m_stats[j].GetFgm() + (double)m_stats[j].GetTfgm()) / s1_j;
+//			double s4_j = ((double)m_stats[j].GetFga() + (double)m_stats[j].GetTfga()) / s1_j;
+//			double s5_j = (double)m_stats[j].GetFtm() / s1_j;
+//			double s6_j = (double)m_stats[j].GetFta() / s1_j;
+//			double s7_j = (double)m_stats[j].GetTfgm() / s1_j;
+//			double s8_j = (double)m_stats[j].GetTfga() / s1_j;
+//			double s9_j = (double)m_stats[j].GetOreb() / s1_j;
+//			double s10_j = ((double)m_stats[j].GetReb() + (double)m_stats[j].GetOreb()) / s1_j;
+//			double s11_j = (double)m_stats[j].GetAst() / s1_j;
+//			double s12_j = (double)m_stats[j].GetStl() / s1_j;
+//			double s13_j = (double)m_stats[j].GetTo() / s1_j;
+//			double s14_j = (double)m_stats[j].GetBlk() / s1_j;
+//			double s15_j = (double)m_stats[j].GetPf() / s1_j;
+//
+//			double p1_j = s3_j / s4_j;
+//			double p2_j = s5_j / s6_j;
+//			double p3_j = s7_j / s8_j;
+//			double pt_j = (s3_j * 2 + s5_j + s7_j);
+//
+//
+//
+//			switch (m_column)
+//			{
+//
+//			case 0:
+//				swap = m_player_i.GetRosterNumber() < m_player_j.GetRosterNumber();
+//				break;
+//			case 1:
+//				swap = m_player_i.m_team < m_player_j.m_team;
+//				break;
+//			case 2:
+//				swap = s1_i > s1_j;
+//				break;
+//			case 3:
+//				swap = s2_i > s2_j;
+//				break;
+//			case 4:
+//				swap = s3_i > s3_j;
+//				break;
+//			case 5:
+//				swap = s4_i > s4_j;
+//				break;
+//			case 6:
+//				swap = p1_i > p1_j;
+//				break;
+//			case 7:
+//				swap = s5_i > s5_j;
+//				break;
+//			case 8:
+//				swap = s6_i > s6_j;
+//				break;
+//			case 9:
+//				swap = p2_i > p2_j;
+//				break;
+//			case 10:
+//				swap = s7_i > s7_j;
+//				break;
+//			case 11:
+//				swap = s8_i > s8_j;
+//				break;
+//			case 12:
+//				swap = p3_i > p3_j;
+//				break;
+//			case 13:
+//				swap = s9_i > s9_j;
+//				break;
+//			case 14:
+//				swap = s10_i > s10_j;
+//				break;
+//			case 15:
+//				swap = s11_i > s11_j;
+//				break;
+//			case 16:
+//				swap = s12_i > s12_j;
+//				break;
+//			case 17:
+//				swap = s13_i > s13_j;
+//				break;
+//			case 18:
+//				swap = s14_i > s14_j;
+//				break;
+//			case 19:
+//				swap = s15_i > s15_j;
+//				break;
+//			case 20:
+//				swap = pt_i > pt_j;
+//				break;
+//
+//
+//			}
+//
+//			if (swap == true)
+//			{//swap
+//				CPlayer temp = m_stats[i];
+//				m_stats[i] = m_stats[j];
+//				m_stats[j] = temp;
+//			}
+//
+//
+//		}
+//
+//	}
+//
+//	ListStats();
+//	ListSeasonStats();
+//	DisplayRating();
+//	int items = 0;
+//	m_listCtrl.SetItemState(items, LVIS_SELECTED, LVIS_SELECTED);
+//	m_listCtrl.SetItemState(items, LVIS_FOCUSED, LVIS_FOCUSED);
+//	m_listCtrl.EnsureVisible(items, TRUE);
+//	*pResult = 0;
+//}
 
 
 
@@ -2091,10 +2084,10 @@ void CPlayerCardDlg::DisplayRating()
 		avg.r_fga, avg.m_avg_fgp, avg.m_avg_fga, avg.m_avg_ftp, avg.m_avg_trade_tru);
 
 	m_list_report.ResetContent();
-	if (m_lines[32] != "") m_list_report.AddString(m_lines[32]);
+	if (m_lines[32] != "") m_list_report.AddString((LPCTSTR)m_lines[32]);
 	for (int i = 0; i <= 31; i++)
 	{
-		if (m_lines[i] != "") m_list_report.AddString(m_lines[i]);
+		if (m_lines[i] != "") m_list_report.AddString((LPCTSTR)m_lines[i]);
 	}
 
 
@@ -2436,30 +2429,30 @@ HBRUSH CPlayerCardDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		return hbr;
 		//Static controls need black text and same background as myBrush
 	case CTLCOLOR_STATIC:
-		LOGBRUSH logbrush;
-		myBrush.GetLogBrush(&logbrush);
+		//LOGBRUSH logbrush;
+		//myBrush.GetLogBrush(&logbrush);
 		pDC->SetTextColor(STATICCOLOR);
-		pDC->SetBkColor(logbrush.lbColor);
+		pDC->SetBkColor(BUTTONFACECOLOR2);
 		return myBrush;
-	case CTLCOLOR_BTN:
+	/*case CTLCOLOR_BTN:
 		pDC->SetTextColor(RGB(0, 255, 255));
 		pDC->SetBkColor(RGB(255, 128, 128));
-		return myBrush;
+		return myBrush;*/
 
 	case CTLCOLOR_LISTBOX:
 		pDC->SetBkColor(LISTBOXCOLOR);
 		pDC->SetTextColor(LISTBOXTEXTCOLOR);
 		return myBrush2;
 
-	case CTLCOLOR_SCROLLBAR:
-		pDC->SetTextColor(RGB(0, 0, 0));
-		pDC->SetBkColor(LISTBOXCOLOR);
-		return myBrush;
+	//case CTLCOLOR_SCROLLBAR:
+	//	pDC->SetTextColor(RGB(0, 0, 0));
+	//	pDC->SetBkColor(LISTBOXCOLOR);
+	//	return myBrush;
 
-	case CTLCOLOR_MSGBOX:
+	/*case CTLCOLOR_MSGBOX:
 		pDC->SetTextColor(RGB(255, 255, 255));
 		pDC->SetBkColor(RGB(255, 128, 128));
-		return myBrush;
+		return myBrush;*/
 
 	case CTLCOLOR_DLG:
 		return myBrush;
@@ -2470,57 +2463,3 @@ HBRUSH CPlayerCardDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	}
 }
 
-
-void CPlayerCardDlg::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: Add your control notification handler code here
-	*pResult = 0;
-}
-
-
-void CPlayerCardDlg::OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: Add your control notification handler code here
-	*pResult = 0;
-}
-
-
-void CPlayerCardDlg::OnEnChangeEditOwner()
-{
-	// TODO:  If this is a RICHEDIT control, the control will not
-	// send this notification unless you override the CDialog::OnInitDialog()
-	// function and call CRichEditCtrl().SetEventMask()
-	// with the ENM_CHANGE flag ORed into the mask.
-
-	// TODO:  Add your control notification handler code here
-}
-
-
-void CPlayerCardDlg::OnLvnItemchangedList6(NMHDR* pNMHDR, LRESULT* pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: Add your control notification handler code here
-	*pResult = 0;
-}
-
-
-void CPlayerCardDlg::OnLvnItemchangedList4(NMHDR* pNMHDR, LRESULT* pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: Add your control notification handler code here
-	*pResult = 0;
-}
-
-
-void CPlayerCardDlg::OnLbnSelchangeListReport2()
-{
-	// TODO: Add your control notification handler code here
-}
-
-
-void CPlayerCardDlg::OnStnClickedStaticPng()
-{
-	// TODO: Add your control notification handler code here
-}

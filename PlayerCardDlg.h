@@ -15,15 +15,19 @@
 #include "Player.h"
 #define Player_h
 #endif 
-#include "MyButton.h"
-#include "afxlistctrl.h"
+//#include "MyButton.h"
+//#include "afxlistctrl.h"
 #ifndef ScoutProfileDlg_h
 #include "ScoutProfileDlg.h"
 #define ScoutProfileDlg_h
 #endif 
 //#include "Staff.h"	// Added by ClassView
-#include "MyListCtrl.h"
-#include "BBall.h"
+//#ifndef MyListCtrl_h
+//#include "MyListCtrl.h"	// Added by ClassView
+//#define MyListCtrl_h
+//#endif
+//#include "BBall.h"
+#include "NegotiateDlg.h"
 
 
 // PlayerCardDlg.h : header file
@@ -89,7 +93,7 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CPlayerCardDlg)
-	afx_msg void OnColumnclickListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
+	//afx_msg void OnColumnclickListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
 	virtual BOOL OnInitDialog();
 	afx_msg BOOL OnHelpInfo(HELPINFO* pHelpInfo);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
@@ -119,13 +123,6 @@ private:
 	CBrush myBrush2;
 
 public:
-	afx_msg void OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnLvnItemchangedListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnEnChangeEditOwner();
-	afx_msg void OnLvnItemchangedList6(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnLvnItemchangedList4(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnLbnSelchangeListReport2();
-	afx_msg void OnStnClickedStaticPng();
 	CMFCButton m_buttonPng;
 };
 
