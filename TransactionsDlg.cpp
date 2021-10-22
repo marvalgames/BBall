@@ -43,14 +43,14 @@ void CTransactionsDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CTransactionsDlg, CDialog)
 	//{{AFX_MSG_MAP(CTransactionsDlg)
-	ON_WM_CONTEXTMENU()
 	ON_WM_HELPINFO()
 	ON_WM_CTLCOLOR()
 	ON_CBN_SELCHANGE(IDC_COMBO_TEAMS, OnSelchangeComboTeams)
 	ON_BN_CLICKED(IDC_RADIO_TRADES, OnRadioTrades)
 	ON_BN_CLICKED(IDC_RADIO_INJURIES, OnRadioInjuries)
-	ON_NOTIFY(NM_DBLCLK, IDC_LIST_TRADES, OnDblclkListTrades)
+	//ON_NOTIFY(NM_DBLCLK, IDC_LIST_TRADES, OnDblclkListTrades)
 	//}}AFX_MSG_MAP
+	ON_NOTIFY(NM_DBLCLK, IDC_LIST_TRADES, &CTransactionsDlg::OnDblclkListTrades)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,7 @@ BOOL CTransactionsDlg::OnInitDialog()
 //		int bytes = file.Read(s, 128);
 //		s[bytes] = 0;
 		string = avg.m_trans_str[i];
-		string = string + "                                                                            ";
+		//string = string + "                                                                            ";
 		m_trans_list[i].m_month = atoi(string.Mid(0,2));
 		m_trans_list[i].m_day = atoi(string.Mid(2,2));
 		m_trans_list[i].m_year = atoi(string.Mid(4,4));
@@ -112,15 +112,6 @@ BOOL CTransactionsDlg::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
-void CTransactionsDlg::OnContextMenu(CWnd* pWnd, CPoint point) 
-{
-	// TODO: Add your message handler code here
-//	WinHelp(HID_LEAGUE_TRANSACTIONS);	
-//	HtmlHelp(NULL, "jumpshot.chm::/html/transactions.htm", HH_DISPLAY_TOPIC, 0);
-	
-//	return CDialog::OnHelpInfo(pHelpInfo);
-	
-}
 
 BOOL CTransactionsDlg::OnHelpInfo(HELPINFO* pHelpInfo) 
 {
@@ -378,7 +369,7 @@ void CTransactionsDlg::ListTrade(int row, int index)
 	CString date;
 	date.Format("%d/%d/%d", month, day, year);
 //	m_id_list[m_row] = 0;
-	m_listTrades.InsertItem(m_row, date);
+	m_listTrades.InsertItem(m_row, (LPCTSTR)date);
 
 
 			
@@ -392,10 +383,10 @@ void CTransactionsDlg::ListTrade(int row, int index)
 			CString name = FindName(id);
 			CString te1 = m_league_team_names[team1-1];
 			CString te2 = "to " + m_league_team_names[team2-1];
-			m_listTrades.SetItemText(m_row,1,te1);
-			m_listTrades.SetItemText(m_row,2,"trade");
-			m_listTrades.SetItemText(m_row,3,name);
-			m_listTrades.SetItemText(m_row,4,te2);
+			m_listTrades.SetItemText(m_row,1, (LPCTSTR)te1);
+			m_listTrades.SetItemText(m_row,2, (LPCTSTR)"trade");
+			m_listTrades.SetItemText(m_row,3, (LPCTSTR)name);
+			m_listTrades.SetItemText(m_row,4, (LPCTSTR)te2);
 
 
 		}
@@ -414,10 +405,10 @@ void CTransactionsDlg::ListTrade(int row, int index)
 
 			if(o_t >= 1) other_team = "to " + m_league_team_names[o_t-1];
 
-			m_listTrades.SetItemText(m_row,1,t);
-			m_listTrades.SetItemText(m_row,2,"trade");
-			m_listTrades.SetItemText(m_row,3,str);
-			m_listTrades.SetItemText(m_row,4,other_team);
+			m_listTrades.SetItemText(m_row,1, (LPCTSTR)t);
+			m_listTrades.SetItemText(m_row,2, (LPCTSTR)"trade");
+			m_listTrades.SetItemText(m_row,3, (LPCTSTR)str);
+			m_listTrades.SetItemText(m_row,4, (LPCTSTR)other_team);
 
 
 		}
@@ -458,17 +449,17 @@ void CTransactionsDlg::ListSignings(int row, int index)
 	m_listTrades.InsertItem(m_row, date);
 
 	CString te = m_league_team_names[team-1];
-	m_listTrades.SetItemText(m_row,1,te);
+	m_listTrades.SetItemText(m_row,1, (LPCTSTR)te);
 	if(ty == 3)
-		m_listTrades.SetItemText(m_row,2,"sign");
+		m_listTrades.SetItemText(m_row,2, (LPCTSTR)"sign");
 	else if(ty == 4)
-		m_listTrades.SetItemText(m_row,2,"release");
+		m_listTrades.SetItemText(m_row,2, (LPCTSTR)"release");
 			
 
 	int id = m_trans_list[index].m_signing_id;
 //	m_id_list[m_row] = id;
 	CString name = FindName(id);
-	m_listTrades.SetItemText(m_row,3,name);
+	m_listTrades.SetItemText(m_row,3, (LPCTSTR)name);
 	m_row = m_row + 1;
 
 	}
@@ -496,11 +487,11 @@ void CTransactionsDlg::ListInjuries(int row, int index)
 	date.Format("%d/%d/%d", month, day, year);
 //	m_id_list[m_row] = 0;
 
-	m_listTrades.InsertItem(m_row, date);
+	m_listTrades.InsertItem(m_row, (LPCTSTR)date);
 
 	CString te = m_league_team_names[team-1];
-	m_listTrades.SetItemText(m_row,1,te);
-	m_listTrades.SetItemText(m_row,2,desc);
+	m_listTrades.SetItemText(m_row,1, (LPCTSTR)te);
+	m_listTrades.SetItemText(m_row,2, (LPCTSTR)desc);
 			
 
 	int id = m_trans_list[index].m_injury_id;
@@ -510,8 +501,8 @@ void CTransactionsDlg::ListInjuries(int row, int index)
 	if(ga == 1) inj = inj + " day";
 	else inj = inj + " days";
 
-	m_listTrades.SetItemText(m_row,3,name);
-	m_listTrades.SetItemText(m_row,4,inj);
+	m_listTrades.SetItemText(m_row,3, (LPCTSTR)name);
+	m_listTrades.SetItemText(m_row,4, (LPCTSTR)inj);
 	m_row = m_row + 1;
 
 	}
@@ -562,49 +553,72 @@ void CTransactionsDlg::OnRadioInjuries()
 	
 }
 
-void CTransactionsDlg::OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult) 
-{
-//	m_row = m_list_free_agents.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED);
-	int i = m_listTrades.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED);	
-	if(i >= 0)
-	{
-	int players_listed = m_listTrades.GetItemCount();
-	int pointer = m_id_list[i];
-	CPlayer m_player = avg.m_actual[pointer];
-	int tm = m_player.m_team_index - 1;
-	
-	CString team = "";
-	if(tm < 0) team = "";
-	else team = m_league_team_names[tm];
-
-
-	CPlayerCardDlg *scout = new CPlayerCardDlg;
-	scout->m_default_scout = m_list_teams.GetCurSel();
-
-	scout->m_path = avg.m_settings.m_path;
-	scout->m_leagueName = avg.m_settings.m_league_name;
-
-	scout->m_player_index = i;
-	scout->m_title = "Scout";
-	scout->avg = avg;
-
-	for(int c=0; c<=players_listed-1; c++)
-	{
-		scout->avg.m_actual[c] = avg.m_actual[m_id_list[c]];
-	}
-	scout->m_player_index = i;
-	scout->m_pl_index_end = players_listed-1;
-	scout->m_pl_index_start = 0;
-
-	scout->DoModal();
-	delete scout;
-
-
-
-
-	}
-	*pResult = 0;
-}
+//void CTransactionsDlg::OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult) 
+//{
+////	m_row = m_list_free_agents.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED);
+//	int i = m_listTrades.GetNextItem( -1, LVNI_ALL | LVNI_SELECTED);	
+//	if(i >= 0)
+//	{
+//	int players_listed = m_listTrades.GetItemCount();
+//	int pointer = m_id_list[i];
+//	CPlayer m_player = avg.m_actual[pointer];
+//	int tm = m_player.m_team_index - 1;
+//	
+//	CString team = "";
+//	if(tm < 0) team = "";
+//	else team = m_league_team_names[tm];
+//
+//
+//	CPlayerCardDlg *scout = new CPlayerCardDlg;
+//	scout->m_default_scout = m_list_teams.GetCurSel();
+//
+//	scout->m_path = avg.m_settings.m_path;
+//	scout->m_leagueName = avg.m_settings.m_league_name;
+//
+//	scout->m_player_index = i;
+//	scout->m_title = "Scout";
+//	scout->avg = avg;
+//
+//	for(int c=0; c<=players_listed-1; c++)
+//	{
+//		scout->avg.m_actual[c] = avg.m_actual[m_id_list[c]];
+//	}
+//	scout->m_player_index = i;
+//	scout->m_pl_index_end = players_listed-1;
+//	scout->m_pl_index_start = 0;
+//
+//	scout->DoModal();
+//	delete scout;
+//
+//	//CPlayerCardDlg scout;
+//	/*scout.m_default_scout = m_list_teams.GetCurSel();
+//
+//	scout.m_path = avg.m_settings.m_path;
+//	scout.m_leagueName = avg.m_settings.m_league_name;
+//
+//	scout.m_player_index = i;
+//	scout.m_title = "Scout";
+//	scout.avg = avg;
+//
+//	for (int c = 0; c <= players_listed - 1; c++)
+//	{
+//		scout.avg.m_actual[c] = avg.m_actual[m_id_list[c]];
+//	}
+//	scout.m_player_index = i;
+//	scout.m_pl_index_end = players_listed - 1;
+//	scout.m_pl_index_start = 0;*/
+//
+//	//scout.DoModal();
+//
+//	//delete scout;
+//
+//
+//
+//
+//
+//	}
+//	*pResult = 0;
+//}
 
 void CTransactionsDlg::ListFaSignings(int row, int index)
 {
@@ -628,14 +642,14 @@ void CTransactionsDlg::ListFaSignings(int row, int index)
 	CString date;
 	date.Format("%d/%d/%d", month, day, year);
 
-	m_listTrades.InsertItem(m_row, date);
+	m_listTrades.InsertItem(m_row, (LPCTSTR)date);
 
 	CString te = m_league_team_names[team-1];
-	m_listTrades.SetItemText(m_row,1,te);
+	m_listTrades.SetItemText(m_row,1, (LPCTSTR)te);
 	if(ty == 5)
-		m_listTrades.SetItemText(m_row,2,"extend");
+		m_listTrades.SetItemText(m_row,2, (LPCTSTR)"extend");
 	else if(ty == 6)
-		m_listTrades.SetItemText(m_row,2,"sign");
+		m_listTrades.SetItemText(m_row,2, (LPCTSTR)"sign");
 			
 
 	int id = m_trans_list[index].m_signing_id;
@@ -644,9 +658,53 @@ void CTransactionsDlg::ListFaSignings(int row, int index)
 	CString tmp;
 	double mo = (double)sa / 100.;
 	tmp.Format(" (%d year %.2f)", yr, mo); 
-	m_listTrades.SetItemText(m_row,3,name + tmp);
+	m_listTrades.SetItemText(m_row,3, (LPCTSTR)name + tmp);
 	m_row = m_row + 1;
 
 	}
 }
 
+
+
+void CTransactionsDlg::OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	int i = m_listTrades.GetNextItem(-1, LVNI_ALL | LVNI_SELECTED);
+	if (i >= 0)
+	{
+		int players_listed = m_listTrades.GetItemCount();
+		int pointer = m_id_list[i];
+		CPlayer m_player = avg.m_actual[pointer];
+		int tm = m_player.m_team_index - 1;
+
+		CString team = "";
+		if (tm < 0) team = "";
+		else team = m_league_team_names[tm];
+
+
+		CPlayerCardDlg* scout = new CPlayerCardDlg;
+		scout->m_default_scout = m_list_teams.GetCurSel();
+
+		scout->m_path = avg.m_settings.m_path;
+		scout->m_leagueName = avg.m_settings.m_league_name;
+
+		scout->m_player_index = i;
+		scout->m_title = "Scout";
+		scout->avg = avg;
+
+		for (int c = 0; c <= players_listed - 1; c++)
+		{
+			scout->avg.m_actual[c] = avg.m_actual[m_id_list[c]];
+		}
+		scout->m_player_index = i;
+		scout->m_pl_index_end = players_listed - 1;
+		scout->m_pl_index_start = 0;
+
+		scout->DoModal();
+		delete scout;
+
+
+		*pResult = 0;
+	}
+}

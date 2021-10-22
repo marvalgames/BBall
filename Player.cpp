@@ -1143,7 +1143,6 @@ void CPlayer::CreateReport(CString m_lines[33],
 void CPlayer::ListHighs(CString string[])
 {
 
-
 	string[0] = "points";
 	string[1].Format(" %2d", m_hi_pts);
 	string[2].Format(" %2d", m_hi_pts_po);

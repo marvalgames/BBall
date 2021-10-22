@@ -5260,7 +5260,7 @@ void SetJustSignedContracts()
 		bool AcceptContract(int seeking_factor, int year_offer, int total_salary_offer, double &quality_of_offer);
 		int SetExtensionRequests(int franchise_w, int franchise_l, double val[6], double pos_value[6], int coach_rating, bool extension, int games_season);
 		void UpdateCareerStats();
-		void ListHighs(CString string[36]);
+		void ListHighs(CString string[33]);
 		//void CreateReport(CString m_lines[33], CStaff m_scout, int r_ast[6]);
 
 		void CreateReport(CString m_lines[33], 

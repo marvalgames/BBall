@@ -3,26 +3,7 @@
 
 #include "stdafx.h"
 #include "bball.h"
-//#include "constants.h"
-//#include "resource.h"
-//#include "MyComboBox.h"
 #include "PlayerCardDlg.h"
-//#include "NegotiateDlg.h"
-//#include <direct.h>
-
-
-//#include "BitmapCtrl.h"
-
-
-//#include "cximage.lib" 
-
-//CBitmapCtrl m_bmpCtrl;
-
-//#include "Picture.h" // Make Sure U Include This 
-
-
-
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -44,14 +25,6 @@ CPlayerCardDlg::CPlayerCardDlg(CWnd* pParent /*=NULL*/)
 	m_pl_index_end = 1440;
 	m_default_scout = 0;
 	m_data_slot = 0;
-
-
-
-	//	bitmapBkgnd.Attach ( LoadImage( NULL, "default.bmp", IMAGE_BITMAP, 0, 0,
-	//               LR_CREATEDIBSECTION | LR_DEFAULTSIZE | LR_LOADFROMFILE ));
-
-
-
 
 }
 
@@ -95,13 +68,10 @@ BEGIN_MESSAGE_MAP(CPlayerCardDlg, CDialog)
 	//{{AFX_MSG_MAP(CPlayerCardDlg)
 	//ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST_CTRL_STATS, OnColumnclickListCtrlStats)
 	ON_WM_HELPINFO()
-	ON_WM_CONTEXTMENU()
 	ON_BN_CLICKED(IDC_BUTTON_BACK, OnButtonBack)
 	ON_BN_CLICKED(IDC_BUTTON_FORWARD, OnButtonForward)
-	ON_WM_ERASEBKGND()
 	ON_BN_CLICKED(IDC_BUTTON_SCOUT, OnButtonScout)
 	ON_BN_CLICKED(IDC_BUTTON_EXTEND, OnButtonExtend)
-	ON_WM_MOVE()
 	ON_WM_CTLCOLOR()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
@@ -118,33 +88,6 @@ BOOL CPlayerCardDlg::OnInitDialog()
 	myBrush2.CreateSolidBrush(LISTBOXCOLOR);
 	//_mkdir(avg.m_settings.m_path + "Pictures");
 
-	//CRect brect;
-	//GetDlgItem(IDC_BITMAP)->GetWindowRect(brect);
-	//ScreenToClient(brect);
-	//m_bmpCtrl.Create(WS_CHILD | WS_VISIBLE, brect, this);
-
-
-
-
-	/*CString na = avg.m_actual[m_player_index].GetName();
-	na.Replace(' ', '_');
-	na.MakeLower();
-
-	CString img = avg.m_settings.m_path + "Pictures\\" + na + ".png";
-
-	bool exists = true;
-	CFileStatus status;
-	if (CFile::GetStatus(img, status) == 0) exists = false;
-	CPngImage pngImage;
-	CBitmap bmp;
-	if (exists == true)
-	{
-		pngImage.Load(img);
-		bmp.Attach(pngImage.Detach());
-	}
-	CImage png;
-	png.Load(img);
-	m_buttonPng.SetImage(png);*/
 
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
@@ -159,14 +102,6 @@ BOOL CPlayerCardDlg::OnInitDialog()
 	lf2.lfHeight = 12;
 	strcpy_s(lf2.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font2.CreateFontIndirect(&lf2);    // Create the font.
-
-
-
-	//	CTabCtrl() tab;
-	//	GetTabControl()->SetFont( &m_font);
-
-
-	//	ptr->SetFont(&m_font);
 
 	m_pointer = avg.m_actual[m_player_index].m_id;
 
@@ -207,15 +142,6 @@ BOOL CPlayerCardDlg::OnInitDialog()
 		m_scout = avg.m_gm[index];
 	else  if (m_title == "Scout")
 		m_scout = avg.m_scout[index];
-
-	//CString na = avg.m_actual[m_player_index].GetName();
-	//na.Replace(' ', '_');
-	//na.MakeLower();
-	//CString img = avg.m_settings.m_path + "Pictures\\" + na + ".png";
-	//CImage image;
-	//image.Load((LPCSTR)img);
- //	m_logoPng.SetBitmap((HBITMAP)image);
-
 
 
 
@@ -287,37 +213,6 @@ void CPlayerCardDlg::Player()
 		m_buttonPng.SetImage(IDB_BITMAP);
 	}
 	m_buttonPng.SetFaceColor(BLACK);
-
-
-	//CPngImage pngImage;
-	//pngImage.Load(IDB_PNG_BK, AfxGetResourceHandle());
-	//CBitmap bmp;
-	//bmp.Attach(pngImage.Detach());
-	//bmp.SetBitmapDimension(32, 32); /* if the size of bitmap is 50 by 40 */
-
-
-	//if(exists == true)
-	//{
-
-
-
-	//m_bmpCtrl.LoadFile(img);
-
-	//m_Picture.Load(img); 
-	//m_Picture.Load(IDR_TEST, "JPG"); 
-	//}
-
-
-//	CPaintDC dc(this); // device context for painting
-
-	// TODO: Add your message handler code here
-
-//m_Picture.UpdateSizeOnDC(&dc); 
-//m_Picture.Show(&dc, 
-//CPoint(0,0), 
-//CPoint(m_Picture.m_Width, m_Picture.m_Height), 
-//0,0); 
-//m_Picture.ShowBitmapResource(&dc, IDR_TEST, CPoint(0,0)); 
 
 
 	CString team;
@@ -486,6 +381,7 @@ void CPlayerCardDlg::Player()
 	}
 
 	ListStats();
+	ListHighs();
 	ListSeasonStats();
 	DisplayRating();
 
@@ -534,7 +430,7 @@ void CPlayerCardDlg::InitListCtrl()
 	m_listCtrl.InsertColumn(20, "ppg");
 
 
-	double scale = 1.5;
+	//double scale = 1.5;
 	m_listCtrl.SetColumnWidth(0, 51);
 	m_listCtrl.SetColumnWidth(1, 62);
 	m_listCtrl.SetColumnWidth(2, 46);
@@ -565,6 +461,7 @@ void CPlayerCardDlg::InitListCtrl()
 
 
 
+	//m_list_highs.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_highs.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	m_list_highs.InsertColumn(0, "cat");
 	m_list_highs.InsertColumn(1, "season");
@@ -572,11 +469,11 @@ void CPlayerCardDlg::InitListCtrl()
 	m_list_highs.InsertColumn(3, "season");
 	m_list_highs.InsertColumn(4, "playoff");
 
-	m_list_highs.SetColumnWidth(0, 50 * scale);
-	m_list_highs.SetColumnWidth(1, 50 * scale);
-	m_list_highs.SetColumnWidth(2, 50 * scale);
-	m_list_highs.SetColumnWidth(3, 50 * scale);
-	m_list_highs.SetColumnWidth(4, 50 * scale);
+	m_list_highs.SetColumnWidth(0, 75);
+	m_list_highs.SetColumnWidth(1, 75);
+	m_list_highs.SetColumnWidth(2, 75);
+	m_list_highs.SetColumnWidth(3, 75);
+	m_list_highs.SetColumnWidth(4, 75);
 	m_list_highs.SetTextColor(RGB(0, 0, 0));
 	m_list_highs.SetTextBkColor(TEXT_BK_COLOR);
 	m_list_highs.SetBkColor(BK_COLOR);
@@ -611,28 +508,28 @@ void CPlayerCardDlg::InitListCtrl()
 
 
 
-	m_listctrlstats.SetColumnWidth(0, 1 * scale);
-	//    m_listctrlstats.SetColumnWidth( 1, 40 * scale );
-	m_listctrlstats.SetColumnWidth(1, 22 * scale);
-	m_listctrlstats.SetColumnWidth(2, 22 * scale);
-	m_listctrlstats.SetColumnWidth(3, 30 * scale);
-	m_listctrlstats.SetColumnWidth(4, 30 * scale);
-	m_listctrlstats.SetColumnWidth(5, 30 * scale);
-	m_listctrlstats.SetColumnWidth(6, 30 * scale);
-	m_listctrlstats.SetColumnWidth(7, 30 * scale);
-	m_listctrlstats.SetColumnWidth(8, 30 * scale);
-	m_listctrlstats.SetColumnWidth(9, 30 * scale);
-	m_listctrlstats.SetColumnWidth(10, 30 * scale);
-	m_listctrlstats.SetColumnWidth(11, 30 * scale);
-	m_listctrlstats.SetColumnWidth(12, 32 * scale);
-	m_listctrlstats.SetColumnWidth(13, 27 * scale);
-	m_listctrlstats.SetColumnWidth(14, 30 * scale);
-	m_listctrlstats.SetColumnWidth(15, 30 * scale);
-	m_listctrlstats.SetColumnWidth(16, 25 * scale);
-	m_listctrlstats.SetColumnWidth(17, 25 * scale);
-	m_listctrlstats.SetColumnWidth(18, 26 * scale);
-	m_listctrlstats.SetColumnWidth(19, 25 * scale);
-	m_listctrlstats.SetColumnWidth(20, 31 * scale);
+	m_listctrlstats.SetColumnWidth(0, 1);
+	//    m_listctrlstats.SetColumnWidth( 1, 40  );
+	m_listctrlstats.SetColumnWidth(1, 33 );
+	m_listctrlstats.SetColumnWidth(2, 33 );
+	m_listctrlstats.SetColumnWidth(3, 45 );
+	m_listctrlstats.SetColumnWidth(4, 45 );
+	m_listctrlstats.SetColumnWidth(5, 45 );
+	m_listctrlstats.SetColumnWidth(6, 45 );
+	m_listctrlstats.SetColumnWidth(7, 45 );
+	m_listctrlstats.SetColumnWidth(8, 45 );
+	m_listctrlstats.SetColumnWidth(9, 45 );
+	m_listctrlstats.SetColumnWidth(10, 45 );
+	m_listctrlstats.SetColumnWidth(11, 45 );
+	m_listctrlstats.SetColumnWidth(12, 48 );
+	m_listctrlstats.SetColumnWidth(13, 40 );
+	m_listctrlstats.SetColumnWidth(14, 45 );
+	m_listctrlstats.SetColumnWidth(15, 45 );
+	m_listctrlstats.SetColumnWidth(16, 37 );
+	m_listctrlstats.SetColumnWidth(17, 37 );
+	m_listctrlstats.SetColumnWidth(18, 39 );
+	m_listctrlstats.SetColumnWidth(19, 37 );
+	m_listctrlstats.SetColumnWidth(20, 46 );
 	m_listctrlstats.SetTextColor(RGB(0, 0, 0));
 	m_listctrlstats.SetTextBkColor(TEXT_BK_COLOR);
 	m_listctrlstats.SetBkColor(BK_COLOR);
@@ -663,21 +560,21 @@ void CPlayerCardDlg::InitListCtrl()
 	m_listCtrlStats.InsertColumn(14, "T");
 
 
-	m_listCtrlStats.SetColumnWidth(0, 32 * scale);
-	m_listCtrlStats.SetColumnWidth(1, 128 * scale);
-	m_listCtrlStats.SetColumnWidth(2, 40 * scale);
-	m_listCtrlStats.SetColumnWidth(3, 33 * scale);
-	m_listCtrlStats.SetColumnWidth(4, 33 * scale);
-	m_listCtrlStats.SetColumnWidth(5, 55 * scale);
-	m_listCtrlStats.SetColumnWidth(6, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(7, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(8, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(9, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(10, 55 * scale);
-	m_listCtrlStats.SetColumnWidth(11, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(12, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(13, 20 * scale);
-	m_listCtrlStats.SetColumnWidth(14, 20 * scale);
+	m_listCtrlStats.SetColumnWidth(0, 48 );
+	m_listCtrlStats.SetColumnWidth(1, 192 );
+	m_listCtrlStats.SetColumnWidth(2, 60 );
+	m_listCtrlStats.SetColumnWidth(3, 49 );
+	m_listCtrlStats.SetColumnWidth(4, 49 );
+	m_listCtrlStats.SetColumnWidth(5, 81 );
+	m_listCtrlStats.SetColumnWidth(6, 30 );
+	m_listCtrlStats.SetColumnWidth(7, 30 );
+	m_listCtrlStats.SetColumnWidth(8, 30 );
+	m_listCtrlStats.SetColumnWidth(9, 30 );
+	m_listCtrlStats.SetColumnWidth(10, 82 );
+	m_listCtrlStats.SetColumnWidth(11, 30 );
+	m_listCtrlStats.SetColumnWidth(12, 30 );
+	m_listCtrlStats.SetColumnWidth(13, 30 );
+	m_listCtrlStats.SetColumnWidth(14, 30 );
 	m_listCtrlStats.SetBkColor(BK_COLOR);
 	m_listCtrlStats.SetTextBkColor(TEXT_BK_COLOR);
 	m_listCtrlStats.SetTextColor(RGB(0, 0, 0));
@@ -696,25 +593,25 @@ void CPlayerCardDlg::InitListCtrl()
 	m_listctrlskill.InsertColumn(5, "blk");
 
 
-	m_listCtrlShot.SetColumnWidth(0, 40 * scale);
-	m_listCtrlShot.SetColumnWidth(1, 40 * scale);
-	m_listCtrlShot.SetColumnWidth(2, 40 * scale);
-	m_listCtrlShot.SetColumnWidth(3, 39 * scale);
-	m_listCtrlShot.SetColumnWidth(4, 39 * scale);
-	m_listCtrlShot.SetColumnWidth(5, 39 * scale);
-	m_listctrlskill.SetColumnWidth(0, 40 * scale);
-	m_listctrlskill.SetColumnWidth(1, 40 * scale);
-	m_listctrlskill.SetColumnWidth(2, 40 * scale);
-	m_listctrlskill.SetColumnWidth(3, 39 * scale);
-	m_listctrlskill.SetColumnWidth(4, 39 * scale);
-	m_listctrlskill.SetColumnWidth(5, 39 * scale);
+	m_listCtrlShot.SetColumnWidth(0, 60 );
+	m_listCtrlShot.SetColumnWidth(1, 60 );
+	m_listCtrlShot.SetColumnWidth(2, 60 );
+	m_listCtrlShot.SetColumnWidth(3, 58 );
+	m_listCtrlShot.SetColumnWidth(4, 58 );
+	m_listCtrlShot.SetColumnWidth(5, 58 );
+	m_listctrlskill.SetColumnWidth(0, 60 );
+	m_listctrlskill.SetColumnWidth(1, 60 );
+	m_listctrlskill.SetColumnWidth(2, 60 );
+	m_listctrlskill.SetColumnWidth(3, 58 );
+	m_listctrlskill.SetColumnWidth(4, 58 );
+	m_listctrlskill.SetColumnWidth(5, 58 );
 
 	m_listFuture.InsertColumn(0, "Talent");
 	m_listFuture.InsertColumn(1, "Skill");
 	m_listFuture.InsertColumn(2, "Intangibles");
-	m_listFuture.SetColumnWidth(0, 69 * scale);
-	m_listFuture.SetColumnWidth(1, 69 * scale);
-	m_listFuture.SetColumnWidth(2, 69 * scale);
+	m_listFuture.SetColumnWidth(0, 103 );
+	m_listFuture.SetColumnWidth(1, 103 );
+	m_listFuture.SetColumnWidth(2, 103 );
 
 	m_listctrlskill.SetBkColor(BK_COLOR);
 	m_listctrlskill.SetTextBkColor(TEXT_BK_COLOR);
@@ -900,76 +797,76 @@ void CPlayerCardDlg::ListStats()
 		else
 			string = "------";
 
-		m_listCtrl.InsertItem(yearsPro, string);
-		m_listCtrl.SetItemText(yearsPro, 1, m_stats[i].GetTeam());
+		m_listCtrl.InsertItem(yearsPro, (LPCTSTR)string);
+		m_listCtrl.SetItemText(yearsPro, 1, (LPCTSTR)m_stats[i].GetTeam());
 
 		string.Format("%d", s1);
-		m_listCtrl.SetItemText(yearsPro, 2, string);
+		m_listCtrl.SetItemText(yearsPro, 2, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s2) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 3, string);
+		m_listCtrl.SetItemText(yearsPro, 3, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s3) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 4, string);
+		m_listCtrl.SetItemText(yearsPro, 4, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s4) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 5, string);
+		m_listCtrl.SetItemText(yearsPro, 5, (LPCTSTR)string);
 
 		if (s4 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s3) / double(s1)) / (double(s4) / double(s1)) * 100);
-		m_listCtrl.SetItemText(yearsPro, 6, string);
+		m_listCtrl.SetItemText(yearsPro, 6, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s5) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 7, string);
+		m_listCtrl.SetItemText(yearsPro, 7, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s6) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 8, string);
+		m_listCtrl.SetItemText(yearsPro, 8, (LPCTSTR)string);
 
 		if (s6 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s5) / double(s1)) / (double(s6) / double(s1)) * 100);
-		m_listCtrl.SetItemText(yearsPro, 9, string);
+		m_listCtrl.SetItemText(yearsPro, 9, (LPCTSTR)string);
 
 
 		string.Format("%.1f", double(s7) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 10, string);
+		m_listCtrl.SetItemText(yearsPro, 10, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s8) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 11, string);
+		m_listCtrl.SetItemText(yearsPro, 11, (LPCTSTR)string);
 
 		if (s8 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s7) / double(s1)) / (double(s8) / double(s1)) * 100);
 
-		m_listCtrl.SetItemText(yearsPro, 12, string);
+		m_listCtrl.SetItemText(yearsPro, 12, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s9) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 13, string);
+		m_listCtrl.SetItemText(yearsPro, 13, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s10) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 14, string);
+		m_listCtrl.SetItemText(yearsPro, 14, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s11) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 15, string);
+		m_listCtrl.SetItemText(yearsPro, 15, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s12) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 16, string);
+		m_listCtrl.SetItemText(yearsPro, 16, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s13) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 17, string);
+		m_listCtrl.SetItemText(yearsPro, 17, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s14) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 18, string);
+		m_listCtrl.SetItemText(yearsPro, 18, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s15) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 19, string);
+		m_listCtrl.SetItemText(yearsPro, 19, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s3 * 2 + s5 + s7) / double(s1));
-		m_listCtrl.SetItemText(yearsPro, 20, string);
+		m_listCtrl.SetItemText(yearsPro, 20, (LPCTSTR)string);
 
 		yearsPro = yearsPro + 1;
 
@@ -984,21 +881,12 @@ void CPlayerCardDlg::ListStats()
 	}
 
 
-	ListHighs();
 
 }
 
 
 
 
-void CPlayerCardDlg::OnContextMenu(CWnd* pWnd, CPoint point)
-{
-	// TODO: Add your message handler code here
-//	HtmlHelp(NULL, "jumpshot.chm::/html/playercard.htm", HH_DISPLAY_TOPIC, 0);
-
-//	return CDialog::OnHelpInfo(pHelpInfo);
-
-}
 
 BOOL CPlayerCardDlg::OnHelpInfo(HELPINFO* pHelpInfo)
 {
@@ -1711,79 +1599,79 @@ void CPlayerCardDlg::ListSeasonStats()
 		int s15 = m_stats.m_sim_pf;
 
 
-		CString string;
-		m_listctrlstats.InsertItem(yearsPro, m_stats.GetTeam());
+		CString string = m_stats.GetTeam();
+		m_listctrlstats.InsertItem(yearsPro, (LPCTSTR)string);
 
 		string.Format("%d", s1);
-		m_listctrlstats.SetItemText(yearsPro, 1, string);
+		m_listctrlstats.SetItemText(yearsPro, 1, (LPCTSTR)string);
 
 		string.Format("%d", sg);
-		m_listctrlstats.SetItemText(yearsPro, 2, string);
+		m_listctrlstats.SetItemText(yearsPro, 2, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s2) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 3, string);
+		m_listctrlstats.SetItemText(yearsPro, 3, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s3) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 4, string);
+		m_listctrlstats.SetItemText(yearsPro, 4, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s4) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 5, string);
+		m_listctrlstats.SetItemText(yearsPro, 5, (LPCTSTR)string);
 
 		if (s4 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s3) / double(s1)) / (double(s4) / double(s1)) * 100);
-		m_listctrlstats.SetItemText(yearsPro, 6, string);
+		m_listctrlstats.SetItemText(yearsPro, 6, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s5) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 7, string);
+		m_listctrlstats.SetItemText(yearsPro, 7, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s6) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 8, string);
+		m_listctrlstats.SetItemText(yearsPro, 8, (LPCTSTR)string);
 
 		if (s6 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s5) / double(s1)) / (double(s6) / double(s1)) * 100);
-		m_listctrlstats.SetItemText(yearsPro, 9, string);
+		m_listctrlstats.SetItemText(yearsPro, 9, (LPCTSTR)string);
 
 
 		string.Format("%.1f", double(s7) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 10, string);
+		m_listctrlstats.SetItemText(yearsPro, 10, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s8) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 11, string);
+		m_listctrlstats.SetItemText(yearsPro, 11, (LPCTSTR)string);
 
 		if (s8 == 0)
 			string = "-----";
 		else
 			string.Format("%.1f", (double(s7) / double(s1)) / (double(s8) / double(s1)) * 100);
 
-		m_listctrlstats.SetItemText(yearsPro, 12, string);
+		m_listctrlstats.SetItemText(yearsPro, 12, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s9) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 13, string);
+		m_listctrlstats.SetItemText(yearsPro, 13, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s10) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 14, string);
+		m_listctrlstats.SetItemText(yearsPro, 14, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s11) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 15, string);
+		m_listctrlstats.SetItemText(yearsPro, 15, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s12) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 16, string);
+		m_listctrlstats.SetItemText(yearsPro, 16, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s13) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 17, string);
+		m_listctrlstats.SetItemText(yearsPro, 17, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s14) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 18, string);
+		m_listctrlstats.SetItemText(yearsPro, 18, (LPCTSTR)string);
 
 		string.Format("%.1f", double(s15) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 19, string);
+		m_listctrlstats.SetItemText(yearsPro, 19, (LPCTSTR)string);
 
-		string.Format("%.1f", double(s3 * 2 + s5 + s7) / double(s1));
-		m_listctrlstats.SetItemText(yearsPro, 20, string);
+		string.Format("%.1f", double(s3 * 2.0 + s5 + s7) / double(s1));
+		m_listctrlstats.SetItemText(yearsPro, 20, (LPCTSTR)string);
 
 		//int inj = m_stats.GetInjury();
 		//   if(inj != 1)
@@ -1825,80 +1713,80 @@ void CPlayerCardDlg::ListSeasonStats()
 
 
 			CString string;
-			m_listctrlstats.InsertItem(yearsPro, m_stats.GetTeam());
+			m_listctrlstats.InsertItem(yearsPro, (LPCTSTR)m_stats.GetTeam());
 
 
 			string.Format("%d", s1);
-			m_listctrlstats.SetItemText(yearsPro, 1, string);
+			m_listctrlstats.SetItemText(yearsPro, 1, (LPCTSTR)string);
 
 			// string.Format("%d", sg);
-			m_listctrlstats.SetItemText(yearsPro, 2, "-");
+			m_listctrlstats.SetItemText(yearsPro, 2, (LPCTSTR)"-");
 
 			string.Format("%.1f", double(s2) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 3, string);
+			m_listctrlstats.SetItemText(yearsPro, 3, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s3) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 4, string);
+			m_listctrlstats.SetItemText(yearsPro, 4, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s4) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 5, string);
+			m_listctrlstats.SetItemText(yearsPro, 5, (LPCTSTR)string);
 
 			if (s4 == 0)
 				string = "-----";
 			else
 				string.Format("%.1f", (double(s3) / double(s1)) / (double(s4) / double(s1)) * 100);
-			m_listctrlstats.SetItemText(yearsPro, 6, string);
+			m_listctrlstats.SetItemText(yearsPro, 6, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s5) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 7, string);
+			m_listctrlstats.SetItemText(yearsPro, 7, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s6) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 8, string);
+			m_listctrlstats.SetItemText(yearsPro, 8, (LPCTSTR)string);
 
 			if (s6 == 0)
 				string = "-----";
 			else
 				string.Format("%.1f", (double(s5) / double(s1)) / (double(s6) / double(s1)) * 100);
-			m_listctrlstats.SetItemText(yearsPro, 9, string);
+			m_listctrlstats.SetItemText(yearsPro, 9, (LPCTSTR)string);
 
 
 			string.Format("%.1f", double(s7) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 10, string);
+			m_listctrlstats.SetItemText(yearsPro, 10, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s8) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 11, string);
+			m_listctrlstats.SetItemText(yearsPro, 11, (LPCTSTR)string);
 
 			if (s8 == 0)
 				string = "-----";
 			else
 				string.Format("%.1f", (double(s7) / double(s1)) / (double(s8) / double(s1)) * 100);
 
-			m_listctrlstats.SetItemText(yearsPro, 12, string);
+			m_listctrlstats.SetItemText(yearsPro, 12, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s9) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 13, string);
+			m_listctrlstats.SetItemText(yearsPro, 13, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s10) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 14, string);
+			m_listctrlstats.SetItemText(yearsPro, 14, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s11) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 15, string);
+			m_listctrlstats.SetItemText(yearsPro, 15, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s12) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 16, string);
+			m_listctrlstats.SetItemText(yearsPro, 16, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s13) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 17, string);
+			m_listctrlstats.SetItemText(yearsPro, 17, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s14) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 18, string);
+			m_listctrlstats.SetItemText(yearsPro, 18, (LPCTSTR)string);
 
 			string.Format("%.1f", double(s15) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 19, string);
+			m_listctrlstats.SetItemText(yearsPro, 19, (LPCTSTR)string);
 
 
-			string.Format("%.1f", double(s3 * 2 + s5 + s7) / double(s1));
-			m_listctrlstats.SetItemText(yearsPro, 20, string);
+			string.Format("%.1f", double(s3 * 2.0 + s5 + s7) / double(s1));
+			m_listctrlstats.SetItemText(yearsPro, 20, (LPCTSTR)string);
 
 		}
 
@@ -1956,21 +1844,21 @@ void CPlayerCardDlg::DisplayRating()
 	TransD.Format("%d", fd);
 
 
-	m_listCtrlStats.InsertItem(0, pos);
-	m_listCtrlStats.SetItemText(0, 1, name);
-	m_listCtrlStats.SetItemText(0, 2, Ht);
-	m_listCtrlStats.SetItemText(0, 3, Wt);
+	m_listCtrlStats.InsertItem(0, (LPCTSTR)pos);
+	m_listCtrlStats.SetItemText(0, 1, (LPCTSTR)name);
+	m_listCtrlStats.SetItemText(0, 2, (LPCTSTR)Ht);
+	m_listCtrlStats.SetItemText(0, 3, (LPCTSTR)Wt);
 
 
-	m_listCtrlStats.SetItemText(0, 4, Age);
-	m_listCtrlStats.SetItemText(0, 6, OutO);
-	m_listCtrlStats.SetItemText(0, 7, PenO);
-	m_listCtrlStats.SetItemText(0, 8, PostO);
-	m_listCtrlStats.SetItemText(0, 9, TransO);
-	m_listCtrlStats.SetItemText(0, 11, OutD);
-	m_listCtrlStats.SetItemText(0, 12, PenD);
-	m_listCtrlStats.SetItemText(0, 13, PostD);
-	m_listCtrlStats.SetItemText(0, 14, TransD);
+	m_listCtrlStats.SetItemText(0, 4, (LPCTSTR)Age);
+	m_listCtrlStats.SetItemText(0, 6, (LPCTSTR)OutO);
+	m_listCtrlStats.SetItemText(0, 7, (LPCTSTR)PenO);
+	m_listCtrlStats.SetItemText(0, 8, (LPCTSTR)PostO);
+	m_listCtrlStats.SetItemText(0, 9, (LPCTSTR)TransO);
+	m_listCtrlStats.SetItemText(0, 11, (LPCTSTR)OutD);
+	m_listCtrlStats.SetItemText(0, 12, (LPCTSTR)PenD);
+	m_listCtrlStats.SetItemText(0, 13, (LPCTSTR)PostD);
+	m_listCtrlStats.SetItemText(0, 14, (LPCTSTR)TransD);
 
 	m_player.SetRatings(avg.m_hi_fga[0], avg.m_hi_fta[0], avg.m_hi_tga[0], avg.m_hi_orb[0], avg.m_hi_drb[0], avg.m_hi_ast[0], avg.m_hi_stl[0], avg.m_hi_to[0], avg.m_hi_blk[0]);
 
@@ -1982,14 +1870,14 @@ void CPlayerCardDlg::DisplayRating()
 	m_player.SetAdjPrFga(rating);
 
 	s.Format("%d", rating);
-	m_listCtrlShot.InsertItem(0, s);
+	m_listCtrlShot.InsertItem(0, (LPCTSTR)s);
 
 
 	r = m_player.GetPrFgp();
 	rating = m_player.PrRating(true, r, m_scout.m_shooting);
 	m_player.SetAdjPrFgp(rating);
 	s.Format("%d", rating);
-	m_listCtrlShot.SetItemText(0, 1, s);
+	m_listCtrlShot.SetItemText(0, 1, (LPCTSTR)s);
 
 
 
@@ -1998,7 +1886,7 @@ void CPlayerCardDlg::DisplayRating()
 	rating = m_player.PrRating(false, r, m_scout.m_scoring);
 	m_player.SetAdjPrFta(rating);
 	s.Format("%d", rating);
-	m_listCtrlShot.SetItemText(0, 2, s);
+	m_listCtrlShot.SetItemText(0, 2, (LPCTSTR)s);
 
 
 
@@ -2006,7 +1894,7 @@ void CPlayerCardDlg::DisplayRating()
 	rating = m_player.PrRating(true, r, m_scout.m_shooting);
 	m_player.SetAdjPrFtp(rating);
 	s.Format("%d", rating);
-	m_listCtrlShot.SetItemText(0, 3, s);
+	m_listCtrlShot.SetItemText(0, 3, (LPCTSTR)s);
 
 
 
@@ -2014,7 +1902,7 @@ void CPlayerCardDlg::DisplayRating()
 	rating = m_player.PrRating(false, r, m_scout.m_scoring);
 	m_player.SetAdjPrTga(rating);
 	s.Format("%d", rating);
-	m_listCtrlShot.SetItemText(0, 4, s);
+	m_listCtrlShot.SetItemText(0, 4, (LPCTSTR)s);
 
 
 
@@ -2022,7 +1910,7 @@ void CPlayerCardDlg::DisplayRating()
 	rating = m_player.PrRating(true, r, m_scout.m_shooting);
 	m_player.SetAdjPrTgp(rating);
 	s.Format("%d", rating);
-	m_listCtrlShot.SetItemText(0, 5, s);
+	m_listCtrlShot.SetItemText(0, 5, (LPCTSTR)s);
 
 
 
@@ -2030,51 +1918,51 @@ void CPlayerCardDlg::DisplayRating()
 	rating = m_player.PrRating(false, r, m_scout.m_rebounding);
 	m_player.SetAdjPrOrb(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.InsertItem(0, s);
+	m_listctrlskill.InsertItem(0, (LPCTSTR)s);
 
 
 	r = m_player.GetPrDrb();
 	rating = m_player.PrRating(false, r, m_scout.m_rebounding);
 	m_player.SetAdjPrDrb(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.SetItemText(0, 1, s);
+	m_listctrlskill.SetItemText(0, 1, (LPCTSTR)s);
 
 
 	r = m_player.GetPrAst();
 	rating = m_player.PrRating(false, r, m_scout.m_passing);
 	m_player.SetAdjPrAst(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.SetItemText(0, 2, s);
+	m_listctrlskill.SetItemText(0, 2, (LPCTSTR)s);
 
 
 	r = m_player.GetPrStl();
 	rating = m_player.PrRating(false, r, m_scout.m_defense);
 	m_player.SetAdjPrStl(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.SetItemText(0, 3, s);
+	m_listctrlskill.SetItemText(0, 3, (LPCTSTR)s);
 
 	r = m_player.GetPrTo();
 
 	rating = m_player.PrRating(false, r, m_scout.m_passing);
 	m_player.SetAdjPrTo(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.SetItemText(0, 4, s);
+	m_listctrlskill.SetItemText(0, 4, (LPCTSTR)s);
 
 
 	r = m_player.GetPrBlk();
 	rating = m_player.PrRating(false, r, m_scout.m_defense);
 	m_player.SetAdjPrBlk(rating);
 	s.Format("%d", rating);
-	m_listctrlskill.SetItemText(0, 5, s);
+	m_listctrlskill.SetItemText(0, 5, (LPCTSTR)s);
 	CString display[6] = { "", "Very Low", "Poor", "Average", "Good", "Excellent" };
 	CString h_display[10] = { "", "Disgruntled", "Mad", "Unhappy", "So So", "Ok", "Good", "Pleased", "Happy", "Grateful" };
 
 	rating = m_player.PrRating(false, m_player.GetPot1() + 200, m_scout.m_pot1);
-	m_listFuture.InsertItem(0, display[rating]);
+	m_listFuture.InsertItem(0, (LPCTSTR)display[rating]);
 	rating = m_player.PrRating(false, m_player.GetPot2() + 200, m_scout.m_pot2);
-	m_listFuture.SetItemText(0, 1, display[rating]);
+	m_listFuture.SetItemText(0, 1, (LPCTSTR)display[rating]);
 	rating = m_player.PrRating(false, m_player.GetEffort() + 200, m_scout.m_effort);
-	m_listFuture.SetItemText(0, 2, display[rating]);
+	m_listFuture.SetItemText(0, 2, (LPCTSTR)display[rating]);
 
 
 
@@ -2130,8 +2018,8 @@ void CPlayerCardDlg::DisplayRating()
 	for (int index = 0; index < 19; index++)
 	{
 		if (Stats[index] == "") continue;
-		m_list_ctrl_1.InsertItem(index, m_label[index + 4]);
-		m_list_ctrl_1.SetItemText(index, 1, Stats[index]);
+		m_list_ctrl_1.InsertItem(index, (LPCTSTR)m_label[index + 4]);
+		m_list_ctrl_1.SetItemText(index, 1, (LPCTSTR)Stats[index]);
 		Stats[index] = "";
 	}
 
@@ -2152,8 +2040,8 @@ void CPlayerCardDlg::DisplayRating()
 	for (int index = 0; index < 19; index++)
 	{
 		if (Stats[index] == "") continue;
-		m_list_ctrl_3.InsertItem(index, m_label[index]);
-		m_list_ctrl_3.SetItemText(index, 1, Stats[index]);
+		m_list_ctrl_3.InsertItem(index, (LPCTSTR)m_label[index]);
+		m_list_ctrl_3.SetItemText(index, 1, (LPCTSTR)Stats[index]);
 	}
 
 
@@ -2208,17 +2096,17 @@ void CPlayerCardDlg::DisplayRating()
 
 	if (count > 0)
 	{
-		m_list_ctrl_2.InsertItem(count, string);
-		m_list_ctrl_2.SetItemText(count, 1, money);
-		m_list_ctrl_2.InsertItem(count + 1, "current year");
-		m_list_ctrl_2.SetItemText(count + 1, 1, yr);
+		m_list_ctrl_2.InsertItem(count, (LPCTSTR)string);
+		m_list_ctrl_2.SetItemText(count, 1, (LPCTSTR)money);
+		m_list_ctrl_2.InsertItem(count + 1, (LPCTSTR)"current year");
+		m_list_ctrl_2.SetItemText(count + 1, 1, (LPCTSTR)yr);
 	}
 	else
 	{
-		m_list_ctrl_2.InsertItem(count, "");
-		m_list_ctrl_2.SetItemText(count, 1, "");
-		m_list_ctrl_2.InsertItem(count + 1, "");
-		m_list_ctrl_2.SetItemText(count + 1, 1, "");
+		m_list_ctrl_2.InsertItem(count, (LPCTSTR)"");
+		m_list_ctrl_2.SetItemText(count, 1, (LPCTSTR)"");
+		m_list_ctrl_2.InsertItem(count + 1, (LPCTSTR)"");
+		m_list_ctrl_2.SetItemText(count + 1, 1, (LPCTSTR)"");
 	}
 
 
@@ -2267,28 +2155,27 @@ void CPlayerCardDlg::ListHighs()
 {
 	CPlayer m_player = avg.m_actual[m_player_index];
 	m_list_highs.DeleteAllItems();
-	CString string[33];
+	CString string[32];
 	m_player.ListHighs(string);
-
 
 	int co = 0;
 	for (int i = 1; i <= 5; i++)
 	{
-		m_list_highs.InsertItem(i - 1, string[co]);
+		m_list_highs.InsertItem(i - 1, (LPCTSTR)string[co]);
 		co = co + 1;
 		for (int j = 1; j <= 4; j++)
 		{
-			m_list_highs.SetItemText(i - 1, j, string[co]);
+			m_list_highs.SetItemText(i - 1, j, (LPCTSTR)string[co]);
 			co = co + 1;
 		}
 	}
 
 	for (int i = 5; i <= 6; i++)
 	{
-		m_list_highs.InsertItem(i, string[25 + (i - 5) * 3]);
-		m_list_highs.SetItemText(i, 1, string[26 + (i - 5) * 3]);
-		m_list_highs.SetItemText(i, 2, " ");
-		m_list_highs.SetItemText(i, 3, string[27 + (i - 5) * 3]);
+		m_list_highs.InsertItem(i, (LPCTSTR)string[25 + (i - 5) * 3]);
+		m_list_highs.SetItemText(i, 1, (LPCTSTR)string[26 + (i - 5) * 3]);
+		m_list_highs.SetItemText(i, 2, (LPCTSTR)"-");
+		m_list_highs.SetItemText(i, 3, (LPCTSTR)string[27 + (i - 5) * 3]);
 	}
 
 
@@ -2403,13 +2290,6 @@ void CPlayerCardDlg::OnButtonExtend()
 
 
 
-void CPlayerCardDlg::OnMove(int x, int y)
-{
-	CDialog::OnMove(x, y);
-
-	// TODO: Add your message handler code here
-
-}
 
 
 

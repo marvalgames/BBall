@@ -82,15 +82,16 @@ protected:
 	// Generated message map functions
 	//{{AFX_MSG(CTransactionsDlg)
 	virtual BOOL OnInitDialog();
-	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	afx_msg BOOL OnHelpInfo(HELPINFO* pHelpInfo);
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	afx_msg void OnSelchangeComboTeams();
 	afx_msg void OnRadioTrades();
 	afx_msg void OnRadioInjuries();
-	afx_msg void OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult);
+	//afx_msg void OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnDblclkListTrades(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 //{{AFX_INSERT_LOCATION}}

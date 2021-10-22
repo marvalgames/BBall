@@ -96,12 +96,10 @@ protected:
 	//afx_msg void OnColumnclickListCtrlStats(NMHDR* pNMHDR, LRESULT* pResult);
 	virtual BOOL OnInitDialog();
 	afx_msg BOOL OnHelpInfo(HELPINFO* pHelpInfo);
-	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	afx_msg void OnButtonBack();
 	afx_msg void OnButtonForward();
 	afx_msg void OnButtonScout();
 	afx_msg void OnButtonExtend();
-	afx_msg void OnMove(int x, int y);
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
@@ -123,7 +121,7 @@ private:
 	CBrush myBrush2;
 
 public:
-	CMFCButton m_buttonPng;
+	MyButton m_buttonPng;
 };
 
 //{{AFX_INSERT_LOCATION}}
