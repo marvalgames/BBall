@@ -1725,9 +1725,7 @@ bool CPlayer::HallofFamer(int awa_pts, int major_points)
 	double stats_pts = (ppg+rpg+apg+spg+bpg)*5;
 
 	if(total_pts >= 200 && m_yrs_of_service >= 7 && major_points >= 20) hof = true;
-	else if (stats_pts >= 180 && m_yrs_of_service >= 13) hof = true;
-	else if (stats_pts >= 160 && m_yrs_of_service >= 10 && major_points > 0 && awa_pts > 0) hof = true;
-	else if (stats_pts >= 150 && total_pts >= 180 && m_yrs_of_service >= 7 && major_points >= 20) hof = true;
+	else if(stats_pts >= 150 && total_pts >= 180  && m_yrs_of_service >= 7 && major_points >= 20) hof = true;
 	else if(awa_pts > 120 && major_points >= 20) hof = true;
 	}
 	return hof;
