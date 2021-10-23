@@ -41,6 +41,7 @@ CTransactions::CTransactions()
 
 CTransactions::~CTransactions()
 {
+
 }
 
 

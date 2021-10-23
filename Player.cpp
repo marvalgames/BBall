@@ -1055,16 +1055,16 @@ void CPlayer::CreateReport(CString m_lines[33],
 
 	if(score_o <= 7  && score_p <= 7 && score_i <= 7)
 	{
-		m_lines[3] == "";
-		m_lines[4] == "";
+		m_lines[3] = "";
+		m_lines[4] = "";
 		if(total_score <= 7) m_lines[2] = "Basically an offensive liability";
 		else if(total_score <= 14) m_lines[2] = "Don't expect any real offense";
 		else m_lines[2] = "Struggles to score";
 	}
 	if(score_o >= 14  && score_p >= 14 && score_i >= 14)
 	{
-		m_lines[3] == "";
-		m_lines[4] == "";
+		m_lines[3] = "";
+		m_lines[4] = "";
 		if(total_score >= 42 && total_score <=47) m_lines[2] = "Versatile offensive player";
 		else if(total_score >= 48 && total_score <= 53) m_lines[2] = "Complete offensive player";
 		else m_lines[2] = "The total package offensively";
@@ -1766,7 +1766,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 		{
 			CString string;
 			int yr = start_yr + y;
-			string.Format("%d most valuable player (%s)", yr, place[mvp]);
+			string.Format("%d most valuable player (%s)", yr, (LPCTSTR)place[mvp]);
 //			string.Format("%d mvp  %d", yr, mvp);
 			awards[count] = string;
 			count = count + 1;
@@ -1783,7 +1783,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 		{
 			CString string;
 			int yr = start_yr + y;
-			string.Format("%d defensive player of the year  (%s)", yr, place[defense]);
+			string.Format("%d defensive player of the year  (%s)", yr, (LPCTSTR)place[defense]);
 //			string.Format("%d defense - %d", yr, defense);
 			awards[count] = string;
 			count = count + 1;
@@ -1803,7 +1803,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d rookie - %d", yr, rookie);
-			string.Format("%d rookie of the year (%s)", yr, place[rookie]);
+			string.Format("%d rookie of the year (%s)", yr, (LPCTSTR)place[rookie]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + 3;
@@ -1818,7 +1818,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 		{
 			CString string;
 			int yr = start_yr + y;
-			string.Format("%d scoring (%s)", yr, place[pts]);
+			string.Format("%d scoring (%s)", yr, (LPCTSTR)place[pts]);
 //			string.Format("%d pts - %d", yr, pts);
 			awards[count] = string;
 			count = count + 1;
@@ -1836,7 +1836,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d reb - %d", yr, reb);
-			string.Format("%d rebounds (%s)", yr, place[reb]);
+			string.Format("%d rebounds (%s)", yr, (LPCTSTR)place[reb]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + (7-reb);
@@ -1852,7 +1852,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d ast - %d", yr, ast);
-			string.Format("%d assists (%s)", yr, place[ast]);
+			string.Format("%d assists (%s)", yr, (LPCTSTR)place[ast]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + (7-ast);
@@ -1869,7 +1869,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d stl - %d", yr, stl);
-			string.Format("%d steals (%s)", yr, place[stl]);
+			string.Format("%d steals (%s)", yr, (LPCTSTR)place[stl]);
 			awards[count] = string;
 			awa_pts = awa_pts + (7-stl);
 			count = count + 1;
@@ -1885,7 +1885,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d blk - %d", yr, blk);
-			string.Format("%d blocks (%s)", yr, place[blk]);
+			string.Format("%d blocks (%s)", yr, (LPCTSTR)place[blk]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + (7-blk);
@@ -1933,7 +1933,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d 6th - %d", yr, sth);
-			string.Format("%d 6th man (%s)", yr, place[sth]);
+			string.Format("%d 6th man (%s)", yr, (LPCTSTR)place[sth]);
 			awa_pts = awa_pts + 3;
 			awards[count] = string;
 			count = count + 1;
@@ -1950,7 +1950,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d all league - %d", yr, all);
-			string.Format("%d all league %s team", yr, place[all]);
+			string.Format("%d all league %s team", yr, (LPCTSTR)place[all]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + (7-all);
@@ -1967,7 +1967,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d all defense - %d", yr, all);
-			string.Format("%d all defense %s team", yr, place[all]);
+			string.Format("%d all defense %s team", yr, (LPCTSTR)place[all]);
 			awards[count] = string;
 			count = count + 1;
 			awa_pts = awa_pts + (6-all);
@@ -1983,7 +1983,7 @@ int CPlayer::GetAwardPoints(CString file_name, int &major_points)
 			CString string;
 			int yr = start_yr + y;
 //			string.Format("%d all rookie - %d", yr, all);
-			string.Format("%d all rookie %s team", yr, place[all]);
+			string.Format("%d all rookie %s team", yr, (LPCTSTR)place[all]);
 			awards[count] = string;
 			count = count + 1;
 		}

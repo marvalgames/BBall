@@ -25,6 +25,10 @@ CPlayerCardDlg::CPlayerCardDlg(CWnd* pParent /*=NULL*/)
 	m_pl_index_end = 1440;
 	m_default_scout = 0;
 	m_data_slot = 0;
+	for (int i = 0; i < 33; i++)
+	{
+		string[i] = "0";
+	}
 
 }
 
@@ -48,7 +52,7 @@ void CPlayerCardDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_CTRL, m_listctrlskill);
 	DDX_Control(pDX, IDC_LIST_FUTURE2, m_listFuture);
 	DDX_Control(pDX, IDC_LIST_CTRL_STATS2, m_listCtrlStats);
-	DDX_Control(pDX, IDC_LIST_CTRL_SHOT2, m_listCtrlShot);
+	//  DDX_Control(pDX, IDC_LIST_CTRL_SHOT2, m_listCtrlShot);
 	DDX_Control(pDX, IDC_LIST_REPORT2, m_list_report);
 	DDX_Control(pDX, IDC_LIST_CTRL_SEASON_STATS, m_listctrlstats);
 	DDX_Control(pDX, IDC_LIST_POSITION, m_listPosition);
@@ -61,6 +65,7 @@ void CPlayerCardDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON_BACK, m_button[0]);
 	DDX_Control(pDX, IDC_BUTTON_FORWARD, m_button[1]);
 	DDX_Control(pDX, IDOK, m_button[2]);
+	DDX_Control(pDX, IDC_LIST_CTRL_SHOT2, m_listCtrlShot);
 }
 
 
@@ -949,7 +954,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 			{
 				CString string;
 				int yr = start_yr + y;
-				string.Format("%d most valuable player (%s)", yr, place[mvp]);
+				string.Format("%d most valuable player (%s)", yr, (LPCTSTR)place[mvp]);
 				//			string.Format("%d mvp  %d", yr, mvp);
 				awards[count] = string;
 				count = count + 1;
@@ -964,7 +969,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 			{
 				CString string;
 				int yr = start_yr + y;
-				string.Format("%d defensive player of the year  (%s)", yr, place[defense]);
+				string.Format("%d defensive player of the year  (%s)", yr, (LPCTSTR)place[defense]);
 				//			string.Format("%d defense - %d", yr, defense);
 				awards[count] = string;
 				count = count + 1;
@@ -980,7 +985,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d rookie - %d", yr, rookie);
-				string.Format("%d rookie of the year (%s)", yr, place[rookie]);
+				string.Format("%d rookie of the year (%s)", yr, (LPCTSTR)place[rookie]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -994,7 +999,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 			{
 				CString string;
 				int yr = start_yr + y;
-				string.Format("%d scoring (%s)", yr, place[pts]);
+				string.Format("%d scoring (%s)", yr, (LPCTSTR)place[pts]);
 				//			string.Format("%d pts - %d", yr, pts);
 				awards[count] = string;
 				count = count + 1;
@@ -1010,7 +1015,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d reb - %d", yr, reb);
-				string.Format("%d rebounds (%s)", yr, place[reb]);
+				string.Format("%d rebounds (%s)", yr, (LPCTSTR)place[reb]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1025,7 +1030,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d ast - %d", yr, ast);
-				string.Format("%d assists (%s)", yr, place[ast]);
+				string.Format("%d assists (%s)", yr, (LPCTSTR)place[ast]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1040,7 +1045,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d stl - %d", yr, stl);
-				string.Format("%d steals (%s)", yr, place[stl]);
+				string.Format("%d steals (%s)", yr, (LPCTSTR)place[stl]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1055,7 +1060,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d blk - %d", yr, blk);
-				string.Format("%d blocks (%s)", yr, place[blk]);
+				string.Format("%d blocks (%s)", yr, (LPCTSTR)place[blk]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1102,7 +1107,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d 6th - %d", yr, sth);
-				string.Format("%d 6th man (%s)", yr, place[sth]);
+				string.Format("%d 6th man (%s)", yr, (LPCTSTR)place[sth]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1117,7 +1122,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d all league - %d", yr, all);
-				string.Format("%d all league %s team", yr, place[all]);
+				string.Format("%d all league %s team", yr, (LPCTSTR)place[all]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1132,7 +1137,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d all defense - %d", yr, all);
-				string.Format("%d all defense %s team", yr, place[all]);
+				string.Format("%d all defense %s team", yr, (LPCTSTR)place[all]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1147,7 +1152,7 @@ void CPlayerCardDlg::ListPlayerAwards()
 				CString string;
 				int yr = start_yr + y;
 				//			string.Format("%d all rookie - %d", yr, all);
-				string.Format("%d all rookie %s team", yr, place[all]);
+				string.Format("%d all rookie %s team", yr, (LPCTSTR)place[all]);
 				awards[count] = string;
 				count = count + 1;
 			}
@@ -1577,7 +1582,7 @@ void CPlayerCardDlg::ListSeasonStats()
 	if (m_extension_allowed != true || avg.m_settings.m_current_stage > 0) m_button_extend.EnableWindow(FALSE);
 
 
-	m_listctrlstats.DeleteAllItems();
+	//m_listctrlstats.DeleteAllItems();
 	int yearsPro = 0;
 	if (m_stats.m_sim_games != 0)
 	{
@@ -1798,8 +1803,12 @@ void CPlayerCardDlg::DisplayRating()
 	CPlayer m_player = avg.m_actual[m_player_index];
 
 	CString string = m_scout.m_name;
-	if (string != "") string = "Scouting Report by " + m_title + " " + string;
-	else m_buttonScout.ShowWindow(FALSE);
+	if (string != "") string = "Scouting Report by " + m_title + " " + string; 
+	else
+	{
+		string = "na";
+		m_buttonScout.ShowWindow(FALSE);
+	}
 	m_buttonScout.SetWindowText(string);
 
 
@@ -1813,7 +1822,7 @@ void CPlayerCardDlg::DisplayRating()
 	CString pos = m_player.GetPos();
 	CString name = m_player.GetName();
 	//SetWindowText(pos + " " + name);
-	CString OutO, PenO, PostO, TransO, OutD, PenD, PostD, TransD, Age, Ht, Wt;
+	CString OutO = "0", PenO = "0", PostO = "0", TransO = "0", OutD = "0", PenD = "0", PostD = "0", TransD = "0", Age = "0", Ht = "0", Wt = "0";
 
 	int ht = m_player.m_height;
 	int ft = m_player.m_height / 12;
@@ -1843,18 +1852,18 @@ void CPlayerCardDlg::DisplayRating()
 	int fd = m_player.GetTransDef();
 	TransD.Format("%d", fd);
 
-
-	m_listCtrlStats.InsertItem(0, (LPCTSTR)pos);
-	m_listCtrlStats.SetItemText(0, 1, (LPCTSTR)name);
+	int items = m_listCtrlStats.GetItemCount();
+	m_listCtrlStats.InsertItem(0, _T(pos));
+	m_listCtrlStats.SetItemText(0, 1, _T(name));
 	m_listCtrlStats.SetItemText(0, 2, (LPCTSTR)Ht);
 	m_listCtrlStats.SetItemText(0, 3, (LPCTSTR)Wt);
-
-
 	m_listCtrlStats.SetItemText(0, 4, (LPCTSTR)Age);
+	m_listCtrlStats.SetItemText(0, 5, "-");
 	m_listCtrlStats.SetItemText(0, 6, (LPCTSTR)OutO);
 	m_listCtrlStats.SetItemText(0, 7, (LPCTSTR)PenO);
 	m_listCtrlStats.SetItemText(0, 8, (LPCTSTR)PostO);
 	m_listCtrlStats.SetItemText(0, 9, (LPCTSTR)TransO);
+	m_listCtrlStats.SetItemText(0, 10, "-");
 	m_listCtrlStats.SetItemText(0, 11, (LPCTSTR)OutD);
 	m_listCtrlStats.SetItemText(0, 12, (LPCTSTR)PenD);
 	m_listCtrlStats.SetItemText(0, 13, (LPCTSTR)PostD);
@@ -2115,13 +2124,13 @@ void CPlayerCardDlg::DisplayRating()
 	int amt = m_player.m_current_yr_salary;
 
 	if (m_player.m_team_paying_name != "")
-		str.Format("contract owned by: %s", m_player.m_team_paying_name);
+		str.Format("contract owned by: %s", (LPCTSTR)m_player.m_team_paying_name);
 	else str = "not under contract";
 
 	if (amt == 0) str = "not under contract";
 	if (amt == 0 && m_player.m_team_paying_name != "")
 	{
-		str.Format("rights owned by: %s", m_player.m_team_paying_name);
+		str.Format("rights owned by: %s",(LPCTSTR) m_player.m_team_paying_name);
 	}
 
 	m_edit_owner = str;
@@ -2155,27 +2164,26 @@ void CPlayerCardDlg::ListHighs()
 {
 	CPlayer m_player = avg.m_actual[m_player_index];
 	m_list_highs.DeleteAllItems();
-	CString string[32];
 	m_player.ListHighs(string);
 
 	int co = 0;
 	for (int i = 1; i <= 5; i++)
 	{
-		m_list_highs.InsertItem(i - 1, (LPCTSTR)string[co]);
+		m_list_highs.InsertItem(i - 1, string[co]);
 		co = co + 1;
 		for (int j = 1; j <= 4; j++)
 		{
-			m_list_highs.SetItemText(i - 1, j, (LPCTSTR)string[co]);
+			m_list_highs.SetItemText(i - 1, j, string[co]);
 			co = co + 1;
 		}
 	}
 
 	for (int i = 5; i <= 6; i++)
 	{
-		m_list_highs.InsertItem(i, (LPCTSTR)string[25 + (i - 5) * 3]);
-		m_list_highs.SetItemText(i, 1, (LPCTSTR)string[26 + (i - 5) * 3]);
-		m_list_highs.SetItemText(i, 2, (LPCTSTR)"-");
-		m_list_highs.SetItemText(i, 3, (LPCTSTR)string[27 + (i - 5) * 3]);
+		m_list_highs.InsertItem(i, string[25 + (i - 5) * 3]);
+		m_list_highs.SetItemText(i, 1, string[26 + (i - 5) * 3]);
+		m_list_highs.SetItemText(i, 2, "-");
+		m_list_highs.SetItemText(i, 3, string[27 + (i - 5) * 3]);
 	}
 
 

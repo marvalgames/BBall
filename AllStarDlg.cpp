@@ -793,7 +793,7 @@ void CAllStarDlg::OnDblclkListRookies(NMHDR* pNMHDR, LRESULT* pResult)
 	*pResult = 0;
 
 
-	*pResult = 0;
+	//*pResult = 0;
 }
 
 void CAllStarDlg::OnButtonAllstarselect()

@@ -28,6 +28,13 @@ CTransactionsDlg::CTransactionsDlg(CWnd* pParent /*=NULL*/)
 }
 
 
+CTransactionsDlg::~CTransactionsDlg()
+{
+
+}
+
+
+
 void CTransactionsDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
@@ -401,7 +408,7 @@ void CTransactionsDlg::ListTrade(int row, int index)
 			t = m_league_team_names[tm-1];
 			int o_t = tr1;
 			if(o_t == tm) o_t = tr2;
-			str.Format("%s round %s %s", y,r,t);
+			str.Format((LPCTSTR)"%s round %s %s", y,r,t);
 
 			if(o_t >= 1) other_team = "to " + m_league_team_names[o_t-1];
 

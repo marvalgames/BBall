@@ -59,6 +59,7 @@ public:
 	int m_current_year;
 	CString m_league;
 	CTransactionsDlg(CWnd* pParent = NULL);   // standard constructor
+	~CTransactionsDlg();   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(CTransactionsDlg)

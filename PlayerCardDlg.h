@@ -40,6 +40,7 @@ class CPlayerCardDlg : public CDialog
 {
 // Construction
 public:
+	CString string[33];
 	int m_data_slot;
 	bool m_extension_allowed;
 	int m_pl_index_start;
@@ -71,7 +72,7 @@ public:
 	CMyListCtrl	m_listctrlskill;
 	CMyListCtrl	m_listFuture;
 	CMyListCtrl	m_listCtrlStats;
-	CMyListCtrl	m_listCtrlShot;
+//	CMyListCtrl	m_listCtrlShot;
 	CMyListCtrl	m_listctrlstats;
 	CMyListCtrl	m_listCtrl;
 	CListBox	m_list_report;
@@ -122,6 +123,7 @@ private:
 
 public:
 	MyButton m_buttonPng;
+	CMyListCtrl m_listCtrlShot;
 };
 
 //{{AFX_INSERT_LOCATION}}
