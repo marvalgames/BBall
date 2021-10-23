@@ -41,7 +41,6 @@ public:
 	CMyComboBox	m_listTeams;
 	MyButton	m_buttonVisitor;
 	MyButton	m_buttonHome;
-	MyButton	m_button[2];
 	//}}AFX_DATA
 
 

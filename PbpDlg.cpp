@@ -33,8 +33,6 @@ void CPbpDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_CTRL_GAMES, m_listGames);
 	DDX_Control(pDX, IDC_COMBO_LIST_TEAMS, m_listTeams);
 	DDX_Control(pDX, IDC_LIST_SAVEDPBP, m_listPbp);
-	DDX_Control(pDX, IDC_BUTTON_PRINT, m_button[0]);
-	DDX_Control(pDX, IDOK, m_button[1]);
 	//}}AFX_DATA_MAP
 }
 
@@ -406,12 +404,12 @@ void CPbpDlg::InitControls()
     m_listGames.InsertColumn(5,"w-l");    
 
 
-    m_listGames.SetColumnWidth( 0, 46);
+    m_listGames.SetColumnWidth( 0, 36);
     m_listGames.SetColumnWidth( 1, 90);
-    m_listGames.SetColumnWidth( 2, 40);
+    m_listGames.SetColumnWidth( 2, 31);
     m_listGames.SetColumnWidth( 3, 90);
-    m_listGames.SetColumnWidth( 4, 40);
-    m_listGames.SetColumnWidth( 5, 40);
+    m_listGames.SetColumnWidth( 4, 31);
+    m_listGames.SetColumnWidth( 5, 33);
 }
 
 void CPbpDlg::OnClickListCtrlGames(NMHDR* pNMHDR, LRESULT* pResult) 

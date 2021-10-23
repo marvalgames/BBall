@@ -13,8 +13,6 @@
 #endif 
 
 #include "MyListCtrl.h"
-#include "MyButton.h"
-
 
 #if _MSC_VER > 1000
 #pragma once
@@ -42,8 +40,6 @@ public:
 	CListBox	m_list_awards;
 	CListBox	m_listDraft;
 	CMyListCtrl	m_listCtrl;
-	MyButton m_button[3];
-
 	//}}AFX_DATA
 
 

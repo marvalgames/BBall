@@ -7,7 +7,6 @@
 
 
 #include "MyListCtrl.h"
-#include "MyButton.h"
 
 
 //#ifndef PropSheet_h
@@ -32,7 +31,6 @@ public:
 	//{{AFX_DATA(CHistoryAwardsDlg)
 	enum { IDD = IDD_DIALOG_HISTORY_AWARDS };
 	CMyListCtrl	m_list_players;
-	MyButton m_button[17];
 	//}}AFX_DATA
 
 

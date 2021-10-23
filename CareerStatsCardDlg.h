@@ -8,7 +8,6 @@
 
 //#include "XListCtrl/XListCtrl.h"
 #include "MyListCtrl.h"
-#include "MyButton.h"
 
 
 #ifndef Player_h
@@ -34,7 +33,6 @@ public:
 	CListBox	m_listPosition;
 	CListBox	m_list_awards;
 	CMyListCtrl	m_listCtrl;
-	MyButton m_button[3];
 	//}}AFX_DATA
 
 
