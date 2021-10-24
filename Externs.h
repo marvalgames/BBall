@@ -45,4 +45,4 @@ static COLORREF LISTBOXCOLOR = RGB(64,64,64);
 static COLORREF DLGCOLOR = RGB(64,64,64);
 static COLORREF BK_COLOR = RGB(33, 158, 188);//list ctrl 
 static COLORREF TEXT_BK_COLOR = RGB(0, 0, 0);
-static CString USERFONT = "Verdana";
+static CString USERFONT = "Futura";

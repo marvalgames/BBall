@@ -415,7 +415,7 @@ void CLeagueTeamSchedule::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -438,11 +438,11 @@ void CLeagueTeamSchedule::InitControls()
 	m_listSchedule.DeleteColumn(4);
 	m_listSchedule.InsertColumn(4, "record");
 
-	m_listSchedule.SetColumnWidth(0, 78);
-	m_listSchedule.SetColumnWidth(1, 90);
-	m_listSchedule.SetColumnWidth(2, 50);
-	m_listSchedule.SetColumnWidth(3, 50);
-	m_listSchedule.SetColumnWidth(4, 50);
+	m_listSchedule.SetColumnWidth(0, 80);
+	m_listSchedule.SetColumnWidth(1, 120);
+	m_listSchedule.SetColumnWidth(2, 80);
+	m_listSchedule.SetColumnWidth(3, 65);
+	m_listSchedule.SetColumnWidth(4, 80);
 }
 
 void CLeagueTeamSchedule::OnDblclkListCtrlTeamSch(NMHDR* pNMHDR, LRESULT* pResult)

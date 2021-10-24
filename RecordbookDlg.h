@@ -12,6 +12,7 @@
 #endif 
 
 #include "MyListCtrl.h"
+#include "MyButton.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -36,6 +37,7 @@ public:
 	enum { IDD = IDD_DIALOG_RECORDBOOK };
 	CMyComboBox	m_combo_teams;
 	CMyListCtrl	m_list_records;
+	MyButton m_button[11];
 	//}}AFX_DATA
 
 

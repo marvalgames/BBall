@@ -39,6 +39,17 @@ void CRecordbookDlg::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CRecordbookDlg)
 	DDX_Control(pDX, IDC_COMBO_TEAMS, m_combo_teams);
 	DDX_Control(pDX, IDC_LIST_RECORDS, m_list_records);
+	DDX_Control(pDX, IDC_RADIO_PPG, m_button[0]);
+	DDX_Control(pDX, IDC_RADIO_RPG, m_button[1]);
+	DDX_Control(pDX, IDC_RADIO_APG, m_button[2]);
+	DDX_Control(pDX, IDC_RADIO_SPG, m_button[3]);
+	DDX_Control(pDX, IDC_RADIO_BPG, m_button[4]);
+	DDX_Control(pDX, IDC_RADIO_FGP, m_button[5]);
+	DDX_Control(pDX, IDC_RADIO_FTP, m_button[6]);
+	DDX_Control(pDX, IDC_RADIO_TGP, m_button[7]);
+	DDX_Control(pDX, IDC_RADIO_SEASON, m_button[8]);
+	DDX_Control(pDX, IDC_RADIO_CAREER, m_button[9]);
+	DDX_Control(pDX, IDOK, m_button[10]);
 	//}}AFX_DATA_MAP
 }
 
@@ -148,7 +159,7 @@ void CRecordbookDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 14;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -1149,8 +1160,8 @@ void CRecordbookDlg::SetHeaders()
 	m_list_records.DeleteColumn(3);
     m_list_records.InsertColumn(3,"avg");    
   
-    m_list_records.SetColumnWidth( 0, 90);
-    m_list_records.SetColumnWidth( 1, 90);
+    m_list_records.SetColumnWidth( 0, 180);
+    m_list_records.SetColumnWidth( 1, 120);
     m_list_records.SetColumnWidth( 2, 90);
     m_list_records.SetColumnWidth( 3, 90);
 	}
@@ -1169,8 +1180,8 @@ void CRecordbookDlg::SetHeaders()
 	m_list_records.DeleteColumn(3);
     m_list_records.InsertColumn(3,"total");    
   
-    m_list_records.SetColumnWidth( 0, 90);
-    m_list_records.SetColumnWidth( 1, 90);
+    m_list_records.SetColumnWidth( 0, 180);
+    m_list_records.SetColumnWidth( 1, 120);
     m_list_records.SetColumnWidth( 2, 90);
     m_list_records.SetColumnWidth( 3, 90);
 
@@ -1187,8 +1198,8 @@ void CRecordbookDlg::SetHeaders()
 	m_list_records.DeleteColumn(3);
     m_list_records.InsertColumn(3,"");    
   
-    m_list_records.SetColumnWidth( 0, 90);
-    m_list_records.SetColumnWidth( 1, 90);
+    m_list_records.SetColumnWidth( 0, 180);
+    m_list_records.SetColumnWidth( 1, 120);
     m_list_records.SetColumnWidth( 2, 90);
     m_list_records.SetColumnWidth( 3, 90);
 

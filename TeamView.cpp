@@ -1474,19 +1474,20 @@ void CTeamView::OpenTradeDlg()
 void CTeamView::OpenTransactionsDlg()
 {
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
-	CTransactionsDlg trans;
+	CTransactionsDlg* trans = new CTransactionsDlg;
 	//trans.m_league = pDoc->avg.m_settings.m_path + pDoc->avg.m_settings.m_league_name + ".tra";
-	trans.avg = pDoc->avg;
-	trans.m_default_team = pDoc->m_combo_team_index - 1;
-	trans.m_path = pDoc->avg.m_settings.m_path;
-	trans.m_league_name = pDoc->avg.m_settings.m_league_name;
+	trans->avg = pDoc->avg;
+	trans->m_default_team = pDoc->m_combo_team_index - 1;
+	trans->m_path = pDoc->avg.m_settings.m_path;
+	trans->m_league_name = pDoc->avg.m_settings.m_league_name;
 
 
 	for (int i = 0; i <= 32; i++)
 	{
-		trans.m_league_team_names[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
+		trans->m_league_team_names[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
 	}
-	trans.DoModal();
+	trans->DoModal();
+	delete trans;
 }
 
 void CTeamView::OpenTeamScheduleDlg()

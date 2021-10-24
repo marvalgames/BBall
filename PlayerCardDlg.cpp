@@ -1719,7 +1719,7 @@ void CPlayerCardDlg::ListSeasonStats()
 
 
 		CString string;
-		m_listctrlstats.InsertItem(yearsPro, m_stats.GetTeam());
+		m_listctrlstats.InsertItem(yearsPro, m_stats.m_team_paying_name);
 
 		string.Format("%d", s1);
 		m_listctrlstats.SetItemText(yearsPro, 1, string);

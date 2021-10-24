@@ -281,7 +281,7 @@ void CTransactionsDlg::InitControls()
 	LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 12;
+	lf.lfHeight = 15;
 	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
@@ -308,10 +308,10 @@ void CTransactionsDlg::InitControls()
 
 
 	m_listTrades.SetColumnWidth(0,100);
-	m_listTrades.SetColumnWidth(1,100);
-	m_listTrades.SetColumnWidth(2,120);
-	m_listTrades.SetColumnWidth(3,180);
-	m_listTrades.SetColumnWidth(4,100);
+	m_listTrades.SetColumnWidth(1,180);
+	m_listTrades.SetColumnWidth(2,100);
+	m_listTrades.SetColumnWidth(3,300);
+	m_listTrades.SetColumnWidth(4,0);
 
 
 	m_list_teams.AddString(m_league_name);
