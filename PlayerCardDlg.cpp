@@ -256,8 +256,10 @@ void CPlayerCardDlg::Player()
 
 	CString test1 = avg.m_settings.m_path + "Pictures\\" + na + ".png";
 	test1.MakeLower();
+	test1.Replace(_T("_"), _T(" "));
 	CString test2 = avg.m_settings.m_path + "Pictures\\" + na +  " Jr" + ".png";
 	test2.MakeLower();
+	test2.Replace(_T("_"), _T(" "));
 
 	CString img = test1;
 	img.MakeLower();

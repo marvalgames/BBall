@@ -620,7 +620,7 @@ void CBoxDlg::InitControls()
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
 	lf.lfHeight = 14;
-	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
+	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 	m_listBox.SetFont(&m_font);
 	m_listBox.SetBkColor(BK_COLOR);
@@ -655,22 +655,22 @@ void CBoxDlg::InitControls()
 //  m_listBox.InsertColumn(17,"true");    
 
   
-    m_listBox.SetColumnWidth( 0, 112);
-    m_listBox.SetColumnWidth( 1, 30);
-    m_listBox.SetColumnWidth( 2, 30);
-    m_listBox.SetColumnWidth( 3, 30);
-    m_listBox.SetColumnWidth( 4, 30);
-    m_listBox.SetColumnWidth( 5, 30);
-    m_listBox.SetColumnWidth( 6, 30);
-    m_listBox.SetColumnWidth( 7, 30);
-    m_listBox.SetColumnWidth( 8, 29);
-    m_listBox.SetColumnWidth( 9, 29);
-    m_listBox.SetColumnWidth( 10, 29);
-    m_listBox.SetColumnWidth( 11, 29);
-    m_listBox.SetColumnWidth( 12, 29);
-    m_listBox.SetColumnWidth( 13, 29);
-    m_listBox.SetColumnWidth( 14, 29);
-    m_listBox.SetColumnWidth( 15, 31);
+    m_listBox.SetColumnWidth( 0, 150);
+    m_listBox.SetColumnWidth( 1, 40);
+    m_listBox.SetColumnWidth( 2, 40);
+    m_listBox.SetColumnWidth( 3, 40);
+    m_listBox.SetColumnWidth( 4, 40);
+    m_listBox.SetColumnWidth( 5, 40);
+    m_listBox.SetColumnWidth( 6, 40);
+    m_listBox.SetColumnWidth( 7, 40);
+    m_listBox.SetColumnWidth( 8, 39);
+    m_listBox.SetColumnWidth( 9, 39);
+    m_listBox.SetColumnWidth( 10, 39);
+    m_listBox.SetColumnWidth( 11, 39);
+    m_listBox.SetColumnWidth( 12, 39);
+    m_listBox.SetColumnWidth( 13, 39);
+    m_listBox.SetColumnWidth( 14, 39);
+    m_listBox.SetColumnWidth( 15, 41);
 
 
 
@@ -692,12 +692,12 @@ void CBoxDlg::InitControls()
     m_listGames.InsertColumn(4,"pts");
     m_listGames.InsertColumn(5,"w-l"); 
 
-    m_listGames.SetColumnWidth( 0, 41);
-    m_listGames.SetColumnWidth( 1, 90);
-    m_listGames.SetColumnWidth( 2, 31);
-    m_listGames.SetColumnWidth( 3, 90);
-    m_listGames.SetColumnWidth( 4, 31);
-    m_listGames.SetColumnWidth( 5, 31);
+    m_listGames.SetColumnWidth( 0, 55);
+    m_listGames.SetColumnWidth( 1, 120);
+    m_listGames.SetColumnWidth( 2, 40);
+    m_listGames.SetColumnWidth( 3, 120);
+    m_listGames.SetColumnWidth( 4, 40);
+    m_listGames.SetColumnWidth( 5, 40);
 
 
 }
