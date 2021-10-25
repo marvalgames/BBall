@@ -6998,8 +6998,14 @@ void CEngine::SaveCurrentGameData()
 		int slot = m_playing_players_list[j];
 		CPlayer *m_playerStats = new CPlayer;
 
-		if(i==15) slot = 1441 + t1;
-		else if(i==30) slot = 1441 + t2;
+		if (i == 15)
+		{
+			slot = 1441 + t1;
+		}
+		else if (i == 30)
+		{
+			slot = 1441 + t2;
+		}
 		*m_playerStats = avg.m_actual[slot];
 
 		CString name = m_playerStats->GetName();

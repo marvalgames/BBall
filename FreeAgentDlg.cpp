@@ -407,7 +407,8 @@ void CFreeAgentDlg::InitListCtrl()
 	m_column_headers[11] = "status";
 	m_column_headers[12] = "from";
   
-
+	m_button_free_agency_period.SetFaceColor(BUTTONFACECOLOR2);
+	m_ok.SetFaceColor(BUTTONFACECOLOR2);
 
 	ListControl();
 	EnableOfferButton();

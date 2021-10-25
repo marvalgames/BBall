@@ -865,8 +865,14 @@ void CGameView::ListSimulatedStats()
 
 		if (Pos != "" && m_position != "" && Pos != m_position && (pointer <= 1440 || pointer > 1504)) continue;
 		if (Name == "") Pos = "";
-		if (Name == "" && pointer >= 1473 && pointer <= 1504) Name = avg.m_settings.m_leagueTeamNames[pointer - 1473] + " opponents";
-		else if (Name == "" && pointer >= 1441 && pointer <= 1472) Name = avg.m_settings.m_leagueTeamNames[pointer - 1441];
+		if (Name == "" && pointer >= 1473 && pointer <= 1504)
+		{
+			Name = avg.m_settings.m_leagueTeamNames[pointer - 1473] + " opponents";
+		}
+		else if (Name == "" && pointer >= 1441 && pointer <= 1472)
+		{
+			Name = avg.m_settings.m_leagueTeamNames[pointer - 1441];
+		}
 		else if (Name == "") continue;
 
 		bool ok = false;

@@ -77,6 +77,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CStaffDlg)
 	enum { IDD = IDD_DIALOG_STAFF };
+	MyButton m_button[2];
 	MyButton	m_radioScout;
 	MyButton	m_radioCoachScout;
 	MyButton	m_radioCoachGame;

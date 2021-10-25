@@ -34,6 +34,8 @@ void CStaffDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CStaffDlg)
 	DDX_Control(pDX, IDC_RADIO_SCOUT, m_radioScout);
+	DDX_Control(pDX, IDC_RADIO_COACH, m_button[0]);
+	DDX_Control(pDX, IDC_RADIO_GM, m_button[1]);
 	DDX_Control(pDX, IDC_RADIO_COACH_SCOUT, m_radioCoachScout);
 	DDX_Control(pDX, IDC_RADIO_COACH_GAME, m_radioCoachGame);
 	DDX_Control(pDX, IDCANCEL, m_button_cancel);
@@ -468,6 +470,8 @@ void CStaffDlg::InitListCtrl()
 	m_listTeams.SetCurSel(m_default_team);
 //	m_listCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT);
 	m_listCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
+
+	m_buttonFirings.SetFaceColor(BUTTONFACECOLOR2);
 
 }
 

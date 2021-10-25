@@ -5482,7 +5482,14 @@ void CDisk::WriteNewPlayerDataFile(CString file_name)
 	{
 
 		CPlayer m_player;
-		if( i<=1320 || i >=1441) m_player = avg.m_actual[i];
+		if (i <= 1320)
+		{
+			m_player = avg.m_actual[i];
+		}
+		else if (i >= 1441)
+		{
+			m_player = avg.m_actual[i];
+		}
 
 		buffer[0].Format("%4d", i);
 		CString Name = m_player.GetName(); 
@@ -6354,6 +6361,10 @@ void CDisk::ReadNewPlayerDataFile(CString file_name, CString dumb_file_name, CSt
 			}
 
 		if (m_player.m_games > 16 && m_player.m_min > 240)
+		{
+			avg.m_actual[i] = m_player;
+		}
+		if (i >= 1440 && i <= 1504)
 		{
 			avg.m_actual[i] = m_player;
 		}

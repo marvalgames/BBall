@@ -447,7 +447,8 @@ void CRookieDlg::InitListCtrl()
 {
 	m_button[0].SetFaceColor(BUTTONFACECOLOR2);
 	m_button[1].SetFaceColor(BUTTONFACECOLOR2);
-
+	m_button_lottery.SetFaceColor(BUTTONFACECOLOR2);
+	m_buttonDraft.SetFaceColor(BUTTONFACECOLOR2);
 
 	m_column_headers[0] = "pos";
 	m_column_headers[1] = "player";
@@ -472,14 +473,6 @@ void CRookieDlg::InitListCtrl()
 	m_column_headers[20] = "d-d";
 	m_column_headers[21] = "p-d";
 	m_column_headers[22] = "t-d";
-
-
-
-
-
-
-
-
 
 
 	LOGFONT lf;                        // Used to create the CFont.
