@@ -311,7 +311,6 @@ void CCareer::AdjustScoring()
 		current_team = (i-1)/30;
 		if(current_team > (m_numberteams - 1)) current_team = IntRandom(m_numberteams) - 1;		
 
-//		dlgProgress.m_progress.SetPos(i/29+1);
 		CString name = m_actual[i].GetName();
 		if(name == "") continue;
 		CString pos = m_actual[i].GetPos();

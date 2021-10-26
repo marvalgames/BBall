@@ -6919,7 +6919,11 @@ void CEngine::SaveCurrentGameData()
 	}
 
 	int len = buffer.GetLength();
-	f.Write(buffer, len);
+	if (mo >= 0 && da >= 0 && ga >= 0 && mo <= 12 && da <= 30 && ga <= 16)
+	{
+		f.Write(buffer, len);
+	}
+
 
 
 

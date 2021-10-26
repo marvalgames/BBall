@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\Win32Debug\jumpshot.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\allstar.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\allstats.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\budgetsheet.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\cityprofiles.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\coach.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\coachdefense.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\coachtimeout.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\draftpreview.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\exhibition.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\fantasydraft.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\features.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\freeagency.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\gameplan.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\gametype.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\historyawards.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\historycareer.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\historydrafts.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\historyhof.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\historyrecordbook.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\index.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\leagueleaders.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\negotiate.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\offercontract.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\play.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\playercard.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\progresscamp.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\progressend.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\progressoverview.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\progressproposals.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\proposetrades.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\records.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\scheduleoverview.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\search.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\seasonawards.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\setupdelete.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\setupnew.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\setupopen.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\setupsave.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\setupsettings.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\staffprofiles.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\staffs.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\standingsoverview.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teambudget.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamdraft.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamfa.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamhistory.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamlineup.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamrecords.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamresults.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamroster.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamschedules.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamstaff.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamtrade.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamtransactions.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\teamyearlyresults.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolsauto.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolscityeditor.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolsdraftfiles.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolshtmlexport.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolsimport.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolsplayeredit.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolssavedbox.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolssavedpbp.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\toolsscheduler.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\tradingblock.htm</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\OneDrive\JSB\Projects\JSB 5.0 Builds\BBall - Copy\html\transactions.htm</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
