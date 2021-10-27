@@ -999,10 +999,6 @@ void CCampDlg::AdjustData()
 	CDisk* disk = new CDisk;
 	CString avg_file_name = m_path + m_leagueName + ".avg";
 	disk->GetSavedAverages(avg_file_name);
-	
-
-
-
 
 	tMin = 0; tFgm = 0; tFga = 0; tFtm = 0; tFta = 0; tTfgm = 0; tTfga = 0; tOreb = 0; treb = 0; tAst = 0; tStl = 0; tTo = 0; tBlk = 0; tPf = 0; tTru = 0;
 	
@@ -1011,7 +1007,6 @@ void CCampDlg::AdjustData()
 	double avgG = 0, avgMin = 0, hiG = 0, count = 0;
 	double t_fgm = 0, t_fga = 0, t_ftm = 0, t_fta = 0, t_tfgm = 0, t_tfga = 0;
 	int players = 1440;
-	//double avgMinPlayer = 0;
 
 	CPlayer* m_player = new CPlayer;
 
@@ -1128,9 +1123,7 @@ void CCampDlg::AdjustData()
 		ftPct = double(ftm)/double(fta) * avgFtPct;
 		if(tfga == 0) tfgPct = 0; else
 		tfgPct = double(tfgm)/double(tfga) * avgTfgPct;
-	    if(tfgPct>.45) tfgPct = double(450 + avg.IntRandom(10*int(pot))) / 1000.;
-
-
+	    if(tfgPct>.400) tfgPct = double(400. + avg.IntRandom(10*int(pot))) / 1000.;
 
 		g = int(double(g*avgGameFactor)) + avg.IntRandom(2) - 1;
 		if(g > 82) g = 82;
@@ -1138,7 +1131,7 @@ void CCampDlg::AdjustData()
 
         if(hasName == true)
 		{
-			double plus_minus_adjustment = diskAvgMin - avgMin;
+			double plus_minus_adjustment = (diskAvgMin - avgMin) / 8;
 			double mpg = (double)min / (double)g;
 			avgMinFactor = (mpg + plus_minus_adjustment) / mpg;
 			avgMinFactor = avgMinFactor * avgGameFactor;

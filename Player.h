@@ -1378,30 +1378,30 @@ void SetTeamGames(int g)
 
 void SetTrueRating(double factor, bool simple)
 {
-	
+
 	int	fgm = m_fgm;
 	int	fga = m_fga;
 	int	reb = m_reb;
 
-  	double gun = double(fgm) + double(m_tfgm) - ((double(fga) - double(fgm)) * 2/3);
-  	gun = gun + double(m_ftm) - (double(m_fta) / 2); 
-	gun = gun + ( double(m_fta) - double(m_ftm)) * 1/6;
+	double gun = double(fgm) + double(m_tfgm) - ((double(fga) - double(fgm)) * 2 / 3);
+	gun = gun + double(m_ftm) - (double(m_fta) / 2);
+	gun = gun + (double(m_fta) - double(m_ftm)) * 1 / 6;
 
-  	double skill = double(m_oreb) * 2/3 + (double(reb) - double(m_oreb)) * 1/3;
-	skill = skill + double(m_stl) -  double(m_to) + double(m_blk);
-  	skill = skill + double(m_ast) * 4 / 5;
+	double skill = double(m_oreb) * 2 / 3 + (double(reb) - double(m_oreb)) * 1 / 3;
+	skill = skill + double(m_stl) - double(m_to) + double(m_blk);
+	skill = skill + double(m_ast) * 4 / 5;
 
-	double tru = gun*3/2 + skill*3/4;
-	
+	double tru = gun * 3 / 2 + skill * 3 / 4;
+
 	int t_mi = m_min;
-	if(t_mi == 0) t_mi = 1;
+	if (t_mi == 0) t_mi = 1;
 	gun = gun / t_mi * 48;
- 	skill = skill / t_mi * 48;
+	skill = skill / t_mi * 48;
 
-	
-	
 
-	if(m_games == 0)
+
+
+	if (m_games == 0)
 		tru = 0;
 	else
 	{
@@ -1409,86 +1409,116 @@ void SetTrueRating(double factor, bool simple)
 		double games = double(m_games);
 		tru = tru / games;
 		tru = tru - factor / 48 * min;
-		tru = (pow(100 + tru,13.0)) / ( pow(100,13.0) + pow(100 + tru,13.0));
+		tru = (pow(100 + tru, 13.0)) / (pow(100, 13.0) + pow(100 + tru, 13.0));
 		tru = tru * games - games / 2;
-	}	
-	
+	}
 
 
 
 
-	if(m_min > 0) m_trueRating = tru;
+
+	if (m_min > 0) m_trueRating = tru;
 
 	fgm = m_sim_fgm + m_sim_tfgm;
 	fga = m_sim_fga + m_sim_tfga;
 	reb = m_sim_reb + m_sim_oreb;
 
-  	gun = double(fgm) + double(m_sim_tfgm) - ((double(fga) - double(fgm)) * 2/3);
-  	gun = gun + double(m_sim_ftm) - (double(m_sim_fta) / 2); 
-	gun = gun + ( double(m_sim_fta) - double(m_sim_ftm)) * 1/6;
+	gun = double(fgm) + double(m_sim_tfgm) - ((double(fga) - double(fgm)) * 2 / 3);
+	gun = gun + double(m_sim_ftm) - (double(m_sim_fta) / 2);
+	gun = gun + (double(m_sim_fta) - double(m_sim_ftm)) * 1 / 6;
 
-  	skill = double(m_sim_oreb) * 2/3 + (double(reb) - double(m_sim_oreb)) * 1/3;
-	skill = skill + double(m_sim_stl) -  double(m_sim_to) + double(m_sim_blk);
-  	skill = skill + double(m_sim_ast) * 4 / 5;
+	skill = double(m_sim_oreb) * 2 / 3 + (double(reb) - double(m_sim_oreb)) * 1 / 3;
+	skill = skill + double(m_sim_stl) - double(m_sim_to) + double(m_sim_blk);
+	skill = skill + double(m_sim_ast) * 4 / 5;
 
-	tru = gun*3/2 + skill*3/4;
+	tru = gun * 3 / 2 + skill * 3 / 4;
 
 	t_mi = m_sim_min;
-	if(t_mi == 0) t_mi = 1;
+	if (t_mi == 0) t_mi = 1;
 	gun = gun / t_mi * 48;
- 	skill = skill / t_mi * 48;
+	skill = skill / t_mi * 48;
 
-	if(m_sim_games == 0)
+	if (m_sim_games == 0)
 		tru = 0;
 	else
 	{
-  		double min = double(m_sim_min) / double(m_sim_games);
+		double min = double(m_sim_min) / double(m_sim_games);
 		double games = double(m_sim_games);
-		if(simple == false)//simple is tru doesnt do per minute here - good for awards!!
+		if (simple == false)//simple is tru doesnt do per minute here - good for awards!!
 		{
 			tru = tru / games;
 			tru = tru - factor / 48 * min;
-			tru = (pow(100 + tru,13.0)) / ( pow(100,13.0) + pow(100 + tru,13.0) );
+			tru = (pow(100 + tru, 13.0)) / (pow(100, 13.0) + pow(100 + tru, 13.0));
 			tru = tru * games - games / 2;
 		}
 	}
-	if(m_sim_min > 0) m_sim_trueRating = tru;
+	if (m_sim_min > 0) m_sim_trueRating = tru;
 
-	fgm = m_po_fgm + m_po_tfgm; 
+	fgm = m_po_fgm + m_po_tfgm;
 	fga = m_po_fga + m_po_tfga;
 	reb = m_po_reb + m_po_oreb;
 
-  	gun = double(fgm) + double(m_po_tfgm) - ((double(fga) - double(fgm)) * 2/3);
-  	gun = gun + double(m_po_ftm) - (double(m_po_fta) / 2); 
-	gun = gun + ( double(m_po_fta) - double(m_po_ftm)) * 1/6;
+	gun = double(fgm) + double(m_po_tfgm) - ((double(fga) - double(fgm)) * 2 / 3);
+	gun = gun + double(m_po_ftm) - (double(m_po_fta) / 2);
+	gun = gun + (double(m_po_fta) - double(m_po_ftm)) * 1 / 6;
 
-  	skill = double(m_po_oreb) * 2/3 + (double(reb) - double(m_po_oreb)) * 1/3;
-	skill = skill + double(m_po_stl) -  double(m_po_to) + double(m_po_blk);
-  	skill = skill + double(m_po_ast) * 4 / 5;
+	skill = double(m_po_oreb) * 2 / 3 + (double(reb) - double(m_po_oreb)) * 1 / 3;
+	skill = skill + double(m_po_stl) - double(m_po_to) + double(m_po_blk);
+	skill = skill + double(m_po_ast) * 4 / 5;
 
-	tru = gun*3/2 + skill*3/4;
+	tru = gun * 3 / 2 + skill * 3 / 4;
 
 	t_mi = m_po_min;
-	if(t_mi == 0) t_mi = 1;
+	if (t_mi == 0) t_mi = 1;
 	gun = gun / t_mi * 48;
- 	skill = skill / t_mi * 48;
+	skill = skill / t_mi * 48;
 
-	if(m_po_games == 0)
-	
+	if (m_po_games == 0)
+
 		tru = 0;
-	
+
 	else
 	{
-  		double min = double(m_po_min) / double(m_po_games);
+		double min = double(m_po_min) / double(m_po_games);
 		double games = double(m_po_games);
 		tru = tru / games;
 		tru = tru - factor / 48 * min;
-		tru = (pow(100 + tru,13.0)) / ( pow(100,13.0) + pow(100 + tru,13.0) );
+		tru = (pow(100 + tru, 13.0)) / (pow(100, 13.0) + pow(100 + tru, 13.0));
 		tru = tru * games - games / 2;
 	}
-	if(m_po_min > 0) 
+	if (m_po_min > 0)
 		m_po_trueRating = tru;
 
+}
+
+double GetSimTrueSimplePer48()
+{
+
+	int fgm = m_sim_fgm + m_sim_tfgm;
+	int fga = m_sim_fga + m_sim_tfga;
+	int reb = m_sim_reb + m_sim_oreb;
+
+	double gun = double(fgm) + double(m_sim_tfgm) - ((double(fga) - double(fgm)) * 2 / 3);
+	gun = gun + double(m_sim_ftm) - (double(m_sim_fta) / 2);
+	gun = gun + (double(m_sim_fta) - double(m_sim_ftm)) * 1 / 6;
+
+	double skill = double(m_sim_oreb) * 2 / 3 + (double(reb) - double(m_sim_oreb)) * 1 / 3;
+	skill = skill + double(m_sim_stl) - double(m_sim_to) + double(m_sim_blk);
+	skill = skill + double(m_sim_ast) * 4 / 5;
+
+	double tru = gun * 3 / 2 + skill * 3 / 4;
+
+	if (m_sim_min == 0) m_sim_min = 1;
+
+	if (m_sim_games == 0)
+		tru = 0;
+	else
+	{
+		tru = tru / m_sim_min * 48;
+	}
+
+
+	return tru;
 }
 
 void SetAdjTrueRatingSimple(int fgm, int fga, int tgm, int tga, int ftm, int fta, int orb, int reb, int ast, int stl, int to, int blk, int scoring[6], int shooting[6], int rebounding[6], int passing[6], int defense[6])

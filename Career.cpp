@@ -280,20 +280,7 @@ void CCareer::AdjustScoring()
 
 		avgG = avgG + (double)g;
 		avgMin = avgMin + double(min);
-		/*avgFgm = avgFgm + double(fgm);
-		avgFga = avgFga + double(fga);
-		avgFtm = avgFtm + double(ftm);
-		avgFta = avgFta + double(fta);
-		avgTfgm= avgTfgm+ double(tgm);
-		avgTfga= avgTfga+ double(tga);
-		avgOreb= avgOreb+ double(orb);
-		avgDreb= avgDreb+ double(drb) + double(orb);
-		avgAst = avgAst + double(ast);
-		avgStl = avgStl + double(stl);
-		avgTo  = avgTo  + double(to );
-		avgBlk = avgBlk + double(blk);
-		avgPf  = avgPf  + double(pf );*/
-
+		
 		}
 
 	}
@@ -394,7 +381,7 @@ void CCareer::AdjustScoring()
 		double coach_effect = 0;
 		
 		int intangible = m_actual[i].m_effort;
-		double factor = SetImprovementVariable(yrs_to_prime, 1, pt1, intangible);
+		double factor = SetImprovementVariable(yrs_to_prime, .75, pt1, intangible);//from 1 for 2ga and 2gp only
 		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
 		factor = 1 + (factor - 1)*(1.0);
 		if(factor >= 1)
@@ -404,7 +391,7 @@ void CCareer::AdjustScoring()
 		factor = 1 + coach_effect;
 		fga = int(double(fga)*factor);
 		
-		factor = SetImprovementVariable(yrs_to_prime, 2, pt1, intangible);
+		factor = SetImprovementVariable(yrs_to_prime, 1.5, pt1, intangible);
 		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
 		if(factor > 1.125) factor = 9/8;
 		else if(factor < 7/8) factor = 7/8;
@@ -749,7 +736,10 @@ void CCareer::AdjustScoring()
 
 		m_actual[i].SetTransDef(fd);
 		m_actual[i].SetTransDef(fd);
-		
+
+
+
+
 		m_actual[i].SetTrueRatingSimple(2);
 		double after = m_actual[i].GetTrueRatingSimple();
 		
@@ -757,6 +747,9 @@ void CCareer::AdjustScoring()
 			
 
 		double tru48 = after / (double)m_actual[i].m_min * 48;
+		double sim48 = m_actual[i].GetSimTrueSimplePer48();
+
+
 
 		//mpg increase based on improving
 		double min_adj = 1;
@@ -770,11 +763,18 @@ void CCareer::AdjustScoring()
 		//min = int(double(min)*min_adj);
 		double prev_mpg = double(min)/double(g);
 		
-
-		mpg = tru48*3 - 8;
-		if (mpg >= 40)
+		if (sim48 > tru48)
 		{
-			mpg = 40;
+			mpg = sim48 * 3 - 8;
+		}
+		else
+		{
+			mpg = tru48 * 3 - 8;
+		}
+
+		if (mpg >= 42)
+		{
+			mpg = 42;
 		}
 		else if (mpg < 6)
 		{
@@ -869,16 +869,6 @@ void CCareer::AdjustScoring()
 	tMin = tMin / tG;//test
 	tMin = avgMin / tMin;
 	tMin = 1;
-/*	tFga = avgFga / tFga;
-	tFta = avgFta / tFta;
-	tTfga = avgTfga / tTfga;
-	tOreb = avgOreb / tOreb;
-	tDreb = avgDreb / tDreb;
-	tAst  = avgAst / tAst;
-	tStl  = avgStl / tStl;
-	tTo   = avgTo / tTo;
-	tBlk  = avgBlk / tBlk;
-	tPf   = avgPf / tPf;*/
 
 
 	double fgPct = 0, ftPct = 0, tfgPct = 0;
@@ -940,11 +930,15 @@ double CCareer::SetImprovementVariable(int yrs_to_prime, double adj, double pot,
 //	if(yrs_to_prime < 0) adj = adj*2./3.;
 //	if(yrs_to_prime < 0) adj = adj*12./3.;
 	if(yrs_to_prime < 0) adj = adj*12.;
-	else if(yrs_to_prime > 0) adj = adj*2./3.;//lower adj is better for improving/more decline
+	else if (yrs_to_prime > 0)
+	{
+		adj = adj * 2. / 3.;//lower adj is better for improving/more decline
+	}
 
 	double major_change = Random(72);
 	double temp_before = ((double)intangible+1.) / 4.;
 	double temp_after = (7.-(double)intangible) / 4.;
+
 	if(major_change <= (temp_before*1.) && yrs_to_prime > 0)
 		adj = adj * 1/4;
 	else if(major_change <= (temp_before*13) && yrs_to_prime > 0)

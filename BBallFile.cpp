@@ -965,5 +965,5 @@ void CBBallFile::ResetSeasonFiles(CString file_name)
 		//create stats files if necessary
 		CreateBlankFile(file_name + ".trn", 64000);
 		CreateBlankFile(file_name + ".bud", 110000);
-		CreateHugeBlankFile(file_name + ".sco", 16);
+		CreateHugeBlankFile(file_name + ".sco", 32);
 }

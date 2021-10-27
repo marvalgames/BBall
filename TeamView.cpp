@@ -1429,18 +1429,19 @@ void CTeamView::OpenDepthChart()
 void CTeamView::OpenRecords()
 {
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
-	CAllTimeDlg all;
+	CAllTimeDlg* all = new CAllTimeDlg;
 	for (int i = 0; i <= 31; i++)
 	{
-		all.m_leagueTeamNames[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
+		all->m_leagueTeamNames[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
 	}
 
-	all.m_leagueName = pDoc->avg.m_settings.m_league_name;
-	all.high = pDoc->m_recordbook;
+	all->m_leagueName = pDoc->avg.m_settings.m_league_name;
+	all->high = pDoc->m_recordbook;
 	int tm = pDoc->m_combo_team_index;
 	if (tm < 0) tm = 0;
-	all.m_default_team = tm;
-	all.DoModal();
+	all->m_default_team = tm;
+	all->DoModal();
+	delete all;
 
 }
 
@@ -1448,17 +1449,18 @@ void CTeamView::OpenTeamHistory()
 {
 
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
-	CHistoryTeamDlg team;
-	team.m_default_team = pDoc->m_combo_team_index - 1;
-	if (team.m_default_team < 0) team.m_default_team = 0;
+	CHistoryTeamDlg* team = new CHistoryTeamDlg;
+	team->m_default_team = pDoc->m_combo_team_index - 1;
+	if (team->m_default_team < 0) team->m_default_team = 0;
 
 	for (int i = 0; i <= 32; i++)
 	{
-		team.m_leagueTeamNames[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
+		team->m_leagueTeamNames[i] = pDoc->avg.m_settings.m_leagueTeamNames[i];
 	}
-	team.m_path = pDoc->avg.m_settings.m_path;
-	team.m_leagueName = pDoc->avg.m_settings.m_league_name;
-	team.DoModal();
+	team->m_path = pDoc->avg.m_settings.m_path;
+	team->m_leagueName = pDoc->avg.m_settings.m_league_name;
+	team->DoModal();
+	delete team;
 }
 
 void CTeamView::OpenTradeDlg()

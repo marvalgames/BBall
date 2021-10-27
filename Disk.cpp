@@ -2397,9 +2397,9 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	{
 		p[j] = FindDataForRookie(pos, elig, m_rookies, j);
 	}
-	int age = 19 + IntRandom(4);
-	if(age == 23) age = 18 + IntRandom(6);
-	if(age == 23) age = 17 + IntRandom(8);
+	int age = 18 + IntRandom(4);
+	if(age == 22) age = 18 + IntRandom(6);
+	if(age == 22) age = 17 + IntRandom(8);
 	int tmp_age = age;
 	if(tmp_age > 23) tmp_age = 23;
 
@@ -5761,7 +5761,6 @@ void CDisk::ReadNewPlayerDataFile(CString file_name, CString dumb_file_name, CSt
 	int player = 0;
 	for(int i = 0; i<=1600; i++)
 	{
-
 		CPlayer m_player;
 		file.ReadString(str);
 		str.TrimRight();
@@ -6368,6 +6367,8 @@ void CDisk::ReadNewPlayerDataFile(CString file_name, CString dumb_file_name, CSt
 		{
 			avg.m_actual[i] = m_player;
 		}
+
+
 	}
 	
 	file.Close();
