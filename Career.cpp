@@ -280,7 +280,7 @@ void CCareer::AdjustScoring()
 
 		avgG = avgG + (double)g;
 		avgMin = avgMin + double(min);
-		avgFgm = avgFgm + double(fgm);
+		/*avgFgm = avgFgm + double(fgm);
 		avgFga = avgFga + double(fga);
 		avgFtm = avgFtm + double(ftm);
 		avgFta = avgFta + double(fta);
@@ -292,7 +292,7 @@ void CCareer::AdjustScoring()
 		avgStl = avgStl + double(stl);
 		avgTo  = avgTo  + double(to );
 		avgBlk = avgBlk + double(blk);
-		avgPf  = avgPf  + double(pf );
+		avgPf  = avgPf  + double(pf );*/
 
 		}
 
@@ -772,10 +772,16 @@ void CCareer::AdjustScoring()
 		
 
 		mpg = tru48*3 - 8;
-		if(mpg >= 40) mpg = 40;
-		else if(mpg < 6) mpg = 6;
+		if (mpg >= 40)
+		{
+			mpg = 40;
+		}
+		else if (mpg < 6)
+		{
+			mpg = 6;
+		}
 
-		if(yrs_to_prime < 0 && mpg > prev_mpg) 
+		if(yrs_to_prime < -1 && mpg > prev_mpg) 
 		{
 				mpg = prev_mpg;// if past prime and minutes based on new tru went up then keep minutes same (so steve nash doesnt increase his minutes after prime)
 				if(mpg < 6) mpg = 6;

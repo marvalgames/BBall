@@ -242,7 +242,7 @@ buffer.Format("%10.2f%10.2f%10.2f%10.2f%10.2f%10.2f%10.2f%10.2f%10.2f%10.2f%10.2
 
 
 
-file.Write(buffer, 255);
+file.Write(buffer, 512);
 
 
 file.Close();

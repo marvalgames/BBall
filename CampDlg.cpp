@@ -1011,6 +1011,7 @@ void CCampDlg::AdjustData()
 	double avgG = 0, avgMin = 0, hiG = 0, count = 0;
 	double t_fgm = 0, t_fga = 0, t_ftm = 0, t_fta = 0, t_tfgm = 0, t_tfga = 0;
 	int players = 1440;
+	//double avgMinPlayer = 0;
 
 	CPlayer* m_player = new CPlayer;
 
@@ -1073,8 +1074,8 @@ void CCampDlg::AdjustData()
 	double t_g = avgG;
 	avgG = (double)t_g / (double)count;
 
-	//avgMin = double(tMin) / double(t_g); //? put back
-	avgMin = t_min_players_on_roster / t_g_players_on_roster;
+	avgMin = double(tMin) / double(t_g); //? put back
+	double avgMinOld = t_min_players_on_roster / t_g_players_on_roster;
 
 	
 	double avgFgPct = old_fgp / (t_fgm / t_fga * 100);
@@ -1094,12 +1095,13 @@ void CCampDlg::AdjustData()
 	tBlk  = disk->avg.m_avg_blk[0] / (tBlk /tMin*48);
 	tPf   = disk->avg.m_avg_pf[0] / (tPf  /tMin*48);
 
-	avgMin = disk->avg.m_avg_min[0] / avgMin;
+	double diskAvgMin = disk->avg.m_avg_min[0];
+	double avgMinFactor = diskAvgMin / avgMin;
 
 	delete disk;
 
 	//avgMin = 1;//temp
-	double orig_avg_min = avgMin;
+	double orig_avg_min = avgMinFactor;
 	double fgPct = 0, ftPct = 0, tfgPct = 0;
 	for(int i=1; i<=players; i++)
 	{
@@ -1133,26 +1135,29 @@ void CCampDlg::AdjustData()
 		g = int(double(g*avgGameFactor)) + avg.IntRandom(2) - 1;
 		if(g > 82) g = 82;
 
-		avgMin = 	orig_avg_min * avgGameFactor;
 
         if(hasName == true)
 		{
-			min = int(min*avgMin) + avg.IntRandom(2) - 1;
+			double plus_minus_adjustment = diskAvgMin - avgMin;
+			double mpg = (double)min / (double)g;
+			avgMinFactor = (mpg + plus_minus_adjustment) / mpg;
+			avgMinFactor = avgMinFactor * avgGameFactor;
+			min = int(min*avgMinFactor) + avg.IntRandom(2);
 		}
 
-        if(hasName == true) fga = int((double)fga*tFga*avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) fta = int((double)fta*tFta*avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) tfga = int((double)tfga*tTfga*avgMin) + avg.IntRandom(2) - 1;
+        if(hasName == true) fga = int((double)fga*tFga*avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) fta = int((double)fta*tFta*avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) tfga = int((double)tfga*tTfga*avgMinFactor) + avg.IntRandom(2) - 1;
         if(hasName == true) fgm = int(fgPct*(double)fga) + avg.IntRandom(2) - 1;
         if(hasName == true) ftm = int(ftPct*(double)fta) + avg.IntRandom(2) - 1;
         if(hasName == true) tfgm = int(tfgPct*(double)tfga) + avg.IntRandom(2) - 1;
-        if(hasName == true) oreb = int((double)oreb*tOreb*avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) reb = int((double)reb*treb*avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) ast = int((double)ast *tAst *avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) stl = int((double)stl *tStl *avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) to  = int((double)to  *tTo  *avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) blk = int((double)blk *tBlk *avgMin) + avg.IntRandom(2) - 1;
-        if(hasName == true) pf  = int((double)pf  *tPf *avgMin ) + avg.IntRandom(2) - 1;
+        if(hasName == true) oreb = int((double)oreb*tOreb*avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) reb = int((double)reb*treb*avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) ast = int((double)ast *tAst *avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) stl = int((double)stl *tStl *avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) to  = int((double)to  *tTo  *avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) blk = int((double)blk *tBlk *avgMinFactor) + avg.IntRandom(2) - 1;
+        if(hasName == true) pf  = int((double)pf  *tPf *avgMinFactor) + avg.IntRandom(2) - 1;
 
 		if(tfga <= 2 && t_fgm >= 1) tfgm = 0;
 

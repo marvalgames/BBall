@@ -354,7 +354,7 @@ void CGameView::OnShowWindow(BOOL bShow, UINT nStatus)
 
 		if (avg.m_settings.m_checkCareer == TRUE)
 		{
-			GetDlgItem(IDC_RADIO_ACTUAL)->ShowWindow(FALSE);
+			//GetDlgItem(IDC_RADIO_ACTUAL)->ShowWindow(FALSE);
 		}
 		else
 		{
