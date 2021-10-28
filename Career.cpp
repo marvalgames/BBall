@@ -308,7 +308,8 @@ void CCareer::AdjustScoring()
 		else if(pos == " C") po = 5;
 		int g = m_actual[i].GetGames();
 		int min = m_actual[i].GetMin();
-		int orig_min = m_actual[i].GetMin();
+		int orig_min = min;
+		int orig_g = g;
 		double mpg = double(min)/double(g);
 	    int orb = m_actual[i].GetOreb();
 		int fga = m_actual[i].GetFga() - m_actual[i].GetTfga();
@@ -347,6 +348,7 @@ void CCareer::AdjustScoring()
 		int pf = m_actual[i].GetPf();
 
 		double before = m_actual[i].GetTrueRatingSimple();
+		double beforeTru48  = m_actual[i].GetTrueRatingSimple() / orig_min * 48;
 
 		//temp stuff
 		int prime = PrimeAge[i];
@@ -381,7 +383,7 @@ void CCareer::AdjustScoring()
 		double coach_effect = 0;
 		
 		int intangible = m_actual[i].m_effort;
-		double factor = SetImprovementVariable(yrs_to_prime, .75, pt1, intangible);//from 1 for 2ga and 2gp only
+		double factor = SetImprovementVariable(yrs_to_prime, 1, pt1, intangible);//from 1 for 2ga and 2gp only
 		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
 		factor = 1 + (factor - 1)*(1.0);
 		if(factor >= 1)
@@ -391,7 +393,7 @@ void CCareer::AdjustScoring()
 		factor = 1 + coach_effect;
 		fga = int(double(fga)*factor);
 		
-		factor = SetImprovementVariable(yrs_to_prime, 1.5, pt1, intangible);
+		factor = SetImprovementVariable(yrs_to_prime, 2, pt1, intangible);
 		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
 		if(factor > 1.125) factor = 9/8;
 		else if(factor < 7/8) factor = 7/8;
@@ -747,7 +749,8 @@ void CCareer::AdjustScoring()
 			
 
 		double tru48 = after / (double)m_actual[i].m_min * 48;
-		double sim48 = m_actual[i].GetSimTrueSimplePer48();
+		double sim48 = m_actual[i].GetSimTrueSimple(true);
+		double sim = m_actual[i].GetSimTrueSimple(false);
 
 
 
@@ -763,23 +766,30 @@ void CCareer::AdjustScoring()
 		//min = int(double(min)*min_adj);
 		double prev_mpg = double(min)/double(g);
 		
-		if (sim48 > tru48)
+		if (sim48 > tru48 && sim > after)//simmed stats count > career adjusted 
 		{
-			mpg = sim48 * 3 - 8;
+			mpg = sim48 * 2 - 8;
+			if (mpg < (orig_min / orig_g))
+			{
+				mpg = (orig_min / orig_g);
+			}
 		}
 		else
 		{
-			mpg = tru48 * 3 - 8;
+			mpg = tru48 * 2 - 8;
 		}
-
-		if (mpg >= 42)
+		if (mpg > 45)
 		{
-			mpg = 42;
+			double f = sim48;
 		}
-		else if (mpg < 6)
-		{
-			mpg = 6;
-		}
+		//if (mpg >= 42)
+		//{
+		//	mpg = 42;
+		//}
+		//else if (mpg < 6)
+		//{
+		//	mpg = 6;
+		//}
 
 		if(yrs_to_prime < -1 && mpg > prev_mpg) 
 		{

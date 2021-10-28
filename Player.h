@@ -1491,7 +1491,7 @@ void SetTrueRating(double factor, bool simple)
 
 }
 
-double GetSimTrueSimplePer48()
+double GetSimTrueSimple(bool per48)
 {
 
 	int fgm = m_sim_fgm + m_sim_tfgm;
@@ -1512,11 +1512,10 @@ double GetSimTrueSimplePer48()
 
 	if (m_sim_games == 0)
 		tru = 0;
-	else
+	else if (per48)
 	{
 		tru = tru / m_sim_min * 48;
 	}
-
 
 	return tru;
 }

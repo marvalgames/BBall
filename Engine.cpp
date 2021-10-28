@@ -3004,9 +3004,9 @@ int CEngine::BallHandler(int ballHandler, int m_possesion, int Lineup[3][6], BOO
 
 
 		if (m_homeCourt == TRUE)
-			FoulsDrawn = FoulsDrawn + double(m_possesion * 2 - 3) * m_hca;
+			FoulsDrawn = FoulsDrawn + double(m_possesion * 2. - 3) * m_hca;
 		if (m_homeCourt == TRUE)
-			To = To - double(m_possesion * 2 - 3) * m_hca;
+			To = To - double(m_possesion * 2. - 3) * m_hca;
 
 		double factor = m_playerRatings.GetGameAdjustedTfgaPer48Min() / attempts * 1;
 		if (forced3 == true)//THREE AUTO
@@ -3031,7 +3031,7 @@ int CEngine::BallHandler(int ballHandler, int m_possesion, int Lineup[3][6], BOO
 		if (typeShot == 5)
 		{
 			double To = m_playerRatings.GetGameAdjustedToPer48Min();
-			if (m_homeCourt == TRUE)	To = To - double(m_possesion * 2 - 3) * m_hca;
+			if (m_homeCourt == TRUE)	To = To - double(m_possesion * 2. - 3) * m_hca;
 			n = avg.m_actual[player].GetGameCoachTfgaPer48Min();
 			temp = avg.m_actual[player].GetGameTfgaPer48Min() * 4;
 			avg.m_actual[player].ReduceGameCoachTfgaPer48Min(1);
@@ -3221,7 +3221,7 @@ bool CEngine::FieldGoalAttemptGame(int FgPct, int Fga, int player,
 	int cons = 4 - (avg.m_actual[player].GetConsistency() - 1);
 	int factor = Fga * (cons / 2) - 1;
 	if (factor < 3) factor = 3;
-	double cells = 1000 / double(factor + 1);
+	double cells = 1000 / double(factor + 1.0);
 
 	player = avg.m_actual[player].m_game_stat_slot;
 
@@ -3239,7 +3239,7 @@ bool CEngine::FieldGoalAttemptGame(int FgPct, int Fga, int player,
 	do
 	{
 		i = IntRandom(1000);
-		temp = (i - 1) / cells;
+		temp = (i - 1.) / cells;
 		n = int(temp);
 	} while (m_numbers[player][n] == true);
 	m_numbers[player][n] = true;
@@ -3763,8 +3763,8 @@ void CEngine::SetAvgTime(double avgPos, double avgOreb)
 	double poss = avgPos * m_avg_player_min_factor * 2 - pb - fb;
 	double possesions = (visitorPossesions + homePossesions - avgOreb - avgFbChances) * 2 - poss;
 	m_avg_time = (2880 - pb * 2 - fb * 4) / possesions;
-	if (m_avg_time < 13) m_avg_time = 13;
-	if (m_avg_time > 16) m_avg_time = 16;
+	if (m_avg_time < 14) m_avg_time = 14;
+	if (m_avg_time > 15) m_avg_time = 15;
 
 	m_avg_time = m_avg_time * (2 - m_scoring_factor);
 	if (m_avg_time < 1 || m_avg_time > 24) m_avg_time = 24;
