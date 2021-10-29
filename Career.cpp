@@ -752,6 +752,10 @@ void CCareer::AdjustScoring()
 		double sim48 = m_actual[i].GetSimTrueSimple(true);
 		double sim = m_actual[i].GetSimTrueSimple(false);
 
+		if (sim48 > 20 || tru48 > 20)
+		{
+			double f = sim48;
+		}
 
 
 		//mpg increase based on improving
@@ -777,10 +781,6 @@ void CCareer::AdjustScoring()
 		else
 		{
 			mpg = tru48 * 2 - 8;
-		}
-		if (mpg > 45)
-		{
-			double f = sim48;
 		}
 		//if (mpg >= 42)
 		//{

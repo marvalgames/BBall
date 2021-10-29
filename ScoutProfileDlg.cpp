@@ -113,8 +113,8 @@ void CScoutProfileDlg::InitListCtrl()
 LOGFONT lf;                        // Used to create the CFont.
 	memset(&lf, 0, sizeof(LOGFONT));   // Clear out structure.
 	lf.lfWeight = 100;
-	lf.lfHeight = 16;
-	strcpy_s(lf.lfFaceName, "Arial");    //    with face name "Arial".
+	lf.lfHeight = 15;
+	strcpy_s(lf.lfFaceName, USERFONT);    //    with face name "Arial".
 	m_font.CreateFontIndirect(&lf);    // Create the font.
 
 	m_list_data.SetBkColor(BK_COLOR);

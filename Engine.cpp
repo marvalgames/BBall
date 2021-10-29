@@ -3765,6 +3765,7 @@ void CEngine::SetAvgTime(double avgPos, double avgOreb)
 	m_avg_time = (2880 - pb * 2 - fb * 4) / possesions;
 	if (m_avg_time < 14) m_avg_time = 14;
 	if (m_avg_time > 15) m_avg_time = 15;
+	m_avg_time = 14.5;
 
 	m_avg_time = m_avg_time * (2 - m_scoring_factor);
 	if (m_avg_time < 1 || m_avg_time > 24) m_avg_time = 24;

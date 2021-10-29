@@ -74,7 +74,7 @@ BEGIN_MESSAGE_MAP(CStaffDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_COMBO_STAFF_TEAMS, OnSelchangeComboStaffTeams)
 	//}}AFX_MSG_MAP
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_CTRL_STAFF, &CStaffDlg::OnLvnItemchangedListCtrlStaff)
-	ON_BN_CLICKED(IDOK, &CStaffDlg::OnBnClickedOk)
+	//ON_BN_CLICKED(IDOK, &CStaffDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1826,9 +1826,9 @@ void CStaffDlg::OnLvnItemchangedListCtrlStaff(NMHDR* pNMHDR, LRESULT* pResult)
 	*pResult = 0;
 }
 
-
-void CStaffDlg::OnBnClickedOk()
-{
-	// TODO: Add your control notification handler code here
-	CDialog::OnOK();
-}
+//
+//void CStaffDlg::OnBnClickedOk()
+//{
+//	// TODO: Add your control notification handler code here
+//	CDialog::OnOK();
+//}

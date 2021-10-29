@@ -319,20 +319,22 @@ void CHistoryView::OnButtonRookieDrafts()
 	// TODO: Add your control notification handler code here
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
-	CHistoryDraftDlg draft;
-	draft.m_path = pDoc->avg.m_settings.m_path;
-	draft.m_leagueName = pDoc->avg.m_settings.m_league_name;
-	draft.DoModal();
+	CHistoryDraftDlg* draft = new CHistoryDraftDlg;
+	draft->m_path = pDoc->avg.m_settings.m_path;
+	draft->m_leagueName = pDoc->avg.m_settings.m_league_name;
+	draft->DoModal();
+	delete draft;
 }
 
 void CHistoryView::OnButtonHof()
 {
 	// TODO: Add your control notification handler code here
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
-	CHofDlg hof;
-	hof.m_path = pDoc->avg.m_settings.m_path;
-	hof.m_leagueName = pDoc->avg.m_settings.m_league_name;
-	hof.DoModal();
+	CHofDlg* hof = new CHofDlg();;
+	hof->m_path = pDoc->avg.m_settings.m_path;
+	hof->m_leagueName = pDoc->avg.m_settings.m_league_name;
+	hof->DoModal();
+	delete hof;
 }
 
 void CHistoryView::OnButtonHistoryAwards()
@@ -358,10 +360,11 @@ void CHistoryView::OnButtonCareerStats()
 	// TODO: Add your control notification handler code here
 	CBBallDoc* pDoc = (CBBallDoc*)GetDocument();
 
-	CHistoryStats stats;
-	stats.m_path = pDoc->avg.m_settings.m_path;
-	stats.m_leagueName = pDoc->avg.m_settings.m_league_name;;
-	stats.DoModal();
+	CHistoryStats* stats = new CHistoryStats;
+	stats->m_path = pDoc->avg.m_settings.m_path;
+	stats->m_leagueName = pDoc->avg.m_settings.m_league_name;;
+	stats->DoModal();
+	delete stats;
 
 }
 
