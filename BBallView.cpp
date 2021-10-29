@@ -1542,14 +1542,14 @@ void CBBallView::OnButtonQuickstart()
 	CString str;
 	str.Format("%s*.*", new_leaguename);
 
-	CFileFind finder;
-	BOOL bWorking = finder.FindFile(str);
-	while (bWorking)
-	{
-		bWorking = finder.FindNextFile();
-		CString file_name = finder.GetFileName();
-		CFile::Remove(path + file_name);
-	}
+	//CFileFind finder;
+	//BOOL bWorking = finder.FindFile(str);
+	//while (bWorking)
+	//{
+	//	bWorking = finder.FindNextFile();
+	//	CString file_name = finder.GetFileName();
+	//	CFile::Remove(path + file_name);
+	//}
 
 	CProgressDlg dlgProgress;
 	dlgProgress.m_text = "Creating League";

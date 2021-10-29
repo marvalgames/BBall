@@ -293,53 +293,53 @@ void CCareer::AdjustScoring()
 
 	double factor_adj = double(min_before_prime) / double(min_after_prime);
 	int current_team = 0;
-	for(int i=0; i<=1440; i++)
+	for (int i = 0; i <= 1440; i++)
 	{
-		current_team = (i-1)/30;
-		if(current_team > (m_numberteams - 1)) current_team = IntRandom(m_numberteams) - 1;		
+		current_team = (i - 1) / 30;
+		if (current_team > (m_numberteams - 1)) current_team = IntRandom(m_numberteams) - 1;
 
 		CString name = m_actual[i].GetName();
-		if(name == "") continue;
+		if (name == "") continue;
 		CString pos = m_actual[i].GetPos();
 		int po = 1;
-		if(pos == "SG") po = 2;
-		else if(pos == "SF") po = 3;
-		else if(pos == "PF") po = 4;
-		else if(pos == " C") po = 5;
+		if (pos == "SG") po = 2;
+		else if (pos == "SF") po = 3;
+		else if (pos == "PF") po = 4;
+		else if (pos == " C") po = 5;
 		int g = m_actual[i].GetGames();
 		int min = m_actual[i].GetMin();
 		int orig_min = min;
 		int orig_g = g;
-		double mpg = double(min)/double(g);
-	    int orb = m_actual[i].GetOreb();
+		double mpg = double(min) / double(g);
+		int orb = m_actual[i].GetOreb();
 		int fga = m_actual[i].GetFga() - m_actual[i].GetTfga();
 		int fgm = m_actual[i].GetFgm() - m_actual[i].GetTfgm();
-		double tmpPct = double(fgm)/double(fga)*1000;
-		if(fga < orb)
+		double tmpPct = double(fgm) / double(fga) * 1000;
+		if (fga < orb)
 		{
 			fga = orb;
-			fgm = int(tmpPct/1000.*double(fga));
+			fgm = int(tmpPct / 1000. * double(fga));
 		}
-		double pct = double(fgm)/double(fga)*1000;
+		double pct = double(fgm) / double(fga) * 1000;
 		int fgp = int(pct);
 		int tgm = m_actual[i].GetTfgm();
 
 		int tga = m_actual[i].GetTfga();
 		int orig_tga = tga;
-		
-		pct = double(tgm)/double(tga)*1000;
+
+		pct = double(tgm) / double(tga) * 1000;
 		int tgp = int(pct);
 		int fta = m_actual[i].GetFta();
 		int ftm = m_actual[i].GetFtm();
-		pct = double(ftm)/double(fta)*1000;
-		int tmpOrb = int(double(orb)*.25);
-		if(fta < tmpOrb)
+		pct = double(ftm) / double(fta) * 1000;
+		int tmpOrb = int(double(orb) * .25);
+		if (fta < tmpOrb)
 		{
 			fta = tmpOrb;
-			ftm = int(pct/1000.*double(fta));
+			ftm = int(pct / 1000. * double(fta));
 		}
 		int ftp = int(pct);
-	
+
 		int drb = m_actual[i].GetReb() - orb;
 		int ast = m_actual[i].GetAst();
 		int stl = m_actual[i].GetStl();
@@ -348,63 +348,64 @@ void CCareer::AdjustScoring()
 		int pf = m_actual[i].GetPf();
 
 		double before = m_actual[i].GetTrueRatingSimple();
-		double beforeTru48  = m_actual[i].GetTrueRatingSimple() / orig_min * 48;
+		double beforeTru48 = m_actual[i].GetTrueRatingSimple() / orig_min * 48;
 
 		//temp stuff
 		int prime = PrimeAge[i];
-
-
-
-
 		double pt1 = double(Pot1[i]);
-		double pt2 = double(Pot2[i]);  
+		double pt2 = double(Pot2[i]);
 		double eff = double(Effort[i]);
 
-//		pt1 = 3;
-//		pt2 = 3;
-//		eff = 3;
-
-		if(current_team <= 31)
+		if (current_team <= 31)
 		{
-			pt1 = pt1 - 1 + (double(m_coach[current_team].m_coachPot1) - 1) / 2;
+			pt1 = pt1 - 1 + (double(m_coach[current_team].m_coachPot1) - 1) / 2;//2 2.5 3 3.5 4
 			pt2 = pt2 - 1 + (double(m_coach[current_team].m_coachPot2) - 1) / 2;
 			eff = eff - 1 + (double(m_coach[current_team].m_coachEffort) - 1) / 2;
-			if(pt1 > 5) pt1 = 5;
-			else if(pt1 < 1) pt1 = 1;
-			if(pt2 > 5) pt2 = 5;
-			else if(pt2 < 1) pt2 = 1;
-			if(eff > 5) eff = 5;
-			else if(eff < 1) eff = 1;
+			if (pt1 > 5) pt1 = 5;
+			else if (pt1 < 1) pt1 = 1;
+			if (pt2 > 5) pt2 = 5;
+			else if (pt2 < 1) pt2 = 1;
+			if (eff > 5) eff = 5;
+			else if (eff < 1) eff = 1;
 		}
-		
+
 
 		int yrs_to_prime = prime - m_actual[i].GetAge();
 
 		double coach_effect = 0;
-		
+
 		int intangible = m_actual[i].m_effort;
 		double factor = SetImprovementVariable(yrs_to_prime, 1, pt1, intangible);//from 1 for 2ga and 2gp only
-		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
-		factor = 1 + (factor - 1)*(1.0);
-		if(factor >= 1)
-			coach_effect = (factor - 1) *  ( 1 + (double(m_coach[current_team].m_coachScoring) - 3) / 10);
-		else 
-			coach_effect = (factor - 1) *  ( 1 + (3 - double(m_coach[current_team].m_coachScoring)) / 10);
+		if (yrs_to_prime > 0) factor = 1 + (factor - 1) * factor_adj;
+		factor = 1 + (factor - 1) * (1.0);
+		if (factor >= 1)
+			coach_effect = (factor - 1) * (1 + (double(m_coach[current_team].m_coachScoring) - 3) / 10);
+		else
+			coach_effect = (factor - 1) * (1 + (3 - double(m_coach[current_team].m_coachScoring)) / 10);
 		factor = 1 + coach_effect;
-		fga = int(double(fga)*factor);
-		
+		fga = int(double(fga) * factor);
+
 		factor = SetImprovementVariable(yrs_to_prime, 2, pt1, intangible);
-		if(yrs_to_prime > 0) factor = 1 + (factor - 1)*factor_adj;
-		if(factor > 1.125) factor = 9/8;
-		else if(factor < 7/8) factor = 7/8;
-		if(factor >= 1)
-			coach_effect = (factor - 1) *  ( 1 + (double(m_coach[current_team].m_coachShooting) - 3) / 10);
-		else 
-			coach_effect = (factor - 1) *  ( 1 + (3 - double(m_coach[current_team].m_coachShooting)) / 10);
+		if (yrs_to_prime > 0) factor = 1 + (factor - 1) * factor_adj;
+		if (factor > 1.125) factor = 9 / 8;
+		else if (factor < 7 / 8) factor = 7 / 8;
+		if (factor >= 1)
+			coach_effect = (factor - 1) * (1 + (double(m_coach[current_team].m_coachShooting) - 3) / 10);
+		else
+			coach_effect = (factor - 1) * (1 + (3 - double(m_coach[current_team].m_coachShooting)) / 10);
 		factor = 1 + coach_effect;
-		fgp = fgp + int( (factor - 1)*(1000 - double(fgp)) );
-		if(fgp>600) fgp = 600 + IntRandom(10*int(pt1));
-		else if(fgp<275) fgp = 250 + IntRandom(50);
+		fgp = fgp + int((factor - 1) * (1000 - double(fgp)));
+		//if (fgp > 600) fgp = 600 + IntRandom(10 * int(pt1));
+		int fgpAdj = (m_actual[i].m_postoff * 2 + m_actual[i].m_penoff + m_actual[i].m_transoff / 2 - m_actual[i].m_movoff);
+
+		if (fgp > 550)
+		{
+			fgp = 550 + IntRandom(10 * int(pt1)) + fgpAdj;
+		}
+		else if (fgp < 275)
+		{
+			fgp = 275 + IntRandom(50) + fgpAdj;
+		}
 		fgm = int(double(fga) * (double(fgp)/1000));
 
 		factor = SetImprovementVariable(yrs_to_prime, 1, pt1, intangible);
@@ -937,12 +938,12 @@ double CCareer::SetImprovementVariable(int yrs_to_prime, double adj, double pot,
 	yrs_to_prime = yrs_to_prime;
 	if(yrs_to_prime == 0) yrs_to_prime = IntRandom(2) * 2 - 3;//change to 1 or -1
 
-//	if(yrs_to_prime < 0) adj = adj*2./3.;
-//	if(yrs_to_prime < 0) adj = adj*12./3.;
-	if(yrs_to_prime < 0) adj = adj*12.;
+	//if (yrs_to_prime < 0) adj = adj * 12.;
+	if (yrs_to_prime < 0) adj = adj * 12;
 	else if (yrs_to_prime > 0)
 	{
-		adj = adj * 2. / 3.;//lower adj is better for improving/more decline
+		//adj = adj * 2. / 3.;//lower adj is better for improving/more decline
+			adj = adj * 1. / 3.;//lower adj is better for improving/more decline
 	}
 
 	double major_change = Random(72);
@@ -981,13 +982,7 @@ double CCareer::SetImprovementVariable(int yrs_to_prime, double adj, double pot,
 	else if(yrs_to_prime == -6) 
 		float_yrs_to_prime = 2.;
 	else if(yrs_to_prime < -6)
-			//float_yrs_to_prime = Random(2);
 			float_yrs_to_prime = 1 + Random(2);
-
-	//temp
-	//if(yrs_to_prime <= -1) 
-		//float_yrs_to_prime = 1./3.;
-
 
 
 	double factor = float_yrs_to_prime/adj;
