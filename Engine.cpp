@@ -6626,15 +6626,17 @@ void CEngine::SaveCurrentGameData()
 	{
 		saveOk = false;
 		pFileName = avg.m_settings.m_path + avg.m_settings.m_league_name + ".bxs";
-		CFile file1(pFileName, CFile::modeRead);
-		bytes = file1.Read(s, 16);
+		CFile* file1 = new CFile();
+		file1->Open(pFileName, CFile::modeRead);
+		bytes = file1->Read(s, 16);
 		s[bytes] = 0;
 		game = atoi(s);
 
 		if (avg.m_settings.m_save_box[visitor] == TRUE ||
 			avg.m_settings.m_save_box[home] == TRUE) saveOk = true;
 
-		file1.Close();
+		file1->Close();
+		delete file1;
 	}
 
 
@@ -6643,34 +6645,35 @@ void CEngine::SaveCurrentGameData()
 	{
 
 		CString buffer;
-		CFile f(pFileName, CFile::modeWrite);
+		CFile* f = new CFile();
+		f->Open(pFileName, CFile::modeWrite);
 		game = game + 1;
 		if (game > 40000) game = 1;
 		buffer.Format("%d", game);
 		buffer = buffer + "               ";
-		f.Write(buffer, 16);
+		f->Write(buffer, 16);
 		int seek = (game - 1) * 50000 + 17 + 32;
-		f.Seek(seek, CFile::begin);
+		f->Seek(seek, CFile::begin);
 		buffer.Format("%d", avg.m_sched.m_currentMonth);
 		buffer = buffer + "   ";
-		f.Write(buffer, 4);
+		f->Write(buffer, 4);
 		buffer.Format("%d", avg.m_sched.m_currentDay);
 		buffer = buffer + "   ";
-		f.Write(buffer, 4);
+		f->Write(buffer, 4);
 		CString vis = m_team_names[1] + "               ";
-		f.Write(vis, 16);
+		f->Write(vis, 16);
 
 		buffer.Format("%d", m_score[1]);
 		buffer = buffer + "   ";
-		f.Write(buffer, 3);
+		f->Write(buffer, 3);
 
 
 		CString home = m_team_names[2] + "               ";
-		f.Write(home, 16);
+		f->Write(home, 16);
 
 		buffer.Format("%d", m_score[2]);
 		buffer = buffer + "   ";
-		f.Write(buffer, 3);
+		f->Write(buffer, 3);
 		bool pbp = true;
 		int lines = GetTotalPbpResults();
 		CString big_buf;
@@ -6681,12 +6684,13 @@ void CEngine::SaveCurrentGameData()
 			big_buf = big_buf + (LPCSTR)m_pbp_strings[i] + "\n";
 		}
 		big_buf = big_buf + "                                                                                                                                                                                                                                                                                                                                                                                                               ";
-		f.Write((LPCSTR)big_buf, big_buf.GetLength());
+		f->Write((LPCSTR)big_buf, big_buf.GetLength());
 
 		char buf[200001];
 		memset(buf, ' ', 200000);
-		f.Write(buf, 200000);
-		f.Close();
+		f->Write(buf, 200000);
+		f->Close();
+		delete f;
 	}
 
 
@@ -6834,12 +6838,17 @@ void CEngine::SaveCurrentGameData()
 
 
 	pFileName = avg.m_settings.m_path + avg.m_settings.m_league_name + ".sco";
-	CFile* f = new CFile();
-	f->Open(pFileName, CFile::modeReadWrite);
+	CFile* f0 = new CFile();
+	f0->Open(pFileName, 
+		CFile::modeReadWrite |
+		CFile::modeCreate |
+		CFile::modeNoTruncate |
+		CFile::typeBinary |
+		CFile::shareDenyNone);
 	//CFile f(pFileName, CFile::modeReadWrite);
 
 	long seek = (mo * 500 + da * 15 + ga) * 2000;
-	f->Seek(seek, CFile::begin);
+	f0->Seek(seek, CFile::begin);
 
 	buffer1.Format("%2d", mo);
 	buffer2.Format("%2d", da);
@@ -6942,45 +6951,46 @@ void CEngine::SaveCurrentGameData()
 	int len = buffer.GetLength();
 	if (mo >= 0 && da >= 0 && ga >= 0 && mo <= 12 && da <= 30 && ga <= 16)
 	{
-		f->Write(buffer, len);
+		f0->Write(buffer, len);
 	}
 
 
-	f->Close();
-	delete f;
+	f0->Close();
+	delete f0;
 
 
 	if (saveOk == true && m_gameType != EXHIBITION && m_gameType != ALLSTAR && m_gameType != ROOKIE)
 	{
 		CString buffer;
-		CFile f1(pFileName, CFile::modeWrite);
+		CFile* f1 = new CFile();
+		f1->Open(pFileName, CFile::modeWrite);
 		game = game + 1;
 		buffer.Format("%d", game);
 		buffer = buffer + "               ";
-		f1.Write(buffer, 16);
+		f1->Write(buffer, 16);
 
 		int seek = (game - 1) * 3000 + 17 + 32;
-		f1.Seek(seek, CFile::begin);
+		f1->Seek(seek, CFile::begin);
 		buffer.Format("%d", avg.m_sched.m_currentMonth);
 		buffer = buffer + "   ";
-		f1.Write(buffer, 4);
+		f1->Write(buffer, 4);
 		buffer.Format("%d", avg.m_sched.m_currentDay);
 		buffer = buffer + "   ";
-		f1.Write(buffer, 4);
+		f1->Write(buffer, 4);
 		CString vis = m_team_names[1] + "               ";
-		f1.Write(vis, 16);
+		f1->Write(vis, 16);
 
 		buffer.Format("%d", m_score[1]);
 		buffer = buffer + "   ";
-		f1.Write(buffer, 3);
+		f1->Write(buffer, 3);
 
 
 		CString home = m_team_names[2] + "               ";
-		f1.Write(home, 16);
+		f1->Write(home, 16);
 
 		buffer.Format("%d", m_score[2]);
 		buffer = buffer + "   ";
-		f1.Write(buffer, 3);
+		f1->Write(buffer, 3);
 
 		buffer = "";
 
@@ -7053,7 +7063,7 @@ void CEngine::SaveCurrentGameData()
 
 
 		int len = buffer.GetLength();
-		f1.Write(buffer, len);
+		f1->Write(buffer, len);
 
 
 
@@ -7061,15 +7071,16 @@ void CEngine::SaveCurrentGameData()
 
 		seek = (game - 1) * 3000 + 2501;	//500 bytes for extra box score stuff
 		buffer.Format("%d", visitor);
-		f1.Write(buffer, 2);
+		f1->Write(buffer, 2);
 		buffer.Format("%d", (LPCTSTR)home);
-		f1.Write(buffer, 2);
+		f1->Write(buffer, 2);
 
 
 		char buf[6001];
 		memset(buf, ' ', 6000);
-		f1.Write(buf, 6000);
-		f1.Close();
+		f1->Write(buf, 6000);
+		f1->Close();
+		delete f1;
 	}
 
 
