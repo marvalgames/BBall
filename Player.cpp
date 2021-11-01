@@ -856,29 +856,34 @@ void CPlayer::CreateReport(CString m_lines[33],
 	s_tru[28] = "One of the greats";
 
 	s_pot[0] = "Should get a real job";
-	s_pot[1] = "Will never be close to a pro caliber player";
-	s_pot[2] = "Is never going to be a pro player";
-	s_pot[3] = "Will probably never make a team";
-	s_pot[4] = "Not much of a chance to ever stick in the league";
-	s_pot[5] = "Could eventually make a team";
-	s_pot[6] = "Could develop into an end of the bench player";
-	s_pot[7] = "Probably a career on the end of the bench";
-	s_pot[8] = "Could eventually give you spot minutes off the bench";
-	s_pot[9] = "Has a chance to develop into a useful player";
-	s_pot[10] = "Expect a solid career as a strong bench player";
-	s_pot[11] = "Decent chance to start in this league";
-	s_pot[12] = "Could become a dependable starter";
-	s_pot[13] = "Will become a solid player and a definite starter";
-	s_pot[14] = "Expect a career as a legitimate starter";
-	s_pot[15] = "Should develop into a high quality starter";
-	s_pot[16] = "Should become a top of the line starter";
-	s_pot[17] = "Could develop into a borderline all star";
-	s_pot[18] = "Has a chance at an all star caliber career";
-	s_pot[19] = "Will become an all star";
-	s_pot[20] = "Should develop into one of league's best";
-	s_pot[21] = "Chance at superstar status";
-	s_pot[22] = "Superstar in the making";
-	s_pot[23] = "Hall of Fame type potential";
+	s_pot[1] = "Is probably looking at a career change";
+	s_pot[2] = "Will never be close to a pro caliber player";
+	s_pot[3] = "Is never going to be a pro player";
+	s_pot[4] = "Will probably never make a team";
+	s_pot[5] = "Not much of a chance to ever stick in the league";
+	s_pot[6] = "Could eventually make a team";
+	s_pot[7] = "Should be able to stick in the league";
+	s_pot[8] = "Could develop into an end of the bench player";
+	s_pot[9] = "Could develop into a bench player";
+	s_pot[10] = "Probably a career on the end of the bench";
+	s_pot[11] = "Probably a long career on the end of the bench";
+	s_pot[12] = "Could eventually give you spot minutes off the bench";
+	s_pot[13] = "Has a chance to be in your rotation";
+	s_pot[14] = "Has a chance to develop into an extremely capable player";
+	s_pot[15] = "At worse expect a very solid career as a strong bench player";
+	s_pot[16] = "Decent chance to start in the league for a long time";
+	s_pot[17] = "Could become a highly dependable starter";
+	s_pot[18] = "Will become a solid player and a definite starter";
+	s_pot[19] = "Expect a very solid career as a legitimate starter";
+	s_pot[20] = "Should develop into a high quality starter";
+	s_pot[21] = "Should become a top end starter";
+	s_pot[22] = "Could develop into a borderline all star";
+	s_pot[23] = "Has a chance at an all star caliber career";
+	s_pot[24] = "Will become an all star";
+	s_pot[25] = "Should develop into one of league's best";
+	s_pot[26] = "Chance at superstar status";
+	s_pot[27] = "Superstar in the making";
+	s_pot[28] = "Hall of Fame type potential";
 
 	int po = m_po;
 	if(po < 0) po = 0;
@@ -1094,48 +1099,63 @@ void CPlayer::CreateReport(CString m_lines[33],
 	double  to_i =  (double)GetAdjPrTo()/(double)r_to[po];	
 	double poss = (ast_i * 3 + fta_i + fga_i) / 4;
 	if(r_to[po] > 50 &&  GetAdjPrTo() > r_to[po])
-		to_i =  1 + double (GetAdjPrTo() + 2 - r_to[po]) / (100 - r_to[po]) * 1;
+		to_i =  1 + double (GetAdjPrTo() + 2. - r_to[po]) / (100. - r_to[po]) * 1;
 	i = 11 - int(to_i * 5 * poss);	
 	if(i>10) i = 11;
 	else if(i<0) i = 0;
 	m_lines[14] = s_to[i];
 
 
-/*
 
-//	double tru = GetTrueRating() * 3/2 + 10;//tru is > 0 for above average less then o for below
-	SetMinPerGame(m_games, m_min);
+
+	//double tru = GetTrueRating() * 3/2 + 10;//tru is > 0 for above average less then o for below
+	//SetMinPerGame(m_games, m_min);
 	double temp = GetTradeTrueRating(FALSE);
 	double temp_tru = temp;
 	double av = m_avg_trade_tru[po];
-	if(temp <= av) temp = av - (av - temp) * 1/2; else temp = av + (temp - av) * 1/2;
+	if(temp <= av) temp = av - (av - temp) * 1/3; else temp = av + (temp - av) * 2/3;
 	double tru_i = temp / av * 10;	
-	int tru = int(tru_i);	
-	if(tru>23) tru = 23; else if(tru<0) tru=0;
-	m_lines[32] = s_tru[tru];
-	if(m_name == "Bebita Ramos")
-		m_lines[32] = "One in a million, the total package";
-
-  */
-
-	SetMinPerGame(m_games, m_min);
-	SetTrueRating(0, FALSE);
-	//m_trueRating
-	double temp = m_trueRating;
-	double temp_tru = temp;
-	double av = 0;
-	double tru_i =     (temp  + av) ;	
 	int tru = int(tru_i);	
 	if(tru>27) tru = 27; else if(tru<0) tru=0;
 	m_lines[32] = s_tru[tru];
-	if(m_name == "Bebita Ramos")
+	if(m_name == "Bebita Ramos" || m_name == "Nancy Ramos")
 		m_lines[32] = "One in a million, the total package";
 
+ 
+
+	//SetMinPerGame(m_games, m_min);
+	//SetTrueRating(0, FALSE);
+	////m_trueRating
+	//double temp = m_tradeTrueRating;
+	//double av = 0;
+	//double tru_i =     (temp  + av) ;	
+	//int tru = int(tru_i);	
+	//if(tru>27) tru = 27; else if(tru<0) tru=0;
+	//m_lines[32] = s_tru[tru];
+	//if(m_name == "Bebita Ramos")
+	//	m_lines[32] = "One in a million, the total package";
+
+
 //	double temp_career = GetTradeTrueRating(TRUE);
-	double temp_career = SetTruePotential(tru_i);
-	int pot = int(tru_i * temp_career / temp_tru);	
-	if(pot>23) pot = 23; else if(pot<0) pot=0;
-	if((pot-tru) >= 1) m_lines[0] = s_pot[pot];
+	int _tru = (int)GetTradeTrueRating(FALSE);
+	//tru_i =     (m_trueRating) ;	
+	int _pot = (int)SetTruePotential(tru_i);
+	//int pot = int(tru_i * temp_career / temp_tru);
+	//int pot = int(tru_i * temp_career / temp);
+	if (_pot > 28)
+	{
+		_pot = 28;
+	}
+	else if (_pot < 0)
+	{
+		_pot = 0;
+	}
+
+	if ((_pot - _tru) > 5)
+	{
+		m_lines[0] = s_pot[_pot];
+	}
+	//m_lines[0] = s_pot[pot];
 
 
 	}

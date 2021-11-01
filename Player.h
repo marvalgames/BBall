@@ -3603,12 +3603,12 @@ void SetRequests(int franchise_w[33], int franchise_l[33], CRecord record[33], C
 
 	double trade_value = m_tradeTrueRating;
 	double sim_value = 0;
-	if(m_sim_games > 4)
+	if (m_sim_games > 4)
 	{
 		sim_value = m_sim_trueRating / m_sim_games;
 	}
 
-	if(sim_value > trade_value) trade_value = sim_value;
+	if (sim_value > trade_value) trade_value = sim_value;
 
 	int age = m_age;
 
@@ -3929,6 +3929,20 @@ double Random(double n)
 
 int ChooseBestContract( int m_counter[33], int m_count)
 {
+
+	double sim_mpg = 48;
+	double actual_mpg = 0;
+	if (m_sim_games > 4)
+	{
+		sim_mpg = m_sim_min / m_sim_games;
+	}
+	if (m_games > 4)
+	{
+		actual_mpg = m_min / m_games;
+	}
+
+
+
 	int best = -1;
 	double requested_salary_avg = 0;
 	if(m_qualifying_offer_years > 0) requested_salary_avg =  (double) m_total_salary_seeking / (double) m_qualifying_offer_years;
@@ -3957,10 +3971,18 @@ int ChooseBestContract( int m_counter[33], int m_count)
 		if(bottom > i_max_years && m_qualifying_offer_years != bottom ) continue;
 
 		double sec_factor = (100 + ((double)m_security_factor * (double) bottom) / 2) / 100;//security importance,//tweaked from 3 to 2
-		double diff = offered_salary_avg * sec_factor / requested_salary_avg / (double) m_seeking[t]; 
-		bool ok = true;
+		double sim_playing_time_factor = 1;
+		if ((actual_mpg - sim_mpg) > 8 && sim_mpg  < 27 && m_previous_team == t)
+		{
+			sim_playing_time_factor = (sim_mpg / 2) / 48;
+			//sim_playing_time_factor = 0;
+		}
 
-		if(diff > hi_diff && (m_rookie == false || m_rookie == true && m_round_selected == 0) && ok == true)
+		double diff = offered_salary_avg * sec_factor * sim_playing_time_factor / requested_salary_avg / (double) m_seeking[t]; 
+
+
+
+		if(diff > hi_diff && (m_rookie == false || m_rookie == true && m_round_selected == 0))
 		{
 			hi_diff = diff;
 			best = t;
@@ -5303,9 +5325,13 @@ void SetJustSignedContracts()
 
 
 
-	void SetGameMinPerGame(int Games, int Min)
+	void SetGameMinPerGame(int Games, int Min, double cap)
 	{
 		m_MinPerGame = double(Min) / double(Games);
+		if (m_MinPerGame > cap)
+		{
+			m_MinPerGame = cap;
+		}
 	}
 
 	void SetGameFgPct(int Fgm, int Fga)

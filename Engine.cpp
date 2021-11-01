@@ -276,7 +276,7 @@ void CEngine::SetupComputerLineups()
 
 
 			m_player.SetGameMinPerGame(
-				m_player.GetGames(), game_min);
+				m_player.GetGames(), game_min, 40);
 
 			m_player.SetGameFgPct(
 				tfgm - ttgm,
@@ -468,39 +468,39 @@ void CEngine::SetupComputerLineups()
 				if (m_player.GetName() == "") continue;
 				m_player = avg.m_actual[player];
 				//set starters
-				if (position == 1 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamepgrot * 240) > CurrentHighMinutes
+				if (position == 1 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamepgrot * 240.) > CurrentHighMinutes
 					&& m_player.m_gamepgrot > 0 && used[player] != true)
 				{
 					starter = player;
-					factor = 2400 - m_player.m_gamepgrot * 240;
+					factor = 2400. - m_player.m_gamepgrot * 240;
 					CurrentHighMinutes = m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + factor;
 				}
-				else if (position == 2 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamesgrot * 240) > CurrentHighMinutes
+				else if (position == 2 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamesgrot * 240.) > CurrentHighMinutes
 					&& m_player.m_gamesgrot > 0 && used[player] != true)
 				{
 					starter = player;
-					factor = 2400 - m_player.m_gamesgrot * 240;
+					factor = 2400 - m_player.m_gamesgrot * 240.;
 					CurrentHighMinutes = m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + factor;
 				}
-				else if (position == 3 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamesfrot * 240) > CurrentHighMinutes
+				else if (position == 3 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamesfrot * 240.) > CurrentHighMinutes
 					&& m_player.m_gamesfrot > 0 && used[player] != true)
 				{
 					starter = player;
-					factor = 2400 - m_player.m_gamesfrot * 240;
+					factor = 2400 - m_player.m_gamesfrot * 240.;
 					CurrentHighMinutes = m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + factor;
 				}
-				else if (position == 4 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamepfrot * 240) > CurrentHighMinutes
+				else if (position == 4 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamepfrot * 240.) > CurrentHighMinutes
 					&& m_player.m_gamepfrot > 0 && used[player] != true)
 				{
 					starter = player;
-					factor = 2400 - m_player.m_gamepfrot * 240;
+					factor = 2400 - m_player.m_gamepfrot * 240.;
 					CurrentHighMinutes = m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + factor;
 				}
-				else if (position == 5 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamecrot * 240) > CurrentHighMinutes
+				else if (position == 5 && (m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + 2400 - m_player.m_gamecrot * 240.) > CurrentHighMinutes
 					&& m_player.m_gamecrot > 0 && used[player] != true)
 				{
 					starter = player;
-					factor = 2400 - m_player.m_gamecrot * 240;
+					factor = 2400 - m_player.m_gamecrot * 240.;
 					CurrentHighMinutes = m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) + factor;
 				}
 				else if (position == 1 && m_player.GetTradeTrueRating(avg.m_settings.m_checkCareer) > CurrentHighMinutes
@@ -1641,9 +1641,15 @@ void CEngine::GamePlay()
 					CurrentLineupBlocks(m_possesion, Lineup, avg.m_avg_blk[0] * 5);
 				double AdjustedFgPct = // adjust fgpct based on opponents blocking ability
 					double(FgPct) / 1000 + (avg.m_avg_blk[0] * 5 - blocks) / 2 / (avg.m_avg_fga[0] * 5);//avg fga in game
-				double betterPct = better / 4 / avg.m_actual[player].GetGameFgaPer48Min();
+				double betterPct =  better / 4 / avg.m_actual[player].GetGameFgaPer48Min();
 				//		double betterPct = 0;
+				//if (betterPct > 3)
+				//{
+					//betterPct = 3;
+				//}
 				AdjustedFgPct = AdjustedFgPct + betterPct;
+				//betterPct = 0;
+				//AdjustedFgPct = AdjustedFgPct * (1 + betterPct);
 				FgPct = int(AdjustedFgPct * 1000);
 				bool Fgm = FieldGoalAttemptGame(FgPct, Fga, player, m_numbers);
 				if (PutBack == FALSE && assister == true)
@@ -3155,9 +3161,9 @@ int CEngine::Result(int player, bool PutBack,
 
 	double FoulsDrawn = fds * fatigueFactor;
 	if (m_homeCourt == TRUE)
-		FoulsDrawn = FoulsDrawn + double(team * 2 - 3) * m_hca;
+		FoulsDrawn = FoulsDrawn + double(team * 2. - 3.) * m_hca;
 	if (m_homeCourt == TRUE)
-		playerTo = playerTo - double(team * 2 - 3) * m_hca;
+		playerTo = playerTo - double(team * 2. - 3.) * m_hca;
 	//adjust Turnovers based on opponents steals
 	playerTo =
 		playerTo + playerTo / lineupTo * (lineupStl - avgStl * 5 / 6); // avg steals per game 
@@ -3635,7 +3641,19 @@ double CEngine::CurrentLineupBetter(int position_ball_handler, int player, int p
 		}
 	}
 
+
+
 	better = better + m_defAdj;
+
+	if (better > 2)
+	{
+		better = sqrt(better) * 2;
+	}
+	else if (better < -2)
+	{
+		better = sqrt(abs(better)) * (-2);
+	}
+
 
 	double result = (better - d) / 5;
 	return result;
@@ -4237,12 +4255,6 @@ void CEngine::AdjustIntensityForGamePlan()
 		m_player.m_AstPer48Min = m_player.m_AstPer48Min * bh_factor;
 
 
-		//if(m_player.m_teammatesBetterRating < 0 )
-		//	m_player.m_teammatesBetterRating = m_player.m_teammatesBetterRating * (2-factor);
-		//else
-		//	m_player.m_teammatesBetterRating = m_player.m_teammatesBetterRating * factor;
-
-
 		if (factor > 0) stamina_factor = stamina_factor * factor1;
 
 		factor = (100 + (double)m_player.m_defensive_intensity * 5) / 100;
@@ -4254,19 +4266,7 @@ void CEngine::AdjustIntensityForGamePlan()
 		m_player.m_BlkPer48Min = m_player.m_OriginalBlkPer48Min * factor;
 		m_player.m_PfPer48Min = m_player.m_PfPer48Min * factor;
 
-		//		m_player.m_AstPer48Min = m_player.m_AstPer48Min  * bh_factor;
 		m_player.m_stamina = int((double)m_player.m_stamina * stamina_factor);
-
-		//		if(m_player.m_teammatesBetterRating < 0)
-		//			m_player.m_teammatesBetterRating = m_player.m_teammatesBetterRating * (2-bh_factor);
-		//		else
-		//			m_player.m_teammatesBetterRating = m_player.m_teammatesBetterRating * bh_factor;
-
-		//		m_player.m_AdjustedFgaPer48Min = m_player.m_OriginalAdjustedFgaPer48Min * factor;
-		//		m_player.m_AdjustedTfgaPer48Min = m_player.m_OriginalAdjustedTfgaPer48Min * factor;
-		//		m_player.m_AdjustedFoulsDrawnPer48Min = m_player.m_OriginalAdjustedFoulsDrawnPer48Min * factor;
-		//		m_player.m_AdjustedToPer48Min = m_player.m_AdjustedToPer48Min * factor;
-
 		avg.m_actual[player] = m_player;
 
 	}
@@ -6624,13 +6624,14 @@ void CEngine::SaveCurrentGameData()
 	//Save History Boxes
 	if (m_gameType != EXHIBITION && m_gameType != ALLSTAR && m_gameType != ROOKIE)
 	{
+		char s0[17];
 		saveOk = false;
 		pFileName = avg.m_settings.m_path + avg.m_settings.m_league_name + ".bxs";
 		CFile* file1 = new CFile();
 		file1->Open(pFileName, CFile::modeRead);
-		bytes = file1->Read(s, 16);
-		s[bytes] = 0;
-		game = atoi(s);
+		bytes = file1->Read(s0, 16);
+		s0[bytes] = 0;
+		game = atoi(s0);
 
 		if (avg.m_settings.m_save_box[visitor] == TRUE ||
 			avg.m_settings.m_save_box[home] == TRUE) saveOk = true;
