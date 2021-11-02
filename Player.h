@@ -1082,9 +1082,13 @@ void SetRatings(int m_hi_fga, int m_hi_fta, int m_hi_tga, int m_hi_orb, int m_hi
 	tmp = double(GetTo())/g*480;
 	tmp = tmp * pen / double(m_hi_to)*100;
 	SetPrTo(100 - int(tmp));
-
-	tmp = double(GetBlk())/g*480;
+	//if (m_name == "Errol Walker")
+	//{
+	//	tmp = double(GetBlk()) / g * 480;
+	//}
+	tmp = double(GetBlk()) / g * 480;
 	tmp = tmp * pen / double(m_hi_blk)*100;
+	if (tmp > 99) tmp = 99;
 	SetPrBlk(int(tmp));
 	
 }

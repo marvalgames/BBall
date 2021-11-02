@@ -797,7 +797,7 @@ void CCareerStatsCardDlg::ListStats()
 	    string.Format("%.1f", double(s13) / double(s1) );
 	    m_listCtrl.SetItemText(yearsPro,17,string);
 			
-	    string.Format("%.1f", double(s14) / double(s1) );
+	    string.Format("%.2f", double(s14) / double(s1) );
 	    m_listCtrl.SetItemText(yearsPro,18,string);
 			
 	    string.Format("%.1f", double(s15) / double(s1) );

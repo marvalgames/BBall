@@ -2493,8 +2493,8 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	ast = ast / double(m_rookies[p[6]].GetMin())*mpg ;
 	stl = stl / double(m_rookies[p[7]].GetMin())*mpg ;
 	to = to / double(m_rookies[p[8]].GetMin())*mpg  ;
-	blk = blk / double(m_rookies[p[9]].GetMin())*mpg ;
 	if (blk == 0) blk = 1 + IntRandom(3);
+	blk = blk / double(m_rookies[p[9]].GetMin())*mpg ;
 	pf = pf / double(m_rookies[p[10]].GetMin())*mpg ;
 
 	//ajdust mpg && games

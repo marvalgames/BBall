@@ -1641,7 +1641,7 @@ void CEngine::GamePlay()
 					CurrentLineupBlocks(m_possesion, Lineup, avg.m_avg_blk[0] * 5);
 				double AdjustedFgPct = // adjust fgpct based on opponents blocking ability
 					double(FgPct) / 1000 + (avg.m_avg_blk[0] * 5 - blocks) / 2 / (avg.m_avg_fga[0] * 5);//avg fga in game
-				double betterPct =  better / 4 / avg.m_actual[player].GetGameFgaPer48Min();
+				double betterPct = better / 4 / avg.m_actual[player].GetGameFgaPer48Min();
 				//		double betterPct = 0;
 				//if (betterPct > 3)
 				//{
@@ -3551,7 +3551,12 @@ int CEngine::BlockPlayer(int Lineup[3][6], bool ThreePointer, double avgBlk)
 		double fatigueFactor = (100 + double(avg.m_actual[player].GetGameCurrentStamina()) / 30) / 100;
 		if (fatigueFactor > 1) fatigueFactor = 1;
 		m_player = avg.m_actual[player];
-		Blocks[i] = Blocks[i - 1] + fatigueFactor * m_player.GetGameBlkPer48Min() * TptBlkPct;
+		double gameBlk = m_player.GetGameBlkPer48Min();
+		if (gameBlk > avg.m_avg_blk[i] * 3.)
+		{
+			gameBlk = avg.m_avg_blk[i] * 3;
+		}
+		Blocks[i] = Blocks[i - 1] + fatigueFactor * gameBlk * TptBlkPct;
 	}
 
 	if (Blocks[5] > (avgBlk * 1.5))
@@ -3645,11 +3650,11 @@ double CEngine::CurrentLineupBetter(int position_ball_handler, int player, int p
 
 	better = better + m_defAdj;
 
-	if (better > 2)
+	if (better > 4)
 	{
 		better = sqrt(better) * 2;
 	}
-	else if (better < -2)
+	else if (better < -4)
 	{
 		better = sqrt(abs(better)) * (-2);
 	}
@@ -6840,7 +6845,7 @@ void CEngine::SaveCurrentGameData()
 
 	pFileName = avg.m_settings.m_path + avg.m_settings.m_league_name + ".sco";
 	CFile* f0 = new CFile();
-	f0->Open(pFileName, 
+	f0->Open(pFileName,
 		CFile::modeReadWrite |
 		CFile::modeCreate |
 		CFile::modeNoTruncate |

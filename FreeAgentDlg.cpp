@@ -1944,7 +1944,7 @@ void CFreeAgentDlg::ListTeamCap()
 		double released_2 = (double) avg.m_owner[index].m_released_salaries[off+2] / 100;
 
 		CString string1, string2, string3, string4, string5, string6;
-		string1.Format("avalaible cap room: %.2f million", cap_room);
+		string1.Format("available cap room: %.2f million", cap_room);
 		string2.Format("owner salary cap: %.2f million", cap);
 
 		string3.Format("team payroll: %.2f million (%.2f)", salary_0, released_0);
