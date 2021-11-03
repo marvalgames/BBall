@@ -2475,7 +2475,7 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	to = to  * (2-ageFactor);
 	blk = blk * (1 - (1 - ageFactor)/2);
 	pf = pf*1.00;
-	if (tga == 0) tga = 1 + IntRandom(3);
+	if (tga == 0) tga = 1. + IntRandom(3);
 
 	fgm = fgm / double(m_rookies[p[2]].GetMin())*mpg ;
 	fga = fga / double(m_rookies[p[2]].GetMin())*mpg ;
@@ -2493,7 +2493,7 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	ast = ast / double(m_rookies[p[6]].GetMin())*mpg ;
 	stl = stl / double(m_rookies[p[7]].GetMin())*mpg ;
 	to = to / double(m_rookies[p[8]].GetMin())*mpg  ;
-	if (blk == 0) blk = 1 + IntRandom(3);
+	if (blk == 0) blk = 1. + IntRandom(3);
 	blk = blk / double(m_rookies[p[9]].GetMin())*mpg ;
 	pf = pf / double(m_rookies[p[10]].GetMin())*mpg ;
 
@@ -2520,11 +2520,11 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	to = to * factor;
 	blk = blk * factor;
 	pf = pf * factor;
-	if(fgp > (5./9.)) fgm = double( fga * ( double(500 + IntRandom(75))/1000 ));
+	if(fgp > (5./9.)) fgm = double( fga * ( double(500. + IntRandom(75))/1000 ));
 	else fgm = fga * fgp;
-	if(ftp > (8./9.)) ftm = double( fta * ( double(825 + IntRandom(100))/1000 ));
+	if(ftp > (8./9.)) ftm = double( fta * ( double(825. + IntRandom(100))/1000 ));
 	else ftm = fta * ftp;
-	if(tgp > (4./9.)) tgm = double( tga * ( double(325 + IntRandom(100))/1000 ));
+	if(tgp > (4./9.)) tgm = double( tga * ( double(325. + IntRandom(100))/1000 ));
 	else tgm = tga * tgp;
 
 	if(pf>4) pf = 4 + Random(.5);
@@ -2560,8 +2560,14 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	m_pool[i].SetAst(int(games*ast));
 	m_pool[i].SetStl(int(games*stl));
 	m_pool[i].SetTo(int(games*to));
-	if(blk == 0 && Random(1) < .5) m_pool[i].SetBlk(1);
-	else m_pool[i].SetBlk(int(games*blk));
+
+	//if(blk == 0 && Random(1) < .5) m_pool[i].SetBlk(1);
+	if ((blk / mpg2 * 48) > (pos + 1.))
+	{
+		blk = (pos + 1.) / 48. * mpg2;
+	}
+
+	m_pool[i].SetBlk(int(games*blk));
 	m_pool[i].SetPf(int(games*pf));
 
 	m_pool[i].GenerateODPT();	
