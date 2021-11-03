@@ -932,7 +932,8 @@ void CPlayer::CreateReport(CString m_lines[33],
 	
 	double tgm = double(GetTfgm());
 	double tga = double(GetTfga());
-	double tgp = tgm/tga*100;
+	double tgp = 0;
+	if(tga > 0)	tgp = tgm / tga * 100;
 
 	double f = (tgp / m_avg_tgp[po] * 20) - 15 / 2;//?
 	if(f < 0) f = 0; else if(f > 5) f = 5;

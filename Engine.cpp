@@ -3569,6 +3569,8 @@ int CEngine::BlockPlayer(int Lineup[3][6], bool ThreePointer, double avgBlk)
 	}
 
 
+	//Blocks[5] = 0.0;
+
 	double ShotsMissed[6] = { 0,0,0,0,0,0 };
 	for (int i = 1; i < 6; ++i)
 	{
@@ -3647,7 +3649,7 @@ double CEngine::CurrentLineupBetter(int position_ball_handler, int player, int p
 	}
 
 
-
+	//m_defAdj = 0;
 	better = better + m_defAdj;
 
 	if (better > 4)
