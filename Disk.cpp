@@ -2421,6 +2421,16 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	if(mpg > 40) mpg = 38 + Random(2);
 	double min = mpg*games;
 
+	double min_fta = avg.m_avg_fta[pos] * gam / mpg / 6 * (.875 + Random(.25));
+	double min_orb = avg.m_avg_orb[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_drb = avg.m_avg_drb[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_ast = avg.m_avg_ast[pos] * gam / mpg / 4 * (.875 + Random(.25));
+	double min_stl = avg.m_avg_stl[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_to = avg.m_avg_to[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_blk = avg.m_avg_blk[pos] * gam / mpg / 6 * (.875 + Random(.25));
+
+
+
 	double fgm = double(m_rookies[p[2]].GetFgm()) - double(m_rookies[p[2]].GetTfgm());
 	double fga = double(m_rookies[p[2]].GetFga()) - double(m_rookies[p[2]].GetTfga());
 	double tgm = double(m_rookies[p[3]].GetTfgm());
@@ -2430,6 +2440,7 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 
 	double ftm = double(m_rookies[p[4]].GetFtm());
 	double fta = double(m_rookies[p[4]].GetFta());
+	if (fta < min_fta) fta = min_fta;
 
 
 	double hi = (fga - fta/3/2);
@@ -2458,6 +2469,14 @@ void CDisk::CreateRookies(CString file_name, bool create_preview_file)
 	double to = double(m_rookies[p[8]].GetTo());
 	double blk = double(m_rookies[p[9]].GetBlk());
 	double pf = double(m_rookies[p[10]].GetPf());
+
+	if (orb < min_orb) orb = min_orb;
+	if (drb < min_drb) drb = min_drb;
+	if (ast < min_ast) ast = min_ast;
+	if (stl < min_stl) stl = min_stl;
+	if (to < min_to) to = min_to;
+	if (blk < min_blk) blk = min_blk;
+
 
 	
 	fgm = fgm * ageFactor;
@@ -3730,12 +3749,25 @@ void CDisk::CreateFictionalPool()
 	double mpg = double(m_rookies[p[1]].GetMin()) / double(games);
 	double min = mpg*games;
 
+	double min_fta = avg.m_avg_fta[pos] * gam / mpg / 6 * (.875 + Random(.25));
+	double min_orb = avg.m_avg_orb[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_drb = avg.m_avg_drb[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_ast = avg.m_avg_ast[pos] * gam / mpg / 4 * (.875 + Random(.25));
+	double min_stl = avg.m_avg_stl[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_to = avg.m_avg_to[pos] * gam / mpg / 3 * (.875 + Random(.25));
+	double min_blk = avg.m_avg_blk[pos] * gam / mpg / 6 * (.875 + Random(.25));
+
+
+
+
 	double fgm = double(m_rookies[p[2]].GetFgm()) - double(m_rookies[p[2]].GetTfgm());
 	double fga = double(m_rookies[p[2]].GetFga()) - double(m_rookies[p[2]].GetTfga());
 	double tgm = double(m_rookies[p[3]].GetTfgm());
 	double tga = double(m_rookies[p[3]].GetTfga());
 	double ftm = double(m_rookies[p[4]].GetFtm());
 	double fta = double(m_rookies[p[4]].GetFta());
+	if (fta < min_fta) fta = min_fta;
+
 
 
 	double hi = (fga - fta/3/2);
@@ -3763,6 +3795,16 @@ void CDisk::CreateFictionalPool()
 	double to = double(m_rookies[p[8]].GetTo());
 	double blk = double(m_rookies[p[9]].GetBlk());
 	double pf = double(m_rookies[p[10]].GetPf());
+
+	if (orb < min_orb) orb = min_orb;
+	if (drb < min_drb) drb = min_drb;
+	if (ast < min_ast) ast = min_ast;
+	if (stl < min_stl) stl = min_stl;
+	if (to < min_to) to = min_to;
+	if (blk < min_blk) blk = min_blk;
+
+
+
 
 	
 	fgm = fgm * ageFactor;
@@ -3874,10 +3916,10 @@ void CDisk::CreateFictionalPool()
 	else m_rookies[i].SetBlk(int(games*blk));
 	m_rookies[i].SetPf(int(games*pf));
 
-    int min_stl = int(double(m_rookies[i].GetMin())*.01);
-	int i_stl = m_rookies[i].GetStl();
-	if(i_stl < min_stl) i_stl = min_stl;
-	m_rookies[i].SetStl(i_stl);
+    //int min_stl = int(double(m_rookies[i].GetMin())*.01);
+	//int i_stl = m_rookies[i].GetStl();
+	//if(i_stl < min_stl) i_stl = min_stl;
+	//m_rookies[i].SetStl(i_stl);
 
 	
 
